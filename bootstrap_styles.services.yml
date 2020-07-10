@@ -1,0 +1,4 @@
+services:
+  plugin.manager.bootstrap_styles_group:
+    class: Drupal\bootstrap_styles\StylesGroupManager
+    arguments: ['@container.namespaces', '@cache.default', '@module_handler']
