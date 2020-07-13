@@ -8,10 +8,10 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * A base class to help developers implement their own Styles Group plugins.
  */
-abstract class StylesGroupPluginBase extends PluginBase implements StylesGroupPluginInterface {
+abstract class StylePluginBase extends PluginBase implements StylePluginInterface {
 
   /**
-   * Constructs a StylesGroupPluginBase object.
+   * Constructs a StylePluginBase object.
    *
    * @param array $configuration
    * @param string $plugin_id
@@ -36,7 +36,7 @@ abstract class StylesGroupPluginBase extends PluginBase implements StylesGroupPl
    * {@inheritdoc}
    */
   public function getTitle() {
-    return $this->pluginDefinition['title'];
+    return $this->pluginDefinition['tite'];
   }
 
 }

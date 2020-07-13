@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\bootstrap_styles\Plugin\StylesGroup;
+namespace Drupal\bootstrap_styles\Plugin\BootstrapStyles\StylesGroup;
 
 use Drupal\bootstrap_styles\StylesGroupPluginBase;
 
@@ -11,7 +11,8 @@ use Drupal\bootstrap_styles\StylesGroupPluginBase;
  *
  * @StylesGroup(
  *   id = "background",
- *   name = @Translation("Background"),
+ *   title = @Translation("Background"),
+ *   weight = 1
  * )
  */
 class Background extends StylesGroupPluginBase {}

@@ -5,11 +5,11 @@ namespace Drupal\bootstrap_styles\Annotation;
 use Drupal\Component\Annotation\Plugin;
 
 /**
- * Defines a styles group form plugin annotation object.
+ * Defines a style form plugin annotation object.
  *
  * @Annotation
  */
-class StylesGroup extends Plugin {
+class Style extends Plugin {
 
   /**
    * The plugin ID.
@@ -28,7 +28,7 @@ class StylesGroup extends Plugin {
   public $title;
 
   /**
-   * An integer to determine the weight of this style group.
+   * An integer to determine the weight of this style.
    *
    * @var intoptional
    */

@@ -8,13 +8,13 @@ use Drupal\Component\Plugin\PluginInspectionInterface;
 /**
  * Provides an interface defining a Styles Group.
  */
-interface StylesGroupPluginInterface extends PluginInspectionInterface, ContainerFactoryPluginInterface {
+interface StylePluginInterface extends PluginInspectionInterface, ContainerFactoryPluginInterface {
 
   /**
-   * Return the title of the Styles Group form plugin.
+   * Return the name of the Styles Group form plugin.
    *
    * @return string
-   *   The title of styles group.
+   *   The name of styles group.
    */
   public function getTitle();
 
