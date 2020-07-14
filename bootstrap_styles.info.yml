@@ -4,6 +4,7 @@ type: module
 core: 8.x
 core_version_requirement: ^8 || ^9
 package: 'Layout Builder'
+configure: bootstrap_styles.settings
 dependencies:
   - drupal:layout_builder
   - media_library_form_element
