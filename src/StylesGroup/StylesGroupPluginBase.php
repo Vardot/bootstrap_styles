@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\bootstrap_styles;
+namespace Drupal\bootstrap_styles\StylesGroup;
 
 use Drupal\Component\Plugin\PluginBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;

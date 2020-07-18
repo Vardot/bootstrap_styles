@@ -2,7 +2,7 @@
 
 namespace Drupal\bootstrap_styles\Plugin\BootstrapStyles\StylesGroup;
 
-use Drupal\bootstrap_styles\StylesGroupPluginBase;
+use Drupal\bootstrap_styles\StylesGroup\StylesGroupPluginBase;
 
 /**
  * Class Spacing.

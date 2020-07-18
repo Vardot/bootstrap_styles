@@ -1,10 +1,11 @@
 <?php
 
-namespace Drupal\bootstrap_styles;
+namespace Drupal\bootstrap_styles\StylesGroup;
 
 use Drupal\Core\Plugin\DefaultPluginManager;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
+use Drupal\bootstrap_styles\Style\StylePluginManagerInterface;
 
 /**
  * Provides an StylesGroup plugin manager.
@@ -14,7 +15,7 @@ class StylesGroupManager extends DefaultPluginManager {
   /**
    * The style plugin manager interface.
    *
-   * @var \Drupal\bootstrap_styles\StylePluginManagerInterface
+   * @var \Drupal\bootstrap_styles\Style\StylePluginManagerInterface
    */
   protected $styleManager;
 
@@ -28,7 +29,7 @@ class StylesGroupManager extends DefaultPluginManager {
    *   Cache backend instance to use.
    * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
    *   The module handler to invoke the alter hook with.
-   * @param \Drupal\bootstrap_styles\StylePluginManagerInterface $style_manager
+   * @param \Drupal\bootstrap_styles\Style\StylePluginManagerInterface $style_manager
    *   The style plugin manager interface.
    */
   public function __construct(\Traversable $namespaces, CacheBackendInterface $cache_backend, ModuleHandlerInterface $module_handler, StylePluginManagerInterface $style_manager) {
@@ -36,7 +37,7 @@ class StylesGroupManager extends DefaultPluginManager {
       'Plugin/BootstrapStyles/StylesGroup',
       $namespaces,
       $module_handler,
-      'Drupal\bootstrap_styles\StylesGroupPluginInterface',
+      'Drupal\bootstrap_styles\StylesGroup\StylesGroupPluginInterface',
       'Drupal\bootstrap_styles\Annotation\StylesGroup'
     );
     $this->alterInfo('bootstrap_styles_info');

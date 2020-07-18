@@ -2,7 +2,7 @@
 
 namespace Drupal\bootstrap_styles\Plugin\BootstrapStyles\Style;
 
-use Drupal\bootstrap_styles\StylePluginBase;
+use Drupal\bootstrap_styles\Style\StylePluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**

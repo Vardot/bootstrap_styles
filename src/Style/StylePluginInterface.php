@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\bootstrap_styles;
+namespace Drupal\bootstrap_styles\Style;
 
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Component\Plugin\PluginInspectionInterface;

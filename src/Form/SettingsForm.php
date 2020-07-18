@@ -5,8 +5,8 @@ namespace Drupal\bootstrap_styles\Form;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\bootstrap_styles\StylesGroupManager;
-use Drupal\bootstrap_styles\StyleManager;
+use Drupal\bootstrap_styles\StylesGroup\StylesGroupManager;
+use Drupal\bootstrap_styles\Style\StyleManager;
 
 /**
  * Configure Bootstrap Styles settings.
@@ -16,23 +16,23 @@ class SettingsForm extends ConfigFormBase {
   /**
    * The styles group plugin manager.
    *
-   * @var \Drupal\bootstrap_styles\StylesGroupManager
+   * @var \Drupal\bootstrap_styles\StylesGroup\StylesGroupManager
    */
   protected $stylesGroupManager;
 
   /**
    * The styles plugin manager.
    *
-   * @var \Drupal\bootstrap_styles\StyleManager
+   * @var \Drupal\bootstrap_styles\Style\StyleManager
    */
   protected $styleManager;
 
   /**
    * Constructs a SettingsForm object.
    *
-   * @param \Drupal\bootstrap_styles\StylesGroupManager $styles_group_manager
+   * @param \Drupal\bootstrap_styles\StylesGroup\StylesGroupManager $styles_group_manager
    *   The styles group plugin manager.
-   * @param \Drupal\bootstrap_styles\StyleManager $style_manager
+   * @param \Drupal\bootstrap_styles\Style\StyleManager $style_manager
    *   The styles plugin manager.
    */
   public function __construct(StylesGroupManager $styles_group_manager, StyleManager $style_manager) {
