@@ -54,4 +54,28 @@ class BackgroundColor extends StylePluginBase {
       ->save();
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function buildStyleFormElements(array $form, FormStateInterface $form_state, $storage) {
+    $form['background_color'] = [
+      '#type' => 'radios',
+      '#options' => $this->getStyleOptions('background_colors'),
+      '#title' => $this->t('Background color'),
+      '#default_value' => $storage['background_color'],
+      '#validated' => TRUE,
+    ];
+
+    return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function submitStyleFormElements(array $group_elements) {
+    return [
+      'container_wrapper_bg_color_class' => $group_elements['background_color'],
+    ];
+  }
+
 }

@@ -6,6 +6,7 @@ use Drupal\Core\Plugin\DefaultPluginManager;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\bootstrap_styles\Style\StylePluginManagerInterface;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Provides an StylesGroup plugin manager.
@@ -57,7 +58,6 @@ class StylesGroupManager extends DefaultPluginManager {
       $groups[$group_id] = $group_definition;
       $groups[$group_id]['styles'] = $this->getGroupStyles($group_id);
     }
-    // @TODO
     uasort($groups, ['Drupal\Component\Utility\SortArray', 'sortByWeightElement']);
     return $groups;
   }
@@ -78,9 +78,50 @@ class StylesGroupManager extends DefaultPluginManager {
         $styles[$style_id] = $style_definition;
       }
     }
-    // @TODO
     uasort($styles, ['Drupal\Component\Utility\SortArray', 'sortByWeightElement']);
     return $styles;
+  }
+
+  /**
+   * 
+   */
+  public function buildStylesFormElements(array &$form, FormStateInterface $form_state, $storage) {
+    foreach ($this->getStylesGroups() as $group_key => $style_group) {
+      // Styles Group.
+      if (isset($style_group['styles'])) {
+        $form[$group_key] = [
+          '#type' => 'details',
+          '#title' => $style_group['title']->__toString(),
+          '#open' => TRUE,
+          '#tree' => TRUE,
+        ];
+
+        foreach ($style_group['styles'] as $style_key => $style) {
+          $style_instance = $this->styleManager->createInstance($style_key);
+          $form[$group_key] += $style_instance->buildStyleFormElements($form[$group_key], $form_state, $storage);
+        }
+      }
+    }
+    return $form;
+  }
+
+  /**
+   * 
+   */
+  public function submitStylesFormElements(array &$form, FormStateInterface $form_state, $tree, $storage) {
+    $options = [];
+    foreach ($this->getStylesGroups() as $group_key => $style_group) {
+      // Styles Group.
+      if ($form_state->getValue(array_merge($tree, [$group_key]))) {
+        $group_elements = $form_state->getValue(array_merge($tree, [$group_key]));
+        foreach ($group_elements as $style_key => $style) {
+          $style_instance = $this->styleManager->createInstance($style_key);
+          $options += $style_instance->submitStyleFormElements($group_elements);
+        }
+      }
+    }
+
+    return array_merge($storage, $options);
   }
 
 }

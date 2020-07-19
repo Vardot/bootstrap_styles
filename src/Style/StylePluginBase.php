@@ -69,6 +69,32 @@ abstract class StylePluginBase extends PluginBase implements StylePluginInterfac
   }
 
   /**
+   * Helper function to get the options of given style name.
+   *
+   * @param string $name
+   *   A config style name like background_color.
+   *
+   * @return array
+   *   Array of key => value of style name options.
+   */
+  public function getStyleOptions(string $name) {
+    $config = $this->config();
+    $options = [];
+    $config_options = $config->get($name);
+
+    $options = ['_none' => t('N/A')];
+    $lines = explode(PHP_EOL, $config_options);
+    foreach ($lines as $line) {
+      $line = explode('|', $line);
+      if ($line && isset($line[0]) && isset($line[1])) {
+        $options[$line[0]] = $line[1];
+      }
+    }
+
+    return $options;
+  }
+
+  /**
    * {@inheritdoc}
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
@@ -85,6 +111,19 @@ abstract class StylePluginBase extends PluginBase implements StylePluginInterfac
    * {@inheritdoc}
    */
   public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function buildStyleFormElements(array $form, FormStateInterface $form_state, $storage) {
+    return [];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function submitStyleFormElements(array $group_elements) {
   }
 
 }
