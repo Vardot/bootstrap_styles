@@ -26,7 +26,6 @@ class BackgroundColor extends StylePluginBase {
     $form = parent::buildConfigurationForm($form, $form_state);
     $config = $this->config();
 
-    // Add colors options.
     $form['background'] = [
       '#type' => 'details',
       '#title' => $this->t('Background'),
@@ -62,7 +61,7 @@ class BackgroundColor extends StylePluginBase {
       '#type' => 'radios',
       '#options' => $this->getStyleOptions('background_colors'),
       '#title' => $this->t('Background color'),
-      '#default_value' => $storage['background_color'],
+      '#default_value' => $storage['background_color']['class'],
       '#validated' => TRUE,
     ];
 
@@ -74,8 +73,18 @@ class BackgroundColor extends StylePluginBase {
    */
   public function submitStyleFormElements(array $group_elements) {
     return [
-      'container_wrapper_bg_color_class' => $group_elements['background_color'],
+      'background_color' => [
+        'class' => $group_elements['background_color'],
+      ],
     ];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function build(array $render_element, array $storage) {
+    $render_element['#attributes']['class'][] = $storage['class'];
+    return $render_element;
   }
 
 }

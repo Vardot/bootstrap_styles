@@ -78,14 +78,17 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+    $plugins_elements = [];
     foreach ($this->stylesGroupManager->getStylesGroups() as $group_plugin_id => $style_group) {
       if (isset($style_group['styles'])) {
         foreach ($style_group['styles'] as $style_plugin_id => $style) {
           $style_instance = $this->styleManager->createInstance($style_plugin_id);
-          $form += $style_instance->buildConfigurationForm($form, $form_state);
+          $plugins_elements = array_merge_recursive($plugins_elements, $style_instance->buildConfigurationForm($form, $form_state));
+
         }
       }
     }
+    $form += $plugins_elements;
     return parent::buildForm($form, $form_state);
   }
 

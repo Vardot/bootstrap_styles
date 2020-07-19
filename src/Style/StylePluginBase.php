@@ -126,4 +126,11 @@ abstract class StylePluginBase extends PluginBase implements StylePluginInterfac
   public function submitStyleFormElements(array $group_elements) {
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function build(array $render_element, array $storage) {
+    return [];
+  }
+
 }

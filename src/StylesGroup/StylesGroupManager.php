@@ -124,4 +124,17 @@ class StylesGroupManager extends DefaultPluginManager {
     return array_merge($storage, $options);
   }
 
+  /**
+   * @param $element
+   * @param $plugins_storage
+   */
+  public function buildStyles(array $element, array $plugins_storage) {
+    foreach ($plugins_storage as $plugin_id => $storage) {
+      $style_instance = $this->styleManager->createInstance($plugin_id);
+      $element = array_merge_recursive($element, $style_instance->build($element, $storage));
+    }
+
+    return $element;
+  }
+
 }
