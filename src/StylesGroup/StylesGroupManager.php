@@ -128,12 +128,16 @@ class StylesGroupManager extends DefaultPluginManager {
    * @param $element
    * @param $plugins_storage
    */
-  public function buildStyles(array $element, array $plugins_storage) {
+  public function buildStyles(array $element, array $plugins_storage, $theme_wrapper = NULL) {
     foreach ($plugins_storage as $plugin_id => $storage) {
+      // Handle special cases.
+      // Ignore background color if there's a background media.
+      if (isset($plugins_storage['background_media']['media_id']) && $plugin_id == 'background_color') {
+        continue;
+      }
       $style_instance = $this->styleManager->createInstance($plugin_id);
-      $element = array_merge_recursive($element, $style_instance->build($element, $storage));
+      $element = $style_instance->build($element, $storage, $theme_wrapper);
     }
-
     return $element;
   }
 

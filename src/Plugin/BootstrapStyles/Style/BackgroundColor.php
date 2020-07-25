@@ -82,9 +82,15 @@ class BackgroundColor extends StylePluginBase {
   /**
    * {@inheritdoc}
    */
-  public function build(array $render_element, array $storage) {
-    $render_element['#attributes']['class'][] = $storage['class'];
-    return $render_element;
+  public function build(array $build, array $storage, $theme_wrapper = NULL) {
+    // Assign the style to element or its theme wrapper if exist.
+    if ($theme_wrapper && isset($build['#theme_wrappers'][$theme_wrapper])) {
+      $build['#theme_wrappers'][$theme_wrapper]['#attributes']['class'][] = $storage['class'];
+    }
+    else {
+      $build['#attributes']['class'][] = $storage['class'];
+    }
+    return $build;
   }
 
 }

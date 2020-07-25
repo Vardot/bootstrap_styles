@@ -254,7 +254,7 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
   /**
    * {@inheritdoc}
    */
-  public function build(array $render_element, array $storage) {
+  public function build(array $build, array $storage, $theme_wrapper = NULL) {
     $config = $this->config();
     if ($media_id = $storage['media_id']) {
       $media_entity = Media::load($media_id);
@@ -265,21 +265,31 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
           $media_field_name = $config->get('background_image.field');
           // Check if the field exist.
           if ($media_entity->hasField($media_field_name)) {
-            $render_element['#attributes']['style'] = $this->buildBackgroundMediaImage($media_entity, $media_field_name);
+            $background_image_style = $this->buildBackgroundMediaImage($media_entity, $media_field_name);
+            // Assign the style to element or its theme wrapper if exist.
+            if ($theme_wrapper && isset($build['#theme_wrappers'][$theme_wrapper])) {
+              $build['#theme_wrappers'][$theme_wrapper]['#attributes']['style'][] = $background_image_style;
+            }
+            else {
+              $build['#attributes']['style'][] = $background_image_style;
+            }
           }
         }
         elseif ($config->get('background_local_video.bundle') && $bundle == $config->get('background_local_video.bundle')) {
           $media_field_name = $config->get('background_local_video.field');
-          $render_element['#video_wrapper_classes'] = $this->configuration['container_wrapper_bg_color_class'];
           // Check if the field exist.
           if ($media_entity->hasField($media_field_name)) {
-            $render_element['#video_background_url'] = $this->buildBackgroundMediaLocalVideo($media_entity, $media_field_name);
+            $background_video_url = $this->buildBackgroundMediaLocalVideo($media_entity, $media_field_name);
+
+            $build['#theme_wrappers']['bs_video_background'] = [
+              '#video_background_url' => $background_video_url,
+            ];
           }
         }
       }
     }
 
-    return $render_element;
+    return $build;
   }
 
   /**

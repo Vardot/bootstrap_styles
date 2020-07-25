@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function bootstrap_styles_theme() {
+  return [
+    'bs_video_background' => [
+      'variables' => [
+        'video_background_url' => '',
+        'attributes' => [],
+        'children' => [],
+      ],
+    ],
+  ];
+}
