@@ -76,7 +76,7 @@ class StylesFilterConfigForm extends ConfigFormBase {
         ];
 
         foreach ($style_group['styles'] as $style_key => $style) {
-          $config_key = $group_key . '.' . $style_key . '.enabled';
+          $config_key = 'plugins.' . $group_key . '.' . $style_key . '.enabled';
           $form['styles_groups'][$group_key][$style_key]['enabled'] = [
             '#type' => 'checkbox',
             '#title' => $style['title']->__toString(),
@@ -98,7 +98,7 @@ class StylesFilterConfigForm extends ConfigFormBase {
       foreach ($styles_group as $group_key => $styles) {
         foreach ($styles as $style_key => $style) {
           foreach ($style as $key => $value) {
-            $config_option_name = $group_key . '.' . $style_key . '.' . $key;
+            $config_option_name = 'plugins.' . $group_key . '.' . $style_key . '.' . $key;
             $config->set($config_option_name, $value);
           }
         }

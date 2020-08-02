@@ -7,6 +7,7 @@ use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\bootstrap_styles\Style\StylePluginManagerInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Config\ConfigFactoryInterface;
 
 /**
  * Provides an StylesGroup plugin manager.
@@ -21,6 +22,13 @@ class StylesGroupManager extends DefaultPluginManager {
   protected $styleManager;
 
   /**
+   * The config factory.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
+   */
+  protected $configFactory;
+
+  /**
    * Constructs a StylesGroupManager object.
    *
    * @param \Traversable $namespaces
@@ -32,8 +40,10 @@ class StylesGroupManager extends DefaultPluginManager {
    *   The module handler to invoke the alter hook with.
    * @param \Drupal\bootstrap_styles\Style\StylePluginManagerInterface $style_manager
    *   The style plugin manager interface.
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
+   *   Config factory service.
    */
-  public function __construct(\Traversable $namespaces, CacheBackendInterface $cache_backend, ModuleHandlerInterface $module_handler, StylePluginManagerInterface $style_manager) {
+  public function __construct(\Traversable $namespaces, CacheBackendInterface $cache_backend, ModuleHandlerInterface $module_handler, StylePluginManagerInterface $style_manager, ConfigFactoryInterface $config_actory) {
     parent::__construct(
       'Plugin/BootstrapStyles/StylesGroup',
       $namespaces,
@@ -44,6 +54,7 @@ class StylesGroupManager extends DefaultPluginManager {
     $this->alterInfo('bootstrap_styles_info');
     $this->setCacheBackend($cache_backend, 'bootstrap_styles_groups');
     $this->styleManager = $style_manager;
+    $this->configFactory = $config_actory;
   }
 
   /**
@@ -85,9 +96,39 @@ class StylesGroupManager extends DefaultPluginManager {
   /**
    * 
    */
-  public function buildStylesFormElements(array &$form, FormStateInterface $form_state, $storage) {
-    $form['#attached'] = [];
+  public function getAllowedPlugins(String $filter = null) {
+    $allowed_plugins = [];
+    if ($filter) {
+      $config = $this->configFactory->get($filter);
+      if ($config->get('plugins')) {
+        $allowed_plugins = [];
+        // Loop through groups.
+        foreach ($config->get('plugins') as $group_key => $group_plugins) {
+          // Loop through group plugins.
+          foreach ($group_plugins as $key => $plugin) {
+            if ($plugin['enabled']) {
+              $allowed_plugins[$group_key][] = $key;
+            }
+          }
+        }
+      }
+    }
+    return $allowed_plugins;
+  }
+
+  /**
+   * 
+   */
+  public function buildStylesFormElements(array &$form, FormStateInterface $form_state, $storage, String $filter = NULL) {
+    // Restrict styles.
+    $allowed_plugins = $this->getAllowedPlugins($filter);
+
     foreach ($this->getStylesGroups() as $group_key => $style_group) {
+      // Check groups restriction.
+      if (count($allowed_plugins) > 0 && !array_key_exists($group_key, $allowed_plugins)) {
+        continue;
+      }
+
       // Styles Group.
       if (isset($style_group['styles'])) {
         $form[$group_key] = [
@@ -98,6 +139,11 @@ class StylesGroupManager extends DefaultPluginManager {
         ];
 
         foreach ($style_group['styles'] as $style_key => $style) {
+          // Check plugins restriction.
+          if (count($allowed_plugins[$group_key]) > 0 && !in_array($style_key, $allowed_plugins[$group_key])) {
+            continue;
+          }
+
           $style_instance = $this->styleManager->createInstance($style_key);
           $form[$group_key] += $style_instance->buildStyleFormElements($form[$group_key], $form_state, $storage);
           // media_library_form_element module is missing some form featues.
