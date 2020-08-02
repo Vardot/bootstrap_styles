@@ -63,7 +63,13 @@ class BackgroundColor extends StylePluginBase {
       '#title' => $this->t('Background color'),
       '#default_value' => $storage['background_color']['class'],
       '#validated' => TRUE,
+      '#attributes' => [
+        'class' => ['field-background-color'],
+      ],
     ];
+
+    // Attach the Layout Builder from style for this plugin.
+    $form['#attached']['library'][] = 'bootstrap_styles/plugin.background_color.layout_builder_form';
 
     return $form;
   }

@@ -1,0 +1,35 @@
+/**
+ * @file
+ * Behaviors Background Color plugin layout builder form scripts.
+ */
+
+(function ($, _, Drupal, drupalSettings) {
+  "use strict";
+  
+  // Configure Section.
+  Drupal.behaviors.backgroundColorLayoutBuilderForm = {
+    attach: function (context) {
+
+      $(".fieldgroup.field-background-color input:radio", context).once('blb_bg-color').each(function () {
+        $(this).next('label').addClass($(this).val());
+      });
+
+      $(".fieldgroup.field-background-color .fieldset-wrapper label", context).on('click', function () {
+        $(this).parents('.fieldset-wrapper').find('label').removeClass('active');
+        $(this).parents('.fieldset-wrapper').find('input').prop("checked", false);
+        $(this).parent().find('input').prop('checked', true);
+        $(this).addClass('active');
+      });
+
+      // Custom solution for bootstrap 3 & Bario drupal theme issues.
+      $(".fieldgroup.field-background-color .fieldset-wrapper input:radio", context).each(function () {
+        $(this).parents('.radio').find('label').addClass($(this).val());
+        var checked = $(this).prop("checked");
+        if (typeof checked !== typeof undefined && checked !== false) {
+          $(this).parents('.radio').find('label').addClass('active');
+        }
+      });
+    }
+  };
+
+})(window.jQuery, window._, window.Drupal, window.drupalSettings);

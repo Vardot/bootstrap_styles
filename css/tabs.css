@@ -1,0 +1,57 @@
+#drupal-off-canvas #blb_nav-tabs {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin: 0 -20px 20px -20px;
+  width: calc(100% + 40px);
+}
+
+#drupal-off-canvas #blb_nav-tabs li {
+  flex: 1 1 auto;
+  margin: 0 1px;
+}
+
+#drupal-off-canvas #blb_nav-tabs li a {
+  cursor: pointer;
+  position: relative;
+  padding: .5rem .75rem;
+  min-height: 50px;
+  min-width: 16.666%;
+  background: #212529;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .2s background-color ease-in-out;
+}
+
+#drupal-off-canvas #blb_nav-tabs li a.active, #drupal-off-canvas #blb_nav-tabs li a.active:hover {
+  background-color: #444444;
+}
+
+#drupal-off-canvas #blb_nav-tabs li a:hover {
+  background: rgba(33, 37, 41, 0.5);
+}
+
+#drupal-off-canvas #blb_nav-tabs li a:hover .bs_tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0px);
+}
+
+#drupal-off-canvas .blb_icon {
+  max-width: 24px;
+  height: auto;
+  background: none;
+}
+
+#drupal-off-canvas #blb_tabContent > .blb_tab-pane {
+  display: none;
+}
+
+#drupal-off-canvas #blb_tabContent > .active {
+  display: block;
+}

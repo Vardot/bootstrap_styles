@@ -1,0 +1,46 @@
+@import "variables";
+// General styles.
+#drupal-off-canvas {
+  .form-composite > legend, .label {
+    font-weight: normal;
+  }
+
+  .form-type-checkbox,
+  .form-radios > div {
+    padding: 0;
+  }
+  // Bario theme.
+  .custom-control-input {
+    opacity: 1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  // Add default style for btn to solve Bootstrap 3 drupal theme issue.
+  button {
+    &.button {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      height: auto;
+      padding: 4px 20px;
+      cursor: pointer;
+      transition: background 0.5s ease;
+      text-align: center;
+      color: #f5f5f5;
+      border: 0;
+      border-radius: 20em;
+      background: #777;
+      font-size: 14px;
+      font-weight: 600;
+
+      &.button--primary {
+        margin-top: 15px;
+        color: $white;
+        border: 0;
+        background: #277abd;
+      }
+    }
+  }
+
+}

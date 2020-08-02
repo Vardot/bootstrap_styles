@@ -86,6 +86,7 @@ class StylesGroupManager extends DefaultPluginManager {
    * 
    */
   public function buildStylesFormElements(array &$form, FormStateInterface $form_state, $storage) {
+    $form['#attached'] = [];
     foreach ($this->getStylesGroups() as $group_key => $style_group) {
       // Styles Group.
       if (isset($style_group['styles'])) {
@@ -99,6 +100,12 @@ class StylesGroupManager extends DefaultPluginManager {
         foreach ($style_group['styles'] as $style_key => $style) {
           $style_instance = $this->styleManager->createInstance($style_key);
           $form[$group_key] += $style_instance->buildStyleFormElements($form[$group_key], $form_state, $storage);
+          // media_library_form_element module is missing some form featues.
+          // like assign attributes or add attachments, here's a workaround.
+          // to handle this special case and attach media library.
+          if ($style_key == 'background_media') {
+            $form['#attached']['library'][] = 'bootstrap_styles/plugin.background_media.layout_builder_form';
+          }
         }
       }
     }

@@ -1,0 +1,42 @@
+# Base styles.
+layout_builder_form_style:
+  css:
+    theme:
+      css/general-styles.css: { }
+  dependencies:
+    - bootstrap_styles/tabs
+    - bootstrap_styles/tooltip
+
+# Tabs
+tabs:
+  css:
+    theme:
+      css/tabs.css: { }
+
+# Tooltip
+tooltip:
+  css:
+    theme:
+      css/tooltip.css: { }
+
+# Plugins.
+# background_color
+plugin.background_color.layout_builder_form:
+  css:
+    theme:
+      css/plugins/background_color/layout-builder-form.css: { }
+  js:
+    js/plugins/background_color/layout-builder-form.js: { }
+
+# background_media
+plugin.background_media.layout_builder_form:
+  css:
+    theme:
+      css/plugins/background_media/layout-builder-form.css: { }
+
+plugin.background_media.build:
+  css:
+    theme:
+      css/plugins/background_media/build.css: { }
+  js:
+    js/plugins/background_media/build.js: { }
