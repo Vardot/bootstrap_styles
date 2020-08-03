@@ -42,3 +42,13 @@ plugin.background_media.build:
       css/plugins/background_media/build.css: { }
   js:
     js/plugins/background_media/build.js: { }
+
+# scroll_effects
+# plugin.scroll_effects.layout_builder_form:
+#   css:
+#     theme:
+#       css/plugins/scroll_effects/layout-builder-form.css: { }
+#   js:
+#     js/plugins/scroll_effects/layout-builder-form.js: { }
+
+# bootstrap_styles/plugin.scroll_effects.build:
