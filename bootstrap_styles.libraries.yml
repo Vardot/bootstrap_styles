@@ -12,6 +12,8 @@ tabs:
   css:
     theme:
       css/tabs.css: { }
+  js:
+    js/tabs.js: { }
 
 # Tooltip
 tooltip:

@@ -6,7 +6,7 @@
   //
 
   // Our icons/headings
-  #blb_nav-tabs {
+  #bs_nav-tabs {
     position: relative;
     display: flex;
     justify-content: center;
@@ -64,8 +64,8 @@
   //
   // Hide tabbable panes to start, show them when `.active`
 
-  #blb_tabContent {
-    > .blb_tab-pane {
+  #bs_tabContent {
+    > .bs_tab-pane {
       display: none;
     }
     > .active {
