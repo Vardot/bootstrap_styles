@@ -32,8 +32,11 @@ abstract class StylePluginBase extends PluginBase implements StylePluginInterfac
    * Constructs a StylePluginBase object.
    *
    * @param array $configuration
+   *   A configuration array containing information about the plugin instance.
    * @param string $plugin_id
+   *   The plugin ID for the plugin instance.
    * @param mixed $plugin_definition
+   *   The plugin implementation definition.
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The configuration factory.
    */
@@ -82,7 +85,7 @@ abstract class StylePluginBase extends PluginBase implements StylePluginInterfac
     $options = [];
     $config_options = $config->get($name);
 
-    $options = ['_none' => t('N/A')];
+    $options = ['_none' => $this->t('N/A')];
     $lines = explode(PHP_EOL, $config_options);
     foreach ($lines as $line) {
       $line = explode('|', $line);

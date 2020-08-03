@@ -40,10 +40,10 @@ class StylesGroupManager extends DefaultPluginManager {
    *   The module handler to invoke the alter hook with.
    * @param \Drupal\bootstrap_styles\Style\StylePluginManagerInterface $style_manager
    *   The style plugin manager interface.
-   * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   Config factory service.
    */
-  public function __construct(\Traversable $namespaces, CacheBackendInterface $cache_backend, ModuleHandlerInterface $module_handler, StylePluginManagerInterface $style_manager, ConfigFactoryInterface $config_actory) {
+  public function __construct(\Traversable $namespaces, CacheBackendInterface $cache_backend, ModuleHandlerInterface $module_handler, StylePluginManagerInterface $style_manager, ConfigFactoryInterface $config_factory) {
     parent::__construct(
       'Plugin/BootstrapStyles/StylesGroup',
       $namespaces,
@@ -54,7 +54,7 @@ class StylesGroupManager extends DefaultPluginManager {
     $this->alterInfo('bootstrap_styles_info');
     $this->setCacheBackend($cache_backend, 'bootstrap_styles_groups');
     $this->styleManager = $style_manager;
-    $this->configFactory = $config_actory;
+    $this->configFactory = $config_factory;
   }
 
   /**
@@ -74,7 +74,7 @@ class StylesGroupManager extends DefaultPluginManager {
   }
 
   /**
-   * Returns an array of group styles.
+   * Returns an array of group styles plugins.
    *
    * @param string $group_id
    *   The styles group plugin id.
@@ -94,9 +94,15 @@ class StylesGroupManager extends DefaultPluginManager {
   }
 
   /**
-   * 
+   * Helper function returns array of allowed groups with its plugins.
+   *
+   * @param string $filter
+   *   The filter config name.
+   *
+   * @return array
+   *   The allowed groups with its plugins.
    */
-  public function getAllowedPlugins(String $filter = null) {
+  public function getAllowedPlugins(string $filter = NULL) {
     $allowed_plugins = [];
     if ($filter) {
       $config = $this->configFactory->get($filter);
@@ -117,9 +123,21 @@ class StylesGroupManager extends DefaultPluginManager {
   }
 
   /**
-   * 
+   * Build the layout builder form styles elements.
+   *
+   * @param array $form
+   *   An associative array containing the structure of the form.
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The current state of the form.
+   * @param array $storage
+   *   The plugins storage array.
+   * @param string $filter
+   *   The filter config name.
+   *
+   * @return array
+   *   The form structure.
    */
-  public function buildStylesFormElements(array &$form, FormStateInterface $form_state, $storage, String $filter = NULL) {
+  public function buildStylesFormElements(array &$form, FormStateInterface $form_state, array $storage, string $filter = NULL) {
     // Restrict styles.
     $allowed_plugins = $this->getAllowedPlugins($filter);
 
@@ -159,9 +177,21 @@ class StylesGroupManager extends DefaultPluginManager {
   }
 
   /**
-   * 
+   * Save styles.
+   *
+   * @param array $form
+   *   An associative array containing the structure of the form.
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The current state of the form.
+   * @param array $tree
+   *   An array of parents.
+   * @param array $storage
+   *   The plugins storage array.
+   *
+   * @return array
+   *   An array of plugins with its storage values.
    */
-  public function submitStylesFormElements(array &$form, FormStateInterface $form_state, $tree, $storage) {
+  public function submitStylesFormElements(array &$form, FormStateInterface $form_state, array $tree = [], array $storage = []) {
     $options = [];
     foreach ($this->getStylesGroups() as $group_key => $style_group) {
       // Styles Group.
@@ -178,10 +208,17 @@ class StylesGroupManager extends DefaultPluginManager {
   }
 
   /**
-   * @param $element
-   * @param $plugins_storage
+   * Build the styles for a given build.
+   *
+   * @param array $build
+   *   The build of element.
+   * @param array $plugins_storage
+   *   An array of plugins with its storage.
+   * @param string $theme_wrapper
+   *   The theme wrapper key.
    */
-  public function buildStyles(array $element, array $plugins_storage, $theme_wrapper = NULL) {
+  public function buildStyles(array $build, array $plugins_storage, $theme_wrapper = NULL) {
+    // Loop through plugins storage.
     foreach ($plugins_storage as $plugin_id => $storage) {
       // Handle special cases.
       // Ignore background color if there's a background media.
@@ -189,9 +226,10 @@ class StylesGroupManager extends DefaultPluginManager {
         continue;
       }
       $style_instance = $this->styleManager->createInstance($plugin_id);
-      $element = $style_instance->build($element, $storage, $theme_wrapper);
+      $build = $style_instance->build($build, $storage, $theme_wrapper);
     }
-    return $element;
+
+    return $build;
   }
 
 }

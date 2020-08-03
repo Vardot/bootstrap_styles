@@ -43,11 +43,14 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
   protected $entityTypeManager;
 
   /**
-   * Constructs a SettingsForm object.
+   * Constructs a BackgroundMedia object.
    *
    * @param array $configuration
+   *   A configuration array containing information about the plugin instance.
    * @param string $plugin_id
+   *   The plugin ID for the plugin instance.
    * @param mixed $plugin_definition
+   *   The plugin implementation definition.
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The configuration factory.
    * @param \Drupal\Core\Entity\EntityTypeBundleInfoInterface $entity_type_bundle_info
@@ -86,7 +89,15 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
     $media_bundles = [];
     $media_bundles_info = $this->entityTypeBundleInfo->getBundleInfo('media');
     // Ignore if match any of the following names.
-    $disabled_bundles = ['audio', 'audio_file', 'instagram', 'tweet', 'document', 'remote_video'];
+    $disabled_bundles = [
+      'audio',
+      'audio_file',
+      'instagram',
+      'tweet',
+      'document',
+      'remote_video',
+    ];
+
     foreach ($media_bundles_info as $key => $bundle) {
       if (!in_array($key, $disabled_bundles)) {
         $media_bundles[$key] = $bundle['label'] . ' (' . $key . ')';

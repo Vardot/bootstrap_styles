@@ -38,7 +38,6 @@ class SettingsForm extends ConfigFormBase {
   public function __construct(StylesGroupManager $styles_group_manager, StyleManager $style_manager) {
     $this->stylesGroupManager = $styles_group_manager;
     $this->styleManager = $style_manager;
-
   }
 
   /**
@@ -96,9 +95,6 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    // $this->configFactory->getEditable(static::SETTINGS)
-    //   ->set('background_colors', $form_state->getValue('background_colors'))
-    //   ->save();
     parent::submitForm($form, $form_state);
     foreach ($this->stylesGroupManager->getStylesGroups() as $group_plugin_id => $style_group) {
       if (isset($style_group['styles'])) {

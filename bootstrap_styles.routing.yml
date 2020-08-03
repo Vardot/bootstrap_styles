@@ -4,4 +4,4 @@ bootstrap_styles.settings:
     _form: '\Drupal\bootstrap_styles\Form\SettingsForm'
     _title: 'Bootstrap Styles Settings'
   requirements:
-    _permission: 'configure bootstrap layout builder'
+    _permission: 'configure bootstrap styles'

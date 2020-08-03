@@ -2,7 +2,6 @@
   "name": "drupal/bootstrap_styles",
   "type": "drupal-module",
   "keywords": ["Drupal", "Bootstrap", "Grid", "Layout Builder"],
-  "version": "dev-master",
   "license": "GPL-2.0+",
   "description": "Add pluginable styles to Layout Builder module.",
   "require": {

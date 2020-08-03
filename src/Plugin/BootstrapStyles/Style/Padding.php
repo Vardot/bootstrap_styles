@@ -18,6 +18,7 @@ use Drupal\Core\Form\FormStateInterface;
  * )
  */
 class Padding extends StylePluginBase {
+
   /**
    * {@inheritdoc}
    */

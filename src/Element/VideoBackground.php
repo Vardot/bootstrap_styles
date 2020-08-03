@@ -5,7 +5,7 @@ namespace Drupal\bootstrap_styles\Element;
 use Drupal\Core\Render\Element\RenderElement;
 
 /**
- * Provides a marquee render element.
+ * Provides a video background render element.
  *
  * @RenderElement("bs_video_background")
  */

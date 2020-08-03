@@ -18,6 +18,7 @@ use Drupal\Core\Form\FormStateInterface;
  * )
  */
 class Margin extends StylePluginBase {
+
   /**
    * {@inheritdoc}
    */
@@ -91,4 +92,5 @@ class Margin extends StylePluginBase {
     }
     return $build;
   }
+
 }

@@ -8,7 +8,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\bootstrap_styles\StylesGroup\StylesGroupManager;
 
 /**
- * Filter Styles.
+ * Configure and filter styles' plugins.
  */
 class StylesFilterConfigForm extends ConfigFormBase {
 
