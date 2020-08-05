@@ -32,7 +32,7 @@ class ScrollEffects extends StylePluginBase {
       '#open' => TRUE,
     ];
 
-    // Library assets
+    // Library assets.
     $form['animation']['scroll_effects_library_type'] = [
       '#type' => 'select',
       '#default_value' => $config->get('scroll_effects_library_type'),
@@ -42,7 +42,7 @@ class ScrollEffects extends StylePluginBase {
         'local' => $this->t('Do nothing, my theme handle it'),
         'external' => $this->t('Add the library for me please'),
       ],
-      '#description' => $this->t('<p>Default uses the AOS library: <a href="https://michalsnik.github.io/aos" target="_blank">https://michalsnik.github.io/aos</a><br/> You can override the animation library in your theme by using <code>libraries-override: bootstrap_styles/plugin.scroll_effects.build: your_theme/your_new_library_definition</code> <small>https://www.drupal.org/node/2497313</small></p> '),
+      '#description' => $this->t('<p>Default uses the AOS library: <a href="https://michalsnik.github.io/aos" target="_blank">https://michalsnik.github.io/aos</a><br/> You can override the animation library in your theme by using <br /><code>libraries-override:<br />&nbsp;&nbsp;bootstrap_styles/plugin.scroll_effects.build: your_theme/your_new_library_definition</code><br /><small>For more information, please check: <a href="https://www.drupal.org/node/2497313" target="_blank">https://www.drupal.org/node/2497313</a></small></p>'),
     ];
 
     $form['animation']['scroll_effects'] = [
@@ -71,7 +71,7 @@ class ScrollEffects extends StylePluginBase {
             [':input[name="scroll_effects_attr_type"]' => ['checked' => TRUE]],
           ],
         ],
-      ]
+      ],
     ];
 
     return $form;
@@ -158,4 +158,5 @@ class ScrollEffects extends StylePluginBase {
 
     return $build;
   }
+
 }

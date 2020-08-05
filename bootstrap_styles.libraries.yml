@@ -48,8 +48,6 @@ plugin.scroll_effects.layout_builder_form:
   css:
     theme:
      css/plugins/scroll_effects/layout-builder-form.css: { }
-#  js:
-#    js/plugins/scroll_effects/layout-builder-form.js: { }
 
 plugin.scroll_effects.build:
   remote: https://michalsnik.github.io/aos
