@@ -26,14 +26,14 @@
   border: 2px solid #ffffff;
   padding: 10px;
   margin: 3px;
-  min-height: 35px;
+  min-height: 40px;
   width: calc(100% - 6px);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   cursor: pointer;
-  border-radius: 2px;
+  border-radius: 8px;
 }
 
 #drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label:hover {
