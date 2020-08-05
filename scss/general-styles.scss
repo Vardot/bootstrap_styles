@@ -1,4 +1,5 @@
 @import "variables";
+
 // General styles.
 #drupal-off-canvas {
   .form-composite > legend, .label {
@@ -9,6 +10,7 @@
   .form-radios > div {
     padding: 0;
   }
+  
   // Bario theme.
   .custom-control-input {
     opacity: 1;
@@ -38,7 +40,7 @@
         margin-top: 15px;
         color: $white;
         border: 0;
-        background: #277abd;
+        background: $blue-277;
       }
     }
   }
