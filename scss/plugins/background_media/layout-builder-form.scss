@@ -1,4 +1,5 @@
 @import "../../variables";
+@import "../../mixins";
 
 #drupal-off-canvas {
   // @TODO Add class for media.
@@ -116,6 +117,89 @@
 
     .media-library-item--grid {
       width: 100%;
+    }
+  }
+
+  // Background position
+  .field-background-position .form-radios {
+    border: 2px solid $gray-e2e;
+    margin: 10px 0;
+    padding: 30px;
+    max-height: 60px;
+    position: relative;
+
+    input {
+      @include sr-only;
+
+      &:checked + label {
+        background-color: $blue-277;
+        transform: scale(1.2);
+      }
+
+      ~ label {
+        @include smooth-all-transition;
+        position: absolute;
+        background-color: $gray-dae;
+        //border: 3px solid $gray-444;
+        border-radius: 50%;
+        width: 14px;
+        height: 14px;
+        font-size: 0;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $white;
+          transform: scale(1.1);
+        }
+      }
+
+      // Left side
+      &[value='left_top'] ~ label {
+        left: -7px;
+        top: -7px;
+      }
+
+      &[value='left_center'] ~ label {
+        left: -7px;
+        top: calc(50% - 7px);
+      }
+
+      &[value='left_bottom'] ~ label {
+        left: -7px;
+        bottom: -7px;
+      }
+
+      // Center
+      &[value='center_top'] ~ label {
+        left: calc(50% - 7px);
+        top: -7px;
+      }
+
+      &[value='center_center'] ~ label {
+        left: calc(50% - 7px);
+        top: calc(50% - 7px);
+      }
+
+      &[value='center_bottom'] ~ label {
+        left: calc(50% - 7px);
+        bottom: -7px;
+      }
+
+      // Right
+      &[value='right_top'] ~ label {
+        right: -7px;
+        top: -7px;
+      }
+
+      &[value='right_center'] ~ label {
+        right: -7px;
+        top: calc(50% - 7px);
+      }
+
+      &[value='right_bottom'] ~ label {
+        right: -7px;
+        bottom: -7px;
+      }
     }
   }
 }

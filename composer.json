@@ -4,6 +4,7 @@
   "keywords": ["Drupal", "Bootstrap", "Grid", "Layout Builder"],
   "license": "GPL-2.0+",
   "description": "Add pluginable styles to Layout Builder module.",
+  "version": "dev-master",
   "require": {
       "drupal/core": "^8.7.7 || ^9",
       "drupal/media_library_form_element": "^2.0",

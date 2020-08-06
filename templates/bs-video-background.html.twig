@@ -30,7 +30,8 @@
 %}
 
 {{ attach_library('bootstrap_styles/plugin.background_media.build') }}
-<div {{ attributes.addClass(classes) }}>
+
+<div{{ attributes.addClass(classes) }}>
   <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
     <source src="{{ video_background_url }}" type="video/mp4">
   </video>

@@ -246,6 +246,26 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
         '#default_value' => $storage['background_media']['media_id'],
         '#prefix' => '<hr />',
       ];
+
+      $form['background_position'] = [
+        '#type' => 'radios',
+        '#title' => $this->t('Background position'),
+        '#options' => [
+          'left_top' => $this->t('Left Top'),
+          'left_center' => $this->t('Left Center'),
+          'left_bottom' => $this->t('Left Bottom'),
+          'right_top' => $this->t('Right Top'),
+          'right_center' => $this->t('Right Center'),
+          'right_bottom' => $this->t('Right Bottom'),
+          'center_top' => $this->t('Center Top'),
+          'center_center' => $this->t('Center Center'),
+          'center_bottom' => $this->t('Center Bottom'),
+        ],
+        '#default_value' => $storage['background_position'],
+        '#attributes' => [
+          'class' => ['field-background-position'],
+        ],
+      ];
     }
 
     return $form;
