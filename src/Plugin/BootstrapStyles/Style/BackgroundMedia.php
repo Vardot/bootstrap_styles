@@ -286,7 +286,7 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
           'repeat_x' => $this->t('Repeat X'),
           'repeat_y' => $this->t('Repeat Y'),
         ],
-        '#default_value' => $storage['background_repeat'],
+        '#default_value' => $storage['background_repeat'] ? $storage['background_repeat'] : 'no_repeat',
         '#attributes' => [
           'class' => ['bs_col bs_background--repeat'],
         ],
