@@ -247,25 +247,51 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
         '#prefix' => '<hr />',
       ];
 
-      $form['background_position'] = [
-        '#type' => 'radios',
-        '#title' => $this->t('Background position'),
-        '#options' => [
-          'left_top' => $this->t('Left Top'),
-          'left_center' => $this->t('Left Center'),
-          'left_bottom' => $this->t('Left Bottom'),
-          'right_top' => $this->t('Right Top'),
-          'right_center' => $this->t('Right Center'),
-          'right_bottom' => $this->t('Right Bottom'),
-          'center_top' => $this->t('Center Top'),
-          'center_center' => $this->t('Center Center'),
-          'center_bottom' => $this->t('Center Bottom'),
-        ],
-        '#default_value' => $storage['background_position'],
+      $form['background_options'] = [
+        '#type' => 'container',
+        '#title' => $this->t('Background Options'),
         '#attributes' => [
-          'class' => ['field-background-position'],
+          'class' => ['bs_row bs_background--options'],
         ],
       ];
+
+      // @todo: pass this all the way down to the buildBackgroundMediaImage() func.
+      // @todo: can we only display these fields only if we upload a background image vs. video?
+      $form['background_options']['background_position'] = [
+        '#type' => 'radios',
+        '#title' => $this->t('Position'),
+        '#options' => [
+          'left_top' => $this->t('Left Top'),
+          'center_top' => $this->t('Center Top'),
+          'right_top' => $this->t('Right Top'),
+          'left_center' => $this->t('Left Center'),
+          'center' => $this->t('Center'),
+          'right_center' => $this->t('Right Center'),
+          'left_bottom' => $this->t('Left Bottom'),
+          'center_bottom' => $this->t('Center Bottom'),
+          'right_bottom' => $this->t('Right Bottom'),
+        ],
+        '#default_value' => $storage['background_position'] ? $storage['background_position'] : 'center',
+        '#attributes' => [
+          'class' => ['bs_col bs_background--position'],
+        ],
+      ];
+
+//      $form['background_options']['background_repeat'] = [
+//        '#type' => 'radios',
+//        '#title' => $this->t('Repeat'),
+//        '#options' => [
+//          'no_repeat' => $this->t('No Repeat'),
+//          'repeat' => $this->t('Repeat'),
+//          'repeat_x' => $this->t('Repeat X'),
+//          'repeat_y' => $this->t('Repeat Y'),
+//        ],
+//        '#default_value' => $storage['background_repeat'],
+//        '#attributes' => [
+//          'class' => ['bs_col bs_background--repeat'],
+//        ],
+//      ];
+
     }
 
     return $form;
@@ -278,7 +304,7 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
     return [
       'background_media' => [
         'media_id' => $group_elements['background_media'],
-      ],
+      ]
     ];
   }
 
@@ -294,6 +320,7 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
 
         if ($config->get('background_image.bundle') && $bundle == $config->get('background_image.bundle')) {
           $media_field_name = $config->get('background_image.field');
+
           // Check if the field exist.
           if ($media_entity->hasField($media_field_name)) {
             $background_image_style = $this->buildBackgroundMediaImage($media_entity, $media_field_name);

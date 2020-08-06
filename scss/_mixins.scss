@@ -1,5 +1,4 @@
 // Mixins
-
 @mixin sr-only() {
   position: absolute;
   width: 1px;
@@ -14,4 +13,65 @@
 
 @mixin smooth-all-transition() {
   transition: all .3s ease-in-out;
+}
+
+// Rounded input style
+@mixin blb_box_inputs($width: 1) {
+  position: relative;
+  flex: $width;
+  margin: 0;
+  padding: 0;
+
+  input {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+    display: block;
+
+    + label {
+      border: 2px solid white;
+      padding: 10px;
+      height: 50px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba($white, .1);
+      }
+    }
+
+    // Active state.
+    &:checked + label {
+      color: $gray-444;
+      background-color: $white;
+    }
+  }
+
+  // Custom fix for Bootstrap 3 Drupal theme.
+  label {
+    border: 2px solid $white;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+
+    + input {
+      opacity: 0;
+      position: absolute;
+    }
+
+    // Active state.
+    &.active {
+      color: $gray-444;
+      background-color: $white;
+    }
+  }
 }
