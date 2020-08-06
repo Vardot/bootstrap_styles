@@ -277,20 +277,20 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
         ],
       ];
 
-//      $form['background_options']['background_repeat'] = [
-//        '#type' => 'radios',
-//        '#title' => $this->t('Repeat'),
-//        '#options' => [
-//          'no_repeat' => $this->t('No Repeat'),
-//          'repeat' => $this->t('Repeat'),
-//          'repeat_x' => $this->t('Repeat X'),
-//          'repeat_y' => $this->t('Repeat Y'),
-//        ],
-//        '#default_value' => $storage['background_repeat'],
-//        '#attributes' => [
-//          'class' => ['bs_col bs_background--repeat'],
-//        ],
-//      ];
+      $form['background_options']['background_repeat'] = [
+        '#type' => 'radios',
+        '#title' => $this->t('Repeat'),
+        '#options' => [
+          'no_repeat' => $this->t('No Repeat'),
+          'repeat' => $this->t('Repeat'),
+          'repeat_x' => $this->t('Repeat X'),
+          'repeat_y' => $this->t('Repeat Y'),
+        ],
+        '#default_value' => $storage['background_repeat'],
+        '#attributes' => [
+          'class' => ['bs_col bs_background--repeat'],
+        ],
+      ];
 
     }
 
