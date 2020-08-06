@@ -305,6 +305,20 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
         ],
       ];
 
+      $form['background_size'] = [
+        '#type' => 'radios',
+        '#title' => $this->t('Size'),
+        '#options' => [
+          'cover' => $this->t('Cover'),
+          'contain' => $this->t('Contain'),
+          'auto' => $this->t('Auto'),
+        ],
+        '#default_value' => $storage['background_size'] ? $storage['background_size'] : 'cover',
+        '#attributes' => [
+          'class' => ['bs_col--full bs_background--size'],
+        ],
+      ];
+
     }
 
     return $form;

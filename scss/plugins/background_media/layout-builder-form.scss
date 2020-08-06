@@ -124,43 +124,12 @@ $bg-pos-toggle-size: 16px;
 
   // Give our legends a bit more space.
   .bs_background--options,
-  .bs_background--attachment {
+  .bs_background--attachment,
+  .bs_background--size {
     legend {
       margin-bottom: 10px;
     }
   }
-
-  // Background position (tile-style)
-  //
-  //.bs_background--position {
-  //  .fieldset-wrapper > div {
-  //    display: flex;
-  //    flex-wrap: wrap;
-  //    border: 2px solid white;
-  //    border-radius: 8px;
-  //    overflow: hidden;
-  //
-  //    // Our actual form item.
-  //    > div {
-  //      @include blb_box_inputs($width: 33.33333%);
-  //
-  //      input + label {
-  //        border-left: 0;
-  //        border-bottom: 0;
-  //      }
-  //
-  //      // first 3 items (top 3)
-  //      &:nth-child(-n+3) input + label {
-  //        border-top: 0;
-  //      }
-  //
-  //      // every 3rd item (right items)
-  //      &:nth-child(3n+3) input + label {
-  //        border-right: 0;
-  //      }
-  //    }
-  //  }
-  //}
 
   // Background position
   .bs_background--position {
@@ -347,8 +316,9 @@ $bg-pos-toggle-size: 16px;
     }
   }
 
-  // Background attachment
-  .bs_background--attachment {
+  // Background attachment/size
+  .bs_background--attachment,
+  .bs_background--size {
     .fieldset-wrapper > div {
       display: flex;
 
