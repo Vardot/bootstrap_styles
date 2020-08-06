@@ -111,6 +111,16 @@
   width: 100%;
 }
 
+#drupal-off-canvas .form-type-range label {
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+#drupal-off-canvas .form-type-range input {
+  width: 100%;
+}
+
 #drupal-off-canvas .bs_background--options legend,
 #drupal-off-canvas .bs_background--attachment legend,
 #drupal-off-canvas .bs_background--size legend {

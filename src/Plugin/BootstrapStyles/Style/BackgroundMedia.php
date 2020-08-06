@@ -247,9 +247,14 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
         '#prefix' => '<hr />',
       ];
 
+      $form['quantity'] = array(
+        '#type' => 'range',
+        '#step' => 10,
+        '#title' => $this->t('Background Opacity'),
+      );
+
       $form['background_options'] = [
         '#type' => 'container',
-        '#title' => $this->t('Background Options'),
         '#attributes' => [
           'class' => ['bs_row bs_background--options'],
         ],

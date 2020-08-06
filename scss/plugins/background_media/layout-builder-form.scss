@@ -122,6 +122,20 @@ $bg-pos-toggle-size: 16px;
     }
   }
 
+  // Background Opacity
+  .form-type-range {
+
+    label {
+      font-size: 16px;
+      font-weight: normal;
+      margin-bottom: 15px;
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+
   // Give our legends a bit more space.
   .bs_background--options,
   .bs_background--attachment,
