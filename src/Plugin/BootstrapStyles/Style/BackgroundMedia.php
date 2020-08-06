@@ -292,6 +292,19 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
         ],
       ];
 
+      $form['background_attachment'] = [
+        '#type' => 'radios',
+        '#title' => $this->t('Attachment'),
+        '#options' => [
+          'not_fixed' => $this->t('Not Fixed'),
+          'fixed' => $this->t('Fixed'),
+        ],
+        '#default_value' => $storage['background_attachment'] ? $storage['background_attachment'] : 'not_fixed',
+        '#attributes' => [
+          'class' => ['bs_col--full bs_background--attachment'],
+        ],
+      ];
+
     }
 
     return $form;

@@ -122,7 +122,9 @@ $bg-pos-toggle-size: 16px;
     }
   }
 
-  .bs_background--options {
+  // Give our legends a bit more space.
+  .bs_background--options,
+  .bs_background--attachment {
     legend {
       margin-bottom: 10px;
     }
@@ -160,6 +162,7 @@ $bg-pos-toggle-size: 16px;
   //  }
   //}
 
+  // Background position
   .bs_background--position {
     margin: 0;
 
@@ -339,6 +342,35 @@ $bg-pos-toggle-size: 16px;
         // every 3rd item (right items)
         &:nth-child(2n+2) input + label {
           border-right: 0;
+        }
+      }
+    }
+  }
+
+  // Background attachment
+  .bs_background--attachment {
+    .fieldset-wrapper > div {
+      display: flex;
+
+      // Our actual form item.
+      > div {
+        @include blb_box_inputs;
+
+        &:first-child input + label {
+          border-right: 0;
+        }
+
+        &:last-child input + label {
+          border-left: 0;
+        }
+
+        // Pill style toggle.
+        &:first-child input + label {
+          border-radius: 8px 0 0 8px;
+        }
+
+        &:last-child input + label {
+          border-radius: 0 8px 8px 0;
         }
       }
     }

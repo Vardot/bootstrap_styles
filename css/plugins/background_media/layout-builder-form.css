@@ -111,7 +111,8 @@
   width: 100%;
 }
 
-#drupal-off-canvas .bs_background--options legend {
+#drupal-off-canvas .bs_background--options legend,
+#drupal-off-canvas .bs_background--attachment legend {
   margin-bottom: 10px;
 }
 
@@ -352,4 +353,86 @@
 
 #drupal-off-canvas .bs_background--repeat .fieldset-wrapper > div > div:nth-child(2n+2) input + label {
   border-right: 0;
+}
+
+#drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div {
+  display: flex;
+}
+
+#drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div {
+  position: relative;
+  flex: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+#drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div input + label {
+  border: 2px solid white;
+  padding: 10px;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+#drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div input + label:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div input:checked + label {
+  color: #444444;
+  background-color: #ffffff;
+}
+
+#drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div label {
+  border: 2px solid #ffffff;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+#drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div label + input {
+  opacity: 0;
+  position: absolute;
+}
+
+#drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div label.active {
+  color: #444444;
+  background-color: #ffffff;
+}
+
+#drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div:first-child input + label {
+  border-right: 0;
+}
+
+#drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div:last-child input + label {
+  border-left: 0;
+}
+
+#drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div:first-child input + label {
+  border-radius: 8px 0 0 8px;
+}
+
+#drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div:last-child input + label {
+  border-radius: 0 8px 8px 0;
 }
