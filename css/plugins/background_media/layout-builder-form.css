@@ -1,3 +1,11 @@
+#drupal-off-canvas {
+  /**
+  * The media library item container receives screen reader focus when items are
+  * removed. Since it is not an interactive element, it does not need an
+  * outline.
+  */
+}
+
 #drupal-off-canvas .media-library-item {
   width: 100%;
   position: relative;
@@ -87,26 +95,107 @@
   position: absolute;
   bottom: 0;
   display: block;
-  padding: 5px;
-  max-height: calc(100% - 50px);
   overflow: hidden;
-  background: #ffffff !important;
+  max-width: calc(100% - 10px);
+  max-height: calc(100% - 50px);
+  padding: 5px;
+  background: white;
 }
 
-#drupal-off-canvas .media-library-item__attributes {
-  position: absolute;
-  bottom: 0;
+#drupal-off-canvas .media-library-item__name {
+  font-size: 14px;
+}
+
+#drupal-off-canvas .media-library-item__name {
   display: block;
-  padding: 5px;
-  max-height: calc(100% - 50px);
   overflow: hidden;
-  background: #ffffff !important;
+  margin: 2px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#drupal-off-canvas .media-library-item__attributes:hover .media-library-item__name,
+#drupal-off-canvas .media-library-item--grid.is-focus .media-library-item__name,
+#drupal-off-canvas .media-library-item--grid.checked .media-library-item__name {
+  white-space: normal;
+}
+
+#drupal-off-canvas .media-library-item--grid {
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+  vertical-align: top;
+  outline: none;
+  background: #fff;
+}
+
+#drupal-off-canvas .media-library-item--grid:before {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  content: "";
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  pointer-events: none;
+  border: 1px solid #dbdbdb;
 }
 
 #drupal-off-canvas .media-library-selection {
   margin: 0;
 }
 
-#drupal-off-canvas .media-library-selection .media-library-item--grid {
-  width: 100%;
+#drupal-off-canvas .media-library-item--grid .field--name-thumbnail {
+  overflow: hidden;
+  text-align: center;
+}
+
+#drupal-off-canvas .media-library-item--grid .field--name-thumbnail img {
+  height: 150px;
+  object-fit: contain;
+  object-position: center center;
+}
+
+#drupal-off-canvas .media-library-item--grid.is-hover:before,
+#drupal-off-canvas .media-library-item--grid.checked:before,
+#drupal-off-canvas .media-library-item--grid.is-focus:before {
+  top: 5px;
+  left: 5px;
+  border-width: 3px;
+  border-color: #40b6ff;
+  border-radius: 3px;
+}
+
+#drupal-off-canvas .media-library-item--grid.checked:before {
+  border-color: #0076c0;
+}
+
+#drupal-off-canvas .media-library-item__click-to-select-checkbox {
+  position: absolute;
+  z-index: 1;
+  top: 16px;
+  left: 16px;
+  /* LTR */
+  display: block;
+}
+
+#drupal-off-canvas [dir="rtl"] .media-library-item__click-to-select-checkbox {
+  right: 16px;
+  left: auto;
+}
+
+#drupal-off-canvas .media-library-item__click-to-select-checkbox input {
+  width: 20px;
+  height: 20px;
+}
+
+#drupal-off-canvas .media-library-item__click-to-select-checkbox .form-item {
+  margin: 0;
+}
+
+#drupal-off-canvas .media-library-item__click-to-select-trigger {
+  overflow: hidden;
+  height: 100%;
+  cursor: pointer;
 }

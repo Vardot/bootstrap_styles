@@ -95,27 +95,111 @@
     position: absolute;
     bottom: 0;
     display: block;
-    padding: 5px;
-    max-height: calc(100% - 50px);
     overflow: hidden;
-    background: $white !important;
+    max-width: calc(100% - 10px);
+    max-height: calc(100% - 50px);
+    padding: 5px;
+    background: white;
   }
 
-  .media-library-item__attributes {
-    position: absolute;
-    bottom: 0;
+  .media-library-item__name {
+    font-size: 14px;
+  }
+
+  .media-library-item__name {
     display: block;
-    padding: 5px;
-    max-height: calc(100% - 50px);
     overflow: hidden;
-    background: $white !important;
+    margin: 2px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .media-library-item__attributes:hover .media-library-item__name,
+  .media-library-item--grid.is-focus .media-library-item__name,
+  .media-library-item--grid.checked .media-library-item__name {
+    white-space: normal;
+  }
+
+  /**
+  * The media library item container receives screen reader focus when items are
+  * removed. Since it is not an interactive element, it does not need an
+  * outline.
+  */
+  .media-library-item--grid {
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    vertical-align: top;
+    outline: none;
+    background: #fff;
+  }
+
+  .media-library-item--grid:before {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    content: "";
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+    pointer-events: none;
+    border: 1px solid #dbdbdb;
   }
 
   .media-library-selection {
     margin: 0;
+  }
 
-    .media-library-item--grid {
-      width: 100%;
-    }
+  .media-library-item--grid .field--name-thumbnail {
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .media-library-item--grid .field--name-thumbnail img {
+    height: 150px;
+    object-fit: contain;
+    object-position: center center;
+  }
+
+  .media-library-item--grid.is-hover:before,
+  .media-library-item--grid.checked:before,
+  .media-library-item--grid.is-focus:before {
+    top: 5px;
+    left: 5px;
+    border-width: 3px;
+    border-color: #40b6ff;
+    border-radius: 3px;
+  }
+
+  .media-library-item--grid.checked:before {
+    border-color: #0076c0;
+  }
+
+  .media-library-item__click-to-select-checkbox {
+    position: absolute;
+    z-index: 1;
+    top: 16px;
+    left: 16px; /* LTR */
+    display: block;
+  }
+  [dir="rtl"] .media-library-item__click-to-select-checkbox {
+    right: 16px;
+    left: auto;
+  }
+
+  .media-library-item__click-to-select-checkbox input {
+    width: 20px;
+    height: 20px;
+  }
+
+  .media-library-item__click-to-select-checkbox .form-item {
+    margin: 0;
+  }
+
+  .media-library-item__click-to-select-trigger {
+    overflow: hidden;
+    height: 100%;
+    cursor: pointer;
   }
 }
