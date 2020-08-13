@@ -1,6 +1,6 @@
 {
   "name": "bootstrap_styles",
-  "description": "Add pluginable styles to Layout Builder module..",
+  "description": "Add a plugins builder and a collection of reusable plugins to the Layout Builder module.",
   "author": "Mahmoud Zayed",
   "version": "1.0.0",
   "scripts": {
