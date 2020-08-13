@@ -1,4 +1,6 @@
 @import "../../variables";
+@import "../../mixins";
+
 #drupal-off-canvas {
   .fieldgroup.field-background-color {
     // fieldset-wrapper to solve Bootstrap 3 drupal theme issue.

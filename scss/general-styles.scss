@@ -1,4 +1,6 @@
 @import "variables";
+@import "mixins";
+@import "animations";
 
 // General styles.
 #drupal-off-canvas {
@@ -16,6 +18,29 @@
     opacity: 1;
     margin-top: 10px;
     margin-bottom: 10px;
+  }
+
+  .bs_flex {
+    display: flex;
+  }
+
+  .bs_row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+
+  .bs_col {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    min-width: 0;
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
   }
 
   // Add default style for btn to solve Bootstrap 3 drupal theme issue.
@@ -44,5 +69,4 @@
       }
     }
   }
-
 }

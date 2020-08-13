@@ -1,3 +1,17 @@
+@-webkit-keyframes hover-pop {
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+
+@keyframes hover-pop {
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+
 #drupal-off-canvas .form-composite > legend, #drupal-off-canvas .label {
   font-weight: normal;
 }
@@ -11,6 +25,29 @@
   opacity: 1;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+#drupal-off-canvas .bs_flex {
+  display: flex;
+}
+
+#drupal-off-canvas .bs_row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+#drupal-off-canvas .bs_col {
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  min-width: 0;
+  max-width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 #drupal-off-canvas button.button {
