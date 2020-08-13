@@ -247,9 +247,14 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
         '#prefix' => '<hr />',
       ];
 
+      $form['quantity'] = array(
+        '#type' => 'range',
+        '#step' => 10,
+        '#title' => $this->t('Background Opacity'),
+      );
+
       $form['background_options'] = [
         '#type' => 'container',
-        '#title' => $this->t('Background Options'),
         '#attributes' => [
           'class' => ['bs_row bs_background--options'],
         ],
@@ -302,6 +307,20 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
         '#default_value' => $storage['background_attachment'] ? $storage['background_attachment'] : 'not_fixed',
         '#attributes' => [
           'class' => ['bs_col--full bs_background--attachment'],
+        ],
+      ];
+
+      $form['background_size'] = [
+        '#type' => 'radios',
+        '#title' => $this->t('Size'),
+        '#options' => [
+          'cover' => $this->t('Cover'),
+          'contain' => $this->t('Contain'),
+          'auto' => $this->t('Auto'),
+        ],
+        '#default_value' => $storage['background_size'] ? $storage['background_size'] : 'cover',
+        '#attributes' => [
+          'class' => ['bs_col--full bs_background--size'],
         ],
       ];
 
