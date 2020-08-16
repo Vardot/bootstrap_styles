@@ -3,6 +3,7 @@
 namespace Drupal\bootstrap_styles\Plugin\BootstrapStyles\StylesGroup;
 
 use Drupal\bootstrap_styles\StylesGroup\StylesGroupPluginBase;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Class Animation.
@@ -15,4 +16,19 @@ use Drupal\bootstrap_styles\StylesGroup\StylesGroupPluginBase;
  *   weight = 3
  * )
  */
-class Animation extends StylesGroupPluginBase {}
+class Animation extends StylesGroupPluginBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
+    $form['animation'] = [
+      '#type' => 'details',
+      '#title' => $this->t('Animation'),
+      '#open' => TRUE,
+    ];
+
+    return $form;
+  }
+
+}

@@ -23,7 +23,6 @@ class Padding extends StylePluginBase {
    * {@inheritdoc}
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
-    $form = parent::buildConfigurationForm($form, $form_state);
     $config = $this->config();
 
     $form['spacing']['padding'] = [
@@ -79,10 +78,10 @@ class Padding extends StylePluginBase {
   public function build(array $build, array $storage, $theme_wrapper = NULL) {
     // Assign the style to element or its theme wrapper if exist.
     if ($theme_wrapper && isset($build['#theme_wrappers'][$theme_wrapper])) {
-      $build['#theme_wrappers'][$theme_wrapper]['#attributes']['class'][] = $storage['class'];
+      $build['#theme_wrappers'][$theme_wrapper]['#attributes']['class'][] = $storage['padding']['class'];
     }
     else {
-      $build['#attributes']['class'][] = $storage['class'];
+      $build['#attributes']['class'][] = $storage['padding']['class'];
     }
     return $build;
   }

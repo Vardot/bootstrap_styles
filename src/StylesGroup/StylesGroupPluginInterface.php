@@ -2,13 +2,12 @@
 
 namespace Drupal\bootstrap_styles\StylesGroup;
 
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Component\Plugin\PluginInspectionInterface;
 
 /**
  * Provides an interface defining a Styles Group.
  */
-interface StylesGroupPluginInterface extends PluginInspectionInterface, ContainerFactoryPluginInterface {
+interface StylesGroupPluginInterface extends PluginInspectionInterface {
 
   /**
    * Return the title of the Styles Group form plugin.

@@ -74,6 +74,21 @@ class StylesGroupManager extends DefaultPluginManager {
   }
 
   /**
+   * Returns an array of styles.
+   *
+   * @return array
+   *   Returns a nested array of styles plugins.
+   */
+  public function getStyles() {
+    $styles = [];
+    foreach ($this->getDefinitions() as $group_id => $group_definition) {
+      $styles += $this->getGroupStyles($group_id);
+    }
+    uasort($styles, ['Drupal\Component\Utility\SortArray', 'sortByWeightElement']);
+    return $styles;
+  }
+
+  /**
    * Returns an array of group styles plugins.
    *
    * @param string $group_id
@@ -152,9 +167,12 @@ class StylesGroupManager extends DefaultPluginManager {
         $form[$group_key] = [
           '#type' => 'details',
           '#title' => $style_group['title']->__toString(),
-          '#open' => TRUE,
+          '#open' => FALSE,
           '#tree' => TRUE,
         ];
+
+        $group_instance = $this->createInstance($group_key);
+        $form[$group_key] += $group_instance->buildStyleFormElements($form[$group_key], $form_state, $storage);
 
         foreach ($style_group['styles'] as $style_key => $style) {
           // Check plugins restriction.
@@ -197,9 +215,18 @@ class StylesGroupManager extends DefaultPluginManager {
       // Styles Group.
       if ($form_state->getValue(array_merge($tree, [$group_key]))) {
         $group_elements = $form_state->getValue(array_merge($tree, [$group_key]));
+        // Submit group form.
+        if (in_array($group_key, array_keys($this->getStylesGroups()))) {
+          $group_instance = $this->createInstance($group_key);
+          $options += $group_instance->submitStyleFormElements($group_elements);
+        }
+
         foreach ($group_elements as $style_key => $style) {
-          $style_instance = $this->styleManager->createInstance($style_key);
-          $options += $style_instance->submitStyleFormElements($group_elements);
+          // Submit style form.
+          if (in_array($style_key, array_keys($this->getStyles()))) {
+            $style_instance = $this->styleManager->createInstance($style_key);
+            $options += $style_instance->submitStyleFormElements($group_elements);
+          }
         }
       }
     }
@@ -218,15 +245,20 @@ class StylesGroupManager extends DefaultPluginManager {
    *   The theme wrapper key.
    */
   public function buildStyles(array $build, array $plugins_storage, $theme_wrapper = NULL) {
+    // Build group shared storage.
+    foreach ($plugins_storage as $plugin_id => $storage) {
+      if (in_array($plugin_id, array_keys($this->getStylesGroups()))) {
+        $group_instance = $this->createInstance($plugin_id);
+        $build = $group_instance->build($build, $plugins_storage, $theme_wrapper);
+      }
+    }
+
     // Loop through plugins storage.
     foreach ($plugins_storage as $plugin_id => $storage) {
-      // Handle special cases.
-      // Ignore background color if there's a background media.
-      if (isset($plugins_storage['background_media']['media_id']) && $plugin_id == 'background_color') {
-        continue;
+      if (in_array($plugin_id, array_keys($this->getStyles()))) {
+        $style_instance = $this->styleManager->createInstance($plugin_id);
+        $build = $style_instance->build($build, $plugins_storage, $theme_wrapper);
       }
-      $style_instance = $this->styleManager->createInstance($plugin_id);
-      $build = $style_instance->build($build, $storage, $theme_wrapper);
     }
 
     return $build;

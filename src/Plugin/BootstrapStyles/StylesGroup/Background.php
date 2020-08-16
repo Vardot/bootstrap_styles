@@ -3,6 +3,7 @@
 namespace Drupal\bootstrap_styles\Plugin\BootstrapStyles\StylesGroup;
 
 use Drupal\bootstrap_styles\StylesGroup\StylesGroupPluginBase;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Class Background.
@@ -15,4 +16,53 @@ use Drupal\bootstrap_styles\StylesGroup\StylesGroupPluginBase;
  *   weight = 1
  * )
  */
-class Background extends StylesGroupPluginBase {}
+class Background extends StylesGroupPluginBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
+    $form['background'] = [
+      '#type' => 'details',
+      '#title' => $this->t('Background'),
+      '#open' => TRUE,
+    ];
+
+    return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function buildStyleFormElements(array $form, FormStateInterface $form_state, $storage) {
+    $form['background_type'] = [
+      '#type' => 'radios',
+      '#options' => [
+        'color' => $this->t('Color'),
+        'image' => $this->t('Image'),
+        'video' => $this->t('Video'),
+      ],
+      '#title' => $this->t('Background type'),
+      '#title_display' => 'invisible',
+      '#default_value' => $storage['background']['background_type'] ?? 'color',
+      '#validated' => TRUE,
+      '#attributes' => [
+        'class' => ['bs_col--full', 'bs_background--type'],
+      ],
+    ];
+
+    return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function submitStyleFormElements(array $group_elements) {
+    return [
+      'background' => [
+        'background_type' => $group_elements['background_type'],
+      ],
+    ];
+  }
+
+}

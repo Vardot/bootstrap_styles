@@ -23,14 +23,7 @@ class ScrollEffects extends StylePluginBase {
    * {@inheritdoc}
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
-    $form = parent::buildConfigurationForm($form, $form_state);
     $config = $this->config();
-
-    $form['animation'] = [
-      '#type' => 'details',
-      '#title' => $this->t('Animation'),
-      '#open' => TRUE,
-    ];
 
     // Library assets.
     $form['animation']['scroll_effects_library_type'] = [
@@ -134,21 +127,21 @@ class ScrollEffects extends StylePluginBase {
     if ($theme_wrapper && isset($build['#theme_wrappers'][$theme_wrapper])) {
       if (isset($attribute_type) && $attribute_type === 1) {
         // Output some sort of data attribute.
-        $build['#theme_wrappers'][$theme_wrapper]['#attributes'][$data_key][] = $storage['class'];
+        $build['#theme_wrappers'][$theme_wrapper]['#attributes'][$data_key][] = $storage['scroll_effects']['class'];
       }
       else {
         // Output classes.
-        $build['#theme_wrappers'][$theme_wrapper]['#attributes']['class'][] = $storage['class'];
+        $build['#theme_wrappers'][$theme_wrapper]['#attributes']['class'][] = $storage['scroll_effects']['class'];
       }
     }
     else {
       if (isset($attribute_type) && $attribute_type === 1) {
         // Output some sort of data attribute.
-        $build['#attributes'][$data_key][] = $storage['class'];
+        $build['#attributes'][$data_key][] = $storage['scroll_effects']['class'];
       }
       else {
         // Output classes.
-        $build['#attributes']['class'][] = $storage['class'];
+        $build['#attributes']['class'][] = $storage['scroll_effects']['class'];
       }
     }
 

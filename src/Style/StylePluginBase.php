@@ -101,7 +101,7 @@ abstract class StylePluginBase extends PluginBase implements StylePluginInterfac
    * {@inheritdoc}
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
-    return [];
+    return $form;
   }
 
   /**
@@ -120,7 +120,7 @@ abstract class StylePluginBase extends PluginBase implements StylePluginInterfac
    * {@inheritdoc}
    */
   public function buildStyleFormElements(array $form, FormStateInterface $form_state, $storage) {
-    return [];
+    return $form;
   }
 
   /**
@@ -132,8 +132,8 @@ abstract class StylePluginBase extends PluginBase implements StylePluginInterfac
   /**
    * {@inheritdoc}
    */
-  public function build(array $render_element, array $storage) {
-    return [];
+  public function build(array $build, array $storage, $theme_wrapper = NULL) {
+    return $build;
   }
 
 }

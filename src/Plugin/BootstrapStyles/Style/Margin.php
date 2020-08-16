@@ -23,14 +23,7 @@ class Margin extends StylePluginBase {
    * {@inheritdoc}
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
-    $form = parent::buildConfigurationForm($form, $form_state);
     $config = $this->config();
-
-    $form['spacing'] = [
-      '#type' => 'details',
-      '#title' => $this->t('Spacing'),
-      '#open' => TRUE,
-    ];
 
     $form['spacing']['margin'] = [
       '#type' => 'textarea',
@@ -85,10 +78,10 @@ class Margin extends StylePluginBase {
   public function build(array $build, array $storage, $theme_wrapper = NULL) {
     // Assign the style to element or its theme wrapper if exist.
     if ($theme_wrapper && isset($build['#theme_wrappers'][$theme_wrapper])) {
-      $build['#theme_wrappers'][$theme_wrapper]['#attributes']['class'][] = $storage['class'];
+      $build['#theme_wrappers'][$theme_wrapper]['#attributes']['class'][] = $storage['margin']['class'];
     }
     else {
-      $build['#attributes']['class'][] = $storage['class'];
+      $build['#attributes']['class'][] = $storage['margin']['class'];
     }
     return $build;
   }

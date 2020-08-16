@@ -77,18 +77,24 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $plugins_elements = [];
-    foreach ($this->stylesGroupManager->getStylesGroups() as $group_plugin_id => $style_group) {
-      if (isset($style_group['styles'])) {
-        foreach ($style_group['styles'] as $style_plugin_id => $style) {
-          $style_instance = $this->styleManager->createInstance($style_plugin_id);
-          $plugins_elements = array_merge_recursive($plugins_elements, $style_instance->buildConfigurationForm($form, $form_state));
+    $form = parent::buildForm($form, $form_state);
 
+    // Loop through styles groups plugins.
+    foreach ($this->stylesGroupManager->getStylesGroups() as $group_plugin_id => $styles_group) {
+      // Style group form.
+      $group_instance = $this->stylesGroupManager->createInstance($group_plugin_id);
+      $form = $group_instance->buildConfigurationForm($form, $form_state);
+      if (isset($styles_group['styles'])) {
+        // Loop through styles plugins.
+        foreach (array_keys($styles_group['styles']) as $style_plugin_id) {
+          // Style plugin form.
+          $style_instance = $this->styleManager->createInstance($style_plugin_id);
+          $form = $style_instance->buildConfigurationForm($form, $form_state);
         }
       }
     }
-    $form += $plugins_elements;
-    return parent::buildForm($form, $form_state);
+
+    return $form;
   }
 
   /**
@@ -97,8 +103,12 @@ class SettingsForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     parent::submitForm($form, $form_state);
     foreach ($this->stylesGroupManager->getStylesGroups() as $group_plugin_id => $style_group) {
+      // Submit group form.
+      $group_instance = $this->stylesGroupManager->createInstance($group_plugin_id);
+      $group_instance->submitConfigurationForm($form, $form_state);
       if (isset($style_group['styles'])) {
         foreach ($style_group['styles'] as $style_plugin_id => $style) {
+          // Submit style form.
           $style_instance = $this->styleManager->createInstance($style_plugin_id);
           $style_instance->submitConfigurationForm($form, $form_state);
         }

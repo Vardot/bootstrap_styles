@@ -23,14 +23,7 @@ class BackgroundColor extends StylePluginBase {
    * {@inheritdoc}
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
-    $form = parent::buildConfigurationForm($form, $form_state);
     $config = $this->config();
-
-    $form['background'] = [
-      '#type' => 'details',
-      '#title' => $this->t('Background'),
-      '#open' => TRUE,
-    ];
 
     $form['background']['background_colors'] = [
       '#type' => 'textarea',
@@ -66,6 +59,11 @@ class BackgroundColor extends StylePluginBase {
       '#attributes' => [
         'class' => ['field-background-color'],
       ],
+      '#states' => [
+        'visible' => [
+          ':input.bs_background--type' => ['value' => 'color'],
+        ],
+      ],
     ];
 
     // Attach the Layout Builder from style for this plugin.
@@ -89,13 +87,16 @@ class BackgroundColor extends StylePluginBase {
    * {@inheritdoc}
    */
   public function build(array $build, array $storage, $theme_wrapper = NULL) {
-    // Assign the style to element or its theme wrapper if exist.
-    if ($theme_wrapper && isset($build['#theme_wrappers'][$theme_wrapper])) {
-      $build['#theme_wrappers'][$theme_wrapper]['#attributes']['class'][] = $storage['class'];
+    if ($storage['background']['background_type'] == 'color') {
+      // Assign the style to element or its theme wrapper if exist.
+      if ($theme_wrapper && isset($build['#theme_wrappers'][$theme_wrapper])) {
+        $build['#theme_wrappers'][$theme_wrapper]['#attributes']['class'][] = $storage['background_color']['class'];
+      }
+      else {
+        $build['#attributes']['class'][] = $storage['background_color']['class'];
+      }
     }
-    else {
-      $build['#attributes']['class'][] = $storage['class'];
-    }
+
     return $build;
   }
 

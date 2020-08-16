@@ -82,7 +82,6 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
    * {@inheritdoc}
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
-    $form = parent::buildConfigurationForm($form, $form_state);
     $config = $this->config();
 
     // Background image media bundle.
@@ -245,40 +244,43 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
         '#allowed_bundles' => $allowed_bundles,
         '#default_value' => $storage['background_media']['media_id'],
         '#prefix' => '<hr />',
+        '#states' => [
+          'visible' => [
+            [':input.bs_background--type' => ['value' => 'image']],
+            [':input.bs_background--type' => ['value' => 'video']],
+          ],
+        ],
       ];
-
-      $form['quantity'] = array(
-        '#type' => 'range',
-        '#step' => 10,
-        '#title' => $this->t('Background Opacity'),
-      );
 
       $form['background_options'] = [
         '#type' => 'container',
         '#attributes' => [
-          'class' => ['bs_row bs_background--options'],
+          'class' => ['bs_background--options'],
+        ],
+        '#states' => [
+          'visible' => [
+            ':input.bs_background--type' => ['value' => 'image'],
+          ],
         ],
       ];
 
-      // @todo: pass this all the way down to the buildBackgroundMediaImage() func.
-      // @todo: can we only display these fields only if we upload a background image vs. video?
       $form['background_options']['background_position'] = [
         '#type' => 'radios',
         '#title' => $this->t('Position'),
         '#options' => [
-          'left_top' => $this->t('Left Top'),
-          'center_top' => $this->t('Center Top'),
-          'right_top' => $this->t('Right Top'),
-          'left_center' => $this->t('Left Center'),
+          'left top' => $this->t('Left Top'),
+          'center top' => $this->t('Center Top'),
+          'right top' => $this->t('Right Top'),
+          'left center' => $this->t('Left Center'),
           'center' => $this->t('Center'),
-          'right_center' => $this->t('Right Center'),
-          'left_bottom' => $this->t('Left Bottom'),
-          'center_bottom' => $this->t('Center Bottom'),
-          'right_bottom' => $this->t('Right Bottom'),
+          'right center' => $this->t('Right Center'),
+          'left bottom' => $this->t('Left Bottom'),
+          'center bottom' => $this->t('Center Bottom'),
+          'right bottom' => $this->t('Right Bottom'),
         ],
-        '#default_value' => $storage['background_position'] ? $storage['background_position'] : 'center',
+        '#default_value' => $storage['background_media']['background_options']['background_position'] ?? 'center',
         '#attributes' => [
-          'class' => ['bs_col bs_background--position'],
+          'class' => ['bs_background--position'],
         ],
       ];
 
@@ -286,31 +288,31 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
         '#type' => 'radios',
         '#title' => $this->t('Repeat'),
         '#options' => [
-          'no_repeat' => $this->t('No Repeat'),
+          'no-repeat' => $this->t('No Repeat'),
           'repeat' => $this->t('Repeat'),
-          'repeat_x' => $this->t('Repeat X'),
-          'repeat_y' => $this->t('Repeat Y'),
+          'repeat-x' => $this->t('Repeat X'),
+          'repeat-y' => $this->t('Repeat Y'),
         ],
-        '#default_value' => $storage['background_repeat'] ? $storage['background_repeat'] : 'no_repeat',
+        '#default_value' => $storage['background_media']['background_options']['background_repeat'] ?? 'no-repeat',
         '#attributes' => [
-          'class' => ['bs_col bs_background--repeat'],
+          'class' => ['bs_background--repeat'],
         ],
       ];
 
-      $form['background_attachment'] = [
+      $form['background_options']['background_attachment'] = [
         '#type' => 'radios',
         '#title' => $this->t('Attachment'),
         '#options' => [
           'not_fixed' => $this->t('Not Fixed'),
           'fixed' => $this->t('Fixed'),
         ],
-        '#default_value' => $storage['background_attachment'] ? $storage['background_attachment'] : 'not_fixed',
+        '#default_value' => $storage['background_media']['background_options']['background_attachment'] ?? 'not_fixed',
         '#attributes' => [
           'class' => ['bs_col--full bs_background--attachment'],
         ],
       ];
 
-      $form['background_size'] = [
+      $form['background_options']['background_size'] = [
         '#type' => 'radios',
         '#title' => $this->t('Size'),
         '#options' => [
@@ -318,7 +320,7 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
           'contain' => $this->t('Contain'),
           'auto' => $this->t('Auto'),
         ],
-        '#default_value' => $storage['background_size'] ? $storage['background_size'] : 'cover',
+        '#default_value' => $storage['background_media']['background_options']['background_size'] ?? 'cover',
         '#attributes' => [
           'class' => ['bs_col--full bs_background--size'],
         ],
@@ -336,7 +338,13 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
     return [
       'background_media' => [
         'media_id' => $group_elements['background_media'],
-      ]
+        'background_options' => [
+          'background_position' => $group_elements['background_options']['background_position'],
+          'background_repeat' => $group_elements['background_options']['background_repeat'],
+          'background_attachment' => $group_elements['background_options']['background_attachment'],
+          'background_size' => $group_elements['background_options']['background_size'],
+        ],
+      ],
     ];
   }
 
@@ -345,17 +353,17 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
    */
   public function build(array $build, array $storage, $theme_wrapper = NULL) {
     $config = $this->config();
-    if ($media_id = $storage['media_id']) {
+    if (($media_id = $storage['background_media']['media_id']) && in_array($storage['background']['background_type'], ['image', 'video'])) {
       $media_entity = Media::load($media_id);
       if ($media_entity) {
         $bundle = $media_entity->bundle();
 
-        if ($config->get('background_image.bundle') && $bundle == $config->get('background_image.bundle')) {
+        if ($config->get('background_image.bundle') && $bundle == $config->get('background_image.bundle') && $storage['background']['background_type'] == 'image') {
           $media_field_name = $config->get('background_image.field');
 
           // Check if the field exist.
           if ($media_entity->hasField($media_field_name)) {
-            $background_image_style = $this->buildBackgroundMediaImage($media_entity, $media_field_name);
+            $background_image_style = $this->buildBackgroundMediaImage($media_entity, $media_field_name, $storage);
             // Assign the style to element or its theme wrapper if exist.
             if ($theme_wrapper && isset($build['#theme_wrappers'][$theme_wrapper])) {
               $build['#theme_wrappers'][$theme_wrapper]['#attributes']['style'][] = $background_image_style;
@@ -365,7 +373,7 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
             }
           }
         }
-        elseif ($config->get('background_local_video.bundle') && $bundle == $config->get('background_local_video.bundle')) {
+        elseif ($config->get('background_local_video.bundle') && $bundle == $config->get('background_local_video.bundle')  && $storage['background']['background_type'] == 'video') {
           $media_field_name = $config->get('background_local_video.field');
           // Check if the field exist.
           if ($media_entity->hasField($media_field_name)) {
@@ -389,16 +397,53 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
    *   A media entity object.
    * @param object $field_name
    *   The Media entity local video field name.
+   * @param object $storage
+   *   The styles storage.
    *
    * @return string
    *   Background media image style.
    */
-  public function buildBackgroundMediaImage($media_entity, $field_name) {
+  public function buildBackgroundMediaImage($media_entity, $field_name, $storage) {
     $fid = $media_entity->get($field_name)->target_id;
     $file = File::load($fid);
     $background_url = $file->createFileUrl();
 
-    $style = 'background-image: url(' . $background_url . '); background-repeat: no-repeat; background-size: cover;';
+    $style = 'background-image: url(' . $background_url . ');';
+    $background_position = 'background-position: center;';
+    $background_repeat = 'background-repeat: no-repeat;';
+    $background_size = 'background-size: cover;';
+    $background_attachment = '';
+    if (isset($storage['background_media']['background_options'])) {
+      // Background position.
+      if (isset($storage['background_media']['background_options']['background_position']) && !empty($storage['background_media']['background_options']['background_position'])) {
+        $background_position = 'background-position: ' . $storage['background_media']['background_options']['background_position'] . ';';
+      }
+
+      // Background repeat.
+      if (isset($storage['background_media']['background_options']['background_repeat']) && !empty($storage['background_media']['background_options']['background_repeat'])) {
+        $background_repeat = 'background-repeat: ' . $storage['background_media']['background_options']['background_repeat'] . ';';
+      }
+
+      // Background attachment.
+      if (isset($storage['background_media']['background_options']['background_attachment']) && !empty($storage['background_media']['background_options']['background_attachment'])) {
+        if ($storage['background_media']['background_options']['background_attachment'] != 'not_fixed') {
+          $background_attachment = 'background-attachment: ' . $storage['background_media']['background_options']['background_attachment'] . ';';
+        }
+      }
+
+      // Background size.
+      if (isset($storage['background_media']['background_options']['background_size']) && !empty($storage['background_media']['background_options']['background_size'])) {
+        $background_size = 'background-size: ' . $storage['background_media']['background_options']['background_size'] . ';';
+      }
+    }
+
+    $style .= ' ' . $background_position;
+    $style .= ' ' . $background_repeat;
+    $style .= ' ' . $background_size;
+    if ($background_attachment) {
+      $style .= ' ' . $background_attachment;
+    }
+
     return $style;
   }
 
