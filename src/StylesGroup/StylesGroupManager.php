@@ -205,25 +205,36 @@ class StylesGroupManager extends DefaultPluginManager {
    *   An array of parents.
    * @param array $storage
    *   The plugins storage array.
+   * @param string $filter
+   *   The filter config name.
    *
    * @return array
    *   An array of plugins with its storage values.
    */
-  public function submitStylesFormElements(array &$form, FormStateInterface $form_state, array $tree = [], array $storage = []) {
+  public function submitStylesFormElements(array &$form, FormStateInterface $form_state, array $tree = [], array $storage = [], $filter = NULL) {
     $options = [];
+
+    // Restrict styles.
+    $allowed_plugins = $this->getAllowedPlugins($filter);
     foreach ($this->getStylesGroups() as $group_key => $style_group) {
+      // Check groups restriction.
+      if (count($allowed_plugins) > 0 && !array_key_exists($group_key, $allowed_plugins)) {
+        continue;
+      }
       // Styles Group.
       if ($form_state->getValue(array_merge($tree, [$group_key]))) {
         $group_elements = $form_state->getValue(array_merge($tree, [$group_key]));
         // Submit group form.
-        if (in_array($group_key, array_keys($this->getStylesGroups()))) {
-          $group_instance = $this->createInstance($group_key);
-          $options += $group_instance->submitStyleFormElements($group_elements);
-        }
-
-        foreach ($group_elements as $style_key => $style) {
-          // Submit style form.
-          if (in_array($style_key, array_keys($this->getStyles()))) {
+        $group_instance = $this->createInstance($group_key);
+        $options += $group_instance->submitStyleFormElements($group_elements);
+        // Styles Group.
+        if (isset($style_group['styles'])) {
+          foreach ($style_group['styles'] as $style_key => $style) {
+            // Check plugins restriction.
+            if (count($allowed_plugins[$group_key]) > 0 && !in_array($style_key, $allowed_plugins[$group_key])) {
+              continue;
+            }
+            // Submit style form.
             $style_instance = $this->styleManager->createInstance($style_key);
             $options += $style_instance->submitStyleFormElements($group_elements);
           }
