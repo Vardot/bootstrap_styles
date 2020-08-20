@@ -142,3 +142,41 @@
 .bs-border-bottom-color-blue {
   border-bottom-color: blue !important;
 }
+
+// Rounded Corners.
+.bs-border-top-left-radius-1 {
+  border-top-left-radius: 0.5rem;
+}
+.bs-border-top-left-radius-2 {
+  border-top-left-radius: 1rem;
+}
+.bs-border-top-left-radius-3 {
+  border-top-left-radius: 2rem;
+}
+.bs-border-top-right-radius-1 {
+  border-top-right-radius: 0.5rem;
+}
+.bs-border-top-right-radius-2 {
+  border-top-right-radius: 1rem;
+}
+.bs-border-top-right-radius-3 {
+  border-top-right-radius: 2rem;
+}
+.bs-border-bottom-left-radius-1 {
+  border-bottom-left-radius: 0.5rem;
+}
+.bs-border-bottom-left-radius-2 {
+  border-bottom-left-radius: 1rem;
+}
+.bs-border-bottom-left-radius-3 {
+  border-bottom-left-radius: 2rem;
+}
+.bs-border-bottom-right-radius-1 {
+  border-bottom-right-radius: 0.5rem;
+}
+.bs-border-bottom-right-radius-2 {
+  border-bottom-right-radius: 1rem;
+}
+.bs-border-bottom-right-radius-3 {
+  border-bottom-right-radius: 2rem;
+}

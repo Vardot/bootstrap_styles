@@ -24,6 +24,10 @@
     display: flex;
   }
 
+  .bs-justify-content-between {
+    justify-content: space-between;
+  }
+
   .bs_row {
     display: flex;
     flex-wrap: wrap;

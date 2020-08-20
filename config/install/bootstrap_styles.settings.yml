@@ -19,4 +19,7 @@ border_left_color: "bs-border-left-color-red|Red\r\nbs-border-left-color-green|G
 border_top_color: "bs-border-top-color-red|Red\r\nbs-border-top-color-green|Green\r\nbs-border-top-color-blue|Blue"
 border_right_color: "bs-border-right-color-red|Red\r\nbs-border-right-color-green|Green\r\nbs-border-right-color-blue|Blue"
 border_bottom_color: "bs-border-bottom-color-red|Red\r\nbs-border-bottom-color-green|Green\r\nbs-border-bottom-color-blue|Blue"
-
+rounded_corner_top_left: "bs-border-top-left-radius-1|Radius 1\r\nbs-border-top-left-radius-2|Radius 2\r\nbs-border-top-left-radius-3|Radius 3"
+rounded_corner_top_right: "bs-border-top-right-radius-1|Radius 1\r\nbs-border-top-right-radius-2|Radius 2\r\nbs-border-top-right-radius-3|Radius 3"
+rounded_corner_bottom_left: "bs-border-bottom-left-radius-1|Radius 1\r\nbs-border-bottom-left-radius-2|Radius 2\r\nbs-border-bottom-left-radius-3|Radius 3"
+rounded_corner_bottom_right: "bs-border-bottom-right-radius-1|Radius 1\r\nbs-border-bottom-right-radius-2|Radius 2\r\nbs-border-bottom-right-radius-3|Radius 3"

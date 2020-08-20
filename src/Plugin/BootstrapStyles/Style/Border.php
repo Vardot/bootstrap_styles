@@ -40,7 +40,7 @@ class Border extends StylePluginBase {
 
     $form['border']['style_group'] = [
       '#type' => 'container',
-      '#title' => $this->t('Border style group.'),
+      '#title' => $this->t('Border style group'),
       '#title_display' => 'invisible',
       '#tree' => FALSE,
       '#attributes' => [
@@ -78,7 +78,7 @@ class Border extends StylePluginBase {
 
     $form['border']['width_group'] = [
       '#type' => 'container',
-      '#title' => $this->t('Border width group.'),
+      '#title' => $this->t('Border width group'),
       '#title_display' => 'invisible',
       '#tree' => FALSE,
       '#attributes' => [
@@ -116,7 +116,7 @@ class Border extends StylePluginBase {
 
     $form['border']['color_group'] = [
       '#type' => 'container',
-      '#title' => $this->t('Border color group.'),
+      '#title' => $this->t('Border color group'),
       '#title_display' => 'invisible',
       '#tree' => FALSE,
       '#attributes' => [
@@ -145,6 +145,43 @@ class Border extends StylePluginBase {
       ];
     }
 
+    // Border rounded corners.
+    $form['border']['rounded_corners_description'] = [
+      '#type' => 'item',
+      '#title' => $this->t('Rounded Corners'),
+      '#markup' => $this->t('<p>Enter one value per line, in the format <b>key|label</b> where <em>key</em> is the CSS class name (without the .), and <em>label</em> is the human readable name of the rounded corner.</p>'),
+    ];
+
+    $form['border']['rounded_corners'] = [
+      '#type' => 'container',
+      '#title' => $this->t('Rounded cornerns'),
+      '#title_display' => 'invisible',
+      '#tree' => FALSE,
+      '#attributes' => [
+        'class' => [
+          'bs-admin-d-lg-flex',
+          'bs-admin-group-form-item-lg-ml',
+        ],
+      ],
+    ];
+
+    $corners = [
+      'top_left' => 'Top Left',
+      'top_right' => 'Top Right',
+      'bottom_left' => 'Bottom Left',
+      'bottom_right' => 'Bottom Right',
+    ];
+
+    foreach ($corners as $corner_key => $corner_value) {
+      $form['border']['rounded_corners']['rounded_corner_' . $corner_key] = [
+        '#type' => 'textarea',
+        '#default_value' => $config->get('rounded_corner_' . $corner_key),
+        '#title' => $this->t('@corner rounded corner (classes)', ['@corner' => $corner_value]),
+        '#cols' => 60,
+        '#rows' => 5,
+      ];
+    }
+
     return $form;
   }
 
@@ -168,6 +205,10 @@ class Border extends StylePluginBase {
       ->set('border_top_color', $form_state->getValue('border_top_color'))
       ->set('border_right_color', $form_state->getValue('border_right_color'))
       ->set('border_bottom_color', $form_state->getValue('border_bottom_color'))
+      ->set('rounded_corner_top_left', $form_state->getValue('rounded_corner_top_left'))
+      ->set('rounded_corner_top_right', $form_state->getValue('rounded_corner_top_right'))
+      ->set('rounded_corner_bottom_left', $form_state->getValue('rounded_corner_bottom_left'))
+      ->set('rounded_corner_bottom_right', $form_state->getValue('rounded_corner_bottom_right'))
       ->save();
   }
 
@@ -299,6 +340,67 @@ class Border extends StylePluginBase {
       ];
     }
 
+    // Rounded Corners.
+    $form['rounded_corners_description'] = [
+      '#type' => 'item',
+      '#title' => $this->t('Rounded Corners'),
+      '#prefix' => '<hr />',
+    ];
+
+    $top_corners = [
+      'top_left' => 'Top Left',
+      'top_right' => 'Top Right',
+    ];
+
+    $form['rounded_corners_top_group'] = [
+      '#type' => 'container',
+      '#title' => $this->t('Top Rounded Corners'),
+      '#title_display' => 'invisible',
+      '#attributes' => [
+        'class' => ['bs_flex', 'bs-justify-content-between'],
+      ],
+    ];
+
+    foreach ($top_corners as $corner_key => $corner_value) {
+      $form['rounded_corners_top_group']['rounded_corner_' . $corner_key] = [
+        '#type' => 'select',
+        '#options' => $this->getStyleOptions('rounded_corner_' . $corner_key),
+        '#title' => $this->t($corner_value),
+        '#default_value' => $storage['border']['rounded_corner_' . $corner_key]['class'],
+        '#validated' => TRUE,
+        '#attributes' => [
+          'class' => ['field-rounded-border-' . $corner_key],
+        ],
+      ];
+    }
+
+    $form['rounded_corners_bottom_group'] = [
+      '#type' => 'container',
+      '#title' => $this->t('Bottom Rounded Corners'),
+      '#title_display' => 'invisible',
+      '#attributes' => [
+        'class' => ['bs_flex', 'bs-justify-content-between'],
+      ],
+    ];
+
+    $bottom_corners = [
+      'bottom_left' => 'Bottom Left',
+      'bottom_right' => 'Bottom Right',
+    ];
+
+    foreach ($bottom_corners as $corner_key => $corner_value) {
+      $form['rounded_corners_bottom_group']['rounded_corner_' . $corner_key] = [
+        '#type' => 'select',
+        '#options' => $this->getStyleOptions('rounded_corner_' . $corner_key),
+        '#title' => $this->t($corner_value),
+        '#default_value' => $storage['border']['rounded_corner_' . $corner_key]['class'],
+        '#validated' => TRUE,
+        '#attributes' => [
+          'class' => ['field-rounded-border-' . $corner_key],
+        ],
+      ];
+    }
+
     // Attach the Layout Builder form style for this plugin.
     $form['#attached']['library'][] = 'bootstrap_styles/plugin.border.layout_builder_form';
 
@@ -336,6 +438,24 @@ class Border extends StylePluginBase {
       $schema['border']['border_' . $directions[$i] . '_color']['class'] = $group_elements['border_' . $directions[$i] . '_color'];
     }
 
+    // Rounded corners.
+    $corners_groups = [
+      'rounded_corners_top_group' => [
+        'top_left' => 'Top Left',
+        'top_right' => 'Top Right',
+      ],
+      'rounded_corners_bottom_group' => [
+        'bottom_left' => 'Bottom Left',
+        'bottom_right' => 'Bottom Right',
+      ],
+    ];
+
+    foreach (array_keys($corners_groups) as $corner_group_key) {
+      foreach (array_keys($corners_groups[$corner_group_key]) as $corner_key) {
+        $schema['border']['rounded_corner_' . $corner_key]['class'] = $group_elements[$corner_group_key]['rounded_corner_' . $corner_key];
+      }
+    }
+
     return $schema;
   }
 
@@ -355,10 +475,22 @@ class Border extends StylePluginBase {
       'bottom',
     ];
 
+    $corners = [
+      'top_left' => 'Top Left',
+      'top_right' => 'Top Right',
+      'bottom_left' => 'Bottom Left',
+      'bottom_right' => 'Bottom Right',
+    ];
+
     for ($i = 0; $i < 4; $i++) {
       $classes[] = $storage['border']['border_' . $directions[$i] . '_style']['class'];
       $classes[] = $storage['border']['border_' . $directions[$i] . '_width']['class'];
       $classes[] = $storage['border']['border_' . $directions[$i] . '_color']['class'];
+    }
+
+    // Rounded corners.
+    foreach (array_keys($corners) as $corner_key) {
+      $classes[] = $storage['border']['rounded_corner_' . $corner_key]['class'];
     }
 
     // Assign the style to element or its theme wrapper if exist.
