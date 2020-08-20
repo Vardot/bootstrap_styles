@@ -66,7 +66,7 @@ class BackgroundColor extends StylePluginBase {
       ],
     ];
 
-    // Attach the Layout Builder from style for this plugin.
+    // Attach the Layout Builder form style for this plugin.
     $form['#attached']['library'][] = 'bootstrap_styles/plugin.background_color.layout_builder_form';
 
     return $form;

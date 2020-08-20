@@ -210,6 +210,7 @@
   width: 100%;
 }
 
+#drupal-off-canvas .bs_radio-tabs legend,
 #drupal-off-canvas .bs_background--options legend,
 #drupal-off-canvas .bs_background--attachment legend,
 #drupal-off-canvas .bs_background--size legend,
@@ -456,12 +457,14 @@
   border-right: 0;
 }
 
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div {
   display: flex;
 }
 
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div > div,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div {
@@ -472,6 +475,7 @@
   padding: 0;
 }
 
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div input,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div input,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div > div input,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div input {
@@ -486,6 +490,7 @@
   border: 0;
 }
 
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div input + label,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div input + label,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div > div input + label,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div input + label {
@@ -500,12 +505,14 @@
   cursor: pointer;
 }
 
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div input + label:hover,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div input + label:hover,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div > div input + label:hover,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div input + label:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div input:checked + label,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div input:checked + label,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div > div input:checked + label,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div input:checked + label {
@@ -513,6 +520,7 @@
   background-color: #ffffff;
 }
 
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div label,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div label,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div > div label,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div label {
@@ -526,6 +534,7 @@
   cursor: pointer;
 }
 
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div label + input,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div label + input,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div > div label + input,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div label + input {
@@ -533,6 +542,7 @@
   position: absolute;
 }
 
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div label.active,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div label.active,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div > div label.active,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div label.active {
@@ -540,24 +550,28 @@
   background-color: #ffffff;
 }
 
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div:first-child input + label,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div:first-child input + label,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div > div:first-child input + label,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div:first-child input + label {
   border-right: 0;
 }
 
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div:last-child input + label,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div:last-child input + label,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div > div:last-child input + label,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div:last-child input + label {
   border-left: 0;
 }
 
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div:first-child input + label,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div:first-child input + label,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div > div:first-child input + label,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div:first-child input + label {
   border-radius: 8px 0 0 8px;
 }
 
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div:last-child input + label,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div:last-child input + label,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div > div:last-child input + label,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div:last-child input + label {

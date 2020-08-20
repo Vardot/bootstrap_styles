@@ -1,0 +1,18 @@
+// Reusable classes.
+.bs-admin-d-lg-flex {
+  @media only screen and (min-width: 1200px) {
+    display: flex;
+  }
+}
+
+.bs-admin-group-form-item-lg-ml {
+  .form-item {
+    &:not(:first-child) {
+      @media only screen and (min-width: 1200px) {
+        margin-left: 1.5rem;
+      }
+    }
+  }
+}
+
+

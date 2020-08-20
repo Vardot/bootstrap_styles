@@ -25,7 +25,7 @@ class Background extends StylesGroupPluginBase {
     $form['background'] = [
       '#type' => 'details',
       '#title' => $this->t('Background'),
-      '#open' => TRUE,
+      '#open' => FALSE,
     ];
 
     return $form;

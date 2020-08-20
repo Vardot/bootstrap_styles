@@ -4,3 +4,19 @@ data_key: aos
 scroll_effects_attr_type: 1
 scroll_effects_data_key: data-aos
 scroll_effects_library_type: external
+border_style: "bs-border-style-solid|Solid\r\nbs-border-style-dashed|Dashed\r\nbs-border-style-dotted|Dotted"
+border_left_style: "bs-border-left-style-solid|Solid\r\nbs-border-left-style-dashed|Dashed\r\nbs-border-left-style-dotted|Dotted"
+border_top_style: "bs-border-top-style-solid|Solid\r\nbs-border-top-style-dashed|Dashed\r\nbs-border-top-style-dotted|Dotted"
+border_right_style: "bs-border-right-style-solid|Solid\r\nbs-border-right-style-dashed|Dashed\r\nbs-border-right-style-dotted|Dotted"
+border_bottom_style: "bs-border-bottom-style-solid|Solid\r\nbs-border-bottom-style-dashed|Dashed\r\nbs-border-bottom-style-dotted|Dotted"
+border_width: "bs-border-width-1|Width 1\r\nbs-border-width-2|Width 2\r\nbs-border-width-3|Width 3"
+border_left_width: "bs-border-left-width-1|Width 1\r\nbs-border-left-width-2|Width 2\r\nbs-border-left-width-3|Width 3"
+border_top_width: "bs-border-top-width-1|Width 1\r\nbs-border-top-width-2|Width 2\r\nbs-border-top-width-3|Width 3"
+border_right_width: "bs-border-right-width-1|Width 1\r\nbs-border-right-width-2|Width 2\r\nbs-border-right-width-3|Width 3"
+border_bottom_width: "bs-border-bottom-width-1|Width 1\r\nbs-border-bottom-width-2|Width 2\r\nbs-border-bottom-width-3|Width 3"
+border_color: "bs-border-color-red|Red\r\nbs-border-color-green|Green\r\nbs-border-color-blue|Blue"
+border_left_color: "bs-border-left-color-red|Red\r\nbs-border-left-color-green|Green\r\nbs-border-left-color-blue|Blue"
+border_top_color: "bs-border-top-color-red|Red\r\nbs-border-top-color-green|Green\r\nbs-border-top-color-blue|Blue"
+border_right_color: "bs-border-right-color-red|Red\r\nbs-border-right-color-green|Green\r\nbs-border-right-color-blue|Blue"
+border_bottom_color: "bs-border-bottom-color-red|Red\r\nbs-border-bottom-color-green|Green\r\nbs-border-bottom-color-blue|Blue"
+

@@ -6,25 +6,25 @@ use Drupal\bootstrap_styles\StylesGroup\StylesGroupPluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class Spacing.
+ * Class Border.
  *
  * @package Drupal\bootstrap_styles\Plugin\StylesGroup
  *
  * @StylesGroup(
- *   id = "spacing",
- *   title = @Translation("Spacing"),
- *   weight = 2
+ *   id = "border",
+ *   title = @Translation("Border"),
+ *   weight = 3
  * )
  */
-class Spacing extends StylesGroupPluginBase {
+class Border extends StylesGroupPluginBase {
 
   /**
    * {@inheritdoc}
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
-    $form['spacing'] = [
+    $form['border'] = [
       '#type' => 'details',
-      '#title' => $this->t('Spacing'),
+      '#title' => $this->t('Border'),
       '#open' => FALSE,
     ];
 

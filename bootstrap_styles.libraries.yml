@@ -21,6 +21,12 @@ tooltip:
     theme:
       css/tooltip.css: { }
 
+# Base styles.
+layout_builder_admin_form_style:
+  css:
+    theme:
+      css/admin-general-styles.css: { }
+
 # Plugins.
 # background_color
 plugin.background_color.layout_builder_form:
@@ -42,6 +48,19 @@ plugin.background_media.build:
       css/plugins/background_media/build.css: { }
   js:
     js/plugins/background_media/build.js: { }
+
+# border
+plugin.border.layout_builder_form:
+  css:
+    theme:
+      css/plugins/border/layout-builder-form.css: { }
+      css/plugins/border/bs-classes.css: { }
+
+plugin.border.build:
+  css:
+    theme:
+      css/plugins/border/bs-classes.css: { }
+
 
 # scroll_effects
 plugin.scroll_effects.layout_builder_form:

@@ -13,7 +13,7 @@ use Drupal\Core\Form\FormStateInterface;
  * @StylesGroup(
  *   id = "animation",
  *   title = @Translation("Animation"),
- *   weight = 3
+ *   weight = 4
  * )
  */
 class Animation extends StylesGroupPluginBase {
@@ -25,7 +25,7 @@ class Animation extends StylesGroupPluginBase {
     $form['animation'] = [
       '#type' => 'details',
       '#title' => $this->t('Animation'),
-      '#open' => TRUE,
+      '#open' => FALSE,
     ];
 
     return $form;

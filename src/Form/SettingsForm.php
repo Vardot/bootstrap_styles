@@ -94,6 +94,9 @@ class SettingsForm extends ConfigFormBase {
       }
     }
 
+    // Attach admin form style.
+    $form['#attached']['library'][] = 'bootstrap_styles/layout_builder_admin_form_style';
+
     return $form;
   }
 
