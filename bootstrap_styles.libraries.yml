@@ -6,6 +6,7 @@ layout_builder_form_style:
   dependencies:
     - bootstrap_styles/tabs
     - bootstrap_styles/tooltip
+    - bootstrap_styles/themes-overrides
 
 # Tabs
 tabs:
@@ -20,6 +21,14 @@ tooltip:
   css:
     theme:
       css/tooltip.css: { }
+
+# Themes overrides
+themes-overrides:
+  css:
+    theme:
+      css/themes-overrides.css: { }
+  js:
+    js/themes-overrides.js: { }
 
 # Base styles.
 layout_builder_admin_form_style:

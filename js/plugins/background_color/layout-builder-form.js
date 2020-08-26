@@ -23,10 +23,10 @@
 
       // Custom solution for bootstrap 3 & Bario drupal theme issues.
       $(".fieldgroup.field-background-color .fieldset-wrapper input:radio", context).each(function () {
-        $(this).parents('.radio').find('label').addClass($(this).val());
+        $(this).closest('.radio').find('label').addClass($(this).val());
         var checked = $(this).prop("checked");
         if (typeof checked !== typeof undefined && checked !== false) {
-          $(this).parents('.radio').find('label').addClass('active');
+          $(this).closest('.radio').find('label').addClass('active');
         }
       });
     }
