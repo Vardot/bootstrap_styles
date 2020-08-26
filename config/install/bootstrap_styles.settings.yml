@@ -1,9 +1,12 @@
-scroll_effects: "fade-up|Fade Up\r\nfade-down|Fade Down\r\nfade-left|Fade Left\r\nfade-right|Fade Right\r\nfade-up-right|Fade Up Right\r\nfade-up-left|Fade Up Left\r\nfade-down-right|Fade Down Right\r\nfade-down-left|Fade Down Left\r\nflip-left|Flip Left\r\nflip-right|Flip Right\r\nflip-up|Flip Up\r\nflip-down|Flip Down\r\nzoom-in|Zoom In\r\nzoom-in-up|Zoom In Up\r\nzoom-in-down|Zoom In Down\r\nzoom-in-left|Zoom In Left\r\nzoom-in-right|Zoom In Right\r\nzoom-out|Zoom Out\r\nzoom-out-up|Zoom Out Up\r\nzoom-out-down|Zoom Out Down\r\nzoom-out-right|Zoom Out Right\r\nzoom-out-left|Zoom Out Left"
-attribute_type: data
-data_key: aos
-scroll_effects_attr_type: 1
-scroll_effects_data_key: data-aos
-scroll_effects_library_type: external
+background_colors: "bs-bg-success|Green\r\nbs-bg-warning|Yellow\r\nbs-bg-danger|Red\r\nbs-bg-light|Light"
+background_image:
+  bundle: image
+  field: field_media_image
+background_local_video:
+  bundle: video
+  field: field_media_video_file
+padding: "bs-px-1|Padding X 1\r\nbs-px-2|Padding X 2\r\nbs-py-1|Padding Y 1\r\nbs-py-2|Padding Y 2\r\nbs-pt-1|Padding Top 1\r\nbs-pt-2|Padding Top 2\r\nbs-pb-1|Padding Bottom 1\r\nbs-pb-2|Padding Bottom 2\r\nbs-pl-1|Padding Left 1\r\nbs-pl-2|Padding Left 2\r\nbs-pr-1|Padding Right 1\r\nbs-pr-2|Padding Right 2"
+margin: "bs-mx-1|Margin X 1\r\nbs-mx-2|Margin X 2\r\nbs-my-1|Margin Y 1\r\nbs-my-2|Margin Y 2\r\nbs-mt-1|Margin Top 1\r\nbs-mt-2|Margin Top 2\r\nbs-mb-1|Margin Bottom 1\r\nbs-mb-2|Margin Bottom 2\r\nbs-ml-1|Margin Left 1\r\nbs-ml-2|Margin Left 2\r\nbs-mr-1|Margin Right 1\r\nbs-mr-2|Margin Right 2"
 border_style: "bs-border-style-solid|Solid\r\nbs-border-style-dashed|Dashed\r\nbs-border-style-dotted|Dotted"
 border_left_style: "bs-border-left-style-solid|Solid\r\nbs-border-left-style-dashed|Dashed\r\nbs-border-left-style-dotted|Dotted"
 border_top_style: "bs-border-top-style-solid|Solid\r\nbs-border-top-style-dashed|Dashed\r\nbs-border-top-style-dotted|Dotted"
@@ -23,3 +26,9 @@ rounded_corner_top_left: "bs-border-top-left-radius-1|Radius 1\r\nbs-border-top-
 rounded_corner_top_right: "bs-border-top-right-radius-1|Radius 1\r\nbs-border-top-right-radius-2|Radius 2\r\nbs-border-top-right-radius-3|Radius 3"
 rounded_corner_bottom_left: "bs-border-bottom-left-radius-1|Radius 1\r\nbs-border-bottom-left-radius-2|Radius 2\r\nbs-border-bottom-left-radius-3|Radius 3"
 rounded_corner_bottom_right: "bs-border-bottom-right-radius-1|Radius 1\r\nbs-border-bottom-right-radius-2|Radius 2\r\nbs-border-bottom-right-radius-3|Radius 3"
+scroll_effects: "fade-up|Fade Up\r\nfade-down|Fade Down\r\nfade-left|Fade Left\r\nfade-right|Fade Right\r\nfade-up-right|Fade Up Right\r\nfade-up-left|Fade Up Left\r\nfade-down-right|Fade Down Right\r\nfade-down-left|Fade Down Left\r\nflip-left|Flip Left\r\nflip-right|Flip Right\r\nflip-up|Flip Up\r\nflip-down|Flip Down\r\nzoom-in|Zoom In\r\nzoom-in-up|Zoom In Up\r\nzoom-in-down|Zoom In Down\r\nzoom-in-left|Zoom In Left\r\nzoom-in-right|Zoom In Right\r\nzoom-out|Zoom Out\r\nzoom-out-up|Zoom Out Up\r\nzoom-out-down|Zoom Out Down\r\nzoom-out-right|Zoom Out Right\r\nzoom-out-left|Zoom Out Left"
+attribute_type: data
+data_key: aos
+scroll_effects_attr_type: 1
+scroll_effects_data_key: data-aos
+scroll_effects_library_type: external

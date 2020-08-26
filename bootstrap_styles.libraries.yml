@@ -42,8 +42,14 @@ plugin.background_color.layout_builder_form:
   css:
     theme:
       css/plugins/background_color/layout-builder-form.css: { }
+      css/plugins/background_color/bs-classes.css: { }
   js:
     js/plugins/background_color/layout-builder-form.js: { }
+
+plugin.background_color.build:
+  css:
+    theme:
+      css/plugins/background_color/bs-classes.css: { }
 
 # background_media
 plugin.background_media.layout_builder_form:
@@ -57,6 +63,28 @@ plugin.background_media.build:
       css/plugins/background_media/build.css: { }
   js:
     js/plugins/background_media/build.js: { }
+
+# padding
+plugin.padding.layout_builder_form:
+  css:
+    theme:
+      css/plugins/padding/bs-classes.css: { }
+
+plugin.padding.build:
+  css:
+    theme:
+      css/plugins/padding/bs-classes.css: { }
+
+# margin
+plugin.margin.layout_builder_form:
+  css:
+    theme:
+      css/plugins/margin/bs-classes.css: { }
+
+plugin.margin.build:
+  css:
+    theme:
+      css/plugins/margin/bs-classes.css: { }
 
 # border
 plugin.border.layout_builder_form:

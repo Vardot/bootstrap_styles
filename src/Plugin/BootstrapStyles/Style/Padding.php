@@ -58,6 +58,9 @@ class Padding extends StylePluginBase {
       '#validated' => TRUE,
     ];
 
+    // Attach the Layout Builder form style for this plugin.
+    $form['#attached']['library'][] = 'bootstrap_styles/plugin.padding.layout_builder_form';
+
     return $form;
   }
 
@@ -83,6 +86,10 @@ class Padding extends StylePluginBase {
     else {
       $build['#attributes']['class'][] = $storage['padding']['class'];
     }
+
+    // Attach bs-classes to the build.
+    $build['#attached']['library'][] = 'bootstrap_styles/plugin.padding.build';
+
     return $build;
   }
 

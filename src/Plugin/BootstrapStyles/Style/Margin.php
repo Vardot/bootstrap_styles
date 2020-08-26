@@ -58,6 +58,9 @@ class Margin extends StylePluginBase {
       '#validated' => TRUE,
     ];
 
+    // Attach the Layout Builder form style for this plugin.
+    $form['#attached']['library'][] = 'bootstrap_styles/plugin.margin.layout_builder_form';
+
     return $form;
   }
 
@@ -83,6 +86,10 @@ class Margin extends StylePluginBase {
     else {
       $build['#attributes']['class'][] = $storage['margin']['class'];
     }
+
+    // Attach bs-classes to the build.
+    $build['#attached']['library'][] = 'bootstrap_styles/plugin.margin.build';
+
     return $build;
   }
 
