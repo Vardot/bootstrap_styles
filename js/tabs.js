@@ -9,14 +9,14 @@
   Drupal.behaviors.bootstrapStylesTabs = {
     attach: function (context) {
 
-      $("#bs_nav-tabs li a", context).each(function() {
+      $('#bs_nav-tabs li a', context).each(function() {
         $(this).on('click', function () {
-          $('#bs_nav-tabs li a').removeClass('active');
+          $('#bs_nav-tabs li a', context).removeClass('active');
           $(this).toggleClass('active');
           var href = $(this).attr('data-target');
           if(href && $('#bs_tabContent').length) {
-            $('.bs_tab-pane').removeClass('active');
-            $('.bs_tab-pane--' + href).addClass('active');
+            $('.bs_tab-pane', context).removeClass('active');
+            $('.bs_tab-pane--' + href, context).addClass('active');
           }
         });
       })

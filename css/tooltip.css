@@ -1,4 +1,5 @@
-#drupal-off-canvas .bs_tooltip {
+#drupal-off-canvas .bs_tooltip,
+#layout-builder-modal .bs_tooltip {
   background: #f8f9fa;
   bottom: 100%;
   color: #333333;
@@ -21,12 +22,14 @@
   z-index: 1;
 }
 
-#drupal-off-canvas .bs_tooltip.bs_tooltip-lg {
+#drupal-off-canvas .bs_tooltip.bs_tooltip-lg,
+#layout-builder-modal .bs_tooltip.bs_tooltip-lg {
   width: 150px;
   margin-left: -75px;
 }
 
-#drupal-off-canvas .bs_tooltip:after {
+#drupal-off-canvas .bs_tooltip:after,
+#layout-builder-modal .bs_tooltip:after {
   border-left: solid transparent 10px;
   border-right: solid transparent 10px;
   border-top: solid #f8f9fa 10px;
@@ -39,14 +42,16 @@
   width: 0;
 }
 
-#drupal-off-canvas .bs_tooltip[data-placement="bottom"] {
+#drupal-off-canvas .bs_tooltip[data-placement="bottom"],
+#layout-builder-modal .bs_tooltip[data-placement="bottom"] {
   bottom: auto;
   top: 100%;
   margin-top: 15px;
   transform: translateY(10px);
 }
 
-#drupal-off-canvas .bs_tooltip[data-placement="bottom"]:after {
+#drupal-off-canvas .bs_tooltip[data-placement="bottom"]:after,
+#layout-builder-modal .bs_tooltip[data-placement="bottom"]:after {
   border-top: 0;
   border-bottom: solid #f8f9fa 10px;
   top: -10px;

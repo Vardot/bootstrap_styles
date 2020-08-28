@@ -1,0 +1,26 @@
+#layout-builder-modal .bs_tab-pane--appearance details {
+  background: #444;
+  color: #fff;
+}
+
+#layout-builder-modal .bs_tab-pane--appearance details input, #layout-builder-modal .bs_tab-pane--appearance details button, #layout-builder-modal .bs_tab-pane--appearance details select, #layout-builder-modal .bs_tab-pane--appearance details optgroup, #layout-builder-modal .bs_tab-pane--appearance details textarea {
+  color: #444;
+}
+
+#layout-builder-modal .bs_tab-pane--appearance details a {
+  color: #ffffff;
+}
+
+#layout-builder-modal .bs_tab-pane--appearance details a:hover {
+  color: #fefefe;
+}
+
+#layout-builder-modal #bs_nav-tabs {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+#layout-builder-modal #bs_nav-tabs li {
+  list-style: none;
+}

@@ -1,6 +1,7 @@
 @import "variables";
 // Tooltips
-#drupal-off-canvas {
+#drupal-off-canvas,
+#layout-builder-modal {
   .bs_tooltip {
     background: $gray-f8f;
     bottom: 100%;

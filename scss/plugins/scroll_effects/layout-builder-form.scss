@@ -1,7 +1,8 @@
 @import "../../variables";
 @import "../../mixins";
 
-#drupal-off-canvas {
+#drupal-off-canvas,
+#layout-builder-modal {
   .fieldgroup.field-scroll-effects {
 
     .fieldset-wrapper > div {

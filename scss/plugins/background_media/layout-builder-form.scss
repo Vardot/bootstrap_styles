@@ -3,7 +3,8 @@
 
 $bg-pos-toggle-size: 16px;
 
-#drupal-off-canvas {
+#drupal-off-canvas,
+#layout-builder-modal {
   // @TODO Add class for media.
   .media-library-item {
     width: 100%;

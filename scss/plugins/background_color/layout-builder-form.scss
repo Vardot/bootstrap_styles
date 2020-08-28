@@ -1,7 +1,8 @@
 @import "../../variables";
 @import "../../mixins";
 
-#drupal-off-canvas {
+#drupal-off-canvas,
+#layout-builder-modal {
   .fieldgroup.field-background-color {
     // fieldset-wrapper to solve Bootstrap 3 drupal theme issue.
     .form-radios, .fieldset-wrapper {

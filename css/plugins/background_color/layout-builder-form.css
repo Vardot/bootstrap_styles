@@ -1,21 +1,31 @@
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios > div.radio, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper > div.radio {
+#drupal-off-canvas .fieldgroup.field-background-color .form-radios > div.radio, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper > div.radio,
+#layout-builder-modal .fieldgroup.field-background-color .form-radios > div.radio,
+#layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper > div.radio {
   display: flex;
 }
 
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios .form-item-layout-settings-ui-tab-content-appearance-container-wrapper-bg-color-class, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper .form-item-layout-settings-ui-tab-content-appearance-container-wrapper-bg-color-class {
+#drupal-off-canvas .fieldgroup.field-background-color .form-radios .form-item-layout-settings-ui-tab-content-appearance-container-wrapper-bg-color-class, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper .form-item-layout-settings-ui-tab-content-appearance-container-wrapper-bg-color-class,
+#layout-builder-modal .fieldgroup.field-background-color .form-radios .form-item-layout-settings-ui-tab-content-appearance-container-wrapper-bg-color-class,
+#layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper .form-item-layout-settings-ui-tab-content-appearance-container-wrapper-bg-color-class {
   padding: 0;
 }
 
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios input, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper input {
+#drupal-off-canvas .fieldgroup.field-background-color .form-radios input, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper input,
+#layout-builder-modal .fieldgroup.field-background-color .form-radios input,
+#layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper input {
   visibility: hidden;
   position: absolute;
 }
 
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios input:checked + label.option, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper input:checked + label.option {
+#drupal-off-canvas .fieldgroup.field-background-color .form-radios input:checked + label.option, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper input:checked + label.option,
+#layout-builder-modal .fieldgroup.field-background-color .form-radios input:checked + label.option,
+#layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper input:checked + label.option {
   border: 2px solid #000000;
 }
 
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios label, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper label {
+#drupal-off-canvas .fieldgroup.field-background-color .form-radios label, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper label,
+#layout-builder-modal .fieldgroup.field-background-color .form-radios label,
+#layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper label {
   cursor: pointer !important;
   border: 1px solid #000000;
   border-radius: 2px;
@@ -30,11 +40,15 @@
   white-space: nowrap;
 }
 
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios label:hover, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper label:hover {
+#drupal-off-canvas .fieldgroup.field-background-color .form-radios label:hover, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper label:hover,
+#layout-builder-modal .fieldgroup.field-background-color .form-radios label:hover,
+#layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper label:hover {
   opacity: 0.8;
 }
 
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios label:after, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper label:after {
+#drupal-off-canvas .fieldgroup.field-background-color .form-radios label:after, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper label:after,
+#layout-builder-modal .fieldgroup.field-background-color .form-radios label:after,
+#layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper label:after {
   display: table;
   position: absolute;
   top: 3px;
@@ -49,11 +63,15 @@
   height: 100%;
 }
 
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios label._none, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper label._none {
+#drupal-off-canvas .fieldgroup.field-background-color .form-radios label._none, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper label._none,
+#layout-builder-modal .fieldgroup.field-background-color .form-radios label._none,
+#layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper label._none {
   background: #ffffff !important;
 }
 
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios label._none:after, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper label._none:after {
+#drupal-off-canvas .fieldgroup.field-background-color .form-radios label._none:after, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper label._none:after,
+#layout-builder-modal .fieldgroup.field-background-color .form-radios label._none:after,
+#layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper label._none:after {
   width: 20px;
   height: 20px;
   top: 50%;
@@ -65,6 +83,8 @@
   background-size: contain;
 }
 
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios label.active, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper label.active {
+#drupal-off-canvas .fieldgroup.field-background-color .form-radios label.active, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper label.active,
+#layout-builder-modal .fieldgroup.field-background-color .form-radios label.active,
+#layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper label.active {
   border: 2px solid #000000;
 }
