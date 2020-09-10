@@ -1,12 +1,12 @@
 @import "variables";
+
 // Tabs
 #drupal-off-canvas,
 #layout-builder-modal {
+
   //
   // Horizontal Icon Tabs
   //
-
-  // Our icons/headings
   #bs_nav-tabs {
     position: relative;
     display: flex;
@@ -25,7 +25,7 @@
         padding: .5rem .75rem;
         min-height: 50px;
         min-width: 16.666%;
-        background: $gray-212;
+        color: $tab_text_color;
         font-size: 10px;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -36,11 +36,11 @@
 
         &.active,
         &.active:hover {
-          background-color: $gray-444;
+          color: $tab_text_color_active;
         }
 
         &:hover {
-          background: rgba($gray-212, .5);
+          color: $tab_text_color_hover;
 
           .bs_tooltip {
             opacity: 1;
