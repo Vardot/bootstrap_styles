@@ -1,15 +1,20 @@
+@import "variables";
+
 #layout-builder-modal {
   .bs_tab-pane--appearance {
     details {
-      background: #444;
-      color: #fff;
-        input, button, select, optgroup, textarea {
-        color: #444;
+      background: $gray-444;
+      color: $white;
+
+      input, button, select, optgroup, textarea {
+        color: $gray-444;
       }
+
       a {
-        color: #ffffff;
+        color: $white;
+
         &:hover {
-          color: #fefefe;
+          color: $gray-f8f;
         }
       }
     }
@@ -19,6 +24,7 @@
     padding: 0;
     margin: 0;
     width: 100%;
+
     li {
       list-style: none;
     }

@@ -21,7 +21,7 @@
   padding: .5rem .75rem;
   min-height: 50px;
   min-width: 16.666%;
-  background: #212529;
+  color: #979AA1;
   font-size: 10px;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -34,12 +34,12 @@
 #drupal-off-canvas #bs_nav-tabs li a.active, #drupal-off-canvas #bs_nav-tabs li a.active:hover,
 #layout-builder-modal #bs_nav-tabs li a.active,
 #layout-builder-modal #bs_nav-tabs li a.active:hover {
-  background-color: #444444;
+  color: #2AAFFF;
 }
 
 #drupal-off-canvas #bs_nav-tabs li a:hover,
 #layout-builder-modal #bs_nav-tabs li a:hover {
-  background: rgba(33, 37, 41, 0.5);
+  color: #ffffff;
 }
 
 #drupal-off-canvas #bs_nav-tabs li a:hover .bs_tooltip,

@@ -1,10 +1,10 @@
 #layout-builder-modal .bs_tab-pane--appearance details {
-  background: #444;
-  color: #fff;
+  background: #444444;
+  color: #ffffff;
 }
 
 #layout-builder-modal .bs_tab-pane--appearance details input, #layout-builder-modal .bs_tab-pane--appearance details button, #layout-builder-modal .bs_tab-pane--appearance details select, #layout-builder-modal .bs_tab-pane--appearance details optgroup, #layout-builder-modal .bs_tab-pane--appearance details textarea {
-  color: #444;
+  color: #444444;
 }
 
 #layout-builder-modal .bs_tab-pane--appearance details a {
@@ -12,7 +12,7 @@
 }
 
 #layout-builder-modal .bs_tab-pane--appearance details a:hover {
-  color: #fefefe;
+  color: #f8f9fa;
 }
 
 #layout-builder-modal #bs_nav-tabs {
