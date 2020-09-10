@@ -32,12 +32,17 @@ $success:                   #7FB48A !default;
 //  Theme defaults. (dark)
 //  These are overridden using the "!default" flag inside of each of our dedicated SCSS files.
 //
-$panel_bg:                  $black !default;
+$panel_text_color:          $white !default;
+$panel_bg_color:            $black !default;
 
 // Tabs
 $tab_text_color:            $gray-979 !default;
 $tab_text_color_hover:      $white !default;
 $tab_text_color_active:     $blue-2aa !default;
+
+// Tabs
+$tooltip_text_color:        $white !default;
+$tooltip_bg_color:          $gray-464 !default;
 
 // Buttons
 $button_text_color:         $blue-277 !default;
