@@ -12,6 +12,10 @@
   }
 }
 
+#drupal-off-canvas .form-composite > legend, #drupal-off-canvas .label {
+  font-weight: normal;
+}
+
 #drupal-off-canvas .form-type-checkbox,
 #drupal-off-canvas .form-radios > div {
   padding: 0;
@@ -68,8 +72,4 @@
 #drupal-off-canvas button.button.button--primary {
   margin-top: 15px;
   border: 0;
-}
-
-#drupal-off-canvas .bs-group-title {
-  margin-left: 15px;
 }

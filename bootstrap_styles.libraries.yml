@@ -3,22 +3,27 @@ layout_builder_form_style:
   css:
     theme:
       css/general-styles.css: { }
-  js:
-    js/components/tabs.js: { }
   dependencies:
+    - bootstrap_styles/tabs
+    - bootstrap_styles/tooltip
     - bootstrap_styles/themes-overrides
     - bootstrap_styles/layout-builder-modal-overrides
-    - bootstrap_styles/offcanvas-font
+    - bootstrap_styles/theme.light
+#    - bootstrap_styles/theme.dark
 
-# Offcanvas Font
-offcanvas-font:
-  version: 1.x
+# Tabs
+tabs:
   css:
     theme:
-      //fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap: { type: external, minified: true }
-      //fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap: { type: external, minified: true }
-      //fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap: { type: external, minified: true }
-      css/fonts.css: { }
+      css/tabs.css: { }
+  js:
+    js/tabs.js: { }
+
+# Tooltip
+tooltip:
+  css:
+    theme:
+      css/tooltip.css: { }
 
 # Themes overrides
 themes-overrides:
@@ -46,17 +51,13 @@ layout_builder_admin_form_style:
 theme.light:
   css:
     theme:
-      css/themes/light.css: { }
-  dependencies:
-    - core/drupal.dialog.off_canvas
+      css/themes/bs-theme-light.css: { }
 
 # Dark
 theme.dark:
   css:
     theme:
-      css/themes/dark.css: { }
-  dependencies:
-    - core/drupal.dialog.off_canvas
+      css/themes/bs-theme-dark.css: { }
 
 # Plugins.
 # background_color
