@@ -8,6 +8,8 @@ layout_builder_form_style:
     - bootstrap_styles/tooltip
     - bootstrap_styles/themes-overrides
     - bootstrap_styles/layout-builder-modal-overrides
+    - bootstrap_styles/theme.light
+#    - bootstrap_styles/theme.dark
 
 # Tabs
 tabs:
@@ -43,6 +45,19 @@ layout_builder_admin_form_style:
   css:
     theme:
       css/admin-general-styles.css: { }
+
+# Themes.
+# Light
+theme.light:
+  css:
+    theme:
+      css/themes/bs-theme-light.css: { }
+
+# Dark
+theme.dark:
+  css:
+    theme:
+      css/themes/bs-theme-dark.css: { }
 
 # Plugins.
 # background_color
