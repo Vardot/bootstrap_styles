@@ -1,8 +1,8 @@
 #drupal-off-canvas .bs_tooltip,
 #layout-builder-modal .bs_tooltip {
-  background: #f8f9fa;
   bottom: 100%;
-  color: #333333;
+  color: #ffffff;
+  background: #46484E;
   font-weight: bold;
   display: block;
   left: 50%;
@@ -32,7 +32,7 @@
 #layout-builder-modal .bs_tooltip:after {
   border-left: solid transparent 10px;
   border-right: solid transparent 10px;
-  border-top: solid #f8f9fa 10px;
+  border-top: solid #46484E 10px;
   bottom: -10px;
   content: " ";
   height: 0;
@@ -53,7 +53,7 @@
 #drupal-off-canvas .bs_tooltip[data-placement="bottom"]:after,
 #layout-builder-modal .bs_tooltip[data-placement="bottom"]:after {
   border-top: 0;
-  border-bottom: solid #f8f9fa 10px;
+  border-bottom: solid #46484E 10px;
   top: -10px;
   bottom: auto;
 }

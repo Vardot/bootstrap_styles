@@ -1,11 +1,16 @@
-@import "variables";
+@import "../variables";
+
 // Tooltips
 #drupal-off-canvas,
 #layout-builder-modal {
+
+  //
+  // Tooltips
+  //
   .bs_tooltip {
-    background: $gray-f8f;
     bottom: 100%;
-    color: $gray-333;
+    color: $tooltip_text_color;
+    background: $tooltip_bg_color;
     font-weight: bold;
     display: block;
     left: 50%;
@@ -32,7 +37,7 @@
     &:after {
       border-left: solid transparent 10px;
       border-right: solid transparent 10px;
-      border-top: solid $gray-f8f 10px;
+      border-top: solid $tooltip_bg_color 10px;
       bottom: -10px;
       content: " ";
       height: 0;
@@ -50,7 +55,7 @@
 
       &:after {
         border-top: 0;
-        border-bottom: solid $gray-f8f 10px;
+        border-bottom: solid $tooltip_bg_color 10px;
         top: -10px;
         bottom: auto;
       }
