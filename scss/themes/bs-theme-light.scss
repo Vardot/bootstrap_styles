@@ -1,8 +1,18 @@
+// Import default variables.
 @import "../variables";
 
+// Reset our theme color variables.
 // Colors
 $panel_bg: $white;
-$button_text_color: $white;
-$button_bg_color: $blue-277;
 
+// Tabs
+$tab_text_color:            $gray-464;
+$tab_text_color_hover:      $black;
+$tab_text_color_active:     $blue-007;
+
+// Buttons
+$button_text_color:         $white;
+$button_bg_color:           $blue-277;
+
+// Import our components with our newly overridden vars from above.
 @import "bs-theme-common";

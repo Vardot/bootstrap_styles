@@ -1,39 +1,26 @@
 #drupal-off-canvas *,
 #drupal-off-canvas *:not(div) {
-  background: #ffffff;
+  color: #ffffff;
+  background: transparent;
 }
 
 #drupal-off-canvas,
 #layout-builder-modal {
-  background-color: #ffffff;
+  background-color: #000000;
 }
 
 #drupal-off-canvas input[type="submit"],
 #drupal-off-canvas button.button,
 #layout-builder-modal input[type="submit"],
 #layout-builder-modal button.button {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  height: auto;
-  padding: 4px 20px;
-  cursor: pointer;
-  transition: background 0.5s ease;
-  text-align: center;
   color: #ffffff;
-  border: 0;
-  border-radius: 20em;
   background: #277abd;
-  font-size: 14px;
-  font-weight: 600;
 }
 
 #drupal-off-canvas input[type="submit"].button--primary,
 #drupal-off-canvas button.button.button--primary,
 #layout-builder-modal input[type="submit"].button--primary,
 #layout-builder-modal button.button.button--primary {
-  margin-top: 15px;
   color: #ffffff;
-  border: 0;
   background: #277abd;
 }

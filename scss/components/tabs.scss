@@ -1,4 +1,4 @@
-@import "variables";
+@import "../variables";
 
 // Tabs
 #drupal-off-canvas,
@@ -26,6 +26,7 @@
         min-height: 50px;
         min-width: 16.666%;
         color: $tab_text_color;
+        background: $panel_bg_color;
         font-size: 10px;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -69,6 +70,7 @@
     > .bs_tab-pane {
       display: none;
     }
+
     > .active {
       display: block;
     }

@@ -15,15 +15,15 @@ layout_builder_form_style:
 tabs:
   css:
     theme:
-      css/tabs.css: { }
+      css/components/tabs.css: { }
   js:
-    js/tabs.js: { }
+    js/components/tabs.js: { }
 
 # Tooltip
 tooltip:
   css:
     theme:
-      css/tooltip.css: { }
+      css/components/tooltip.css: { }
 
 # Themes overrides
 themes-overrides:
@@ -51,13 +51,13 @@ layout_builder_admin_form_style:
 theme.light:
   css:
     theme:
-      css/themes/bs-theme-light.css: { }
+      css/themes/bs-theme-light.css: { weight: 50 }
 
 # Dark
 theme.dark:
   css:
     theme:
-      css/themes/bs-theme-dark.css: { }
+      css/themes/bs-theme-dark.css: { weight: 50 }
 
 # Plugins.
 # background_color
