@@ -158,7 +158,7 @@ class StylesGroupManager extends DefaultPluginManager {
 
     foreach ($this->getStylesGroups() as $group_key => $style_group) {
       // Check groups restriction.
-      if (count($allowed_plugins) > 0 && !array_key_exists($group_key, $allowed_plugins)) {
+      if (!empty($allowed_plugins) && !array_key_exists($group_key, $allowed_plugins)) {
         continue;
       }
 
@@ -176,7 +176,7 @@ class StylesGroupManager extends DefaultPluginManager {
 
         foreach ($style_group['styles'] as $style_key => $style) {
           // Check plugins restriction.
-          if (count($allowed_plugins[$group_key]) > 0 && !in_array($style_key, $allowed_plugins[$group_key])) {
+          if (!empty($allowed_plugins) && count($allowed_plugins[$group_key]) > 0 && !in_array($style_key, $allowed_plugins[$group_key])) {
             continue;
           }
 
@@ -218,7 +218,7 @@ class StylesGroupManager extends DefaultPluginManager {
     $allowed_plugins = $this->getAllowedPlugins($filter);
     foreach ($this->getStylesGroups() as $group_key => $style_group) {
       // Check groups restriction.
-      if (count($allowed_plugins) > 0 && !array_key_exists($group_key, $allowed_plugins)) {
+      if (!empty($allowed_plugins) && !array_key_exists($group_key, $allowed_plugins)) {
         continue;
       }
       // Styles Group.
@@ -231,7 +231,7 @@ class StylesGroupManager extends DefaultPluginManager {
         if (isset($style_group['styles'])) {
           foreach ($style_group['styles'] as $style_key => $style) {
             // Check plugins restriction.
-            if (count($allowed_plugins[$group_key]) > 0 && !in_array($style_key, $allowed_plugins[$group_key])) {
+            if (!empty($allowed_plugins) && count($allowed_plugins[$group_key]) > 0 && !in_array($style_key, $allowed_plugins[$group_key])) {
               continue;
             }
             // Submit style form.
