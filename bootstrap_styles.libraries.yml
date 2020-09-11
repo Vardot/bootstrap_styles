@@ -9,7 +9,23 @@ layout_builder_form_style:
     - bootstrap_styles/themes-overrides
     - bootstrap_styles/layout-builder-modal-overrides
     - bootstrap_styles/theme.light
-#    - bootstrap_styles/theme.dark
+
+#bootstrap_styles.drupal.dialog.off_canvas:
+#  css:
+#    base:
+#      css/themes/dialog/off-canvas.reset.css: { }
+#      css/core/dialog/off-canvas.base.css: { }
+#      css/core/dialog/off-canvas.css: { }
+#      css/core/dialog/off-canvas.theme.css: { }
+#    component:
+#      css/core/dialog/off-canvas.motion.css: { }
+#      css/core/dialog/off-canvas.button.css: { }
+#      css/core/dialog/off-canvas.form.css: { }
+#      css/core/dialog/off-canvas.table.css: { }
+#      css/core/dialog/off-canvas.details.css: { }
+#      css/core/dialog/off-canvas.tabledrag.css: { }
+#      css/core/dialog/off-canvas.dropbutton.css: { }
+#      css/core/dialog/off-canvas.layout.css: { }
 
 # Tabs
 tabs:
@@ -51,13 +67,13 @@ layout_builder_admin_form_style:
 theme.light:
   css:
     theme:
-      css/themes/bs-theme-light.css: { weight: 50 }
+      css/themes/light.css: { weight: 50 }
 
 # Dark
 theme.dark:
   css:
     theme:
-      css/themes/bs-theme-dark.css: { weight: 50 }
+      css/themes/dark.css: { weight: 50 }
 
 # Plugins.
 # background_color

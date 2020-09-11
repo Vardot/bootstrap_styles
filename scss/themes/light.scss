@@ -3,7 +3,9 @@
 
 // Reset our theme color variables.
 // Colors
-$panel_bg: $white;
+$panel_text_color:          $black;
+$panel_link_color:          $blue-2aa;
+$panel_bg_color:            $white;
 
 // Tabs
 $tab_text_color:            $gray-464;
@@ -15,4 +17,4 @@ $button_text_color:         $white;
 $button_bg_color:           $blue-277;
 
 // Import our components with our newly overridden vars from above.
-@import "bs-theme-common";
+@import "common";
