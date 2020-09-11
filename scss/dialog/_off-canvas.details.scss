@@ -1,0 +1,68 @@
+/**
+ * @file
+ * Visual styling for summary and details in the off-canvas dialog.
+ */
+
+#drupal-off-canvas details {
+  margin: 0 -10px;
+  //display: block;
+}
+//#drupal-off-canvas details,
+//#drupal-off-canvas summary {
+//  font-family: "Lucida Grande", "Lucida Sans Unicode", "liberation sans", sans-serif;
+//}
+#drupal-off-canvas details,
+#drupal-off-canvas summary,
+#drupal-off-canvas .ui-dialog-content {
+  outline: 0;
+  color: $details_text_color;
+  background: transparent;
+}
+#drupal-off-canvas summary a {
+  //margin: 0 1rem;
+  //padding-top: 0;
+  //padding-bottom: 0;
+  color: $summary_bg_color;
+}
+#drupal-off-canvas summary a:hover,
+#drupal-off-canvas summary a:focus {
+  color: $summary_bg_color_hover;
+}
+//#drupal-off-canvas details,
+//#drupal-off-canvas summary,
+//#drupal-off-canvas .details-wrapper {
+//  /* Cancel out the padding of the parent. */
+//  margin: 0 -20px;
+//  padding: 0 20px;
+//  border-width: 0;
+//}
+#drupal-off-canvas summary {
+  border-radius: $border_radius;
+  margin: 2px -10px;
+  min-height: 40px;
+//  padding: 10px 20px;
+//  transition: all 0.5s ease;
+//  text-shadow: none;
+//  font-size: 14px;
+}
+#drupal-off-canvas summary:hover,
+#drupal-off-canvas summary:focus {
+  background-color: rgba($summary_link_color_hover, .14);
+}
+//#drupal-off-canvas details[open] {
+//  padding-bottom: 10px;
+//}
+#drupal-off-canvas details[open] > summary {
+  color: $summary_link_color_active;
+  background-color: $summary_bg_color_active;
+}
+#drupal-off-canvas details[open] > summary:hover {
+  //color: #fff;
+  background-color: $summary_bg_color_active_hover;
+}
+//#drupal-off-canvas details .placeholder {
+//  color: inherit;
+//  background: transparent;
+//  font: inherit;
+//  font-style: italic;
+//}

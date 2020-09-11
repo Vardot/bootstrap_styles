@@ -1,23 +1,18 @@
-@import "dialog/off-canvas.base";
-@import "dialog/off-canvas.theme";
+@import "../mixins";
+@import "../components/*";
+@import "../dialog/*";
 
-#drupal-off-canvas,
-#layout-builder-modal {
-
-  input[type="submit"],
-  button.button {
-    color: $button_text_color;
-    background: $button_bg_color;
-
-    &.button--primary {
-      color: $button_text_color;
-      background: $button_bg_color;
-    }
-  }
-}
-
-// Unset backgrounds on our main components.
-#drupal-off-canvas #bs_ui,
-#drupal-off-canvas #bs_ui .form-item {
-  background: $panel_bg_color;
-}
+// @todo: do we still need this?
+//#drupal-off-canvas,
+//#layout-builder-modal {
+//  input[type="submit"],
+//  button.button {
+//    color: $button_text_color;
+//    background: $button_bg_color;
+//
+//    &.button--primary {
+//      color: $button_text_color;
+//      background: $button_bg_color;
+//    }
+//  }
+//}
