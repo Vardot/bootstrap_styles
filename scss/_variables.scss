@@ -24,15 +24,16 @@ $gray-464:                  #46484E;
 $gray-292:                  #292C32;
 
 // States
-$error:                     #DC7C7C !default;
-$warning:                   #F1C666 !default;
-$success:                   #7FB48A !default;
+$state_error:               #DC7C7C !default;
+$state_warning:             #F1C666 !default;
+$state_success:             #7FB48A !default;
 
 //
 //  Theme defaults. (dark)
 //  These are overridden using the "!default" flag inside of each of our dedicated SCSS files.
 //
 $panel_text_color:          $white !default;
+$panel_link_color:          $blue-007 !default;
 $panel_bg_color:            $black !default;
 
 // Tabs
