@@ -1,50 +1,17 @@
 /**
  * @file
- * Set base styles for the off-canvas dialog.
- */
-/* Set some global attributes. */
-#drupal-off-canvas *,
-#drupal-off-canvas *:not(div) {
-  color: #ffffff;
-  background: unset;
-}
-
-/* Generic elements. */
-#drupal-off-canvas a,
-#drupal-off-canvas .link {
-  color: #007BC7;
-}
-
-#drupal-off-canvas hr {
-  background: #ccc;
-}
-
-/* Override jQuery UI */
-#drupal-off-canvas .ui-widget-content a {
-  color: #85bef4 !important;
-}
-
-#drupal-off-canvas .messages--status {
-  color: #DC7C7C;
-}
-
-#drupal-off-canvas .messages--warning {
-  color: #F1C666;
-}
-
-#drupal-off-canvas .messages--error {
-  color: #DC7C7C;
-}
-
-/**
- * @file
  * Styling for the off-canvas ui dialog. Including overrides for jQuery UI.
  */
+
 /* Style the dialog-off-canvas container. */
 .ui-dialog.ui-dialog-off-canvas {
   /* Layer the dialog just under the toolbar. */
-  color: #ffffff;
-  background: #000000;
+  //z-index: 501;
+  //padding: 0;
+  color: $panel_text_color;
+  //border-radius: 0;
+  background: $panel_bg_color;
+  //box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.3333);
 }
 
 .ui-widget.ui-dialog.ui-dialog-off-canvas {
@@ -54,11 +21,11 @@
 /* Style the off-canvas dialog header. */
 .ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar {
   padding: 1em;
-  color: #ffffff;
+  color: $panel_text_color;
   border: 0;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid $panel_text_color;
   border-radius: 0;
-  background: #000000;
+  background: $panel_bg_color;
   font-weight: normal;
 }
 
@@ -96,13 +63,10 @@
   /* Ensure that long titles do not overlap the close button. */
   max-width: 210px;
   margin: 0;
-  padding-right: 0;
-  /* LTR */
+  padding-right: 0; /* LTR */
   /* Push the text away from the icon. */
-  padding-left: 30px;
-  /* LTR */
-  text-align: left;
-  /* LTR */
+  padding-left: 30px; /* LTR */
+  text-align: left; /* LTR */
   /* Ensure that long titles are not truncated. */
   white-space: normal;
   font-family: "Lucida Grande", "Lucida Sans Unicode", "liberation sans", sans-serif;
@@ -119,8 +83,7 @@
 .ui-dialog.ui-dialog-off-canvas .ui-dialog-title:before {
   position: absolute;
   top: 0;
-  left: 1em;
-  /* LTR */
+  left: 1em; /* LTR */
   display: block;
   width: 20px;
   height: 100%;
@@ -146,25 +109,4 @@
 
 #drupal-off-canvas .ui-widget-content a {
   color: #85bef4;
-}
-
-#drupal-off-canvas input[type="submit"],
-#drupal-off-canvas button.button,
-#layout-builder-modal input[type="submit"],
-#layout-builder-modal button.button {
-  color: #277abd;
-  background: #ffffff;
-}
-
-#drupal-off-canvas input[type="submit"].button--primary,
-#drupal-off-canvas button.button.button--primary,
-#layout-builder-modal input[type="submit"].button--primary,
-#layout-builder-modal button.button.button--primary {
-  color: #277abd;
-  background: #ffffff;
-}
-
-#drupal-off-canvas #bs_ui,
-#drupal-off-canvas #bs_ui .form-item {
-  background: #000000;
 }

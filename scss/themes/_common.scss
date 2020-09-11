@@ -1,3 +1,23 @@
-@import "../mixins";
-@import "../components/*";
-@import "../dialog/*";
+@import "dialog/off-canvas.base";
+@import "dialog/off-canvas.theme";
+
+#drupal-off-canvas,
+#layout-builder-modal {
+
+  input[type="submit"],
+  button.button {
+    color: $button_text_color;
+    background: $button_bg_color;
+
+    &.button--primary {
+      color: $button_text_color;
+      background: $button_bg_color;
+    }
+  }
+}
+
+// Unset backgrounds on our main components.
+#drupal-off-canvas #bs_ui,
+#drupal-off-canvas #bs_ui .form-item {
+  background: $panel_bg_color;
+}

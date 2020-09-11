@@ -1,3 +1,5 @@
+//@import "../../variables";
+
 /**
  * @file
  * Set base styles for the off-canvas dialog.
@@ -7,20 +9,23 @@
 #drupal-off-canvas *,
 #drupal-off-canvas *:not(div) {
   color: $panel_text_color;
-  background: $panel_bg_color;
+  background: unset;
+  //font-family: "Lucida Grande", "Lucida Sans Unicode", "liberation sans", sans-serif;
 }
-//
-///* Generic elements. */
-//#drupal-off-canvas a,
-//#drupal-off-canvas .link {
-//  transition: color 0.5s ease;
-//  text-decoration: none;
-//  color: #85bef4;
-//  border-bottom: none;
-//  font-family: "Lucida Grande", "Lucida Sans Unicode", "liberation sans", sans-serif;
-//  font-size: inherit;
-//  font-weight: normal;
-//}
+
+/* Generic elements. */
+#drupal-off-canvas {
+  a,
+  .link {
+    //transition: color 0.5s ease;
+    //text-decoration: none;
+    color: $panel_link_color;
+    //border-bottom: none;
+    //font-family: "Lucida Grande", "Lucida Sans Unicode", "liberation sans", sans-serif;
+    //font-size: inherit;
+    //font-weight: normal;
+  }
+}
 //
 //#drupal-off-canvas a:focus,
 //#drupal-off-canvas .link:focus,
@@ -28,10 +33,10 @@
 //#drupal-off-canvas .link:hover {
 //  text-decoration: underline;
 //}
-//#drupal-off-canvas hr {
-//  height: 1px;
-//  background: #ccc;
-//}
+#drupal-off-canvas hr {
+  //height: 1px;
+  background: #ccc;
+}
 //#drupal-off-canvas summary,
 //#drupal-off-canvas .fieldgroup:not(.form-composite) > legend {
 //  font-weight: bold;
@@ -194,12 +199,12 @@
 //#drupal-off-canvas small .admin-link:after {
 //  content: "]";
 //}
-//
-///* Override jQuery UI */
-//#drupal-off-canvas .ui-widget-content a {
-//  color: #85bef4 !important;
-//}
-//
+
+/* Override jQuery UI */
+#drupal-off-canvas .ui-widget-content a {
+  color: #85bef4 !important;
+}
+
 ///* Message styles */
 //#drupal-off-canvas .messages {
 //  background: no-repeat 10px 17px;
@@ -210,22 +215,22 @@
 //#drupal-off-canvas .messages abbr {
 //  color: #444;
 //}
-//#drupal-off-canvas .messages--status {
-//  color: #325e1c;
-//  background-color: #f3faef;
-//  background-image: url(../../../images/core/icons/73b355/check.svg);
-//}
-//#drupal-off-canvas .messages--warning {
-//  color: #734c00;
-//  background-color: #fdf8ed;
-//  background-image: url(../../../images/core/icons/e29700/warning.svg);
-//}
-//
-//#drupal-off-canvas .messages--error {
-//  color: #a51b00;
-//  background-color: #fcf4f2;
-//  background-image: url(../../../images/core/icons/e32700/error.svg);
-//}
+#drupal-off-canvas .messages--status {
+  color: $state_error;
+  //background-color: #f3faef;
+  //background-image: url(../icons/73b355/check.svg);
+}
+#drupal-off-canvas .messages--warning {
+  color: $state_warning;
+  //background-color: #fdf8ed;
+  //background-image: url(../icons/e29700/warning.svg);
+}
+
+#drupal-off-canvas .messages--error {
+  color: $state_error;
+  //background-color: #fcf4f2;
+  //background-image: url(../icons/e32700/error.svg);
+}
 //
 //#drupal-off-canvas .messages--error div[role="alert"] {
 //  color: inherit;
