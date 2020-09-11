@@ -8,6 +8,7 @@ $panel_link_color:          $blue-2aa;
 $panel_bg_color:            $white;
 
 // Tabs
+$tabs_bottom_border:        2px solid $gray-dbd;
 $tab_text_color:            $gray-464;
 $tab_text_color_hover:      $black;
 $tab_text_color_active:     $blue-007;
@@ -15,6 +16,20 @@ $tab_text_color_active:     $blue-007;
 // Buttons
 $button_text_color:         $white;
 $button_bg_color:           $blue-277;
+
+// Details
+//$details_text_color:        $black;
+//$details_link_color:        $black;
+//$details_link_color_hover:  $black;
+//$details_bg_color:          transparent !default;
+//$details_bg_color_hover:    $gray-464;
+//$details_bg_color_active:   rgba($blue-2aa, .14) !default;
+
+// Buttons
+$button_text_color:         $white;
+$button_text_color_hover:   $gray-979;
+$button_text_color:         $blue-007;
+$button_bg_color_hover:     $blue-2aa;
 
 // Import our components with our newly overridden vars from above.
 @import "common";
