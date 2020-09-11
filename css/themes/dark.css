@@ -1,3 +1,160 @@
+#drupal-off-canvas #bs_nav-tabs,
+#layout-builder-modal #bs_nav-tabs {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin: 0 -40px 20px -40px;
+  width: calc(100% + 80px);
+  box-shadow: inset 0px -2px 0px 0px #979AA1;
+}
+
+#drupal-off-canvas #bs_nav-tabs li,
+#layout-builder-modal #bs_nav-tabs li {
+  flex: 1 1 auto;
+  margin: 0 1px;
+}
+
+#drupal-off-canvas #bs_nav-tabs li a,
+#layout-builder-modal #bs_nav-tabs li a {
+  cursor: pointer;
+  position: relative;
+  padding: .5rem .75rem;
+  min-height: 64px;
+  min-width: 16.666%;
+  color: #979AA1;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .2s background-color ease-in-out;
+}
+
+#drupal-off-canvas #bs_nav-tabs li a:after,
+#layout-builder-modal #bs_nav-tabs li a:after {
+  transition: all .3s ease-in-out;
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 5px;
+  border-radius: 8px;
+  background-color: transparent;
+}
+
+#drupal-off-canvas #bs_nav-tabs li a:hover,
+#layout-builder-modal #bs_nav-tabs li a:hover {
+  color: #ffffff;
+}
+
+#drupal-off-canvas #bs_nav-tabs li a:hover .bs_tooltip,
+#layout-builder-modal #bs_nav-tabs li a:hover .bs_tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0px);
+}
+
+#drupal-off-canvas #bs_nav-tabs li a.active, #drupal-off-canvas #bs_nav-tabs li a.active:hover,
+#layout-builder-modal #bs_nav-tabs li a.active,
+#layout-builder-modal #bs_nav-tabs li a.active:hover {
+  color: #2AAFFF;
+  background-color: #46484E;
+}
+
+#drupal-off-canvas #bs_nav-tabs li a.active:after, #drupal-off-canvas #bs_nav-tabs li a.active:hover:after,
+#layout-builder-modal #bs_nav-tabs li a.active:after,
+#layout-builder-modal #bs_nav-tabs li a.active:hover:after {
+  background-color: #2AAFFF;
+}
+
+#drupal-off-canvas #bs_nav-tabs li a.active svg, #drupal-off-canvas #bs_nav-tabs li a.active:hover svg,
+#layout-builder-modal #bs_nav-tabs li a.active svg,
+#layout-builder-modal #bs_nav-tabs li a.active:hover svg {
+  fill: #2AAFFF;
+}
+
+#drupal-off-canvas #bs_nav-tabs li a svg,
+#layout-builder-modal #bs_nav-tabs li a svg {
+  transition: all .3s ease-in-out;
+  max-width: 24px;
+  height: auto;
+  background: none;
+}
+
+#drupal-off-canvas #bs_tabContent > .bs_tab-pane,
+#layout-builder-modal #bs_tabContent > .bs_tab-pane {
+  display: none;
+}
+
+#drupal-off-canvas #bs_tabContent > .active,
+#layout-builder-modal #bs_tabContent > .active {
+  display: block;
+}
+
+#drupal-off-canvas .bs_tooltip,
+#layout-builder-modal .bs_tooltip {
+  bottom: 100%;
+  color: #ffffff;
+  background: #46484E;
+  font-weight: bold;
+  display: block;
+  left: 50%;
+  margin-left: -37.5px;
+  margin-bottom: 15px;
+  opacity: 0;
+  padding: 9px 10px;
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+  width: 75px;
+  transform: translateY(-10px);
+  transition: all .25s ease-out;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  border-radius: 4px;
+  white-space: normal;
+  z-index: 1;
+}
+
+#drupal-off-canvas .bs_tooltip.bs_tooltip-lg,
+#layout-builder-modal .bs_tooltip.bs_tooltip-lg {
+  width: 150px;
+  margin-left: -75px;
+}
+
+#drupal-off-canvas .bs_tooltip:after,
+#layout-builder-modal .bs_tooltip:after {
+  border-left: solid transparent 10px;
+  border-right: solid transparent 10px;
+  border-top: solid #46484E 10px;
+  bottom: -10px;
+  content: " ";
+  height: 0;
+  left: 50%;
+  margin-left: -13px;
+  position: absolute;
+  width: 0;
+}
+
+#drupal-off-canvas .bs_tooltip[data-placement="bottom"],
+#layout-builder-modal .bs_tooltip[data-placement="bottom"] {
+  bottom: auto;
+  top: 100%;
+  margin-top: 15px;
+  transform: translateY(10px);
+}
+
+#drupal-off-canvas .bs_tooltip[data-placement="bottom"]:after,
+#layout-builder-modal .bs_tooltip[data-placement="bottom"]:after {
+  border-top: 0;
+  border-bottom: solid #46484E 10px;
+  top: -10px;
+  bottom: auto;
+}
+
 /**
  * @file
  * Set base styles for the off-canvas dialog.
@@ -16,12 +173,12 @@
 }
 
 #drupal-off-canvas hr {
-  background: #ccc;
+  background: #ffffff;
 }
 
 /* Override jQuery UI */
 #drupal-off-canvas .ui-widget-content a {
-  color: #85bef4 !important;
+  color: #007BC7 !important;
 }
 
 #drupal-off-canvas .messages--status {
@@ -38,13 +195,515 @@
 
 /**
  * @file
+ * Visual styling for buttons in the off-canvas dialog.
+ *
+ * @see seven/css/components/buttons.css
+ */
+#drupal-off-canvas button.link {
+  color: #383A40;
+}
+
+#drupal-off-canvas button.link:hover,
+#drupal-off-canvas button.link:focus {
+  color: #383A40;
+}
+
+#drupal-off-canvas input[type="submit"].button {
+  padding: 10px 20px;
+  color: #383A40;
+  border-radius: 8px;
+  background: #2AAFFF;
+}
+
+#drupal-off-canvas input[type="submit"].button:hover,
+#drupal-off-canvas input[type="submit"].button:focus,
+#drupal-off-canvas input[type="submit"].button:active {
+  color: #383A40;
+}
+
+#drupal-off-canvas input[type="submit"].button--primary {
+  color: #383A40;
+  background: #2AAFFF;
+}
+
+#drupal-off-canvas input[type="submit"].button--primary:hover,
+#drupal-off-canvas input[type="submit"].button--primary:focus,
+#drupal-off-canvas input[type="submit"].button--primary:active {
+  background: #007BC7;
+}
+
+#drupal-off-canvas .button:disabled,
+#drupal-off-canvas .button:disabled:active,
+#drupal-off-canvas .button.is-disabled,
+#drupal-off-canvas .button.is-disabled:active {
+  color: #5c5c5c;
+  background: #555;
+}
+
+#drupal-off-canvas .button--danger {
+  color: #c72100;
+}
+
+#drupal-off-canvas .button--danger:hover,
+#drupal-off-canvas .button--danger:focus,
+#drupal-off-canvas .button--danger:active {
+  color: #ff2a00;
+}
+
+#drupal-off-canvas .button--danger:disabled,
+#drupal-off-canvas .button--danger.is-disabled {
+  color: #737373;
+}
+
+/**
+ * @file
+ * Visual styling for summary and details in the off-canvas dialog.
+ */
+#drupal-off-canvas details {
+  margin: 0 -10px;
+}
+
+#drupal-off-canvas details,
+#drupal-off-canvas summary,
+#drupal-off-canvas .ui-dialog-content {
+  outline: 0;
+  color: #ffffff;
+  background: transparent;
+}
+
+#drupal-off-canvas summary a {
+  color: transparent;
+}
+
+#drupal-off-canvas summary a:hover,
+#drupal-off-canvas summary a:focus {
+  color: #46484E;
+}
+
+#drupal-off-canvas summary {
+  border-radius: 8px;
+  margin: 2px -10px;
+  min-height: 40px;
+}
+
+#drupal-off-canvas summary:hover,
+#drupal-off-canvas summary:focus {
+  background-color: rgba(255, 255, 255, 0.14);
+}
+
+#drupal-off-canvas details[open] > summary {
+  color: #2AAFFF;
+  background-color: rgba(42, 175, 255, 0.14);
+}
+
+#drupal-off-canvas details[open] > summary:hover {
+  background-color: rgba(42, 175, 255, 0.3);
+}
+
+/**
+ * @file
+ * Styles for dropbuttons in the off-canvas dialog.
+ */
+#drupal-off-canvas .dropbutton-widget {
+  color: #fff;
+  background: #277abd;
+}
+
+#drupal-off-canvas .dropbutton-widget:hover {
+  background: #2b8bd8;
+}
+
+/*
+ * Style dropbutton single.
+ */
+#drupal-off-canvas .dropbutton li,
+#drupal-off-canvas .dropbutton a {
+  color: #555;
+}
+
+#drupal-off-canvas .dropbutton li:hover,
+#drupal-off-canvas .dropbutton li:focus,
+#drupal-off-canvas .dropbutton a:hover,
+#drupal-off-canvas .dropbutton a:focus {
+  color: #333;
+  background: transparent;
+}
+
+/*
+ * Style dropbutton multiple.
+ */
+#drupal-off-canvas .dropbutton-multiple .dropbutton-widget:hover {
+  background-color: #2b8bd8;
+}
+
+/* Hide the other actions until the dropbutton is triggered. */
+/* The toggle to expand the button. */
+#drupal-off-canvas .dropbutton-toggle {
+  color: #fff;
+}
+
+/* The toggle arrow. */
+#drupal-off-canvas .dropbutton-arrow {
+  color: #fff;
+}
+
+/* Push the widget to the right so text expands left. */
+#drupal-off-canvas td .dropbutton-widget {
+  background: #277abd none;
+}
+
+/* Push the wrapper to the right edge of the td. */
+/* Push text out of the way. */
+#drupal-off-canvas td .dropbutton-multiple.open .dropbutton li,
+#drupal-off-canvas td .dropbutton-multiple.open .dropbutton a {
+  color: #fff;
+}
+
+/* Collapse the button to a circle. */
+/* Create visual separation if there is an adjacent button. */
+/**
+ * @file
+ * Visual styling for forms in the off-canvas dialog.
+ */
+#drupal-off-canvas form {
+  color: #ffffff;
+}
+
+#drupal-off-canvas label {
+  color: #ffffff;
+}
+
+#drupal-off-canvas .description,
+#drupal-off-canvas .form-item .description,
+#drupal-off-canvas .details-description {
+  color: #ffffff;
+}
+
+/* Set size and position for all inputs. */
+#drupal-off-canvas .form-select,
+#drupal-off-canvas .form-text,
+#drupal-off-canvas .form-tel,
+#drupal-off-canvas .form-email,
+#drupal-off-canvas .form-url,
+#drupal-off-canvas .form-search,
+#drupal-off-canvas .form-number,
+#drupal-off-canvas .form-color,
+#drupal-off-canvas .form-file,
+#drupal-off-canvas .form-textarea,
+#drupal-off-canvas .form-date,
+#drupal-off-canvas .form-time {
+  color: #333;
+}
+
+/* Reduce contrast for fields against dark background. */
+#drupal-off-canvas .form-text,
+#drupal-off-canvas .form-tel,
+#drupal-off-canvas .form-email,
+#drupal-off-canvas .form-url,
+#drupal-off-canvas .form-search,
+#drupal-off-canvas .form-number,
+#drupal-off-canvas .form-color,
+#drupal-off-canvas .form-file,
+#drupal-off-canvas .form-textarea,
+#drupal-off-canvas .form-date,
+#drupal-off-canvas .form-time {
+  color: #595959;
+  border-color: #333;
+  background-color: #eee;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.125);
+}
+
+#drupal-off-canvas .form-text:focus,
+#drupal-off-canvas .form-tel:focus,
+#drupal-off-canvas .form-email:focus,
+#drupal-off-canvas .form-url:focus,
+#drupal-off-canvas .form-search:focus,
+#drupal-off-canvas .form-number:focus,
+#drupal-off-canvas .form-color:focus,
+#drupal-off-canvas .form-file:focus,
+#drupal-off-canvas .form-textarea:focus,
+#drupal-off-canvas .form-date:focus,
+#drupal-off-canvas .form-time:focus {
+  border-color: #40b6ff;
+  background-color: #fff;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.125), 0 0 8px #40b6ff;
+}
+
+#drupal-off-canvas .ui-autocomplete {
+  background-color: white;
+}
+
+#drupal-off-canvas .ui-autocomplete li a {
+  color: #595959 !important;
+}
+
+/**
+ * @file
+ * Visual styling for layouts in the off-canvas dialog.
+ *
+ * See seven/css/layout/layout.css
+ */
+.layout-icon__region {
+  fill: #f5f5f2;
+  stroke: #666;
+}
+
+/**
+ * @file
+ * Motion effects for off-canvas dialog.
+ *
+ * Motion effects are in a separate file so that they can be easily turned off
+ * to improve performance if desired.
+ */
+/**
+ * @file
+ * Reset most HTML elements styles for the off-canvas dialog.
+ *
+ * This is a generic reset. Drupal-specific classes are reset in components.
+ */
+/**
+ * Do not include div in then initial overrides because including div will
+ * cause the need for many more overrides in this file.
+ */
+#drupal-off-canvas textarea[disabled],
+#drupal-off-canvas select[disabled],
+#drupal-off-canvas input[type="date"][disabled],
+#drupal-off-canvas input[type="datetime"][disabled],
+#drupal-off-canvas input[type="datetime-local"][disabled],
+#drupal-off-canvas input[type="email"][disabled],
+#drupal-off-canvas input[type="month"][disabled],
+#drupal-off-canvas input[type="number"][disabled],
+#drupal-off-canvas input[type="password"][disabled],
+#drupal-off-canvas input[type="search"][disabled],
+#drupal-off-canvas input[type="tel"][disabled],
+#drupal-off-canvas input[type="text"][disabled],
+#drupal-off-canvas input[type="time"][disabled],
+#drupal-off-canvas input[type="url"][disabled],
+#drupal-off-canvas input[type="week"][disabled] {
+  background-color: grey;
+}
+
+#drupal-off-canvas input:placeholder,
+#drupal-off-canvas textarea:placeholder {
+  color: grey;
+}
+
+#drupal-off-canvas optgroup {
+  color: black;
+}
+
+#drupal-off-canvas * button {
+  color: black;
+  border: 1px solid grey;
+}
+
+#drupal-off-canvas * textarea,
+#drupal-off-canvas * select,
+#drupal-off-canvas *:not(div) textarea,
+#drupal-off-canvas *:not(div) select {
+  color: black;
+  border: 1px solid grey;
+  background: white;
+}
+
+/* To standardize off-canvas selection color. */
+#drupal-off-canvas ::-moz-selection,
+#drupal-off-canvas ::selection {
+  color: inherit;
+  background-color: rgba(175, 175, 175, 0.5);
+}
+
+/**
+ * @file
+ * Visual styling for tables in the off-canvas dialog.
+ */
+#drupal-off-canvas table {
+  /* Cancel out the padding of the parent to make the table full width. */
+  color: #ffffff;
+}
+
+#drupal-off-canvas td,
+#drupal-off-canvas th {
+  border-bottom: 1px solid #777;
+}
+
+#drupal-off-canvas td {
+  color: #ffffff;
+}
+
+/* Hide overflow with ellipsis for links. */
+/**
+ * @file
+ * Table drag behavior for off-canvas dialog.
+ *
+ * @see tabledrag.js
+ */
+#drupal-off-canvas .drag {
+  cursor: move;
+}
+
+#drupal-off-canvas tr.region-title {
+  font-weight: normal;
+}
+
+#drupal-off-canvas table .region-message {
+  color: #fff;
+}
+
+#drupal-off-canvas table .region-populated {
+  display: none;
+}
+
+#drupal-off-canvas .add-new .tabledrag-changed {
+  display: none;
+}
+
+#drupal-off-canvas .draggable a.tabledrag-handle {
+  float: left;
+  /* LTR */
+  overflow: hidden;
+  min-width: 20px;
+  height: auto;
+  margin: 0 5px 0 0;
+  padding: 0;
+  cursor: move;
+  text-decoration: none;
+  background-image: none;
+}
+
+[dir="rtl"] #drupal-off-canvas .draggable a.tabledrag-handle {
+  float: right;
+  margin-right: 0;
+  margin-left: 5px;
+}
+
+#drupal-off-canvas a.tabledrag-handle .handle {
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  /* Use lighter drag icon against dark background. */
+  background-image: url(../icons/bebebe/move.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#drupal-off-canvas .draggable a.tabledrag-handle:hover .handle,
+#drupal-off-canvas .draggable a.tabledrag-handle:focus .handle {
+  text-decoration: none;
+  background-image: url(../icons/787878/move.svg);
+}
+
+#drupal-off-canvas tr td {
+  transition: background 0.3s ease;
+}
+
+#drupal-off-canvas tr td abbr {
+  margin-left: 5px;
+  /* LTR */
+}
+
+[dir="rtl"] #drupal-off-canvas tr td abbr {
+  margin-right: 5px;
+  margin-left: 0;
+}
+
+#drupal-off-canvas tr:hover td {
+  background: #222;
+}
+
+#drupal-off-canvas tr.drag td {
+  background: #111;
+}
+
+#drupal-off-canvas tr.drag-previous td {
+  background: #000;
+}
+
+#drupal-off-canvas tr.drag-previous:hover td {
+  background: #222;
+}
+
+body div.tabledrag-changed-warning {
+  margin-bottom: 0.5em;
+  font-size: 14px;
+}
+
+#drupal-off-canvas .touchevents .draggable td {
+  padding: 0 10px;
+}
+
+#drupal-off-canvas .touchevents .draggable .menu-item__link {
+  display: inline-block;
+  padding: 10px 0;
+}
+
+#drupal-off-canvas .touchevents a.tabledrag-handle {
+  width: 40px;
+  height: 44px;
+}
+
+#drupal-off-canvas .touchevents a.tabledrag-handle .handle {
+  height: 21px;
+  background-position: 40% 19px;
+  /* LTR */
+}
+
+[dir="rtl"] #drupal-off-canvas .touch a.tabledrag-handle .handle {
+  background-position: right 40% top 19px;
+}
+
+#drupal-off-canvas .touchevents .draggable.drag a.tabledrag-handle .handle {
+  background-position: 50% -32px;
+}
+
+#drupal-off-canvas .tabledrag-toggle-weight-wrapper {
+  padding-top: 10px;
+  text-align: right;
+  /* LTR */
+}
+
+[dir="rtl"] #drupal-off-canvas .tabledrag-toggle-weight-wrapper {
+  text-align: left;
+}
+
+#drupal-off-canvas .indentation {
+  float: left;
+  /* LTR */
+  width: auto;
+  height: auto;
+  margin: 0 3px 0 -10px;
+  /* LTR */
+  padding: 0 0 0 10px;
+  /* LTR */
+}
+
+[dir="rtl"] #drupal-off-canvas .indentation {
+  float: right;
+  margin: 0 -10px 0 3px;
+  padding: 0 10px 0 0;
+}
+
+/**
+ * @file
  * Styling for the off-canvas ui dialog. Including overrides for jQuery UI.
  */
+.ui-dialog-off-canvas #drupal-off-canvas {
+  padding: 0 40px 40px;
+}
+
 /* Style the dialog-off-canvas container. */
 .ui-dialog.ui-dialog-off-canvas {
   /* Layer the dialog just under the toolbar. */
   color: #ffffff;
-  background: #000000;
+  background: #383A40;
+}
+
+@media only screen and (min-width: 1200px) {
+  .ui-dialog.ui-dialog-off-canvas {
+    min-width: 400px;
+  }
 }
 
 .ui-widget.ui-dialog.ui-dialog-off-canvas {
@@ -58,7 +717,7 @@
   border: 0;
   border-bottom: 1px solid #ffffff;
   border-radius: 0;
-  background: #000000;
+  background: #383A40;
   font-weight: normal;
 }
 
@@ -146,25 +805,4 @@
 
 #drupal-off-canvas .ui-widget-content a {
   color: #85bef4;
-}
-
-#drupal-off-canvas input[type="submit"],
-#drupal-off-canvas button.button,
-#layout-builder-modal input[type="submit"],
-#layout-builder-modal button.button {
-  color: #277abd;
-  background: #ffffff;
-}
-
-#drupal-off-canvas input[type="submit"].button--primary,
-#drupal-off-canvas button.button.button--primary,
-#layout-builder-modal input[type="submit"].button--primary,
-#layout-builder-modal button.button.button--primary {
-  color: #277abd;
-  background: #ffffff;
-}
-
-#drupal-off-canvas #bs_ui,
-#drupal-off-canvas #bs_ui .form-item {
-  background: #000000;
 }

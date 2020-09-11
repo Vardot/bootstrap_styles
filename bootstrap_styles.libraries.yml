@@ -3,43 +3,11 @@ layout_builder_form_style:
   css:
     theme:
       css/general-styles.css: { }
-  dependencies:
-    - bootstrap_styles/tabs
-    - bootstrap_styles/tooltip
-    - bootstrap_styles/themes-overrides
-    - bootstrap_styles/layout-builder-modal-overrides
-    - bootstrap_styles/theme.light
-
-#bootstrap_styles.drupal.dialog.off_canvas:
-#  css:
-#    base:
-#      css/themes/dialog/off-canvas.reset.css: { }
-#      css/core/dialog/off-canvas.base.css: { }
-#      css/core/dialog/off-canvas.css: { }
-#      css/core/dialog/off-canvas.theme.css: { }
-#    component:
-#      css/core/dialog/off-canvas.motion.css: { }
-#      css/core/dialog/off-canvas.button.css: { }
-#      css/core/dialog/off-canvas.form.css: { }
-#      css/core/dialog/off-canvas.table.css: { }
-#      css/core/dialog/off-canvas.details.css: { }
-#      css/core/dialog/off-canvas.tabledrag.css: { }
-#      css/core/dialog/off-canvas.dropbutton.css: { }
-#      css/core/dialog/off-canvas.layout.css: { }
-
-# Tabs
-tabs:
-  css:
-    theme:
-      css/components/tabs.css: { }
   js:
     js/components/tabs.js: { }
-
-# Tooltip
-tooltip:
-  css:
-    theme:
-      css/components/tooltip.css: { }
+  dependencies:
+    - bootstrap_styles/themes-overrides
+    - bootstrap_styles/layout-builder-modal-overrides
 
 # Themes overrides
 themes-overrides:
@@ -67,13 +35,17 @@ layout_builder_admin_form_style:
 theme.light:
   css:
     theme:
-      css/themes/light.css: { weight: 50 }
+      css/themes/light.css: { }
+  dependencies:
+    - core/drupal.dialog.off_canvas
 
 # Dark
 theme.dark:
   css:
     theme:
-      css/themes/dark.css: { weight: 50 }
+      css/themes/dark.css: { }
+  dependencies:
+    - core/drupal.dialog.off_canvas
 
 # Plugins.
 # background_color

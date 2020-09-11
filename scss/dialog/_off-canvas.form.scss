@@ -5,7 +5,7 @@
 
 #drupal-off-canvas form {
   color: $panel_text_color;
-  font-family: inherit;
+  //font-family: "Lucida Grande", "Lucida Sans Unicode", "liberation sans", sans-serif;
 }
 //#drupal-off-canvas input[type="checkbox"] {
 //  -webkit-appearance: checkbox;
@@ -24,7 +24,7 @@
 #drupal-off-canvas label {
   color: $panel_text_color;
   //font-family: inherit;
-  font-size: 1rem;
+  //font-size: 12px;
   //font-weight: bold;
   //line-height: normal;
 }
@@ -40,13 +40,13 @@
   //margin-top: 5px;
   color: $panel_text_color;
   //font-family: inherit;
-  font-size: .875rem;
+  //font-size: 12px;
   //font-style: normal;
 }
-#drupal-off-canvas .form-item {
-  margin-top: .25rem;
-  margin-bottom: 1.5rem;
-}
+//#drupal-off-canvas .form-item {
+//  margin-top: 10px;
+//  margin-bottom: 10px;
+//}
 /* Set size and position for all inputs. */
 #drupal-off-canvas .form-select,
 #drupal-off-canvas .form-text,
@@ -69,7 +69,7 @@
   //border-width: 1px;
   //border-radius: 2px;
   //font-family: inherit;
-  font-size: .875rem;
+  //font-size: 14px;
   //line-height: 16px;
 }
 /* Reduce contrast for fields against dark background. */
