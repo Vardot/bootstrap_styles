@@ -57,6 +57,10 @@
             pointer-events: auto;
             transform: translateY(0px);
           }
+
+          svg * {
+            fill: $tab_text_color_hover;
+          }
         }
 
         &.active,
@@ -68,16 +72,25 @@
             background-color: $tab_text_color_active;
           }
 
-          svg {
+          svg * {
             fill: $tab_text_color_active;
           }
         }
 
+        span[role='img'] {
+          max-width: 25px;
+        }
+
         svg {
-          @include smooth-all-transition;
-          max-width: 24px;
+          //@include smooth-all-transition;
+          max-width: 100%;
           height: auto;
           background: none;
+
+          * {
+            @include smooth-all-transition;
+            fill: $tab_text_color;
+          }
         }
       }
     }
