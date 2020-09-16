@@ -4,11 +4,12 @@
  */
 
 .ui-dialog-off-canvas #drupal-off-canvas {
-  padding: 0 40px 40px;
+  padding: 0 $offcanvas_tray_padding $offcanvas_tray_padding;
 }
 
 /* Style the dialog-off-canvas container. */
 .ui-dialog.ui-dialog-off-canvas {
+  font-size: $offcanvas_font_size;
   /* Layer the dialog just under the toolbar. */
   //z-index: 501;
   //padding: 0;
@@ -18,7 +19,7 @@
   //box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.3333);
 
   @media only screen and (min-width: 1200px) {
-    min-width: 400px;
+    min-width: $offcanvas_tray_width;
   }
 }
 
@@ -28,93 +29,93 @@
 
 /* Style the off-canvas dialog header. */
 .ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar {
-  padding: 1em;
+  //padding: 1em;
   color: $panel_text_color;
-  border: 0;
+  //border: 0;
   border-bottom: 1px solid $panel_text_color;
-  border-radius: 0;
+  //border-radius: 0;
   background: $panel_bg_color;
-  font-weight: normal;
+  //font-weight: normal;
 }
 
-/* Hide the default jQuery UI dialog close button. */
-.ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close .ui-icon {
-  visibility: hidden;
-}
-
-.ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close {
-  position: absolute;
-  top: calc(50% - 6px);
-  right: 1em;
-  width: 30px;
-  height: 30px;
-  transition: all 0.5s ease;
-  border: 3px solid transparent;
-  background-color: transparent;
-  background-image: url(../icons/bebebe/ex.svg);
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close:hover,
-.ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close:focus {
-  border: 3px solid #fff;
-  background-image: url(../icons/ffffff/ex.svg);
-}
-
-[dir="rtl"] .ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close {
-  right: auto;
-  left: 1em;
-}
-
+///* Hide the default jQuery UI dialog close button. */
+//.ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close .ui-icon {
+//  visibility: hidden;
+//}
+//
+//.ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close {
+//  position: absolute;
+//  top: calc(50% - 6px);
+//  right: 1em;
+//  width: 30px;
+//  height: 30px;
+//  transition: all 0.5s ease;
+//  border: 3px solid transparent;
+//  background-color: transparent;
+//  background-image: url(../icons/bebebe/ex.svg);
+//  background-repeat: no-repeat;
+//  background-position: center center;
+//}
+//
+//.ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close:hover,
+//.ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close:focus {
+//  border: 3px solid #fff;
+//  background-image: url(../icons/ffffff/ex.svg);
+//}
+//
+//[dir="rtl"] .ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close {
+//  right: auto;
+//  left: 1em;
+//}
+//
 .ui-dialog.ui-dialog-off-canvas .ui-dialog-title {
-  /* Ensure that long titles do not overlap the close button. */
-  max-width: 210px;
-  margin: 0;
-  padding-right: 0; /* LTR */
-  /* Push the text away from the icon. */
-  padding-left: 30px; /* LTR */
-  text-align: left; /* LTR */
-  /* Ensure that long titles are not truncated. */
-  white-space: normal;
-  font-family: "Lucida Grande", "Lucida Sans Unicode", "liberation sans", sans-serif;
-  font-size: 16px;
+//  /* Ensure that long titles do not overlap the close button. */
+//  max-width: 210px;
+//  margin: 0;
+//  padding-right: 0; /* LTR */
+//  /* Push the text away from the icon. */
+  padding-left: $offcanvas_tray_padding; /* LTR */
+//  text-align: left; /* LTR */
+//  /* Ensure that long titles are not truncated. */
+//  white-space: normal;
+  font-family: inherit;
+  font-size: 1.25rem;
 }
-
+//
 [dir="rtl"] .ui-dialog.ui-dialog-off-canvas .ui-dialog-title {
-  float: right;
-  padding-right: 30px;
-  padding-left: 0;
-  text-align: right;
+//  float: right;
+  padding-right: $offcanvas_tray_padding;
+//  padding-left: 0;
+//  text-align: right;
 }
-
-.ui-dialog.ui-dialog-off-canvas .ui-dialog-title:before {
-  position: absolute;
-  top: 0;
-  left: 1em; /* LTR */
-  display: block;
-  width: 20px;
-  height: 100%;
-  content: "";
-  background: transparent url(../icons/ffffff/pencil.svg) no-repeat scroll center center;
-  background-size: 100% auto;
-}
-
-[dir="rtl"] .ui-dialog.ui-dialog-off-canvas .ui-dialog-title:before {
-  right: 1em;
-  left: auto;
-}
-
-/* Override default styling from jQuery UI. */
-#drupal-off-canvas .ui-state-default,
-#drupal-off-canvas .ui-widget-content .ui-state-default,
-#drupal-off-canvas .ui-widget-header .ui-state-default {
-  color: #333;
-  border: 0;
-  font-size: 14px;
-  font-weight: normal;
-}
-
-#drupal-off-canvas .ui-widget-content a {
-  color: #85bef4;
-}
+//
+//.ui-dialog.ui-dialog-off-canvas .ui-dialog-title:before {
+//  position: absolute;
+//  top: 0;
+//  left: 1em; /* LTR */
+//  display: block;
+//  width: 20px;
+//  height: 100%;
+//  content: "";
+//  background: transparent url(../icons/ffffff/pencil.svg) no-repeat scroll center center;
+//  background-size: 100% auto;
+//}
+//
+//[dir="rtl"] .ui-dialog.ui-dialog-off-canvas .ui-dialog-title:before {
+//  right: 1em;
+//  left: auto;
+//}
+//
+///* Override default styling from jQuery UI. */
+//#drupal-off-canvas .ui-state-default,
+//#drupal-off-canvas .ui-widget-content .ui-state-default,
+//#drupal-off-canvas .ui-widget-header .ui-state-default {
+//  color: #333;
+//  border: 0;
+//  font-size: 14px;
+//  font-weight: normal;
+//}
+//
+//#drupal-off-canvas .ui-widget-content a {
+//  color: #85bef4;
+//}

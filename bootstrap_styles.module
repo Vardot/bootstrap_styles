@@ -22,6 +22,6 @@ function bootstrap_styles_theme() {
 
 function bootstrap_styles_page_attachments_alter(array &$page) {
   // Attach the asset on every page.
-//  $page['#attached']['library'][] = 'bootstrap_styles/theme.light';
+  $page['#attached']['library'][] = 'bootstrap_styles/fonts';
   $page['#attached']['library'][] = 'bootstrap_styles/theme.dark';
 }
