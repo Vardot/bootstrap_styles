@@ -47,6 +47,24 @@
     padding-left: 15px;
   }
 
+  .bs_chevron {
+    @include smooth-all-transition;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    content: '';
+    display: inline-block;
+    border-right: 1.5px solid $summary_link_color;
+    border-bottom: 1.5px solid $summary_link_color;
+    width: 9px;
+    height: 9px;
+    transform: rotate(45deg);
+  }
+
+  details[open] > summary .bs_chevron {
+    transform: rotate(-135deg);
+  }
+
   // Add default style for btn to solve Bootstrap 3 drupal theme issue.
   button.button {
     @include smooth-all-transition;

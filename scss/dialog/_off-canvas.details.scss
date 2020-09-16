@@ -19,16 +19,15 @@
   color: $details_text_color;
   background: transparent;
 }
-#drupal-off-canvas summary a {
-  //margin: 0 1rem;
-  //padding-top: 0;
-  //padding-bottom: 0;
-  color: $summary_bg_color;
-}
-#drupal-off-canvas summary a:hover,
-#drupal-off-canvas summary a:focus {
-  color: $summary_bg_color_hover;
-}
+//#drupal-off-canvas summary a {
+//  //margin: 0 1rem;
+//  //padding-top: 0;
+//  //padding-bottom: 0;
+//}
+//#drupal-off-canvas summary a:hover,
+//#drupal-off-canvas summary a:focus {
+//  color: $summary_bg_color_hover;
+//}
 #drupal-off-canvas details,
 #drupal-off-canvas summary,
 #drupal-off-canvas .details-wrapper {
@@ -49,18 +48,8 @@
 //  text-shadow: none;
   font-size: 1rem;
   font-weight: 300;
-
-  //&:after {
-  //  position: absolute;
-  //  top: 10px;
-  //  right: 10px;
-  //  content: '';
-  //  width: 12px;
-  //  height: 12px;
-  //  background: url('../../images/ui/chevron.svg') center center no-repeat;
-  //  background-size: 100%;
-  //  display: block;
-  //}
+  display: flex;
+  align-items: center;
 
   &::-webkit-details-marker {
     display:none;
@@ -70,6 +59,11 @@
 #drupal-off-canvas summary:focus {
   color: $summary_link_color_hover;
   background-color: $summary_bg_color_hover;
+
+  &:after {
+    border-right-color: $summary_link_color_hover;
+    border-bottom-color: $summary_link_color_hover;
+  }
 }
 //#drupal-off-canvas details[open] {
 //  padding-bottom: 10px;

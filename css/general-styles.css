@@ -50,6 +50,24 @@
   padding-left: 15px;
 }
 
+#drupal-off-canvas .bs_chevron {
+  transition: all .3s ease-in-out;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  content: '';
+  display: inline-block;
+  border-right: 1.5px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.6);
+  width: 9px;
+  height: 9px;
+  transform: rotate(45deg);
+}
+
+#drupal-off-canvas details[open] > summary .bs_chevron {
+  transform: rotate(-135deg);
+}
+
 #drupal-off-canvas button.button {
   transition: all .3s ease-in-out;
   position: relative;
@@ -68,4 +86,8 @@
 #drupal-off-canvas button.button.button--primary {
   margin-top: 15px;
   border: 0;
+}
+
+#drupal-off-canvas .bs-plugin-group-icon {
+  margin-right: 15px;
 }

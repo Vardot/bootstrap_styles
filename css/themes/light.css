@@ -6,13 +6,12 @@
   flex-wrap: nowrap;
   margin: 0 -40px 20px -40px;
   width: calc(100% + 80px);
-  box-shadow: inset 0px -2px 0px 0px #979AA1;
 }
 
 #drupal-off-canvas #bs_nav-tabs li,
 #layout-builder-modal #bs_nav-tabs li {
   flex: 1 1 auto;
-  margin: 0 1px;
+  margin: 0;
 }
 
 #drupal-off-canvas #bs_nav-tabs li a,
@@ -20,9 +19,10 @@
   cursor: pointer;
   position: relative;
   padding: .5rem .75rem;
-  min-height: 64px;
+  min-height: 68px;
   min-width: 16.666%;
   color: #46484E;
+  background: #292C32;
   font-size: 10px;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -41,9 +41,9 @@
   bottom: 0;
   right: 0;
   width: 100%;
-  height: 5px;
-  border-radius: 8px;
-  background-color: transparent;
+  height: 2px;
+  background-color: #727579;
+  z-index: 1;
 }
 
 #drupal-off-canvas #bs_nav-tabs li a:hover,
@@ -74,6 +74,12 @@
 #layout-builder-modal #bs_nav-tabs li a.active:after,
 #layout-builder-modal #bs_nav-tabs li a.active:hover:after {
   background-color: #007BC7;
+  left: -1px;
+  bottom: 0;
+  right: -1px;
+  width: calc(100% + 2px);
+  height: 5px;
+  border-radius: 8px;
 }
 
 #drupal-off-canvas #bs_nav-tabs li a.active svg *, #drupal-off-canvas #bs_nav-tabs li a.active:hover svg *,
@@ -289,15 +295,6 @@
   background: transparent;
 }
 
-#drupal-off-canvas summary a {
-  color: transparent;
-}
-
-#drupal-off-canvas summary a:hover,
-#drupal-off-canvas summary a:focus {
-  color: rgba(42, 175, 255, 0.14);
-}
-
 #drupal-off-canvas details,
 #drupal-off-canvas summary,
 #drupal-off-canvas .details-wrapper {
@@ -316,6 +313,8 @@
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: 300;
+  display: flex;
+  align-items: center;
 }
 
 #drupal-off-canvas summary::-webkit-details-marker {
@@ -326,6 +325,12 @@
 #drupal-off-canvas summary:focus {
   color: #2AAFFF;
   background-color: rgba(42, 175, 255, 0.14);
+}
+
+#drupal-off-canvas summary:hover:after,
+#drupal-off-canvas summary:focus:after {
+  border-right-color: #2AAFFF;
+  border-bottom-color: #2AAFFF;
 }
 
 #drupal-off-canvas details[open] > summary {

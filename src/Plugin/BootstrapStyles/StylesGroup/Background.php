@@ -14,7 +14,7 @@ use Drupal\Core\Form\FormStateInterface;
  *   id = "background",
  *   title = @Translation("Background"),
  *   weight = 1,
- *   icon = "bootstrap_styles/images/background-icon.svg"
+ *   icon = "bootstrap_styles/images/plugins/background-icon.svg"
  * )
  */
 class Background extends StylesGroupPluginBase {
