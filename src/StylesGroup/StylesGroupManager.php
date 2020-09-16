@@ -164,14 +164,14 @@ class StylesGroupManager extends DefaultPluginManager {
 
       // Styles Group.
       if (isset($style_group['styles'])) {
+        $group_instance = $this->createInstance($group_key);
+
         $form[$group_key] = [
           '#type' => 'details',
-          '#title' => $style_group['title']->__toString(),
+          '#title' => $group_instance->getTitleWithIcon(),
           '#open' => FALSE,
           '#tree' => TRUE,
         ];
-
-        $group_instance = $this->createInstance($group_key);
         $form[$group_key] += $group_instance->buildStyleFormElements($form[$group_key], $form_state, $storage);
 
         foreach ($style_group['styles'] as $style_key => $style) {

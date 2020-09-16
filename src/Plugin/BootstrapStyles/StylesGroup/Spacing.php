@@ -13,7 +13,8 @@ use Drupal\Core\Form\FormStateInterface;
  * @StylesGroup(
  *   id = "spacing",
  *   title = @Translation("Spacing"),
- *   weight = 2
+ *   weight = 2,
+ *   icon = "bootstrap_styles/images/spacing-icon.svg"
  * )
  */
 class Spacing extends StylesGroupPluginBase {

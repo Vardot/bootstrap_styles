@@ -13,7 +13,8 @@ use Drupal\Core\Form\FormStateInterface;
  * @StylesGroup(
  *   id = "border",
  *   title = @Translation("Border"),
- *   weight = 3
+ *   weight = 3,
+ *   icon = "bootstrap_styles/images/border-icon.svg"
  * )
  */
 class Border extends StylesGroupPluginBase {

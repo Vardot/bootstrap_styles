@@ -68,6 +68,37 @@ abstract class StylesGroupPluginBase extends PluginBase implements StylesGroupPl
   /**
    * {@inheritdoc}
    */
+  public function getIconPath() {
+    // The default icon.
+    $icon_path = base_path() . drupal_get_path('module', 'bootstrap_styles') . 'images/plugin-group-default-icon.svg';
+    if (isset($this->pluginDefinition['icon'])) {
+      $icon = $this->pluginDefinition['icon'];
+      $path_array = explode('/', $icon);
+      if (isset($path_array[0])) {
+        $module_name = $path_array[0];
+        $icon_path = base_path() . drupal_get_path('module', $module_name) . str_replace($module_name, '', $icon);
+      }
+    }
+    return $icon_path;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getIcon() {
+    return '<img class="bs-plugin-group-icon" src="' . $this->getIconPath() . '" />';
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getTitleWithIcon() {
+    return $this->getIcon() . $this->getTitle();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function config() {
     return $this->configFactory->getEditable(static::CONFIG);
   }

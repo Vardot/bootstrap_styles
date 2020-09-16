@@ -13,7 +13,8 @@ use Drupal\Core\Form\FormStateInterface;
  * @StylesGroup(
  *   id = "background",
  *   title = @Translation("Background"),
- *   weight = 1
+ *   weight = 1,
+ *   icon = "bootstrap_styles/images/background-icon.svg"
  * )
  */
 class Background extends StylesGroupPluginBase {
