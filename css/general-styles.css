@@ -12,10 +12,6 @@
   }
 }
 
-#drupal-off-canvas .form-composite > legend, #drupal-off-canvas .label {
-  font-weight: normal;
-}
-
 #drupal-off-canvas .form-type-checkbox,
 #drupal-off-canvas .form-radios > div {
   padding: 0;
@@ -54,28 +50,42 @@
   padding-left: 15px;
 }
 
+#drupal-off-canvas .bs_chevron {
+  transition: all .3s ease-in-out;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  content: '';
+  display: inline-block;
+  border-right: 1.5px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.6);
+  width: 9px;
+  height: 9px;
+  transform: rotate(45deg);
+}
+
+#drupal-off-canvas details[open] > summary .bs_chevron {
+  transform: rotate(-135deg);
+}
+
 #drupal-off-canvas button.button {
+  transition: all .3s ease-in-out;
   position: relative;
   display: inline-block;
   width: 100%;
   height: auto;
   padding: 4px 20px;
   cursor: pointer;
-  transition: background 0.5s ease;
   text-align: center;
-  color: #f5f5f5;
   border: 0;
   border-radius: 20em;
-  background: #777;
   font-size: 14px;
   font-weight: 600;
 }
 
 #drupal-off-canvas button.button.button--primary {
   margin-top: 15px;
-  color: #ffffff;
   border: 0;
-  background: #277abd;
 }
 
 #drupal-off-canvas .bs-plugin-group-icon {

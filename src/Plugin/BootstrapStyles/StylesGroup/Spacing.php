@@ -14,7 +14,7 @@ use Drupal\Core\Form\FormStateInterface;
  *   id = "spacing",
  *   title = @Translation("Spacing"),
  *   weight = 2,
- *   icon = "bootstrap_styles/images/spacing-icon.svg"
+ *   icon = "bootstrap_styles/images/plugins/spacing-icon.svg"
  * )
  */
 class Spacing extends StylesGroupPluginBase {

@@ -70,7 +70,7 @@ abstract class StylesGroupPluginBase extends PluginBase implements StylesGroupPl
    */
   public function getIconPath() {
     // The default icon.
-    $icon_path = base_path() . drupal_get_path('module', 'bootstrap_styles') . 'images/plugin-group-default-icon.svg';
+    $icon_path = base_path() . drupal_get_path('module', 'bootstrap_styles') . 'images/plugins/plugin-group-default-icon.svg';
     if (isset($this->pluginDefinition['icon'])) {
       $icon = $this->pluginDefinition['icon'];
       $path_array = explode('/', $icon);
@@ -93,7 +93,7 @@ abstract class StylesGroupPluginBase extends PluginBase implements StylesGroupPl
    * {@inheritdoc}
    */
   public function getTitleWithIcon() {
-    return $this->getIcon() . $this->getTitle();
+    return $this->getIcon() . $this->getTitle() . '<span class="bs_chevron"></span>';
   }
 
   /**
