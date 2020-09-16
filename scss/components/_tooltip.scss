@@ -11,7 +11,6 @@
     bottom: 100%;
     color: $tooltip_text_color;
     background: $tooltip_bg_color;
-    font-weight: bold;
     display: block;
     left: 50%;
     margin-left: -37.5px;
@@ -28,6 +27,7 @@
     border-radius: $border_radius / 2;
     white-space: normal;
     z-index: 1;
+    font-size: .875rem;
 
     &.bs_tooltip-lg {
       width: 150px;

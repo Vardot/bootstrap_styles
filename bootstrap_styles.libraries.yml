@@ -8,6 +8,17 @@ layout_builder_form_style:
   dependencies:
     - bootstrap_styles/themes-overrides
     - bootstrap_styles/layout-builder-modal-overrides
+    - bootstrap_styles/offcanvas-font
+
+# Offcanvas Font
+offcanvas-font:
+  version: 1.x
+  css:
+    theme:
+      //fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap: { type: external, minified: true }
+      //fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap: { type: external, minified: true }
+      //fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap: { type: external, minified: true }
+      css/fonts.css: { }
 
 # Themes overrides
 themes-overrides:

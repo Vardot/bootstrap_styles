@@ -58,6 +58,11 @@
   transform: translateY(0px);
 }
 
+#drupal-off-canvas #bs_nav-tabs li a:hover svg *,
+#layout-builder-modal #bs_nav-tabs li a:hover svg * {
+  fill: #000000;
+}
+
 #drupal-off-canvas #bs_nav-tabs li a.active, #drupal-off-canvas #bs_nav-tabs li a.active:hover,
 #layout-builder-modal #bs_nav-tabs li a.active,
 #layout-builder-modal #bs_nav-tabs li a.active:hover {
@@ -71,18 +76,28 @@
   background-color: #007BC7;
 }
 
-#drupal-off-canvas #bs_nav-tabs li a.active svg, #drupal-off-canvas #bs_nav-tabs li a.active:hover svg,
-#layout-builder-modal #bs_nav-tabs li a.active svg,
-#layout-builder-modal #bs_nav-tabs li a.active:hover svg {
+#drupal-off-canvas #bs_nav-tabs li a.active svg *, #drupal-off-canvas #bs_nav-tabs li a.active:hover svg *,
+#layout-builder-modal #bs_nav-tabs li a.active svg *,
+#layout-builder-modal #bs_nav-tabs li a.active:hover svg * {
   fill: #007BC7;
+}
+
+#drupal-off-canvas #bs_nav-tabs li a span[role='img'],
+#layout-builder-modal #bs_nav-tabs li a span[role='img'] {
+  max-width: 25px;
 }
 
 #drupal-off-canvas #bs_nav-tabs li a svg,
 #layout-builder-modal #bs_nav-tabs li a svg {
-  transition: all .3s ease-in-out;
-  max-width: 24px;
+  max-width: 100%;
   height: auto;
   background: none;
+}
+
+#drupal-off-canvas #bs_nav-tabs li a svg *,
+#layout-builder-modal #bs_nav-tabs li a svg * {
+  transition: all .3s ease-in-out;
+  fill: #46484E;
 }
 
 #drupal-off-canvas #bs_tabContent > .bs_tab-pane,
@@ -100,7 +115,6 @@
   bottom: 100%;
   color: #ffffff;
   background: #46484E;
-  font-weight: bold;
   display: block;
   left: 50%;
   margin-left: -37.5px;
@@ -117,6 +131,7 @@
   border-radius: 4px;
   white-space: normal;
   z-index: 1;
+  font-size: .875rem;
 }
 
 #drupal-off-canvas .bs_tooltip.bs_tooltip-lg,
@@ -164,12 +179,14 @@
 #drupal-off-canvas *:not(div) {
   color: #000000;
   background: unset;
+  font-family: inherit;
 }
 
 /* Generic elements. */
 #drupal-off-canvas a,
 #drupal-off-canvas .link {
   color: #2AAFFF;
+  font-family: inherit;
 }
 
 #drupal-off-canvas hr {
@@ -260,6 +277,7 @@
  * Visual styling for summary and details in the off-canvas dialog.
  */
 #drupal-off-canvas details {
+  padding: 0;
   margin: 0 -10px;
 }
 
@@ -277,27 +295,46 @@
 
 #drupal-off-canvas summary a:hover,
 #drupal-off-canvas summary a:focus {
-  color: #46484E;
+  color: rgba(42, 175, 255, 0.14);
+}
+
+#drupal-off-canvas details,
+#drupal-off-canvas summary,
+#drupal-off-canvas .details-wrapper {
+  /* Cancel out the padding of the parent. */
+  margin: 0;
+  padding: 0;
+  background-image: none;
+  -webkit-appearance: none;
 }
 
 #drupal-off-canvas summary {
+  position: relative;
   border-radius: 8px;
-  margin: 2px -10px;
+  margin: 2px 0;
   min-height: 40px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+#drupal-off-canvas summary::-webkit-details-marker {
+  display: none;
 }
 
 #drupal-off-canvas summary:hover,
 #drupal-off-canvas summary:focus {
-  background-color: rgba(255, 255, 255, 0.14);
-}
-
-#drupal-off-canvas details[open] > summary {
   color: #2AAFFF;
   background-color: rgba(42, 175, 255, 0.14);
 }
 
+#drupal-off-canvas details[open] > summary {
+  color: #ffffff;
+  background-color: #46484E;
+}
+
 #drupal-off-canvas details[open] > summary:hover {
-  background-color: rgba(42, 175, 255, 0.3);
+  background-color: #46484E;
 }
 
 /**
@@ -367,16 +404,24 @@
  */
 #drupal-off-canvas form {
   color: #000000;
+  font-family: inherit;
 }
 
 #drupal-off-canvas label {
   color: #000000;
+  font-size: 1rem;
 }
 
 #drupal-off-canvas .description,
 #drupal-off-canvas .form-item .description,
 #drupal-off-canvas .details-description {
   color: #000000;
+  font-size: .875rem;
+}
+
+#drupal-off-canvas .form-item {
+  margin-top: .25rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Set size and position for all inputs. */
@@ -393,6 +438,7 @@
 #drupal-off-canvas .form-date,
 #drupal-off-canvas .form-time {
   color: #333;
+  font-size: .875rem;
 }
 
 /* Reduce contrast for fields against dark background. */
@@ -695,6 +741,7 @@ body div.tabledrag-changed-warning {
 
 /* Style the dialog-off-canvas container. */
 .ui-dialog.ui-dialog-off-canvas {
+  font-size: 16px;
   /* Layer the dialog just under the toolbar. */
   color: #000000;
   background: #ffffff;
@@ -702,7 +749,7 @@ body div.tabledrag-changed-warning {
 
 @media only screen and (min-width: 1200px) {
   .ui-dialog.ui-dialog-off-canvas {
-    min-width: 400px;
+    min-width: 350px;
   }
 }
 
@@ -712,97 +759,18 @@ body div.tabledrag-changed-warning {
 
 /* Style the off-canvas dialog header. */
 .ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar {
-  padding: 1em;
   color: #000000;
-  border: 0;
   border-bottom: 1px solid #000000;
-  border-radius: 0;
   background: #ffffff;
-  font-weight: normal;
-}
-
-/* Hide the default jQuery UI dialog close button. */
-.ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close .ui-icon {
-  visibility: hidden;
-}
-
-.ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close {
-  position: absolute;
-  top: calc(50% - 6px);
-  right: 1em;
-  width: 30px;
-  height: 30px;
-  transition: all 0.5s ease;
-  border: 3px solid transparent;
-  background-color: transparent;
-  background-image: url(../icons/bebebe/ex.svg);
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close:hover,
-.ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close:focus {
-  border: 3px solid #fff;
-  background-image: url(../icons/ffffff/ex.svg);
-}
-
-[dir="rtl"] .ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close {
-  right: auto;
-  left: 1em;
 }
 
 .ui-dialog.ui-dialog-off-canvas .ui-dialog-title {
-  /* Ensure that long titles do not overlap the close button. */
-  max-width: 210px;
-  margin: 0;
-  padding-right: 0;
+  padding-left: 40px;
   /* LTR */
-  /* Push the text away from the icon. */
-  padding-left: 30px;
-  /* LTR */
-  text-align: left;
-  /* LTR */
-  /* Ensure that long titles are not truncated. */
-  white-space: normal;
-  font-family: "Lucida Grande", "Lucida Sans Unicode", "liberation sans", sans-serif;
-  font-size: 16px;
+  font-family: inherit;
+  font-size: 1.25rem;
 }
 
 [dir="rtl"] .ui-dialog.ui-dialog-off-canvas .ui-dialog-title {
-  float: right;
-  padding-right: 30px;
-  padding-left: 0;
-  text-align: right;
-}
-
-.ui-dialog.ui-dialog-off-canvas .ui-dialog-title:before {
-  position: absolute;
-  top: 0;
-  left: 1em;
-  /* LTR */
-  display: block;
-  width: 20px;
-  height: 100%;
-  content: "";
-  background: transparent url(../icons/ffffff/pencil.svg) no-repeat scroll center center;
-  background-size: 100% auto;
-}
-
-[dir="rtl"] .ui-dialog.ui-dialog-off-canvas .ui-dialog-title:before {
-  right: 1em;
-  left: auto;
-}
-
-/* Override default styling from jQuery UI. */
-#drupal-off-canvas .ui-state-default,
-#drupal-off-canvas .ui-widget-content .ui-state-default,
-#drupal-off-canvas .ui-widget-header .ui-state-default {
-  color: #333;
-  border: 0;
-  font-size: 14px;
-  font-weight: normal;
-}
-
-#drupal-off-canvas .ui-widget-content a {
-  color: #85bef4;
+  padding-right: 40px;
 }
