@@ -1,18 +1,3 @@
 @import "../mixins";
 @import "../components/*";
 @import "../dialog/*";
-
-// @todo: do we still need this?
-//#drupal-off-canvas,
-//#layout-builder-modal {
-//  input[type="submit"],
-//  button.button {
-//    color: $button_text_color;
-//    background: $button_bg_color;
-//
-//    &.button--primary {
-//      color: $button_text_color;
-//      background: $button_bg_color;
-//    }
-//  }
-//}
