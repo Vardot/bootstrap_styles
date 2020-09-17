@@ -213,8 +213,8 @@
 //  display: none;
 //}
 //#drupal-off-canvas input {
-//  margin: 0;
-//  padding: 0;
+  //margin: 0;
+  //padding: 0;
 //}
 //#drupal-off-canvas input[type="checkbox"],
 //#drupal-off-canvas input[type="radio"] {
@@ -299,7 +299,7 @@
   height: auto;
   vertical-align: middle;
   border-radius: $border_radius;
-  border: 1px solid $tabs_bottom_border_color;
+  border: 2px solid $tabs_bottom_border_color;
   background-color: transparent;
 }
 #drupal-off-canvas textarea[disabled],

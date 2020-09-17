@@ -3,33 +3,23 @@
 
 // Reset our theme color variables.
 // Colors
-$panel_text_color:          $black;
+$panel_text_color:          $gray-383;
 $panel_link_color:          $blue-2aa;
 $panel_bg_color:            $white;
 
 // Tabs
-$tabs_bottom_border:        2px solid $gray-dbd;
-$tab_text_color:            $gray-464;
-$tab_text_color_hover:      $black;
+$tabs_bottom_border_color:  $gray-dbd;
+$tab_text_color:            $panel_text_color;
+$tab_text_color_hover:      rgba($tab_text_color, .8);
 $tab_text_color_active:     $blue-007;
+$tab_bg_color:              $white;
+$tab_bg_color_active:       $white;
 
 // Buttons
-$button_text_color:         $white;
-$button_bg_color:           $blue-277;
-
-// Details
-//$details_text_color:        $black;
-//$details_link_color:        $black;
-//$details_link_color_hover:  $black;
-//$details_bg_color:          transparent !default;
-//$details_bg_color_hover:    $gray-464;
-//$details_bg_color_active:   rgba($blue-2aa, .14) !default;
-
-// Buttons
-$button_text_color:         $white;
-$button_text_color_hover:   $gray-979;
-$button_text_color:         $blue-007;
-$button_bg_color_hover:     $blue-2aa;
+$button_text_color:         $panel_bg_color !default;
+$button_text_color_hover:   $panel_text_color !default;
+$button_bg_color:           $blue-2aa !default;
+$button_bg_color_hover:     darken($button_bg_color, 10%) !default;
 
 // Import our components with our newly overridden vars from above.
 @import "common";

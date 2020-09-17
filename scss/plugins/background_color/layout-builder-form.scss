@@ -7,7 +7,6 @@
     // fieldset-wrapper to solve Bootstrap 3 drupal theme issue.
     .form-radios, .fieldset-wrapper {
 
-
       // Solve Barrio bootstrap 4 issue.
       > div {
         display: flex;
@@ -21,7 +20,7 @@
         @include sr-only();
 
         &:checked + label.option {
-          border: 2px solid #000000;
+          border: 2px solid $black;
 
           &:after {
             width: 20px;
@@ -40,7 +39,7 @@
       label {
         @include smooth-all-transition;
         cursor: pointer !important;
-        border: 1px solid #000000;
+        border: 1px solid $black;
         border-radius: 2px;
         font-size: 0.00001px;
         position: relative;
@@ -89,7 +88,7 @@
 
         // Add active class to solve Bootstrap 3 drupal theme issue.
         &.active {
-          border: 2px solid #000000;
+          border: 2px solid $black;
         }
       }
     }
