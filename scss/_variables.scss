@@ -51,39 +51,39 @@ $offcanvas_font_size:       16px !default;
 //
 //  Theme defaults. (dark)
 //  These are overridden using the "!default" flag inside of each of our dedicated SCSS files.
+//  Copy these into your own stylesheet (example: light.scss)
 //
+
+// Main Color Controllers
 $panel_text_color:          $white !default;
-$panel_link_color:          $blue-007 !default;
+$panel_link_color:          $blue-41a !default;
 $panel_bg_color:            $gray-383 !default;
 
 // Tabs
 $tabs_bottom_border_color:  $gray-727 !default;
 $tab_text_color:            $gray-979 !default;
-$tab_text_color_hover:      $white !default;
-$tab_text_color_active:     $blue-41a !default;
+$tab_text_color_hover:      $panel_text_color !default;
+$tab_text_color_active:     $panel_link_color !default;
 $tab_bg_color:              $gray-292 !default;
 $tab_bg_color_active:       $gray-464 !default;
 
 // Tooltips
-$tooltip_text_color:        $white !default;
+$tooltip_text_color:        $panel_text_color !default;
 $tooltip_bg_color:          $gray-464 !default;
 
-// Details
-$details_text_color:              $white !default;
-//$details_link_color:              $blue-2aa !default;
-//$details_link_color_hover:        $blue-2aa !default;
+// Details & Summary
+$details_text_color:              $panel_text_color !default;
 
-// Summary
-$summary_link_color:              rgba($white, .6) !default;
+$summary_link_color:              rgba($details_text_color, .6) !default;
 $summary_link_color_hover:        $blue-2aa !default;
-$summary_link_color_active:       $white !default;
+$summary_link_color_active:       $details_text_color !default;
 
 $summary_bg_color:                transparent !default;
 $summary_bg_color_hover:          rgba($summary_link_color_hover, .14) !default;
 $summary_bg_color_active:         $gray-464 !default;
 
 // Buttons
-$button_text_color:         $gray-383 !default;
-$button_text_color_hover:   $white !default;
+$button_text_color:         $panel_bg_color !default;
+$button_text_color_hover:   $panel_text_color !default;
 $button_bg_color:           $blue-2aa !default;
 $button_bg_color_hover:     darken($button_bg_color, 10%) !default;

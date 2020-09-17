@@ -20,6 +20,7 @@
       margin: 0;
 
       a {
+        @include smooth-all-transition;
         cursor: pointer;
         position: relative;
         padding: .5rem .75rem;
@@ -27,7 +28,6 @@
         min-width: 16.666%;
         color: $tab_text_color;
         background: $tab_bg_color;
-        font-size: 10px;
         text-overflow: ellipsis;
         white-space: nowrap;
         display: flex;
@@ -50,6 +50,7 @@
 
         &:hover {
           color: $tab_text_color_hover;
+          text-decoration: none;
 
           .bs_tooltip {
             opacity: 1;
@@ -85,10 +86,10 @@
         .blb_icon,
         span[role='img'] {
           max-width: 25px;
+          margin: 0 .75rem;
         }
 
         svg {
-          //@include smooth-all-transition;
           max-width: 100%;
           height: auto;
           background: none;
