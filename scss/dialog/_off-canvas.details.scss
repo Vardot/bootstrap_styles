@@ -38,18 +38,36 @@
   -webkit-appearance:none;
   //border-width: 0;
 }
+#drupal-off-canvas .details-wrapper {
+  padding: 1rem;
+}
 #drupal-off-canvas summary {
   position: relative;
   border-radius: $border_radius;
-  margin: 2px 0;
+  margin: 4px 0;
   min-height: 40px;
   padding: 10px 20px;
 //  transition: all 0.5s ease;
 //  text-shadow: none;
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: normal;
   display: flex;
   align-items: center;
+  background-color: rgba($summary_bg_color_active, .5);
+
+  &:after {
+    @include smooth-all-transition;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    content: '';
+    display: inline-block;
+    border-right: 2px solid $summary_link_color;
+    border-bottom: 2px solid $summary_link_color;
+    width: 9px;
+    height: 9px;
+    transform: rotate(45deg);
+  }
 
   &::-webkit-details-marker {
     display:none;
@@ -71,6 +89,11 @@
 #drupal-off-canvas details[open] > summary {
   color: $summary_link_color_active;
   background-color: $summary_bg_color_active;
+
+  &:after {
+    top: 20px;
+    transform: rotate(-135deg);
+  }
 }
 #drupal-off-canvas details[open] > summary:hover {
   //color: #fff;

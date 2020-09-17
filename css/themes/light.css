@@ -4,8 +4,8 @@
   display: flex;
   justify-content: center;
   flex-wrap: nowrap;
-  margin: 0 -40px 20px -40px;
-  width: calc(100% + 80px);
+  margin: 0 -30px 30px -30px;
+  width: calc(100% + 60px);
 }
 
 #drupal-off-canvas #bs_nav-tabs li,
@@ -88,7 +88,9 @@
   fill: #007BC7;
 }
 
+#drupal-off-canvas #bs_nav-tabs li a .blb_icon,
 #drupal-off-canvas #bs_nav-tabs li a span[role='img'],
+#layout-builder-modal #bs_nav-tabs li a .blb_icon,
 #layout-builder-modal #bs_nav-tabs li a span[role='img'] {
   max-width: 25px;
 }
@@ -232,10 +234,12 @@
 }
 
 #drupal-off-canvas input[type="submit"].button {
-  padding: 10px 20px;
+  margin-top: 10px;
+  padding: 11px 20px;
   color: #007BC7;
   border-radius: 8px;
   background: #277abd;
+  font-weight: normal;
 }
 
 #drupal-off-canvas input[type="submit"].button:hover,
@@ -305,16 +309,35 @@
   -webkit-appearance: none;
 }
 
+#drupal-off-canvas .details-wrapper {
+  padding: 1rem;
+}
+
 #drupal-off-canvas summary {
   position: relative;
   border-radius: 8px;
-  margin: 2px 0;
+  margin: 4px 0;
   min-height: 40px;
   padding: 10px 20px;
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: normal;
   display: flex;
   align-items: center;
+  background-color: rgba(70, 72, 78, 0.5);
+}
+
+#drupal-off-canvas summary:after {
+  transition: all .3s ease-in-out;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  content: '';
+  display: inline-block;
+  border-right: 2px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+  width: 9px;
+  height: 9px;
+  transform: rotate(45deg);
 }
 
 #drupal-off-canvas summary::-webkit-details-marker {
@@ -336,6 +359,11 @@
 #drupal-off-canvas details[open] > summary {
   color: #ffffff;
   background-color: #46484E;
+}
+
+#drupal-off-canvas details[open] > summary:after {
+  top: 20px;
+  transform: rotate(-135deg);
 }
 
 #drupal-off-canvas details[open] > summary:hover {
@@ -412,21 +440,36 @@
   font-family: inherit;
 }
 
+#drupal-off-canvas input[type="checkbox"] {
+  margin-right: .5rem;
+}
+
+#drupal-off-canvas input[type="radio"] {
+  margin-right: .5rem;
+}
+
 #drupal-off-canvas label {
   color: #000000;
   font-size: 1rem;
+  font-weight: normal;
 }
 
 #drupal-off-canvas .description,
 #drupal-off-canvas .form-item .description,
 #drupal-off-canvas .details-description {
-  color: #000000;
+  color: rgba(0, 0, 0, 0.5);
   font-size: .875rem;
+  margin-bottom: 1rem;
 }
 
 #drupal-off-canvas .form-item {
   margin-top: .25rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#drupal-off-canvas .fieldset-legend {
+  margin-bottom: 0.5rem;
+  display: block;
 }
 
 /* Set size and position for all inputs. */
@@ -443,7 +486,7 @@
 #drupal-off-canvas .form-date,
 #drupal-off-canvas .form-time {
   color: #333;
-  font-size: .875rem;
+  font-size: 1rem;
 }
 
 /* Reduce contrast for fields against dark background. */
@@ -458,10 +501,8 @@
 #drupal-off-canvas .form-textarea,
 #drupal-off-canvas .form-date,
 #drupal-off-canvas .form-time {
-  color: #595959;
-  border-color: #333;
-  background-color: #eee;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.125);
+  transition: all .3s ease-in-out;
+  border-radius: 8px;
 }
 
 #drupal-off-canvas .form-text:focus,
@@ -475,9 +516,10 @@
 #drupal-off-canvas .form-textarea:focus,
 #drupal-off-canvas .form-date:focus,
 #drupal-off-canvas .form-time:focus {
-  border-color: #40b6ff;
-  background-color: #fff;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.125), 0 0 8px #40b6ff;
+  border-color: #000000;
+  background-color: transparent;
+  box-shadow: none;
+  outline: 0;
 }
 
 #drupal-off-canvas .ui-autocomplete {
@@ -516,6 +558,30 @@
  * Do not include div in then initial overrides because including div will
  * cause the need for many more overrides in this file.
  */
+#drupal-off-canvas textarea,
+#drupal-off-canvas select,
+#drupal-off-canvas input[type="date"],
+#drupal-off-canvas input[type="datetime"],
+#drupal-off-canvas input[type="datetime-local"],
+#drupal-off-canvas input[type="email"],
+#drupal-off-canvas input[type="month"],
+#drupal-off-canvas input[type="number"],
+#drupal-off-canvas input[type="password"],
+#drupal-off-canvas input[type="search"],
+#drupal-off-canvas input[type="tel"],
+#drupal-off-canvas input[type="text"],
+#drupal-off-canvas input[type="time"],
+#drupal-off-canvas input[type="url"],
+#drupal-off-canvas input[type="week"] {
+  color: #000000;
+  padding: .65rem 1rem;
+  height: auto;
+  vertical-align: middle;
+  border-radius: 8px;
+  border: 1px solid #727579;
+  background-color: transparent;
+}
+
 #drupal-off-canvas textarea[disabled],
 #drupal-off-canvas select[disabled],
 #drupal-off-canvas input[type="date"][disabled],
@@ -531,12 +597,12 @@
 #drupal-off-canvas input[type="time"][disabled],
 #drupal-off-canvas input[type="url"][disabled],
 #drupal-off-canvas input[type="week"][disabled] {
-  background-color: grey;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 #drupal-off-canvas input:placeholder,
 #drupal-off-canvas textarea:placeholder {
-  color: grey;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 #drupal-off-canvas optgroup {
@@ -741,7 +807,7 @@ body div.tabledrag-changed-warning {
  * Styling for the off-canvas ui dialog. Including overrides for jQuery UI.
  */
 .ui-dialog-off-canvas #drupal-off-canvas {
-  padding: 0 40px 40px;
+  padding: 0 30px 30px;
 }
 
 /* Style the dialog-off-canvas container. */
@@ -765,7 +831,7 @@ body div.tabledrag-changed-warning {
 /* Style the off-canvas dialog header. */
 .ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar {
   color: #000000;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid #727579;
   background: #ffffff;
 }
 
@@ -778,4 +844,9 @@ body div.tabledrag-changed-warning {
 
 [dir="rtl"] .ui-dialog.ui-dialog-off-canvas .ui-dialog-title {
   padding-right: 40px;
+}
+
+.ui-dialog.ui-dialog-off-canvas .ui-dialog-title:before {
+  background: transparent url(../../images/ui/configure.svg) no-repeat scroll center center;
+  background-size: 100% auto;
 }

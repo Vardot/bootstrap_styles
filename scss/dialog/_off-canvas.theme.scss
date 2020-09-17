@@ -32,7 +32,7 @@
   //padding: 1em;
   color: $panel_text_color;
   //border: 0;
-  border-bottom: 1px solid $panel_text_color;
+  border-bottom: 1px solid $tabs_bottom_border_color;
   //border-radius: 0;
   background: $panel_bg_color;
   //font-weight: normal;
@@ -74,7 +74,7 @@
 //  margin: 0;
 //  padding-right: 0; /* LTR */
 //  /* Push the text away from the icon. */
-  padding-left: $offcanvas_tray_padding; /* LTR */
+  padding-left: 40px; /* LTR */
 //  text-align: left; /* LTR */
 //  /* Ensure that long titles are not truncated. */
 //  white-space: normal;
@@ -84,12 +84,12 @@
 //
 [dir="rtl"] .ui-dialog.ui-dialog-off-canvas .ui-dialog-title {
 //  float: right;
-  padding-right: $offcanvas_tray_padding;
+  padding-right: 40px;
 //  padding-left: 0;
 //  text-align: right;
 }
 //
-//.ui-dialog.ui-dialog-off-canvas .ui-dialog-title:before {
+.ui-dialog.ui-dialog-off-canvas .ui-dialog-title:before {
 //  position: absolute;
 //  top: 0;
 //  left: 1em; /* LTR */
@@ -97,9 +97,9 @@
 //  width: 20px;
 //  height: 100%;
 //  content: "";
-//  background: transparent url(../icons/ffffff/pencil.svg) no-repeat scroll center center;
-//  background-size: 100% auto;
-//}
+  background: transparent url(../../images/ui/configure.svg) no-repeat scroll center center;
+  background-size: 100% auto;
+}
 //
 //[dir="rtl"] .ui-dialog.ui-dialog-off-canvas .ui-dialog-title:before {
 //  right: 1em;

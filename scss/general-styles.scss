@@ -4,13 +4,10 @@
 
 // General styles.
 #drupal-off-canvas {
-  //.form-composite > legend, .label {
-  //  font-weight: normal;
-  //}
-
   .form-type-checkbox,
   .form-radios > div {
     padding: 0;
+    margin: 0;
   }
   
   // Bario theme.
@@ -45,24 +42,6 @@
     max-width: 100%;
     padding-right: 15px;
     padding-left: 15px;
-  }
-
-  .bs_chevron {
-    @include smooth-all-transition;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    content: '';
-    display: inline-block;
-    border-right: 1.5px solid $summary_link_color;
-    border-bottom: 1.5px solid $summary_link_color;
-    width: 9px;
-    height: 9px;
-    transform: rotate(45deg);
-  }
-
-  details[open] > summary .bs_chevron {
-    transform: rotate(-135deg);
   }
 
   // Add default style for btn to solve Bootstrap 3 drupal theme issue.
