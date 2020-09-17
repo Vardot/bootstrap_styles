@@ -1,6 +1,6 @@
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios > div.radio, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper > div.radio,
-#layout-builder-modal .fieldgroup.field-background-color .form-radios > div.radio,
-#layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper > div.radio {
+#drupal-off-canvas .fieldgroup.field-background-color .form-radios > div, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper > div,
+#layout-builder-modal .fieldgroup.field-background-color .form-radios > div,
+#layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper > div {
   display: flex;
 }
 
@@ -13,8 +13,15 @@
 #drupal-off-canvas .fieldgroup.field-background-color .form-radios input, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper input,
 #layout-builder-modal .fieldgroup.field-background-color .form-radios input,
 #layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper input {
-  visibility: hidden;
   position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 #drupal-off-canvas .fieldgroup.field-background-color .form-radios input:checked + label.option, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper input:checked + label.option,
@@ -23,19 +30,34 @@
   border: 2px solid #000000;
 }
 
+#drupal-off-canvas .fieldgroup.field-background-color .form-radios input:checked + label.option:after, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper input:checked + label.option:after,
+#layout-builder-modal .fieldgroup.field-background-color .form-radios input:checked + label.option:after,
+#layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper input:checked + label.option:after {
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -10px;
+  content: '';
+  position: absolute;
+  background: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzMwMHB4JyB3aWR0aD0nMzAwcHgnICBmaWxsPSIjZmZmZmZmIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOmNjPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczpzb2RpcG9kaT0iaHR0cDovL3NvZGlwb2RpLnNvdXJjZWZvcmdlLm5ldC9EVEQvc29kaXBvZGktMC5kdGQiIHhtbG5zOmlua3NjYXBlPSJodHRwOi8vd3d3Lmlua3NjYXBlLm9yZy9uYW1lc3BhY2VzL2lua3NjYXBlIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwtOTUyLjM2MjE4KSI+PHBhdGggc3R5bGU9InRleHQtaW5kZW50OjA7dGV4dC10cmFuc2Zvcm06bm9uZTtkaXJlY3Rpb246bHRyO2Jsb2NrLXByb2dyZXNzaW9uOnRiO2Jhc2VsaW5lLXNoaWZ0OmJhc2VsaW5lO2NvbG9yOiMwMDAwMDA7ZW5hYmxlLWJhY2tncm91bmQ6YWNjdW11bGF0ZTsiIGQ9Im0gODMuOTg0Mzc1LDk3Ni4yMzcxOCAtMi4xMjUsMi4xMjUgYyAtMS4xNzY3OCwxLjE3NjggLTExLjI4MTI1LDExLjUzMTMgLTIxLjUzMTI1LDIyLjAzMTMyIC05LjM1Nzc3LDkuNTg2IC0xNy4zODcxNCwxNy44MTc5IC0xOS41OTM3NSwyMC4wNjI1IGwgLTIyLjg3NSwtMTguMzEyNSAtMi4zNDM3NSwtMS44NzUgLTMuNzUsNC42ODc1IDIuMzQzNzUsMS44NzUgMjUsMTkuOTk5OSAyLjA5Mzc1LDEuNjU2MyAxLjkwNjI1LC0xLjkwNjMgYyAxLjE3Njc4LC0xLjE3NjcgMTEuMjgxMjUsLTExLjQ5OTkgMjEuNTMxMjUsLTIxLjk5OTkgMTAuMjUsLTEwLjUwMDAyIDIwLjY0NTUzLC0yMS4xNzY4MiAyMS40Njg3NSwtMjIuMDAwMDIgbCAyLjEyNSwtMi4wOTM4IC00LjI1LC00LjI1IHoiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMSIgbWFya2VyPSJub25lIiB2aXNpYmlsaXR5PSJ2aXNpYmxlIiBkaXNwbGF5PSJpbmxpbmUiIG92ZXJmbG93PSJ2aXNpYmxlIj48L3BhdGg+PC9nPjwvc3ZnPg==") center center no-repeat;
+  background-size: contain;
+}
+
 #drupal-off-canvas .fieldgroup.field-background-color .form-radios label, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper label,
 #layout-builder-modal .fieldgroup.field-background-color .form-radios label,
 #layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper label {
+  transition: all .3s ease-in-out;
   cursor: pointer !important;
   border: 1px solid #000000;
   border-radius: 2px;
   font-size: 0.00001px;
   position: relative;
   display: inline-block;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   float: left;
-  margin: 5px 5px 5px 0;
+  margin: 0 5px 5px 0;
   padding: 0;
   white-space: nowrap;
 }
@@ -53,7 +75,7 @@
   position: absolute;
   top: 3px;
   left: 0;
-  right: 0px;
+  right: 0;
   bottom: 0;
   z-index: 1;
   font-size: 20px;

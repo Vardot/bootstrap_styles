@@ -279,25 +279,29 @@
 //  padding: 0;
 //  border: 0;
 //}
-//#drupal-off-canvas textarea,
-//#drupal-off-canvas select,
-//#drupal-off-canvas input[type="date"],
-//#drupal-off-canvas input[type="datetime"],
-//#drupal-off-canvas input[type="datetime-local"],
-//#drupal-off-canvas input[type="email"],
-//#drupal-off-canvas input[type="month"],
-//#drupal-off-canvas input[type="number"],
-//#drupal-off-canvas input[type="password"],
-//#drupal-off-canvas input[type="search"],
-//#drupal-off-canvas input[type="tel"],
-//#drupal-off-canvas input[type="text"],
-//#drupal-off-canvas input[type="time"],
-//#drupal-off-canvas input[type="url"],
-//#drupal-off-canvas input[type="week"] {
-//  height: auto;
-//  vertical-align: middle;
-//  border-radius: 0;
-//}
+#drupal-off-canvas textarea,
+#drupal-off-canvas select,
+#drupal-off-canvas input[type="date"],
+#drupal-off-canvas input[type="datetime"],
+#drupal-off-canvas input[type="datetime-local"],
+#drupal-off-canvas input[type="email"],
+#drupal-off-canvas input[type="month"],
+#drupal-off-canvas input[type="number"],
+#drupal-off-canvas input[type="password"],
+#drupal-off-canvas input[type="search"],
+#drupal-off-canvas input[type="tel"],
+#drupal-off-canvas input[type="text"],
+#drupal-off-canvas input[type="time"],
+#drupal-off-canvas input[type="url"],
+#drupal-off-canvas input[type="week"] {
+  color: $panel_text_color;
+  padding: .65rem 1rem;
+  height: auto;
+  vertical-align: middle;
+  border-radius: $border_radius;
+  border: 1px solid $tabs_bottom_border_color;
+  background-color: transparent;
+}
 #drupal-off-canvas textarea[disabled],
 #drupal-off-canvas select[disabled],
 #drupal-off-canvas input[type="date"][disabled],
@@ -313,7 +317,7 @@
 #drupal-off-canvas input[type="time"][disabled],
 #drupal-off-canvas input[type="url"][disabled],
 #drupal-off-canvas input[type="week"][disabled] {
-  background-color: grey;
+  background-color: rgba($panel_text_color, .1);
 }
 //#drupal-off-canvas input[type="hidden"] {
 //  visibility: hidden;
@@ -333,7 +337,7 @@
 //}
 #drupal-off-canvas input:placeholder,
 #drupal-off-canvas textarea:placeholder {
-  color: grey;
+  color: rgba($panel_text_color, .8);
 }
 //#drupal-off-canvas textarea,
 //#drupal-off-canvas select[size],

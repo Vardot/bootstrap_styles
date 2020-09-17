@@ -32,9 +32,19 @@ $state_error:               #DC7C7C !default;
 $state_warning:             #F1C666 !default;
 $state_success:             #7FB48A !default;
 
+//
+//  Helper variables.
+//
+
+// Tooltips
+$zindex-tooltip:            1070;
+
+// Common Border Radius
+$border_radius:             8px;
+
 // Offcanvas Tray
 $offcanvas_tray_width:      350px !default;
-$offcanvas_tray_padding:    40px !default;
+$offcanvas_tray_padding:    30px !default;
 $offcanvas_font:            'PT Sans', sans-serif !default;
 $offcanvas_font_size:       16px !default;
 
@@ -77,13 +87,3 @@ $button_text_color:         $gray-383 !default;
 $button_text_color_hover:   $white !default;
 $button_bg_color:           $blue-2aa !default;
 $button_bg_color_hover:     darken($button_bg_color, 10%) !default;
-
-//
-//  Helper variables.
-//
-
-// Tooltips
-$zindex-tooltip:            1070;
-
-// Common Border Radius
-$border_radius:             8px;
