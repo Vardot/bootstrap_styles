@@ -78,7 +78,6 @@
   //font-family: inherit;
   font-size: 1rem;
   width: 100%;
-  //line-height: 16px;
 }
 /* Reduce contrast for fields against dark background. */
 #drupal-off-canvas .form-text,
@@ -95,7 +94,6 @@
   @include smooth-all-transition;
   border-radius: $border_radius;
   padding: .65rem 1rem;
-  //color: #595959;
   border: 2px solid $tabs_bottom_border_color;
   background-color: transparent;
   box-shadow: none;
@@ -133,7 +131,7 @@
   //top: 0;
   //left: 0;
   //cursor: default;
-  background-color: white;
+  background-color: $panel_bg_color;
 }
 //#drupal-off-canvas .ui-autocomplete li {
 //  display: block;
