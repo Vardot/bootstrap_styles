@@ -4,6 +4,7 @@
   color: $panel_text_color;
   background: $panel_bg_color;
   padding: 0;
+  border-radius: 0 0 $border_radius $border_radius;
 
   @import "../dialog/components/*";
 
@@ -23,6 +24,21 @@
       margin: 1.5rem 2rem;
     }
   }
-
-
 }
+
+// Layout Builder Modal
+.ui-dialog.ui-layout-builder-modal {
+  border: 0;
+  border-radius: $border_radius;
+  background: transparent;
+
+  .ui-dialog-titlebar {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    border-radius: $border_radius $border_radius 0 0;
+    background-color: $tab_bg_color;
+    color: $panel_text_color;
+    border: 0;
+  }
+}
+

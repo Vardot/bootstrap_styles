@@ -8,6 +8,15 @@
 
   Drupal.behaviors.bootstrapStylesThemesOverrides = {
     attach: function (context) {
+
+      // Layout builder modal
+      // @todo: we need to add this class somewhere else
+      if($('#layout-builder-modal').length) {
+        $(document).ajaxComplete(function() {
+          $('#layout-builder-modal').parent().addClass('ui-layout-builder-modal');
+        });
+      }
+
       // Remove custom-control class from Barrio theme.
       $(".bs_tab-pane--appearance input:radio", context).once('bs-themes-overrides').each(function () {
         $(this).parent().removeClass('custom-control custom-radio');

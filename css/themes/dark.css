@@ -1009,6 +1009,7 @@
   color: #ffffff;
   background: #383A40;
   padding: 0;
+  border-radius: 0 0 8px 8px;
   /**
  * @file
  * Set base styles for the off-canvas autocomplete.
@@ -1066,7 +1067,6 @@
  * @file
  * Visual styling for tables in the off-canvas dialog.
  */
-  /* Hide overflow with ellipsis for links. */
   /**
  * @file
  * Table drag behavior for off-canvas dialog.
@@ -1457,6 +1457,14 @@
   padding: 0 15px;
 }
 
+#layout-builder-modal .form-textarea-wrapper {
+  background-color: #ffffff;
+}
+
+#layout-builder-modal .form-type-textarea {
+  margin-bottom: 0;
+}
+
 #layout-builder-modal .inline-block-create-button,
 #layout-builder-modal .inline-block-list__item {
   transition: all .3s ease-in-out;
@@ -1575,7 +1583,6 @@
 }
 
 #layout-builder-modal table {
-  /* Cancel out the padding of the parent to make the table full width. */
   color: #ffffff;
 }
 
@@ -1749,6 +1756,21 @@
   margin: 1.5rem 2rem;
 }
 
+.ui-dialog.ui-layout-builder-modal {
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+}
+
+.ui-dialog.ui-layout-builder-modal .ui-dialog-titlebar {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border-radius: 8px 8px 0 0;
+  background-color: #292C32;
+  color: #ffffff;
+  border: 0;
+}
+
 #drupal-off-canvas {
   width: 100% !important;
   /**
@@ -1808,7 +1830,6 @@
  * @file
  * Visual styling for tables in the off-canvas dialog.
  */
-  /* Hide overflow with ellipsis for links. */
   /**
  * @file
  * Table drag behavior for off-canvas dialog.
@@ -2199,6 +2220,14 @@
   padding: 0 15px;
 }
 
+#drupal-off-canvas .form-textarea-wrapper {
+  background-color: #ffffff;
+}
+
+#drupal-off-canvas .form-type-textarea {
+  margin-bottom: 0;
+}
+
 #drupal-off-canvas .inline-block-create-button,
 #drupal-off-canvas .inline-block-list__item {
   transition: all .3s ease-in-out;
@@ -2317,7 +2346,6 @@
 }
 
 #drupal-off-canvas table {
-  /* Cancel out the padding of the parent to make the table full width. */
   color: #ffffff;
 }
 
@@ -2488,7 +2516,6 @@
 /* Style the dialog-off-canvas container. */
 .ui-dialog.ui-dialog-off-canvas {
   font-size: 16px;
-  /* Layer the dialog just under the toolbar. */
   color: #ffffff;
   background: #383A40;
 }
