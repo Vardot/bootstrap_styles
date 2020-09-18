@@ -841,8 +841,7 @@
   background-color: #41A5FF;
 }
 
-#drupal-off-canvas #bs_nav-tabs,
-#layout-builder-modal #bs_nav-tabs {
+.ui-dialog #bs_nav-tabs {
   position: relative;
   display: flex;
   justify-content: center;
@@ -851,15 +850,13 @@
   width: calc(100% + 60px);
 }
 
-#drupal-off-canvas #bs_nav-tabs li,
-#layout-builder-modal #bs_nav-tabs li {
+.ui-dialog #bs_nav-tabs li {
   flex: 1 1 auto;
   margin: 0;
   list-style: none;
 }
 
-#drupal-off-canvas #bs_nav-tabs li a,
-#layout-builder-modal #bs_nav-tabs li a {
+.ui-dialog #bs_nav-tabs li a {
   transition: all .3s ease-in-out;
   cursor: pointer;
   position: relative;
@@ -876,8 +873,7 @@
   transition: .2s background-color ease-in-out;
 }
 
-#drupal-off-canvas #bs_nav-tabs li a:after,
-#layout-builder-modal #bs_nav-tabs li a:after {
+.ui-dialog #bs_nav-tabs li a:after {
   transition: all .3s ease-in-out;
   content: '';
   position: absolute;
@@ -890,34 +886,27 @@
   z-index: 1;
 }
 
-#drupal-off-canvas #bs_nav-tabs li a:hover,
-#layout-builder-modal #bs_nav-tabs li a:hover {
+.ui-dialog #bs_nav-tabs li a:hover {
   color: #ffffff;
   text-decoration: none;
 }
 
-#drupal-off-canvas #bs_nav-tabs li a:hover .bs_tooltip,
-#layout-builder-modal #bs_nav-tabs li a:hover .bs_tooltip {
+.ui-dialog #bs_nav-tabs li a:hover .bs_tooltip {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0px);
 }
 
-#drupal-off-canvas #bs_nav-tabs li a:hover svg *,
-#layout-builder-modal #bs_nav-tabs li a:hover svg * {
+.ui-dialog #bs_nav-tabs li a:hover svg * {
   fill: #ffffff;
 }
 
-#drupal-off-canvas #bs_nav-tabs li a.active, #drupal-off-canvas #bs_nav-tabs li a.active:hover,
-#layout-builder-modal #bs_nav-tabs li a.active,
-#layout-builder-modal #bs_nav-tabs li a.active:hover {
+.ui-dialog #bs_nav-tabs li a.active, .ui-dialog #bs_nav-tabs li a.active:hover {
   color: #41A5FF;
   background-color: #46484E;
 }
 
-#drupal-off-canvas #bs_nav-tabs li a.active:after, #drupal-off-canvas #bs_nav-tabs li a.active:hover:after,
-#layout-builder-modal #bs_nav-tabs li a.active:after,
-#layout-builder-modal #bs_nav-tabs li a.active:hover:after {
+.ui-dialog #bs_nav-tabs li a.active:after, .ui-dialog #bs_nav-tabs li a.active:hover:after {
   background-color: #41A5FF;
   left: -1px;
   bottom: 0;
@@ -927,40 +916,32 @@
   border-radius: 8px;
 }
 
-#drupal-off-canvas #bs_nav-tabs li a.active svg *, #drupal-off-canvas #bs_nav-tabs li a.active:hover svg *,
-#layout-builder-modal #bs_nav-tabs li a.active svg *,
-#layout-builder-modal #bs_nav-tabs li a.active:hover svg * {
+.ui-dialog #bs_nav-tabs li a.active svg *, .ui-dialog #bs_nav-tabs li a.active:hover svg * {
   fill: #41A5FF;
 }
 
-#drupal-off-canvas #bs_nav-tabs li a .blb_icon,
-#drupal-off-canvas #bs_nav-tabs li a span[role='img'],
-#layout-builder-modal #bs_nav-tabs li a .blb_icon,
-#layout-builder-modal #bs_nav-tabs li a span[role='img'] {
+.ui-dialog #bs_nav-tabs li a .blb_icon,
+.ui-dialog #bs_nav-tabs li a span[role='img'] {
   max-width: 25px;
   margin: 0 .75rem;
 }
 
-#drupal-off-canvas #bs_nav-tabs li a svg,
-#layout-builder-modal #bs_nav-tabs li a svg {
+.ui-dialog #bs_nav-tabs li a svg {
   max-width: 100%;
   height: auto;
   background: none;
 }
 
-#drupal-off-canvas #bs_nav-tabs li a svg *,
-#layout-builder-modal #bs_nav-tabs li a svg * {
+.ui-dialog #bs_nav-tabs li a svg * {
   transition: all .3s ease-in-out;
   fill: #979AA1;
 }
 
-#drupal-off-canvas #bs_tabContent > .bs_tab-pane,
-#layout-builder-modal #bs_tabContent > .bs_tab-pane {
+.ui-dialog #bs_tabContent > .bs_tab-pane {
   display: none;
 }
 
-#drupal-off-canvas #bs_tabContent > .active,
-#layout-builder-modal #bs_tabContent > .active {
+.ui-dialog #bs_tabContent > .active {
   display: block;
 }
 
@@ -1024,11 +1005,91 @@
   bottom: auto;
 }
 
-/**
+#layout-builder-modal {
+  color: #ffffff;
+  background: #383A40;
+  padding: 0;
+}
+
+#layout-builder-modal .blb_tab-content {
+  padding: 0 2rem;
+}
+
+#layout-builder-modal #bs_ui ~ input[type="submit"] {
+  float: right;
+  margin: 1.5rem 2rem;
+}
+
+#layout-builder-modal .bs_tab-pane--appearance details {
+  border: 0;
+}
+
+#drupal-off-canvas {
+  /**
  * @file
  * Set base styles for the off-canvas dialog.
  */
-/* Set some global attributes. */
+  /* Set some global attributes. */
+  /* Generic elements. */
+  /* Override jQuery UI */
+  /**
+ * @file
+ * Visual styling for buttons in the off-canvas dialog.
+ *
+ * @see seven/css/components/buttons.css
+ */
+  /**
+ * @file
+ * Visual styling for summary and details in the off-canvas dialog.
+ */
+  /**
+ * @file
+ * Styles for dropbuttons in the off-canvas dialog.
+ */
+  /*
+ * Style dropbutton single.
+ */
+  /*
+ * Style dropbutton multiple.
+ */
+  /* Hide the other actions until the dropbutton is triggered. */
+  /* The toggle to expand the button. */
+  /* The toggle arrow. */
+  /* Push the widget to the right so text expands left. */
+  /* Push the wrapper to the right edge of the td. */
+  /* Push text out of the way. */
+  /* Collapse the button to a circle. */
+  /* Create visual separation if there is an adjacent button. */
+  /**
+ * @file
+ * Visual styling for forms in the off-canvas dialog.
+ */
+  /* Set size and position for all inputs. */
+  /* Reduce contrast for fields against dark background. */
+  /**
+ * @file
+ * Reset most HTML elements styles for the off-canvas dialog.
+ *
+ * This is a generic reset. Drupal-specific classes are reset in components.
+ */
+  /**
+ * Do not include div in then initial overrides because including div will
+ * cause the need for many more overrides in this file.
+ */
+  /* To standardize off-canvas selection color. */
+  /**
+ * @file
+ * Visual styling for tables in the off-canvas dialog.
+ */
+  /* Hide overflow with ellipsis for links. */
+  /**
+ * @file
+ * Table drag behavior for off-canvas dialog.
+ *
+ * @see tabledrag.js
+ */
+}
+
 #drupal-off-canvas *,
 #drupal-off-canvas *:not(div) {
   color: #ffffff;
@@ -1036,7 +1097,6 @@
   font-family: inherit;
 }
 
-/* Generic elements. */
 #drupal-off-canvas a,
 #drupal-off-canvas .link {
   color: #41A5FF;
@@ -1047,7 +1107,6 @@
   background: #ffffff;
 }
 
-/* Override jQuery UI */
 #drupal-off-canvas .ui-widget-content a {
   color: #41A5FF !important;
 }
@@ -1064,12 +1123,6 @@
   color: #DC7C7C;
 }
 
-/**
- * @file
- * Visual styling for buttons in the off-canvas dialog.
- *
- * @see seven/css/components/buttons.css
- */
 #drupal-off-canvas button.link {
   color: #383A40;
 }
@@ -1128,13 +1181,10 @@
   color: #737373;
 }
 
-/**
- * @file
- * Visual styling for summary and details in the off-canvas dialog.
- */
 #drupal-off-canvas details {
   padding: 0;
   margin: 0 -10px;
+  border: 0;
 }
 
 #drupal-off-canvas details,
@@ -1170,6 +1220,11 @@
   display: flex;
   align-items: center;
   background-color: transparent;
+}
+
+#drupal-off-canvas summary img,
+#drupal-off-canvas summary svg {
+  margin-right: 1rem;
 }
 
 #drupal-off-canvas summary:after {
@@ -1217,10 +1272,6 @@
   background-color: #46484E;
 }
 
-/**
- * @file
- * Styles for dropbuttons in the off-canvas dialog.
- */
 #drupal-off-canvas .dropbutton-widget {
   color: #fff;
   background: #277abd;
@@ -1230,9 +1281,6 @@
   background: #2b8bd8;
 }
 
-/*
- * Style dropbutton single.
- */
 #drupal-off-canvas .dropbutton li,
 #drupal-off-canvas .dropbutton a {
   color: #555;
@@ -1246,42 +1294,27 @@
   background: transparent;
 }
 
-/*
- * Style dropbutton multiple.
- */
 #drupal-off-canvas .dropbutton-multiple .dropbutton-widget:hover {
   background-color: #2b8bd8;
 }
 
-/* Hide the other actions until the dropbutton is triggered. */
-/* The toggle to expand the button. */
 #drupal-off-canvas .dropbutton-toggle {
   color: #fff;
 }
 
-/* The toggle arrow. */
 #drupal-off-canvas .dropbutton-arrow {
   color: #fff;
 }
 
-/* Push the widget to the right so text expands left. */
 #drupal-off-canvas td .dropbutton-widget {
   background: #277abd none;
 }
 
-/* Push the wrapper to the right edge of the td. */
-/* Push text out of the way. */
 #drupal-off-canvas td .dropbutton-multiple.open .dropbutton li,
 #drupal-off-canvas td .dropbutton-multiple.open .dropbutton a {
   color: #fff;
 }
 
-/* Collapse the button to a circle. */
-/* Create visual separation if there is an adjacent button. */
-/**
- * @file
- * Visual styling for forms in the off-canvas dialog.
- */
 #drupal-off-canvas form {
   color: #ffffff;
   font-family: inherit;
@@ -1319,7 +1352,6 @@
   display: block;
 }
 
-/* Set size and position for all inputs. */
 #drupal-off-canvas .form-select,
 #drupal-off-canvas .form-text,
 #drupal-off-canvas .form-tel,
@@ -1337,7 +1369,6 @@
   width: 100%;
 }
 
-/* Reduce contrast for fields against dark background. */
 #drupal-off-canvas .form-text,
 #drupal-off-canvas .form-tel,
 #drupal-off-canvas .form-email,
@@ -1382,34 +1413,6 @@
   color: #595959 !important;
 }
 
-/**
- * @file
- * Visual styling for layouts in the off-canvas dialog.
- *
- * See seven/css/layout/layout.css
- */
-.layout-icon__region {
-  fill: #f5f5f2;
-  stroke: #666;
-}
-
-/**
- * @file
- * Motion effects for off-canvas dialog.
- *
- * Motion effects are in a separate file so that they can be easily turned off
- * to improve performance if desired.
- */
-/**
- * @file
- * Reset most HTML elements styles for the off-canvas dialog.
- *
- * This is a generic reset. Drupal-specific classes are reset in components.
- */
-/**
- * Do not include div in then initial overrides because including div will
- * cause the need for many more overrides in this file.
- */
 #drupal-off-canvas textarea,
 #drupal-off-canvas select,
 #drupal-off-canvas input[type="date"],
@@ -1475,17 +1478,12 @@
   background: white;
 }
 
-/* To standardize off-canvas selection color. */
 #drupal-off-canvas ::-moz-selection,
 #drupal-off-canvas ::selection {
   color: inherit;
   background-color: rgba(175, 175, 175, 0.5);
 }
 
-/**
- * @file
- * Visual styling for tables in the off-canvas dialog.
- */
 #drupal-off-canvas table {
   /* Cancel out the padding of the parent to make the table full width. */
   color: #ffffff;
@@ -1500,13 +1498,6 @@
   color: #ffffff;
 }
 
-/* Hide overflow with ellipsis for links. */
-/**
- * @file
- * Table drag behavior for off-canvas dialog.
- *
- * @see tabledrag.js
- */
 #drupal-off-canvas .drag {
   cursor: move;
 }
@@ -1540,7 +1531,7 @@
   background-image: none;
 }
 
-[dir="rtl"] #drupal-off-canvas .draggable a.tabledrag-handle {
+#drupal-off-canvas [dir="rtl"] .draggable a.tabledrag-handle {
   float: right;
   margin-right: 0;
   margin-left: 5px;
@@ -1573,7 +1564,7 @@
   /* LTR */
 }
 
-[dir="rtl"] #drupal-off-canvas tr td abbr {
+#drupal-off-canvas [dir="rtl"] tr td abbr {
   margin-right: 5px;
   margin-left: 0;
 }
@@ -1594,7 +1585,7 @@
   background: #222;
 }
 
-body div.tabledrag-changed-warning {
+#drupal-off-canvas body div.tabledrag-changed-warning {
   margin-bottom: 0.5em;
   font-size: 14px;
 }
@@ -1619,7 +1610,7 @@ body div.tabledrag-changed-warning {
   /* LTR */
 }
 
-[dir="rtl"] #drupal-off-canvas .touch a.tabledrag-handle .handle {
+#drupal-off-canvas [dir="rtl"] .touch a.tabledrag-handle .handle {
   background-position: right 40% top 19px;
 }
 
@@ -1633,7 +1624,7 @@ body div.tabledrag-changed-warning {
   /* LTR */
 }
 
-[dir="rtl"] #drupal-off-canvas .tabledrag-toggle-weight-wrapper {
+#drupal-off-canvas [dir="rtl"] .tabledrag-toggle-weight-wrapper {
   text-align: left;
 }
 
@@ -1648,7 +1639,7 @@ body div.tabledrag-changed-warning {
   /* LTR */
 }
 
-[dir="rtl"] #drupal-off-canvas .indentation {
+#drupal-off-canvas [dir="rtl"] .indentation {
   float: right;
   margin: 0 -10px 0 3px;
   padding: 0 10px 0 0;
@@ -1658,9 +1649,8 @@ body div.tabledrag-changed-warning {
  * @file
  * Styling for the off-canvas ui dialog. Including overrides for jQuery UI.
  */
-.ui-dialog-off-canvas #drupal-off-canvas {
+.ui-dialog-off-canvas {
   padding: 0 30px 30px;
-  width: 100% !important;
 }
 
 /* Style the dialog-off-canvas container. */
@@ -1723,144 +1713,4 @@ body div.tabledrag-changed-warning {
 .ui-dialog.ui-dialog-off-canvas .ui-dialog-title:before {
   background: transparent url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzMwMHB4JyB3aWR0aD0nMzAwcHgnICBmaWxsPSIjZmZmZmZmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNjQgNjQiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDY0IDY0IiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48cGF0aCBkPSJNNTEsMzBoLTcuMzVjLTAuODI3LTIuMzI2LTMuMDQ0LTQtNS42NS00cy00LjgyMywxLjY3NC01LjY1LDRIMTNjLTEuMTA0LDAtMiwwLjg5Ni0yLDJzMC44OTYsMiwyLDJoMTkuMzUgICBjMC44MjcsMi4zMjYsMy4wNDQsNCw1LjY1LDRzNC44MjMtMS42NzQsNS42NS00SDUxYzEuMTA0LDAsMi0wLjg5NiwyLTJTNTIuMTA0LDMwLDUxLDMweiI+PC9wYXRoPjxwYXRoIGQ9Ik0xMywxOWg4LjM1YzAuODI3LDIuMzI2LDMuMDQ0LDQsNS42NSw0czQuODIzLTEuNjc0LDUuNjUtNEg1MWMxLjEwNCwwLDItMC44OTYsMi0ycy0wLjg5Ni0yLTItMkgzMi42NSAgIGMtMC44MjctMi4zMjYtMy4wNDQtNC01LjY1LTRzLTQuODIzLDEuNjc0LTUuNjUsNEgxM2MtMS4xMDQsMC0yLDAuODk2LTIsMlMxMS44OTYsMTksMTMsMTl6Ij48L3BhdGg+PHBhdGggZD0iTTUxLDQ1SDMyLjY1Yy0wLjgyNy0yLjMyNi0zLjA0NC00LTUuNjUtNHMtNC44MjMsMS42NzQtNS42NSw0SDEzYy0xLjEwNCwwLTIsMC44OTYtMiwyczAuODk2LDIsMiwyaDguMzUgICBjMC44MjcsMi4zMjYsMy4wNDQsNCw1LjY1LDRzNC44MjMtMS42NzQsNS42NS00SDUxYzEuMTA0LDAsMi0wLjg5NiwyLTJTNTIuMTA0LDQ1LDUxLDQ1eiI+PC9wYXRoPjwvZz48L3N2Zz4=") no-repeat scroll center center;
   background-size: 100% auto;
-}
-
-/**
- * @file
- * Visual styling for forms in the off-canvas dialog.
- */
-#layout-builder-modal form {
-  color: #ffffff;
-  font-family: inherit;
-}
-
-#layout-builder-modal input[type="checkbox"] {
-  margin-right: .5rem;
-}
-
-#layout-builder-modal input[type="radio"] {
-  margin-right: .5rem;
-}
-
-#layout-builder-modal label {
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: normal;
-}
-
-#layout-builder-modal .description,
-#layout-builder-modal .form-item .description,
-#layout-builder-modal .details-description {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: .875rem;
-  margin-bottom: 1rem;
-}
-
-#layout-builder-modal .form-item {
-  margin-top: .25rem;
-  margin-bottom: 1rem;
-}
-
-#layout-builder-modal .fieldset-legend {
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
-/* Set size and position for all inputs. */
-#layout-builder-modal .form-select,
-#layout-builder-modal .form-text,
-#layout-builder-modal .form-tel,
-#layout-builder-modal .form-email,
-#layout-builder-modal .form-url,
-#layout-builder-modal .form-search,
-#layout-builder-modal .form-number,
-#layout-builder-modal .form-color,
-#layout-builder-modal .form-file,
-#layout-builder-modal .form-textarea,
-#layout-builder-modal .form-date,
-#layout-builder-modal .form-time {
-  color: inherit;
-  font-size: 1rem;
-  width: 100%;
-}
-
-/* Reduce contrast for fields against dark background. */
-#layout-builder-modal .form-text,
-#layout-builder-modal .form-tel,
-#layout-builder-modal .form-email,
-#layout-builder-modal .form-url,
-#layout-builder-modal .form-search,
-#layout-builder-modal .form-number,
-#layout-builder-modal .form-color,
-#layout-builder-modal .form-file,
-#layout-builder-modal .form-textarea,
-#layout-builder-modal .form-date,
-#layout-builder-modal .form-time {
-  transition: all .3s ease-in-out;
-  border-radius: 8px;
-  padding: .65rem 1rem;
-  border: 2px solid #727579;
-  background-color: transparent;
-  box-shadow: none;
-}
-
-#layout-builder-modal .form-text:focus,
-#layout-builder-modal .form-tel:focus,
-#layout-builder-modal .form-email:focus,
-#layout-builder-modal .form-url:focus,
-#layout-builder-modal .form-search:focus,
-#layout-builder-modal .form-number:focus,
-#layout-builder-modal .form-color:focus,
-#layout-builder-modal .form-file:focus,
-#layout-builder-modal .form-textarea:focus,
-#layout-builder-modal .form-date:focus,
-#layout-builder-modal .form-time:focus {
-  border-color: #41A5FF;
-  background-color: transparent;
-  box-shadow: none;
-  outline: 0;
-}
-
-#layout-builder-modal .ui-autocomplete {
-  background-color: #383A40;
-}
-
-#layout-builder-modal .ui-autocomplete li a {
-  color: #595959 !important;
-}
-
-#layout-builder-modal {
-  color: #ffffff;
-  background: #383A40;
-  padding: 0;
-}
-
-#layout-builder-modal .blb_tab-content {
-  padding: 0 2rem;
-}
-
-#layout-builder-modal #bs_ui ~ input[type="submit"] {
-  float: right;
-  margin: 0 2rem 1.5rem 2rem;
-  margin-top: 10px;
-  padding: 11px 20px;
-  color: #383A40;
-  border-radius: 8px;
-  background: #26A5FF;
-  font-weight: normal;
-  border: 0;
-}
-
-#layout-builder-modal .bs_tab-pane--appearance details {
-  color: #ffffff;
-  background: #383A40;
-  border: 0;
-}
-
-#layout-builder-modal .bs_tab-pane--appearance details a {
-  color: #ffffff;
-}
-
-#layout-builder-modal .bs_tab-pane--appearance details a:hover {
-  color: #f8f9fa;
 }

@@ -3,34 +3,35 @@
  * Visual styling for summary and details in the off-canvas dialog.
  */
 
-#drupal-off-canvas details {
+details {
   padding: 0;
   margin: 0 -10px;
+  border: 0;
   //display: block;
 }
-//#drupal-off-canvas details,
-//#drupal-off-canvas summary {
+//details,
+//summary {
 //  font-family: "Lucida Grande", "Lucida Sans Unicode", "liberation sans", sans-serif;
 //}
-#drupal-off-canvas details,
-#drupal-off-canvas summary,
-#drupal-off-canvas .ui-dialog-content {
+details,
+summary,
+.ui-dialog-content {
   outline: 0;
   color: $panel_text_color;
   background: transparent;
 }
-//#drupal-off-canvas summary a {
+//summary a {
 //  //margin: 0 1rem;
 //  //padding-top: 0;
 //  //padding-bottom: 0;
 //}
-//#drupal-off-canvas summary a:hover,
-//#drupal-off-canvas summary a:focus {
+//summary a:hover,
+//summary a:focus {
 //  color: $summary_bg_color_hover;
 //}
-#drupal-off-canvas details,
-#drupal-off-canvas summary,
-#drupal-off-canvas .details-wrapper {
+details,
+summary,
+.details-wrapper {
   /* Cancel out the padding of the parent. */
   margin: 0;
   padding: 0;
@@ -38,10 +39,10 @@
   -webkit-appearance:none;
   //border-width: 0;
 }
-#drupal-off-canvas .details-wrapper {
+.details-wrapper {
   padding: 1rem;
 }
-#drupal-off-canvas summary {
+summary {
   position: relative;
   border-radius: $border_radius;
   margin: 4px 0;
@@ -54,6 +55,11 @@
   display: flex;
   align-items: center;
   background-color: $summary_bg_color;
+
+  img,
+  svg {
+    margin-right: 1rem;
+  }
 
   &:after {
     @include smooth-all-transition;
@@ -73,8 +79,8 @@
     display:none;
   }
 }
-#drupal-off-canvas summary:hover,
-#drupal-off-canvas summary:focus {
+summary:hover,
+summary:focus {
   color: $summary_link_color_hover;
   background-color: $summary_bg_color_hover;
 
@@ -83,10 +89,10 @@
     border-bottom-color: $summary_link_color_hover;
   }
 }
-//#drupal-off-canvas details[open] {
+//details[open] {
 //  padding-bottom: 10px;
 //}
-#drupal-off-canvas details[open] > summary {
+details[open] > summary {
   color: $summary_link_color_active;
   background-color: $summary_bg_color_active;
 
@@ -95,11 +101,11 @@
     transform: rotate(-135deg);
   }
 }
-#drupal-off-canvas details[open] > summary:hover {
+details[open] > summary:hover {
   color: $summary_link_color_active;
   background-color: $summary_bg_color_active;
 }
-//#drupal-off-canvas details .placeholder {
+//details .placeholder {
 //  color: inherit;
 //  background: transparent;
 //  font: inherit;

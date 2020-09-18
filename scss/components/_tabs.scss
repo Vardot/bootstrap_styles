@@ -1,12 +1,9 @@
 @import "../variables";
 
 // Tabs
-#drupal-off-canvas,
-#layout-builder-modal {
+.ui-dialog {
 
-  //
   // Horizontal Icon Tabs
-  //
   #bs_nav-tabs {
     position: relative;
     display: flex;
@@ -119,4 +116,9 @@
       display: block;
     }
   }
+}
+
+// Small fix for offcanvas
+#drupal-off-canvas #bs_nav-tabs {
+
 }

@@ -3,9 +3,8 @@
  * Styling for the off-canvas ui dialog. Including overrides for jQuery UI.
  */
 
-.ui-dialog-off-canvas #drupal-off-canvas {
+.ui-dialog-off-canvas {
   padding: 0 $offcanvas_tray_padding $offcanvas_tray_padding;
-  width: 100% !important;
 }
 
 /* Style the dialog-off-canvas container. */
@@ -115,15 +114,15 @@
 //}
 //
 ///* Override default styling from jQuery UI. */
-//#drupal-off-canvas .ui-state-default,
-//#drupal-off-canvas .ui-widget-content .ui-state-default,
-//#drupal-off-canvas .ui-widget-header .ui-state-default {
+//.ui-state-default,
+//.ui-widget-content .ui-state-default,
+//.ui-widget-header .ui-state-default {
 //  color: #333;
 //  border: 0;
 //  font-size: 14px;
 //  font-weight: normal;
 //}
 //
-//#drupal-off-canvas .ui-widget-content a {
+//.ui-widget-content a {
 //  color: #85bef4;
 //}

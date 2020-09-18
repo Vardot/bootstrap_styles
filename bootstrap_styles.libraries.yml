@@ -7,7 +7,6 @@ layout_builder_form_style:
     js/components/tabs.js: { }
   dependencies:
     - bootstrap_styles/themes-overrides
-    - bootstrap_styles/layout-builder-modal-overrides
 
 # Offcanvas Font
 offcanvas-font:
@@ -26,13 +25,6 @@ themes-overrides:
       css/themes-overrides.css: { }
   js:
     js/themes-overrides.js: { }
-
-# Layout Builder Modal module overrides
-# Override the default style for LB configure form in the modal.
-layout-builder-modal-overrides:
-  css:
-    theme:
-      css/layout-builder-modal-overrides.css: { }
 
 # Base admin styles.
 layout_builder_admin_form_style:
