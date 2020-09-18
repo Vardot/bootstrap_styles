@@ -28,18 +28,18 @@ hr {
 }
 
 .messages--status {
-  color: $state_error;
-  //background-color: #f3faef;
+  color: $state_success;
+  background-color: lighten($state_success, 30%)
   //background-image: url(../icons/73b355/check.svg);
 }
 .messages--warning {
   color: $state_warning;
-  //background-color: #fdf8ed;
+  background-color: lighten($state_warning, 30%)
   //background-image: url(../icons/e29700/warning.svg);
 }
 
 .messages--error {
   color: $state_error;
-  //background-color: #fcf4f2;
+  background-color: lighten($state_error, 30%);
   //background-image: url(../icons/e32700/error.svg);
 }

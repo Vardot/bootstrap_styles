@@ -1,0 +1,59 @@
+/**
+ * @file
+ * Visual styling for buttons in the off-canvas inline custom block creation.
+ *
+ * @see seven/css/components/buttons.css
+ */
+
+.inline-block-create-button,
+.inline-block-list__item {
+  @include smooth-all-transition;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  margin: 20px auto !important;
+  cursor: pointer;
+  text-align: center;
+  border: 0 !important;
+  border-radius: $border_radius;
+  font-size: 1rem;
+  font-weight: normal;
+  box-shadow: none;
+  text-decoration: none !important;
+}
+
+.inline-block-create-button {
+  color: $button_text_color !important;
+  background: $button_bg_color !important;
+  padding: 15px 2rem !important;
+
+  &:hover {
+    background: darken($button_bg_color, 10%) !important;
+  }
+
+  &:before {
+    content: '';
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    display: block;
+    margin-top: -1rem;
+    background: $add_block_icon transparent;
+    background-size: contain;
+  }
+}
+
+.inline-block-list__item {
+  padding: 11px 20px !important;
+  color: $button_text_color !important;
+  //background: $button_bg_color !important;
+
+  //&:hover {
+  //  background: darken($button_bg_color, 10%);
+  //}
+
+
+}
