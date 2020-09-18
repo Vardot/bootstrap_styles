@@ -25,7 +25,8 @@
 
 #drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label,
 #layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label {
-  font-size: 12px;
+  transition: all .3s ease-in-out;
+  font-size: .75rem;
   font-weight: normal;
   border: 2px solid #ffffff;
   padding: 10px;
@@ -47,7 +48,7 @@
 
 #drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label,
 #layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label {
-  color: #444444;
+  color: #383A40;
   background-color: #ffffff;
 }
 
@@ -71,6 +72,6 @@
 
 #drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div label.active,
 #layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div label.active {
-  color: #444444;
+  color: #383A40;
   background-color: #ffffff;
 }

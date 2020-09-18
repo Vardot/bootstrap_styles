@@ -10,7 +10,7 @@
   //
   //    // Our actual form item.
       > div {
-        @include blb_box_inputs($panel_text_color, $panel_bg_color);
+        @include blb_box_inputs;
   //
   //      &:first-child input + label {
   //        border-right: 0;

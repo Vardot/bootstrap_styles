@@ -16,7 +16,7 @@
 #drupal-off-canvas summary,
 #drupal-off-canvas .ui-dialog-content {
   outline: 0;
-  color: $details_text_color;
+  color: $panel_text_color;
   background: transparent;
 }
 //#drupal-off-canvas summary a {
@@ -53,7 +53,7 @@
   font-weight: normal;
   display: flex;
   align-items: center;
-  background-color: rgba($summary_bg_color_active, .5);
+  background-color: $summary_bg_color;
 
   &:after {
     @include smooth-all-transition;
@@ -96,7 +96,7 @@
   }
 }
 #drupal-off-canvas details[open] > summary:hover {
-  //color: #fff;
+  color: $summary_link_color_active;
   background-color: $summary_bg_color_active;
 }
 //#drupal-off-canvas details .placeholder {
