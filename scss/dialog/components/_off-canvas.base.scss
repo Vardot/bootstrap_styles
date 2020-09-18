@@ -27,19 +27,28 @@ hr {
   color: $panel_link_color !important;
 }
 
+.messages {
+  margin-bottom: 2rem;
+  padding-left: 3rem;
+  background-size: 40px;
+  background-position: 5px 10px;
+  background-repeat: no-repeat;
+}
+
 .messages--status {
   color: $state_success;
-  background-color: lighten($state_success, 30%)
-  //background-image: url(../icons/73b355/check.svg);
+  background-color: lighten($state_success, 30%);
+  background-image: $state_success_icon;
 }
+
 .messages--warning {
   color: $state_warning;
-  background-color: lighten($state_warning, 30%)
-  //background-image: url(../icons/e29700/warning.svg);
+  background-color: lighten($state_warning, 30%);
+  background-image: $state_warning_icon;
 }
 
 .messages--error {
   color: $state_error;
   background-color: lighten($state_error, 30%);
-  //background-image: url(../icons/e32700/error.svg);
+  background-image: $state_error_icon;
 }

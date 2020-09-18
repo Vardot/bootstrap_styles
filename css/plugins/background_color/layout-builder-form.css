@@ -24,6 +24,12 @@
   border: 0;
 }
 
+#drupal-off-canvas .fieldgroup.field-background-color .form-radios input:checked + label.option, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper input:checked + label.option,
+#layout-builder-modal .fieldgroup.field-background-color .form-radios input:checked + label.option,
+#layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper input:checked + label.option {
+  border-color: #41A5FF;
+}
+
 #drupal-off-canvas .fieldgroup.field-background-color .form-radios input:checked + label.option:before, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper input:checked + label.option:before,
 #layout-builder-modal .fieldgroup.field-background-color .form-radios input:checked + label.option:before,
 #layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper input:checked + label.option:before {
@@ -78,7 +84,7 @@
 #layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper label {
   transition: all .3s ease-in-out;
   cursor: pointer !important;
-  border: 1px solid #ffffff;
+  border: 2px solid #ffffff;
   border-radius: 40px;
   font-size: 0.00001px;
   position: relative;
@@ -89,6 +95,7 @@
   margin: 0 5px 5px 0;
   padding: 0;
   white-space: nowrap;
+  box-shadow: 2px 2px 3px 1px rgba(56, 58, 64, 0.15);
 }
 
 #drupal-off-canvas .fieldgroup.field-background-color .form-radios label:hover, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper label:hover,

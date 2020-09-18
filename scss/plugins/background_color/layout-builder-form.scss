@@ -21,6 +21,8 @@
         @include sr-only();
 
         &:checked + label.option {
+          border-color: $panel_link_color;
+
           &:before {
             @include smooth-all-transition;
             width: calc(100% - 2px);
@@ -69,7 +71,7 @@
       label {
         @include smooth-all-transition;
         cursor: pointer !important;
-        border: 1px solid $panel_text_color;
+        border: 2px solid $panel_text_color;
         border-radius: 40px;
         font-size: 0.00001px;
         position: relative;
@@ -80,6 +82,7 @@
         margin: 0 5px 5px 0;
         padding: 0;
         white-space: nowrap;
+        box-shadow: 2px 2px 3px 1px rgba($panel_bg_color, 0.15);
 
         &:hover {
           opacity: 0.8;
