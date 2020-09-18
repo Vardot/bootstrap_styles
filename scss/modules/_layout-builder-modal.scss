@@ -5,21 +5,24 @@
   background: $panel_bg_color;
   padding: 0;
 
-
+  @import "../dialog/components/*";
 
   .blb_tab-content {
     padding: 0 2rem;
   }
 
   // Update Button.
-  #bs_ui ~ input[type="submit"] {
-    float: right;
-    margin: 1.5rem 2rem;
-  }
+  #bs_ui  {
+    #bs_nav-tabs {
+      margin: 0 -40px 30px -40px;
+      width: calc(100% + 40px);
+    }
 
-  .bs_tab-pane--appearance {
-    details {
-      border: 0;
+    ~ input[type="submit"] {
+      float: right;
+      margin: 1.5rem 2rem;
     }
   }
+
+
 }

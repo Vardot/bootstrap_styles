@@ -1009,19 +1009,639 @@
   color: #383A40;
   background: #ffffff;
   padding: 0;
+  /**
+ * @file
+ * Set base styles for the off-canvas dialog.
+ */
+  /* Set some global attributes. */
+  /* Generic elements. */
+  /* Override jQuery UI */
+  /**
+ * @file
+ * Visual styling for buttons in the off-canvas dialog.
+ *
+ * @see seven/css/components/buttons.css
+ */
+  /**
+ * @file
+ * Visual styling for summary and details in the off-canvas dialog.
+ */
+  /**
+ * @file
+ * Styles for dropbuttons in the off-canvas dialog.
+ */
+  /*
+ * Style dropbutton single.
+ */
+  /*
+ * Style dropbutton multiple.
+ */
+  /* Hide the other actions until the dropbutton is triggered. */
+  /* The toggle to expand the button. */
+  /* The toggle arrow. */
+  /* Push the widget to the right so text expands left. */
+  /* Push the wrapper to the right edge of the td. */
+  /* Push text out of the way. */
+  /* Collapse the button to a circle. */
+  /* Create visual separation if there is an adjacent button. */
+  /**
+ * @file
+ * Visual styling for forms in the off-canvas dialog.
+ */
+  /* Set size and position for all inputs. */
+  /* Reduce contrast for fields against dark background. */
+  /**
+ * @file
+ * Reset most HTML elements styles for the off-canvas dialog.
+ *
+ * This is a generic reset. Drupal-specific classes are reset in components.
+ */
+  /**
+ * Do not include div in then initial overrides because including div will
+ * cause the need for many more overrides in this file.
+ */
+  /* To standardize off-canvas selection color. */
+  /**
+ * @file
+ * Visual styling for tables in the off-canvas dialog.
+ */
+  /* Hide overflow with ellipsis for links. */
+  /**
+ * @file
+ * Table drag behavior for off-canvas dialog.
+ *
+ * @see tabledrag.js
+ */
+}
+
+#layout-builder-modal *,
+#layout-builder-modal *:not(div) {
+  color: #383A40;
+  background: unset;
+  font-family: inherit;
+}
+
+#layout-builder-modal a,
+#layout-builder-modal .link {
+  color: #26A5FF;
+  font-family: inherit;
+}
+
+#layout-builder-modal hr {
+  background: #383A40;
+}
+
+#layout-builder-modal .ui-widget-content a {
+  color: #26A5FF !important;
+}
+
+#layout-builder-modal .messages--status {
+  color: #DC7C7C;
+}
+
+#layout-builder-modal .messages--warning {
+  color: #F1C666;
+}
+
+#layout-builder-modal .messages--error {
+  color: #DC7C7C;
+}
+
+#layout-builder-modal button.link {
+  color: #ffffff;
+}
+
+#layout-builder-modal button.link:hover,
+#layout-builder-modal button.link:focus {
+  color: #383A40;
+}
+
+#layout-builder-modal input[type="submit"].button {
+  margin-top: 10px;
+  padding: 11px 20px;
+  color: #ffffff;
+  border-radius: 8px;
+  background: #26A5FF;
+  font-weight: normal;
+  border: 0;
+}
+
+#layout-builder-modal input[type="submit"].button:hover,
+#layout-builder-modal input[type="submit"].button:focus,
+#layout-builder-modal input[type="submit"].button:active {
+  color: #ffffff;
+}
+
+#layout-builder-modal input[type="submit"].button--primary {
+  color: #ffffff;
+  background: #26A5FF;
+}
+
+#layout-builder-modal input[type="submit"].button--primary:hover,
+#layout-builder-modal input[type="submit"].button--primary:focus,
+#layout-builder-modal input[type="submit"].button--primary:active {
+  background: #008ef2;
+}
+
+#layout-builder-modal .button:disabled,
+#layout-builder-modal .button:disabled:active,
+#layout-builder-modal .button.is-disabled,
+#layout-builder-modal .button.is-disabled:active {
+  color: #5c5c5c;
+  background: #555;
+}
+
+#layout-builder-modal .button--danger {
+  color: #c72100;
+}
+
+#layout-builder-modal .button--danger:hover,
+#layout-builder-modal .button--danger:focus,
+#layout-builder-modal .button--danger:active {
+  color: #ff2a00;
+}
+
+#layout-builder-modal .button--danger:disabled,
+#layout-builder-modal .button--danger.is-disabled {
+  color: #737373;
+}
+
+#layout-builder-modal details {
+  padding: 0;
+  margin: 0 -10px;
+  border: 0;
+}
+
+#layout-builder-modal details,
+#layout-builder-modal summary,
+#layout-builder-modal .ui-dialog-content {
+  outline: 0;
+  color: #383A40;
+  background: transparent;
+}
+
+#layout-builder-modal details,
+#layout-builder-modal summary,
+#layout-builder-modal .details-wrapper {
+  /* Cancel out the padding of the parent. */
+  margin: 0;
+  padding: 0;
+  background-image: none;
+  -webkit-appearance: none;
+}
+
+#layout-builder-modal .details-wrapper {
+  padding: 1rem;
+}
+
+#layout-builder-modal summary {
+  position: relative;
+  border-radius: 8px;
+  margin: 4px 0;
+  min-height: 40px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  background-color: rgba(56, 58, 64, 0.05);
+}
+
+#layout-builder-modal summary img,
+#layout-builder-modal summary svg {
+  margin-right: 1rem;
+}
+
+#layout-builder-modal summary:after {
+  transition: all .3s ease-in-out;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  content: '';
+  display: inline-block;
+  border-right: 2px solid rgba(56, 58, 64, 0.6);
+  border-bottom: 2px solid rgba(56, 58, 64, 0.6);
+  width: 9px;
+  height: 9px;
+  transform: rotate(45deg);
+}
+
+#layout-builder-modal summary::-webkit-details-marker {
+  display: none;
+}
+
+#layout-builder-modal summary:hover,
+#layout-builder-modal summary:focus {
+  color: #26A5FF;
+  background-color: rgba(56, 58, 64, 0.14);
+}
+
+#layout-builder-modal summary:hover:after,
+#layout-builder-modal summary:focus:after {
+  border-right-color: #26A5FF;
+  border-bottom-color: #26A5FF;
+}
+
+#layout-builder-modal details[open] > summary {
+  color: #26A5FF;
+  background-color: rgba(56, 58, 64, 0.14);
+}
+
+#layout-builder-modal details[open] > summary:after {
+  top: 20px;
+  transform: rotate(-135deg);
+}
+
+#layout-builder-modal details[open] > summary:hover {
+  color: #26A5FF;
+  background-color: rgba(56, 58, 64, 0.14);
+}
+
+#layout-builder-modal .dropbutton-widget {
+  color: #fff;
+  background: #277abd;
+}
+
+#layout-builder-modal .dropbutton-widget:hover {
+  background: #2b8bd8;
+}
+
+#layout-builder-modal .dropbutton li,
+#layout-builder-modal .dropbutton a {
+  color: #555;
+}
+
+#layout-builder-modal .dropbutton li:hover,
+#layout-builder-modal .dropbutton li:focus,
+#layout-builder-modal .dropbutton a:hover,
+#layout-builder-modal .dropbutton a:focus {
+  color: #333;
+  background: transparent;
+}
+
+#layout-builder-modal .dropbutton-multiple .dropbutton-widget:hover {
+  background-color: #2b8bd8;
+}
+
+#layout-builder-modal .dropbutton-toggle {
+  color: #fff;
+}
+
+#layout-builder-modal .dropbutton-arrow {
+  color: #fff;
+}
+
+#layout-builder-modal td .dropbutton-widget {
+  background: #277abd none;
+}
+
+#layout-builder-modal td .dropbutton-multiple.open .dropbutton li,
+#layout-builder-modal td .dropbutton-multiple.open .dropbutton a {
+  color: #fff;
+}
+
+#layout-builder-modal form {
+  color: #383A40;
+  font-family: inherit;
+}
+
+#layout-builder-modal input[type="checkbox"] {
+  margin-right: .5rem;
+}
+
+#layout-builder-modal input[type="radio"] {
+  margin-right: .5rem;
+}
+
+#layout-builder-modal label {
+  color: #383A40;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+#layout-builder-modal .description,
+#layout-builder-modal .form-item .description,
+#layout-builder-modal .details-description {
+  color: rgba(56, 58, 64, 0.5);
+  font-size: .875rem;
+  margin-bottom: 1rem;
+}
+
+#layout-builder-modal .form-item {
+  margin-top: .25rem;
+  margin-bottom: 1rem;
+}
+
+#layout-builder-modal .fieldset-legend {
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+#layout-builder-modal .form-select,
+#layout-builder-modal .form-text,
+#layout-builder-modal .form-tel,
+#layout-builder-modal .form-email,
+#layout-builder-modal .form-url,
+#layout-builder-modal .form-search,
+#layout-builder-modal .form-number,
+#layout-builder-modal .form-color,
+#layout-builder-modal .form-file,
+#layout-builder-modal .form-textarea,
+#layout-builder-modal .form-date,
+#layout-builder-modal .form-time {
+  color: inherit;
+  font-size: 1rem;
+  width: 100%;
+}
+
+#layout-builder-modal .form-text,
+#layout-builder-modal .form-tel,
+#layout-builder-modal .form-email,
+#layout-builder-modal .form-url,
+#layout-builder-modal .form-search,
+#layout-builder-modal .form-number,
+#layout-builder-modal .form-color,
+#layout-builder-modal .form-file,
+#layout-builder-modal .form-textarea,
+#layout-builder-modal .form-date,
+#layout-builder-modal .form-time {
+  transition: all .3s ease-in-out;
+  border-radius: 8px;
+  padding: .65rem 1rem;
+  border: 2px solid #dbdbdb;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+#layout-builder-modal .form-text:focus,
+#layout-builder-modal .form-tel:focus,
+#layout-builder-modal .form-email:focus,
+#layout-builder-modal .form-url:focus,
+#layout-builder-modal .form-search:focus,
+#layout-builder-modal .form-number:focus,
+#layout-builder-modal .form-color:focus,
+#layout-builder-modal .form-file:focus,
+#layout-builder-modal .form-textarea:focus,
+#layout-builder-modal .form-date:focus,
+#layout-builder-modal .form-time:focus {
+  border-color: #26A5FF;
+  background-color: transparent;
+  box-shadow: none;
+  outline: 0;
+}
+
+#layout-builder-modal .ui-autocomplete {
+  background-color: #ffffff;
+}
+
+#layout-builder-modal .ui-autocomplete li a {
+  color: #595959 !important;
+}
+
+#layout-builder-modal textarea,
+#layout-builder-modal select,
+#layout-builder-modal input[type="date"],
+#layout-builder-modal input[type="datetime"],
+#layout-builder-modal input[type="datetime-local"],
+#layout-builder-modal input[type="email"],
+#layout-builder-modal input[type="month"],
+#layout-builder-modal input[type="number"],
+#layout-builder-modal input[type="password"],
+#layout-builder-modal input[type="search"],
+#layout-builder-modal input[type="tel"],
+#layout-builder-modal input[type="text"],
+#layout-builder-modal input[type="time"],
+#layout-builder-modal input[type="url"],
+#layout-builder-modal input[type="week"] {
+  color: #383A40;
+  padding: .65rem 1rem;
+  height: auto;
+  vertical-align: middle;
+  border-radius: 8px;
+  border: 2px solid #dbdbdb;
+  background-color: transparent;
+}
+
+#layout-builder-modal textarea[disabled],
+#layout-builder-modal select[disabled],
+#layout-builder-modal input[type="date"][disabled],
+#layout-builder-modal input[type="datetime"][disabled],
+#layout-builder-modal input[type="datetime-local"][disabled],
+#layout-builder-modal input[type="email"][disabled],
+#layout-builder-modal input[type="month"][disabled],
+#layout-builder-modal input[type="number"][disabled],
+#layout-builder-modal input[type="password"][disabled],
+#layout-builder-modal input[type="search"][disabled],
+#layout-builder-modal input[type="tel"][disabled],
+#layout-builder-modal input[type="text"][disabled],
+#layout-builder-modal input[type="time"][disabled],
+#layout-builder-modal input[type="url"][disabled],
+#layout-builder-modal input[type="week"][disabled] {
+  background-color: rgba(56, 58, 64, 0.1);
+}
+
+#layout-builder-modal input:placeholder,
+#layout-builder-modal textarea:placeholder {
+  color: rgba(56, 58, 64, 0.8);
+}
+
+#layout-builder-modal optgroup {
+  color: black;
+}
+
+#layout-builder-modal * button {
+  color: black;
+  border: 1px solid grey;
+}
+
+#layout-builder-modal * textarea,
+#layout-builder-modal * select,
+#layout-builder-modal *:not(div) textarea,
+#layout-builder-modal *:not(div) select {
+  color: black;
+  border: 1px solid grey;
+  background: white;
+}
+
+#layout-builder-modal ::-moz-selection,
+#layout-builder-modal ::selection {
+  color: inherit;
+  background-color: rgba(175, 175, 175, 0.5);
+}
+
+#layout-builder-modal table {
+  /* Cancel out the padding of the parent to make the table full width. */
+  color: #383A40;
+}
+
+#layout-builder-modal td,
+#layout-builder-modal th {
+  border-bottom: 1px solid #777;
+}
+
+#layout-builder-modal td {
+  color: #383A40;
+}
+
+#layout-builder-modal .drag {
+  cursor: move;
+}
+
+#layout-builder-modal tr.region-title {
+  font-weight: normal;
+}
+
+#layout-builder-modal table .region-message {
+  color: #fff;
+}
+
+#layout-builder-modal table .region-populated {
+  display: none;
+}
+
+#layout-builder-modal .add-new .tabledrag-changed {
+  display: none;
+}
+
+#layout-builder-modal .draggable a.tabledrag-handle {
+  float: left;
+  /* LTR */
+  overflow: hidden;
+  min-width: 20px;
+  height: auto;
+  margin: 0 5px 0 0;
+  padding: 0;
+  cursor: move;
+  text-decoration: none;
+  background-image: none;
+}
+
+#layout-builder-modal [dir="rtl"] .draggable a.tabledrag-handle {
+  float: right;
+  margin-right: 0;
+  margin-left: 5px;
+}
+
+#layout-builder-modal a.tabledrag-handle .handle {
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  /* Use lighter drag icon against dark background. */
+  background-image: url(../icons/bebebe/move.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#layout-builder-modal .draggable a.tabledrag-handle:hover .handle,
+#layout-builder-modal .draggable a.tabledrag-handle:focus .handle {
+  text-decoration: none;
+  background-image: url(../icons/787878/move.svg);
+}
+
+#layout-builder-modal tr td {
+  transition: background 0.3s ease;
+}
+
+#layout-builder-modal tr td abbr {
+  margin-left: 5px;
+  /* LTR */
+}
+
+#layout-builder-modal [dir="rtl"] tr td abbr {
+  margin-right: 5px;
+  margin-left: 0;
+}
+
+#layout-builder-modal tr:hover td {
+  background: #222;
+}
+
+#layout-builder-modal tr.drag td {
+  background: #111;
+}
+
+#layout-builder-modal tr.drag-previous td {
+  background: #000;
+}
+
+#layout-builder-modal tr.drag-previous:hover td {
+  background: #222;
+}
+
+#layout-builder-modal body div.tabledrag-changed-warning {
+  margin-bottom: 0.5em;
+  font-size: 14px;
+}
+
+#layout-builder-modal .touchevents .draggable td {
+  padding: 0 10px;
+}
+
+#layout-builder-modal .touchevents .draggable .menu-item__link {
+  display: inline-block;
+  padding: 10px 0;
+}
+
+#layout-builder-modal .touchevents a.tabledrag-handle {
+  width: 40px;
+  height: 44px;
+}
+
+#layout-builder-modal .touchevents a.tabledrag-handle .handle {
+  height: 21px;
+  background-position: 40% 19px;
+  /* LTR */
+}
+
+#layout-builder-modal [dir="rtl"] .touch a.tabledrag-handle .handle {
+  background-position: right 40% top 19px;
+}
+
+#layout-builder-modal .touchevents .draggable.drag a.tabledrag-handle .handle {
+  background-position: 50% -32px;
+}
+
+#layout-builder-modal .tabledrag-toggle-weight-wrapper {
+  padding-top: 10px;
+  text-align: right;
+  /* LTR */
+}
+
+#layout-builder-modal [dir="rtl"] .tabledrag-toggle-weight-wrapper {
+  text-align: left;
+}
+
+#layout-builder-modal .indentation {
+  float: left;
+  /* LTR */
+  width: auto;
+  height: auto;
+  margin: 0 3px 0 -10px;
+  /* LTR */
+  padding: 0 0 0 10px;
+  /* LTR */
+}
+
+#layout-builder-modal [dir="rtl"] .indentation {
+  float: right;
+  margin: 0 -10px 0 3px;
+  padding: 0 10px 0 0;
 }
 
 #layout-builder-modal .blb_tab-content {
   padding: 0 2rem;
 }
 
+#layout-builder-modal #bs_ui #bs_nav-tabs {
+  margin: 0 -40px 30px -40px;
+  width: calc(100% + 40px);
+}
+
 #layout-builder-modal #bs_ui ~ input[type="submit"] {
   float: right;
   margin: 1.5rem 2rem;
-}
-
-#layout-builder-modal .bs_tab-pane--appearance details {
-  border: 0;
 }
 
 #drupal-off-canvas {
@@ -1139,6 +1759,7 @@
   border-radius: 8px;
   background: #26A5FF;
   font-weight: normal;
+  border: 0;
 }
 
 #drupal-off-canvas input[type="submit"].button:hover,
