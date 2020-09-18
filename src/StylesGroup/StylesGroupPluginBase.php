@@ -8,6 +8,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Render\Markup;
 
 /**
  * A base class to help developers implement their own Styles Group plugins.
@@ -86,14 +87,20 @@ abstract class StylesGroupPluginBase extends PluginBase implements StylesGroupPl
    * {@inheritdoc}
    */
   public function getIcon() {
-    return '<img class="bs-plugin-group-icon" src="' . $this->getIconPath() . '" />';
+    $svg = file_get_contents(DRUPAL_ROOT . $this->getIconPath());
+    $svg = preg_replace(['/<\?xml.*\?>/i', '/<!DOCTYPE((.|\n|\r)*?)">/i'], '', $svg);
+    $svg = trim($svg);
+    return Markup::create($svg);
   }
 
   /**
    * {@inheritdoc}
    */
   public function getTitleWithIcon() {
-    return $this->getIcon() . $this->getTitle();
+    return [
+      '#markup' => $this->getIcon(),
+      '#suffix' => '<span class="bs-group-title">' . $this->getTitle() . '</span>',
+    ];
   }
 
   /**

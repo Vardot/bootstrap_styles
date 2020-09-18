@@ -78,6 +78,6 @@
   background: #277abd;
 }
 
-#drupal-off-canvas .bs-plugin-group-icon {
-  margin-right: 15px;
+#drupal-off-canvas .bs-group-title {
+  margin-left: 15px;
 }

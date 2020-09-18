@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="24px" height="21px" viewBox="0 0 24 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>6521FA8A-5C45-4842-93F0-ABAECB02BEEB</title>
-    <g id="Themes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.6">
-        <g id="Layout2" transform="translate(-1199.000000, -509.000000)" fill="#FFFFFF" fill-rule="nonzero">
+    <title>Animation</title>
+    <g id="Themes" stroke="none" stroke-width="1" fill-rule="evenodd" opacity="0.6">
+        <g id="Layout2" transform="translate(-1199.000000, -509.000000)">
             <g id="Group-10" transform="translate(1199.000000, 509.151724)">
                 <path d="M15.3105882,-8.02495325e-15 L6.78691765,4.92084706 L6.78691765,14.7628235 L15.3105882,19.6839529 L23.8342588,14.7628235 L23.8342588,4.92112941 L15.3105882,-8.02495325e-15 Z M22.752,5.11143529 L15.3105882,9.05195294 L7.86861176,5.11143529 L15.3103059,0.815152941 L22.752,5.11143529 Z M7.4928,5.71087059 L14.9576471,9.66381176 L14.9576471,18.6652235 L7.4928,14.3553882 L7.4928,5.71087059 Z M15.6635294,18.6652235 L15.6635294,9.66381176 L23.1283765,5.71087059 L23.1283765,14.3553882 L15.6635294,18.6652235 Z" id="Shape"></path>
                 <rect id="Rectangle" x="14.9576471" y="4.92508235" width="1" height="1"></rect>

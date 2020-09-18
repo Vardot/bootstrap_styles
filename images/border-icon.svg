@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>B49E027F-4CD0-491E-B2A3-1602ACA2AB8E</title>
-    <g id="Themes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.6">
-        <g id="Layout2" transform="translate(-1201.000000, -465.000000)" fill="#FFFFFF" fill-rule="nonzero">
+    <title>Border</title>
+    <g id="Themes" stroke="none" stroke-width="1" fill-rule="evenodd" opacity="0.6">
+        <g id="Layout2" transform="translate(-1201.000000, -465.000000)">
             <g id="Group-11" transform="translate(1201.000000, 465.000000)">
                 <path d="M1.8115942,-1.32367547e-13 C2.81211005,-1.32367547e-13 3.62318841,0.811078351 3.62318841,1.8115942 C3.62318841,2.81211005 2.81211005,3.62318841 1.8115942,3.62318841 C0.811078351,3.62318841 -8.85282186e-15,2.81211005 -8.85282186e-15,1.8115942 C-8.85282186e-15,0.811078351 0.811078351,-1.32367547e-13 1.8115942,-1.32367547e-13 Z M1.8115942,0.905797101 C1.31133628,0.905797101 0.905797101,1.31133628 0.905797101,1.8115942 C0.905797101,2.31185213 1.31133628,2.7173913 1.8115942,2.7173913 C2.31185213,2.7173913 2.7173913,2.31185213 2.7173913,1.8115942 C2.7173913,1.31133628 2.31185213,0.905797101 1.8115942,0.905797101 Z" id="Combined-Shape"></path>
                 <rect id="Rectangle" x="3.17028986" y="1.35869565" width="13.5869565" height="1"></rect>
