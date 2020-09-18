@@ -3,28 +3,9 @@
  * Styles for dropbuttons in the off-canvas dialog.
  */
 
-//.dropbutton-wrapper,
-//.dropbutton-widget {
-//  position: static;
-//  display: block;
-//  transition: none;
-//  -webkit-appearance: none;
-//  -moz-appearance: none;
-//}
 .dropbutton-widget {
-  //margin: 0;
-  //padding: 0;
-  //cursor: pointer;
-  //transition: background 0.5s ease;
-  //text-align: center;
-  //text-decoration: none;
-  //text-transform: none;
   color: #fff;
-  //border: 0;
-  //border-radius: 1em;
   background: #277abd;
-  //font-weight: 600;
-  //line-height: normal;
 }
 .dropbutton-widget:hover {
   background: #2b8bd8;
@@ -34,40 +15,15 @@
  * Style dropbutton single.
  */
 
-//.dropbutton-single .dropbutton-action a {
-//  height: 2.2em;
-//  /* Overlap icon for trigger. */
-//  margin-top: -2em;
-//  padding: 0;
-//  cursor: pointer;
-//}
-//.dropbutton-single .dropbutton-action:hover,
-//.dropbutton-single .dropbutton-action:focus,
-//.dropbutton-single .dropbutton-action a:hover,
-//.dropbutton-single .dropbutton-action a:focus {
-//  text-decoration: none;
-//  outline: none;
-//}
-//.dropbutton-widget .dropbutton {
-//  overflow: hidden;
-//  margin: 0;
-//  padding: 0;
-//}
 .dropbutton li,
 .dropbutton a {
-  //display: block;
-  //width: auto;
-  //padding: 4px 0;
-  //text-align: left;
-  color: #555;
-  //outline: none;
+  color: $panel_link_color;
 }
 .dropbutton li:hover,
 .dropbutton li:focus,
 .dropbutton a:hover,
 .dropbutton a:focus {
-  color: #333;
-  //outline: none;
+  color: darken($panel_link_color, 10%);
   background: transparent;
 }
 
@@ -75,217 +31,26 @@
  * Style dropbutton multiple.
  */
 
-//.dropbutton-multiple .dropbutton-widget {
-//  width: 2em;
-//  height: 2em;
-//}
 .dropbutton-multiple .dropbutton-widget:hover {
-  background-color: #2b8bd8;
+  background-color: lighten($panel_link_color, 20%);
 }
-
-/* Hide the other actions until the dropbutton is triggered. */
-//.dropbutton-multiple .dropbutton .secondary-action {
-//  display: none;
-//}
 
 /* The toggle to expand the button. */
 .dropbutton-toggle {
-  //position: absolute;
-  //top: 0;
-  //right: 0; /* LTR */
-  //bottom: 0;
-  //display: block;
-  //width: 2em;
-  //white-space: nowrap;
-  //text-indent: 110%;
-  color: #fff;
+  color: $panel_text_color;
 }
-//.dropbutton-toggle button {
-//  display: block;
-//  width: 100%;
-//  height: 100%;
-//  margin: 0;
-//  padding: 0;
-//  cursor: pointer;
-//  border: 0 solid transparent;
-//  border-top-right-radius: 1em; /* LTR */
-//  border-bottom-right-radius: 1em; /* LTR */
-//}
-//.dropbutton-toggle button:hover,
-//.dropbutton-toggle button:focus {
-//  outline: none;
-//}
 
 /* The toggle arrow. */
 .dropbutton-arrow {
-  //position: absolute;
-  //display: block;
-  //overflow: hidden;
-  //width: 0;
-  //height: 0;
-  //margin-top: 0;
-  color: #fff;
-  //border-width: 0.3333em 0.3333em 0;
-  //border-style: solid;
-  //border-right-color: transparent;
-  //border-bottom-color: transparent;
-  //border-left-color: transparent;
-  //line-height: 0;
+  color: $panel_text_color;
 }
-//span.dropbutton-arrow {
-//  top: 7px;
-//  right: 7px; /* LTR */
-//  background: transparent;
-//}
-//span.dropbutton-arrow:hover {
-//  background: transparent;
-//}
-//
-//.dropbutton-action > .js-form-submit.form-submit,
-//.dropbutton-toggle button {
-//  position: relative;
-//  text-shadow: none;
-//}
-//
-///*
-// * Dropbuttons when in a table cell.
-// */
-//
-///* Make sure table cell doesn't collapse around absolute positioned dropbutton. */
-//td .dropbutton-single {
-//  min-width: 2em;
-//}
-//td .dropbutton-multiple {
-//  min-width: 2em;
-//  margin-right: 0;
-//  margin-left: 0;
-//  padding-right: 0;
-//  padding-left: 0;
-//  border: 0;
-//}
-//td .dropbutton-multiple .dropbutton-action a,
-//td .dropbutton-multiple .dropbutton-action input,
-//td .dropbutton-multiple .dropbutton-action button {
-//  width: auto;
-//  padding: 0;
-//  font-size: inherit;
-//}
-//td .dropbutton-wrapper {
-//  margin-bottom: 0;
-//}
 
 /* Push the widget to the right so text expands left. */
 td .dropbutton-widget {
-  //position: absolute;
-  //right: 12px; /* LTR */
-  //padding: 0;
-  background: #277abd none;
+  background: lighten($panel_link_color, 20%) none;
 }
 
-/* Push the wrapper to the right edge of the td. */
-//td .dropbutton-single,
-//td .dropbutton-multiple {
-//  position: relative;
-//  float: right; /* LTR */
-//  min-width: initial;
-//  max-width: initial;
-//  margin-right: 0;
-//  padding-right: 0;
-//}
-//td .dropbutton-widget .dropbutton {
-//  overflow: hidden;
-//  width: 2em;
-//  height: 2em;
-//  margin: 0;
-//  background: transparent;
-//}
-
-/* Push text out of the way. */
-//td .dropbutton-multiple li,
-//td .dropbutton-multiple a {
-//  margin-left: -9999px;
-//  background: transparent;
-//}
 td .dropbutton-multiple.open .dropbutton li,
 td .dropbutton-multiple.open .dropbutton a {
-  //width: auto;
-  //margin-left: 0;
-  color: #fff;
+  color: $panel_text_color;
 }
-
-/* Collapse the button to a circle. */
-//td .dropbutton-toggle {
-//  width: 2em;
-//  height: 2em;
-//  border-radius: 1em;
-//}
-//td .dropbutton-wrapper .dropbutton-widget .dropbutton-toggle button {
-//  border: 0;
-//  background: transparent;
-//}
-//
-///* Prevent list item from expanding its container. */
-//td ul.dropbutton li.edit {
-//  width: 2em;
-//  height: 2em;
-//}
-//
-///* Make li text transparent above icon so it's clickable. */
-//td .dropbutton-single li.edit.dropbutton-action > a {
-//  z-index: 1;
-//  color: transparent;
-//}
-//
-///* Put pencil icon in place of hidden 'edit' text on single buttons. */
-//td .dropbutton-single .edit:before {
-//  display: block;
-//  content: ".";
-//  color: transparent;
-//  background: transparent url(../icons/ffffff/pencil.svg) no-repeat center;
-//  background-size: 14px;
-//}
-//
-///* Dropbutton when triggered expands to show secondary items. */
-//.dropbutton-multiple.open {
-//  z-index: 100;
-//}
-//
-/* Create visual separation if there is an adjacent button. */
-//.dropbutton-multiple.open .dropbutton-widget {
-//  box-shadow: 0 3px 3px 2px rgba(0, 0, 0, 0.5);
-//}
-//
-///* Triggered dropbutton expands to show secondary items. */
-//.dropbutton-multiple.open,
-//.dropbutton-multiple.open .dropbutton-widget {
-//  display: block;
-//  overflow: visible;
-//  width: auto;
-//  min-width: 0;
-//  max-width: none;
-//  height: auto;
-//  padding: 0;
-//}
-//
-///* Triggered dropbutton in td expands to show secondary items. */
-//td .dropbutton-multiple.open .dropbutton,
-//.dropbutton-multiple.open .dropbutton .secondary-action {
-//  display: block;
-//  width: auto;
-//  height: auto;
-//  padding-right: 1em; /* LTR */
-//}
-//[dir="rtl"] td .dropbutton-multiple.open .dropbutton {
-//  padding-right: inherit;
-//  padding-left: 1em;
-//}
-//.dropbutton-multiple.open .dropbutton li a {
-//  padding: 2px 1em;
-//}
-//
-///* When open, the toggle arrow points upward. */
-//.dropbutton-multiple.open span.dropbutton-arrow {
-//  top: 2px;
-//  border-top-color: transparent;
-//  border-bottom: 0.3333em solid;
-//}
