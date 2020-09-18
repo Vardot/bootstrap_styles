@@ -33,12 +33,35 @@
   background: transparent;
 
   .ui-dialog-titlebar {
+    font-weight: normal;
     font-size: 1.5rem;
     padding: 1rem 2rem;
     border-radius: $border_radius $border_radius 0 0;
     background-color: $tab_bg_color;
     color: $panel_text_color;
     border: 0;
+  }
+
+  .ui-dialog-titlebar-close {
+    right: 2rem;
+    top: 50%;
+    margin-top: -.75rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    opacity: .6;
+    border: 0;
+    background: #{$close_circle_icon} center center no-repeat $panel_bg_color;
+    background-size: contain;
+    outline: 0;
+    border-radius: 1.5rem;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+      border: 0;
+      background: #{$close_circle_icon} center center no-repeat $panel_bg_color;
+      background-size: contain;
+    }
   }
 }
 

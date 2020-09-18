@@ -40,14 +40,14 @@
   background-size: contain;
   outline: 0;
   border-radius: 1.5rem;
-}
 
-.ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close:hover,
-.ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close:focus {
-  opacity: 1;
-  border: 0;
-  background: #{$close_circle_icon} center center no-repeat $panel_bg_color;
-  background-size: contain;
+  &:hover,
+  &:focus {
+    opacity: 1;
+    border: 0;
+    background: #{$close_circle_icon} center center no-repeat $panel_bg_color;
+    background-size: contain;
+  }
 }
 
 .ui-dialog.ui-dialog-off-canvas .ui-dialog-title {

@@ -49,11 +49,9 @@
 .inline-block-list__item {
   padding: 11px 20px !important;
   color: $button_text_color !important;
-  //background: $button_bg_color !important;
+  background: lighten($button_bg_color, 5%) !important;
 
-  //&:hover {
-  //  background: darken($button_bg_color, 10%);
-  //}
-
-
+  &:hover {
+    background: darken($button_bg_color, 10%);
+  }
 }
