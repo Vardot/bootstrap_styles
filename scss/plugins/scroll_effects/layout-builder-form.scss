@@ -25,9 +25,10 @@
           display: block;
 
           + label {
-            font-size: 12px;
+            @include smooth-all-transition;
+            font-size: .75rem;
             font-weight: normal;
-            border: 2px solid $white;
+            border: 2px solid $panel_text_color;
             padding: 10px;
             margin: 3px;
             min-height: 40px;
@@ -40,20 +41,20 @@
             border-radius: 8px;
 
             &:hover {
-              background-color: rgba($white, .1);
+              background-color: rgba($panel_text_color, .1);
             }
           }
 
           // Active state.
           &:checked + label {
-            color: $gray-444;
-            background-color: $white;
+            color: $panel_bg_color;
+            background-color: $panel_text_color;
           }
         }
 
         // Custom fix for Bootstrap 3 Drupal theme.
         label {
-          border: 2px solid $white;
+          border: 2px solid $panel_text_color;
           height: 30px;
           width: 100%;
           display: flex;
@@ -69,8 +70,8 @@
 
           // Active state.
           &.active {
-            color: $gray-444;
-            background-color: $white;
+            color: $panel_bg_color;
+            background-color: $panel_text_color;
           }
         }
       }

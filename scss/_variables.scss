@@ -15,7 +15,7 @@ $black:                     #000000;
 
 // Blues
 $blue-41a:                  #41A5FF;
-$blue-2aa:                  #2AAFFF;
+$blue-26a:                  #26A5FF;
 $blue-009:                  #009DDE;
 $blue-007:                  #007BC7;
 $blue-277:                  #277abd;
@@ -59,6 +59,10 @@ $panel_text_color:          $white !default;
 $panel_link_color:          $blue-41a !default;
 $panel_bg_color:            $gray-383 !default;
 
+// Icons
+$close_circle_icon:         url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzMwMHB4JyB3aWR0aD0nMzAwcHgnICBmaWxsPSIjZmZmZmZmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgODUuODEyIDg1LjgxMiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgODUuODEyIDg1LjgxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PHBhdGggZD0iTTcwLjY5LDE0LjEyMWMtMTUuNjIxLTE1LjYyLTQwLjk0NS0xNS42Mi01Ni41NjgsMGMtMTUuNjIxLDE1LjYyLTE1LjYyLDQwLjk0NiwwLDU2LjU2NyAgIGMxNS42MjQsMTUuNjIzLDQwLjk0OSwxNS42MjMsNTYuNTY5LDAuMDAyQzg2LjMxMiw1NS4wNzEsODYuMzEzLDI5Ljc0NCw3MC42OSwxNC4xMjF6IE01NC44NzEsNTkuMjlMNDIuNDA2LDQ2LjgyNUwyOS45NDIsNTkuMjkgICBjLTEuMjIzLDEuMjIzLTMuMjAyLDEuMjIyLTQuNDIyLDAuMDAyYy0xLjIyMy0xLjIyNC0xLjIyMS0zLjIsMC00LjQyMmwxMi40NjYtMTIuNDY2TDI1LjUyMiwyOS45NDEgICBjLTEuMjIzLTEuMjIzLTEuMjIzLTMuMjAxLDAtNC40MjFjMS4yMTktMS4yMjIsMy4xOTktMS4yMjMsNC40MiwwbDEyLjQ2NSwxMi40NjRMNTQuODcsMjUuNTJjMS4yMjItMS4yMjIsMy4xOTktMS4yMjIsNC40MiwwLjAwMSAgIGMxLjIyMSwxLjIxOSwxLjIyMiwzLjE5OCwwLjAwMSw0LjQxOUw0Ni44MjYsNDIuNDA0bDEyLjQ2NSwxMi40NjZjMS4yMjIsMS4yMjIsMS4yMjIsMy4yMDEsMCw0LjQyMlM1Ni4wOTMsNjAuNTEyLDU0Ljg3MSw1OS4yOXoiPjwvcGF0aD48L2c+PC9zdmc+");
+$configure_icon:            url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzMwMHB4JyB3aWR0aD0nMzAwcHgnICBmaWxsPSIjZmZmZmZmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNjQgNjQiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDY0IDY0IiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48cGF0aCBkPSJNNTEsMzBoLTcuMzVjLTAuODI3LTIuMzI2LTMuMDQ0LTQtNS42NS00cy00LjgyMywxLjY3NC01LjY1LDRIMTNjLTEuMTA0LDAtMiwwLjg5Ni0yLDJzMC44OTYsMiwyLDJoMTkuMzUgICBjMC44MjcsMi4zMjYsMy4wNDQsNCw1LjY1LDRzNC44MjMtMS42NzQsNS42NS00SDUxYzEuMTA0LDAsMi0wLjg5NiwyLTJTNTIuMTA0LDMwLDUxLDMweiI+PC9wYXRoPjxwYXRoIGQ9Ik0xMywxOWg4LjM1YzAuODI3LDIuMzI2LDMuMDQ0LDQsNS42NSw0czQuODIzLTEuNjc0LDUuNjUtNEg1MWMxLjEwNCwwLDItMC44OTYsMi0ycy0wLjg5Ni0yLTItMkgzMi42NSAgIGMtMC44MjctMi4zMjYtMy4wNDQtNC01LjY1LTRzLTQuODIzLDEuNjc0LTUuNjUsNEgxM2MtMS4xMDQsMC0yLDAuODk2LTIsMlMxMS44OTYsMTksMTMsMTl6Ij48L3BhdGg+PHBhdGggZD0iTTUxLDQ1SDMyLjY1Yy0wLjgyNy0yLjMyNi0zLjA0NC00LTUuNjUtNHMtNC44MjMsMS42NzQtNS42NSw0SDEzYy0xLjEwNCwwLTIsMC44OTYtMiwyczAuODk2LDIsMiwyaDguMzUgICBjMC44MjcsMi4zMjYsMy4wNDQsNCw1LjY1LDRzNC44MjMtMS42NzQsNS42NS00SDUxYzEuMTA0LDAsMi0wLjg5NiwyLTJTNTIuMTA0LDQ1LDUxLDQ1eiI+PC9wYXRoPjwvZz48L3N2Zz4=");
+
 // Tabs
 $tabs_bottom_border_color:  $gray-727 !default;
 $tab_text_color:            $gray-979 !default;
@@ -72,18 +76,17 @@ $tooltip_text_color:        $panel_text_color !default;
 $tooltip_bg_color:          $gray-464 !default;
 
 // Details & Summary
-$details_text_color:              $panel_text_color !default;
-
-$summary_link_color:              rgba($details_text_color, .6) !default;
-$summary_link_color_hover:        $blue-2aa !default;
-$summary_link_color_active:       $details_text_color !default;
+//$details_text_color:              $panel_text_color !default;
+$summary_link_color:              rgba($panel_bg_color, .6) !default;
+$summary_link_color_hover:        $blue-26a !default;
+$summary_link_color_active:       $summary_link_color_hover !default;
 
 $summary_bg_color:                transparent !default;
 $summary_bg_color_hover:          rgba($summary_link_color_hover, .14) !default;
-$summary_bg_color_active:         $gray-464 !default;
+$summary_bg_color_active:         $gray-464;
 
 // Buttons
 $button_text_color:         $panel_bg_color !default;
 $button_text_color_hover:   $panel_text_color !default;
-$button_bg_color:           $blue-2aa !default;
+$button_bg_color:           $blue-26a !default;
 $button_bg_color_hover:     darken($button_bg_color, 10%) !default;

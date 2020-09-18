@@ -46,22 +46,29 @@
 //
 .ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close {
   //position: absolute;
-  //top: calc(50% - 6px);
+  top: 50%;
+  margin-top: -.75rem;
   //right: 1em;
-  //width: 30px;
-  //height: 30px;
+  width: 1.5rem;
+  height: 1.5rem;
   //transition: all 0.5s ease;
-  border: 2px solid transparent;
+  opacity: .6;
+  border: 0;
   //background-color: transparent;
-  //background-image: url(../icons/bebebe/ex.svg);
+  background: #{$close_circle_icon} center center no-repeat $panel_bg_color;
+  background-size: contain;
+  outline: 0;
+  border-radius: 1.5rem;
   //background-repeat: no-repeat;
   //background-position: center center;
 }
 
 .ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close:hover,
 .ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close:focus {
-  border: 2px solid $panel_text_color;
-  //background-image: url(../icons/ffffff/ex.svg);
+  opacity: 1;
+  border: 0;
+  background: #{$close_circle_icon} center center no-repeat $panel_bg_color;
+  background-size: contain;
 }
 //
 //[dir="rtl"] .ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close {
@@ -98,7 +105,7 @@
 //  width: 20px;
 //  height: 100%;
 //  content: "";
-  background: transparent url(../../images/ui/configure.svg) no-repeat scroll center center;
+  background: transparent #{$configure_icon} no-repeat scroll center center;
   background-size: 100% auto;
 }
 //
