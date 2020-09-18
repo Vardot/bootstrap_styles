@@ -1,0 +1,143 @@
+/**
+ * @file
+ * Visual styling for forms in the off-canvas dialog.
+ */
+
+#layout-builder-modal form {
+  color: $panel_text_color;
+  font-family: inherit;
+}
+#layout-builder-modal input[type="checkbox"] {
+  margin-right: .5rem;
+  //-webkit-appearance: checkbox;
+}
+#layout-builder-modal input[type="radio"] {
+  margin-right: .5rem;
+  //-webkit-appearance: radio;
+}
+//#layout-builder-modal select:not([multiple]) {
+//  -webkit-appearance: menulist;
+//  -moz-appearance: menulist;
+//}
+//#layout-builder-modal option {
+//  display: block;
+//  font-family: "Lucida Grande", "Lucida Sans Unicode", "liberation sans", sans-serif;
+//}
+#layout-builder-modal label {
+  color: $panel_text_color;
+  //font-family: inherit;
+  font-size: 1rem;
+  font-weight: normal;
+  //line-height: normal;
+}
+//#layout-builder-modal .visually-hidden {
+//  width: 0;
+//  height: 0;
+//  letter-spacing: -2em;
+//  opacity: 0;
+//}
+#layout-builder-modal .description,
+#layout-builder-modal .form-item .description,
+#layout-builder-modal .details-description {
+  //margin-top: 5px;
+  color: rgba($panel_text_color, .5);
+  //font-family: inherit;
+  font-size: .875rem;
+  margin-bottom: 1rem;
+  //font-style: normal;
+}
+#layout-builder-modal .form-item {
+  margin-top: .25rem;
+  margin-bottom: 1rem;
+}
+#layout-builder-modal .fieldset-legend {
+  margin-bottom: 0.5rem;
+  display: block;
+}
+/* Set size and position for all inputs. */
+#layout-builder-modal .form-select,
+#layout-builder-modal .form-text,
+#layout-builder-modal .form-tel,
+#layout-builder-modal .form-email,
+#layout-builder-modal .form-url,
+#layout-builder-modal .form-search,
+#layout-builder-modal .form-number,
+#layout-builder-modal .form-color,
+#layout-builder-modal .form-file,
+#layout-builder-modal .form-textarea,
+#layout-builder-modal .form-date,
+#layout-builder-modal .form-time {
+  //display: block;
+  //box-sizing: border-box;
+  //max-width: 100%;
+  //margin: 5px 0 0 0;
+  //padding: 6px;
+  color: inherit;
+  //border-width: 1px;
+  //border-radius: 2px;
+  //font-family: inherit;
+  font-size: 1rem;
+  width: 100%;
+}
+/* Reduce contrast for fields against dark background. */
+#layout-builder-modal .form-text,
+#layout-builder-modal .form-tel,
+#layout-builder-modal .form-email,
+#layout-builder-modal .form-url,
+#layout-builder-modal .form-search,
+#layout-builder-modal .form-number,
+#layout-builder-modal .form-color,
+#layout-builder-modal .form-file,
+#layout-builder-modal .form-textarea,
+#layout-builder-modal .form-date,
+#layout-builder-modal .form-time {
+  @include smooth-all-transition;
+  border-radius: $border_radius;
+  padding: .65rem 1rem;
+  border: 2px solid $tabs_bottom_border_color;
+  background-color: transparent;
+  box-shadow: none;
+}
+#layout-builder-modal .form-text:focus,
+#layout-builder-modal .form-tel:focus,
+#layout-builder-modal .form-email:focus,
+#layout-builder-modal .form-url:focus,
+#layout-builder-modal .form-search:focus,
+#layout-builder-modal .form-number:focus,
+#layout-builder-modal .form-color:focus,
+#layout-builder-modal .form-file:focus,
+#layout-builder-modal .form-textarea:focus,
+#layout-builder-modal .form-date:focus,
+#layout-builder-modal .form-time:focus {
+  border-color: $panel_link_color;
+  background-color: transparent;
+  box-shadow: none;
+  outline: 0;
+}
+//#layout-builder-modal td .form-item,
+//#layout-builder-modal td .form-select {
+//  margin: 0;
+//}
+//#layout-builder-modal .form-file {
+//  width: 100%;
+//  margin-bottom: 5px;
+//}
+//#layout-builder-modal .form-actions {
+//  margin: 10px 0;
+//  text-align: center;
+//}
+#layout-builder-modal .ui-autocomplete {
+  //position: absolute;
+  //top: 0;
+  //left: 0;
+  //cursor: default;
+  background-color: $panel_bg_color;
+}
+//#layout-builder-modal .ui-autocomplete li {
+//  display: block;
+//}
+#layout-builder-modal .ui-autocomplete li a {
+  //padding: 5px;
+  //cursor: pointer;
+  color: #595959 !important;
+}
