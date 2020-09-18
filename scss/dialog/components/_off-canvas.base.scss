@@ -1,0 +1,45 @@
+/**
+ * @file
+ * Set base styles for the off-canvas dialog.
+ */
+
+/* Set some global attributes. */
+*,
+*:not(div) {
+  color: $panel_text_color;
+  background: unset;
+  font-family: inherit;
+}
+
+/* Generic elements. */
+a,
+.link {
+  color: $panel_link_color;
+  font-family: inherit;
+}
+
+hr {
+  background: $panel_text_color;
+}
+
+/* Override jQuery UI */
+.ui-widget-content a {
+  color: $panel_link_color !important;
+}
+
+.messages--status {
+  color: $state_error;
+  //background-color: #f3faef;
+  //background-image: url(../icons/73b355/check.svg);
+}
+.messages--warning {
+  color: $state_warning;
+  //background-color: #fdf8ed;
+  //background-image: url(../icons/e29700/warning.svg);
+}
+
+.messages--error {
+  color: $state_error;
+  //background-color: #fcf4f2;
+  //background-image: url(../icons/e32700/error.svg);
+}
