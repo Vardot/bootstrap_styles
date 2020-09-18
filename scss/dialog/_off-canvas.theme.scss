@@ -10,13 +10,8 @@
 /* Style the dialog-off-canvas container. */
 .ui-dialog.ui-dialog-off-canvas {
   font-size: $offcanvas_font_size;
-  /* Layer the dialog just under the toolbar. */
-  //z-index: 501;
-  //padding: 0;
   color: $panel_text_color;
-  //border-radius: 0;
   background: $panel_bg_color;
-  //box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.3333);
 
   @media only screen and (min-width: 1200px) {
     min-width: $offcanvas_tray_width;
@@ -29,37 +24,22 @@
 
 /* Style the off-canvas dialog header. */
 .ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar {
-  //padding: 1em;
   color: $panel_text_color;
-  //border: 0;
   border-bottom: 1px solid $tabs_bottom_border_color;
-  //border-radius: 0;
   background: $panel_bg_color;
-  //font-weight: normal;
 }
 
-///* Hide the default jQuery UI dialog close button. */
-//.ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close .ui-icon {
-//  visibility: hidden;
-//}
-//
 .ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close {
-  //position: absolute;
   top: 50%;
   margin-top: -.75rem;
-  //right: 1em;
   width: 1.5rem;
   height: 1.5rem;
-  //transition: all 0.5s ease;
   opacity: .6;
   border: 0;
-  //background-color: transparent;
   background: #{$close_circle_icon} center center no-repeat $panel_bg_color;
   background-size: contain;
   outline: 0;
   border-radius: 1.5rem;
-  //background-repeat: no-repeat;
-  //background-position: center center;
 }
 
 .ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close:hover,
@@ -69,60 +49,19 @@
   background: #{$close_circle_icon} center center no-repeat $panel_bg_color;
   background-size: contain;
 }
-//
-//[dir="rtl"] .ui-dialog.ui-dialog-off-canvas .ui-dialog-titlebar-close {
-//  right: auto;
-//  left: 1em;
-//}
-//
+
 .ui-dialog.ui-dialog-off-canvas .ui-dialog-title {
-//  /* Ensure that long titles do not overlap the close button. */
-//  max-width: 210px;
-//  margin: 0;
-//  padding-right: 0; /* LTR */
-//  /* Push the text away from the icon. */
   padding-left: 40px; /* LTR */
-//  text-align: left; /* LTR */
-//  /* Ensure that long titles are not truncated. */
-//  white-space: normal;
   font-family: inherit;
   font-size: 1.25rem;
 }
-//
+
 [dir="rtl"] .ui-dialog.ui-dialog-off-canvas .ui-dialog-title {
-//  float: right;
   padding-right: 40px;
-//  padding-left: 0;
-//  text-align: right;
 }
-//
+
 .ui-dialog.ui-dialog-off-canvas .ui-dialog-title:before {
-//  position: absolute;
-//  top: 0;
-//  left: 1em; /* LTR */
-//  display: block;
-//  width: 20px;
-//  height: 100%;
-//  content: "";
   background: transparent #{$configure_icon} no-repeat scroll center center;
   background-size: 100% auto;
 }
-//
-//[dir="rtl"] .ui-dialog.ui-dialog-off-canvas .ui-dialog-title:before {
-//  right: 1em;
-//  left: auto;
-//}
-//
-///* Override default styling from jQuery UI. */
-//.ui-state-default,
-//.ui-widget-content .ui-state-default,
-//.ui-widget-header .ui-state-default {
-//  color: #333;
-//  border: 0;
-//  font-size: 14px;
-//  font-weight: normal;
-//}
-//
-//.ui-widget-content a {
-//  color: #85bef4;
-//}
+
