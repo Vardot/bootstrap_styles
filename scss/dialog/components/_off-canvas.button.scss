@@ -47,6 +47,7 @@ input[type="submit"].button {
   background: $button_bg_color;
   //font-size: 14px;
   font-weight: normal;
+  border: 0;
 }
 input[type="submit"].button:hover,
 input[type="submit"].button:focus,
