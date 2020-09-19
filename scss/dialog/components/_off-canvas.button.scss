@@ -14,6 +14,7 @@ button.link:focus {
   color: $button_text_color_hover;
 }
 
+button.button,
 input[type="submit"].button {
   margin-top: 10px;
   padding: 11px 20px;
@@ -22,6 +23,7 @@ input[type="submit"].button {
   background: $button_bg_color;
   font-weight: normal;
   border: 0;
+  width: 100%;
 }
 
 input[type="submit"].button:hover,
@@ -30,15 +32,16 @@ input[type="submit"].button:active {
   color: $button_text_color;
 }
 
+button.button--primary,
 input[type="submit"].button--primary {
   color: $button_text_color;
   background: $button_bg_color;
-}
 
-input[type="submit"].button--primary:hover,
-input[type="submit"].button--primary:focus,
-input[type="submit"].button--primary:active {
-  background: $button_bg_color_hover;
+  &:hover,
+  &:focus,
+  &:active {
+    background: $button_bg_color_hover;
+  }
 }
 
 .button:disabled,

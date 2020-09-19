@@ -1172,6 +1172,7 @@
   color: #ffffff;
 }
 
+#layout-builder-modal button.button,
 #layout-builder-modal input[type="submit"].button {
   margin-top: 10px;
   padding: 11px 20px;
@@ -1180,6 +1181,7 @@
   background: #26A5FF;
   font-weight: normal;
   border: 0;
+  width: 100%;
 }
 
 #layout-builder-modal input[type="submit"].button:hover,
@@ -1188,11 +1190,13 @@
   color: #383A40;
 }
 
+#layout-builder-modal button.button--primary,
 #layout-builder-modal input[type="submit"].button--primary {
   color: #383A40;
   background: #26A5FF;
 }
 
+#layout-builder-modal button.button--primary:hover, #layout-builder-modal button.button--primary:focus, #layout-builder-modal button.button--primary:active,
 #layout-builder-modal input[type="submit"].button--primary:hover,
 #layout-builder-modal input[type="submit"].button--primary:focus,
 #layout-builder-modal input[type="submit"].button--primary:active {
@@ -1756,9 +1760,11 @@
   width: calc(100% + 40px);
 }
 
-#layout-builder-modal #bs_ui ~ input[type="submit"] {
+#layout-builder-modal #bs_ui ~ button.button,
+#layout-builder-modal #bs_ui ~ input[type="submit"].button {
   float: right;
   margin: 1.5rem 2rem;
+  width: auto !important;
 }
 
 .ui-dialog.ui-layout-builder-modal {
@@ -1962,6 +1968,7 @@
   color: #ffffff;
 }
 
+#drupal-off-canvas button.button,
 #drupal-off-canvas input[type="submit"].button {
   margin-top: 10px;
   padding: 11px 20px;
@@ -1970,6 +1977,7 @@
   background: #26A5FF;
   font-weight: normal;
   border: 0;
+  width: 100%;
 }
 
 #drupal-off-canvas input[type="submit"].button:hover,
@@ -1978,11 +1986,13 @@
   color: #383A40;
 }
 
+#drupal-off-canvas button.button--primary,
 #drupal-off-canvas input[type="submit"].button--primary {
   color: #383A40;
   background: #26A5FF;
 }
 
+#drupal-off-canvas button.button--primary:hover, #drupal-off-canvas button.button--primary:focus, #drupal-off-canvas button.button--primary:active,
 #drupal-off-canvas input[type="submit"].button--primary:hover,
 #drupal-off-canvas input[type="submit"].button--primary:focus,
 #drupal-off-canvas input[type="submit"].button--primary:active {
