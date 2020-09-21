@@ -79,6 +79,19 @@ class SettingsForm extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildForm($form, $form_state);
 
+    // Layout builder theme toggler.
+    $options = [
+      'dark' => $this->t('Dark'),
+      'light' => $this->t('Light'),
+    ];
+
+    $form['layout_builder_theme'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Layout Builder Theme'),
+      '#options' => $options,
+      '#default_value' => $this->config(static::SETTINGS)->get('layout_builder_theme') ?? 'dark',
+    ];
+
     // Loop through styles groups plugins.
     foreach ($this->stylesGroupManager->getStylesGroups() as $group_plugin_id => $styles_group) {
       // Style group form.
@@ -105,6 +118,12 @@ class SettingsForm extends ConfigFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     parent::submitForm($form, $form_state);
+
+    // Save layout builder theme.
+    $this->config(static::SETTINGS)
+      ->set('layout_builder_theme', $form_state->getValue('layout_builder_theme'))
+      ->save();
+
     foreach ($this->stylesGroupManager->getStylesGroups() as $group_plugin_id => $style_group) {
       // Submit group form.
       $group_instance = $this->stylesGroupManager->createInstance($group_plugin_id);
