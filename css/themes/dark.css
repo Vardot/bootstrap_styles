@@ -761,8 +761,7 @@
 
 #drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div {
   position: relative;
-  flex: 100%;
-  width: 100%;
+  flex: 1;
   margin: 0;
   padding: 0;
 }
@@ -779,7 +778,6 @@
 }
 
 #drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div input + label {
-  transition: all .3s ease-in-out;
   border: 2px solid #ffffff;
   padding: 10px;
   height: 50px;
@@ -796,7 +794,7 @@
 }
 
 #drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div input:checked + label {
-  color: #383A40;
+  color: #444444;
   background-color: #ffffff;
 }
 
@@ -817,7 +815,7 @@
 }
 
 #drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div label.active {
-  color: #383A40;
+  color: #444444;
   background-color: #ffffff;
 }
 
@@ -1461,7 +1459,7 @@
   padding: 0 15px;
 }
 
-#layout-builder-modal .form-textarea-wrapper {
+#layout-builder-modal .cke {
   background-color: #ffffff;
 }
 
@@ -2257,7 +2255,7 @@
   padding: 0 15px;
 }
 
-#drupal-off-canvas .form-textarea-wrapper {
+#drupal-off-canvas .cke {
   background-color: #ffffff;
 }
 
