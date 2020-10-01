@@ -54,7 +54,7 @@ class Margin extends StylePluginBase {
       '#type' => 'radios',
       '#options' => $this->getStyleOptions('margin'),
       '#title' => $this->t('Margin'),
-      '#default_value' => $storage['margin']['class'],
+      '#default_value' => $storage['margin']['class'] ?? NULL,
       '#validated' => TRUE,
     ];
 

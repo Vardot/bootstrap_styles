@@ -54,7 +54,7 @@ class Padding extends StylePluginBase {
       '#type' => 'radios',
       '#options' => $this->getStyleOptions('padding'),
       '#title' => $this->t('Padding'),
-      '#default_value' => $storage['padding']['class'],
+      '#default_value' => $storage['padding']['class'] ?? NULL,
       '#validated' => TRUE,
     ];
 

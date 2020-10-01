@@ -90,7 +90,7 @@ class ScrollEffects extends StylePluginBase {
       '#type' => 'radios',
       '#options' => $this->getStyleOptions('scroll_effects'),
       '#title' => $this->t('Scroll Effects'),
-      '#default_value' => $storage['scroll_effects']['class'],
+      '#default_value' => $storage['scroll_effects']['class'] ?? NULL,
       '#validated' => TRUE,
       '#attributes' => [
         'class' => ['field-scroll-effects'],

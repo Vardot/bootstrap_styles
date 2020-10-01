@@ -54,7 +54,7 @@ class BackgroundColor extends StylePluginBase {
       '#type' => 'radios',
       '#options' => $this->getStyleOptions('background_colors'),
       '#title' => $this->t('Background color'),
-      '#default_value' => $storage['background_color']['class'],
+      '#default_value' => $storage['background_color']['class'] ?? NULL,
       '#validated' => TRUE,
       '#attributes' => [
         'class' => ['field-background-color'],

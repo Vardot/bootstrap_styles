@@ -246,7 +246,7 @@ class Border extends StylePluginBase {
       '#type' => 'radios',
       '#options' => $this->getStyleOptions('border_style'),
       '#title' => $this->t('Border style'),
-      '#default_value' => $storage['border']['border_style']['class'],
+      '#default_value' => $storage['border']['border_style']['class'] ?? NULL,
       '#validated' => TRUE,
       '#attributes' => [
         'class' => ['field-border-style'],
@@ -262,7 +262,7 @@ class Border extends StylePluginBase {
       '#type' => 'radios',
       '#options' => $this->getStyleOptions('border_width'),
       '#title' => $this->t('Border width'),
-      '#default_value' => $storage['border']['border_width']['class'],
+      '#default_value' => $storage['border']['border_width']['class'] ?? NULL,
       '#validated' => TRUE,
       '#attributes' => [
         'class' => ['field-border-width'],
@@ -278,7 +278,7 @@ class Border extends StylePluginBase {
       '#type' => 'radios',
       '#options' => $this->getStyleOptions('border_color'),
       '#title' => $this->t('Border color'),
-      '#default_value' => $storage['border']['border_color']['class'],
+      '#default_value' => $storage['border']['border_color']['class'] ?? NULL,
       '#validated' => TRUE,
       '#attributes' => [
         'class' => ['field-border-color'],
@@ -295,7 +295,7 @@ class Border extends StylePluginBase {
         '#type' => 'radios',
         '#options' => $this->getStyleOptions('border_' . $directions[$i] . '_style'),
         '#title' => $this->t('Border style'),
-        '#default_value' => $storage['border']['border_' . $directions[$i] . '_style']['class'],
+        '#default_value' => $storage['border']['border_' . $directions[$i] . '_style']['class'] ?? NULL,
         '#validated' => TRUE,
         '#attributes' => [
           'class' => ['field-border-style-' . $directions[$i]],
@@ -311,7 +311,7 @@ class Border extends StylePluginBase {
         '#type' => 'radios',
         '#options' => $this->getStyleOptions('border_' . $directions[$i] . '_width'),
         '#title' => $this->t('Border width'),
-        '#default_value' => $storage['border']['border_' . $directions[$i] . '_width']['class'],
+        '#default_value' => $storage['border']['border_' . $directions[$i] . '_width']['class'] ?? NULL,
         '#validated' => TRUE,
         '#attributes' => [
           'class' => ['field-border-width-' . $directions[$i]],
@@ -327,7 +327,7 @@ class Border extends StylePluginBase {
         '#type' => 'radios',
         '#options' => $this->getStyleOptions('border_' . $directions[$i] . '_color'),
         '#title' => $this->t('Border color'),
-        '#default_value' => $storage['border']['border_' . $directions[$i] . '_color']['class'],
+        '#default_value' => $storage['border']['border_' . $directions[$i] . '_color']['class'] ?? NULL,
         '#validated' => TRUE,
         '#attributes' => [
           'class' => ['field-border-color-' . $directions[$i]],
@@ -366,7 +366,7 @@ class Border extends StylePluginBase {
         '#type' => 'select',
         '#options' => $this->getStyleOptions('rounded_corner_' . $corner_key),
         '#title' => $this->t($corner_value),
-        '#default_value' => $storage['border']['rounded_corner_' . $corner_key]['class'],
+        '#default_value' => $storage['border']['rounded_corner_' . $corner_key]['class'] ?? NULL,
         '#validated' => TRUE,
         '#attributes' => [
           'class' => ['field-rounded-border-' . $corner_key],
@@ -393,7 +393,7 @@ class Border extends StylePluginBase {
         '#type' => 'select',
         '#options' => $this->getStyleOptions('rounded_corner_' . $corner_key),
         '#title' => $this->t($corner_value),
-        '#default_value' => $storage['border']['rounded_corner_' . $corner_key]['class'],
+        '#default_value' => $storage['border']['rounded_corner_' . $corner_key]['class'] ?? NULL,
         '#validated' => TRUE,
         '#attributes' => [
           'class' => ['field-rounded-border-' . $corner_key],
