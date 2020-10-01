@@ -361,6 +361,14 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
    */
   public function build(array $build, array $storage, $theme_wrapper = NULL) {
     $config = $this->config();
+
+    // Backwards compatibility for layouts created on the 1.x version.
+    if (isset($storage['background_media']['media_id'])) {
+      $media_id = $storage['background_media']['media_id'];
+      $background_type = $storage['background']['background_type'];
+      $storage['background_media'][$background_type]['media_id'] = $media_id;
+    }
+
     if ($config->get('background_image.bundle') && $storage['background']['background_type'] == 'image' && isset($storage['background_media']['image']['media_id']) && ($media_id = $storage['background_media']['image']['media_id'])) {
       $media_entity = Media::load($media_id);
       $media_field_name = $config->get('background_image.field');
