@@ -85,7 +85,7 @@ class ScrollEffects extends StylePluginBase {
   /**
    * {@inheritdoc}
    */
-  public function buildStyleFormElements(array $form, FormStateInterface $form_state, $storage) {
+  public function buildStyleFormElements(array &$form, FormStateInterface $form_state, $storage) {
     $form['scroll_effects'] = [
       '#type' => 'radios',
       '#options' => $this->getStyleOptions('scroll_effects'),

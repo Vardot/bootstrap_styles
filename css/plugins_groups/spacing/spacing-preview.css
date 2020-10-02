@@ -1,0 +1,255 @@
+#drupal-off-canvas #bs_spacing_preview_calc,
+#layout-builder-modal #bs_spacing_preview_calc {
+  display: none;
+  visibility: hidden;
+}
+
+#drupal-off-canvas .spacing-preview,
+#layout-builder-modal .spacing-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#drupal-off-canvas .spacing-preview .margin-box,
+#layout-builder-modal .spacing-preview .margin-box {
+  width: 281px;
+  height: 217px;
+  background: #F1C666;
+  position: relative;
+}
+
+#drupal-off-canvas .spacing-preview .margin-box .title,
+#layout-builder-modal .spacing-preview .margin-box .title {
+  color: #383A40;
+  top: 0.5rem;
+  position: absolute;
+  left: 0.5rem;
+  font-size: 12px;
+}
+
+#drupal-off-canvas .spacing-preview .margin-box .margin-left,
+#drupal-off-canvas .spacing-preview .margin-box .margin-top,
+#drupal-off-canvas .spacing-preview .margin-box .margin-right,
+#drupal-off-canvas .spacing-preview .margin-box .margin-bottom,
+#layout-builder-modal .spacing-preview .margin-box .margin-left,
+#layout-builder-modal .spacing-preview .margin-box .margin-top,
+#layout-builder-modal .spacing-preview .margin-box .margin-right,
+#layout-builder-modal .spacing-preview .margin-box .margin-bottom {
+  position: absolute;
+  font-size: 12px;
+  color: #383A40;
+}
+
+#drupal-off-canvas .spacing-preview .margin-box .margin-left,
+#drupal-off-canvas .spacing-preview .margin-box .margin-right,
+#layout-builder-modal .spacing-preview .margin-box .margin-left,
+#layout-builder-modal .spacing-preview .margin-box .margin-right {
+  width: 2rem;
+  text-align: center;
+  top: 50%;
+}
+
+#drupal-off-canvas .spacing-preview .margin-box .margin-left,
+#layout-builder-modal .spacing-preview .margin-box .margin-left {
+  left: 0;
+}
+
+#drupal-off-canvas .spacing-preview .margin-box .margin-right,
+#layout-builder-modal .spacing-preview .margin-box .margin-right {
+  right: 0;
+}
+
+#drupal-off-canvas .spacing-preview .margin-box .margin-top,
+#layout-builder-modal .spacing-preview .margin-box .margin-top {
+  top: 0.5rem;
+  left: 50%;
+}
+
+#drupal-off-canvas .spacing-preview .margin-box .margin-bottom,
+#layout-builder-modal .spacing-preview .margin-box .margin-bottom {
+  bottom: 0.5rem;
+  left: 50%;
+}
+
+#drupal-off-canvas .spacing-preview .padding-box,
+#layout-builder-modal .spacing-preview .padding-box {
+  width: 217px;
+  height: 153px;
+  background: #7FB58A;
+  position: absolute;
+  top: 2rem;
+}
+
+#drupal-off-canvas .spacing-preview .padding-box .title,
+#layout-builder-modal .spacing-preview .padding-box .title {
+  color: #383A40;
+  top: 0.5rem;
+  position: absolute;
+  left: 0.5rem;
+  font-size: 12px;
+}
+
+#drupal-off-canvas .spacing-preview .padding-box .padding-left,
+#drupal-off-canvas .spacing-preview .padding-box .padding-top,
+#drupal-off-canvas .spacing-preview .padding-box .padding-right,
+#drupal-off-canvas .spacing-preview .padding-box .padding-bottom,
+#layout-builder-modal .spacing-preview .padding-box .padding-left,
+#layout-builder-modal .spacing-preview .padding-box .padding-top,
+#layout-builder-modal .spacing-preview .padding-box .padding-right,
+#layout-builder-modal .spacing-preview .padding-box .padding-bottom {
+  font-size: 12px;
+  color: #383A40;
+  position: absolute;
+}
+
+#drupal-off-canvas .spacing-preview .padding-box .padding-left,
+#drupal-off-canvas .spacing-preview .padding-box .padding-right,
+#layout-builder-modal .spacing-preview .padding-box .padding-left,
+#layout-builder-modal .spacing-preview .padding-box .padding-right {
+  width: 2rem;
+  text-align: center;
+  top: 50%;
+}
+
+#drupal-off-canvas .spacing-preview .padding-box .padding-left,
+#layout-builder-modal .spacing-preview .padding-box .padding-left {
+  left: 0;
+}
+
+#drupal-off-canvas .spacing-preview .padding-box .padding-right,
+#layout-builder-modal .spacing-preview .padding-box .padding-right {
+  right: 0;
+}
+
+#drupal-off-canvas .spacing-preview .padding-box .padding-top,
+#layout-builder-modal .spacing-preview .padding-box .padding-top {
+  top: 0.5rem;
+  left: 50%;
+}
+
+#drupal-off-canvas .spacing-preview .padding-box .padding-bottom,
+#layout-builder-modal .spacing-preview .padding-box .padding-bottom {
+  bottom: 0.5rem;
+  left: 50%;
+}
+
+#drupal-off-canvas .spacing-preview .box,
+#layout-builder-modal .spacing-preview .box {
+  width: 153px;
+  height: 89px;
+  background: #383A40;
+  position: absolute;
+  top: 4rem;
+}
+
+#drupal-off-canvas input[type=range]:focus,
+#layout-builder-modal input[type=range]:focus {
+  outline: none;
+}
+
+#drupal-off-canvas input.bs-field-margin,
+#drupal-off-canvas input.bs-field-margin-left,
+#drupal-off-canvas input.bs-field-margin-top,
+#drupal-off-canvas input.bs-field-margin-right,
+#drupal-off-canvas input.bs-field-margin-bottom,
+#drupal-off-canvas input.bs-field-padding,
+#drupal-off-canvas input.bs-field-padding-left,
+#drupal-off-canvas input.bs-field-padding-top,
+#drupal-off-canvas input.bs-field-padding-right,
+#drupal-off-canvas input.bs-field-padding-bottom,
+#layout-builder-modal input.bs-field-margin,
+#layout-builder-modal input.bs-field-margin-left,
+#layout-builder-modal input.bs-field-margin-top,
+#layout-builder-modal input.bs-field-margin-right,
+#layout-builder-modal input.bs-field-margin-bottom,
+#layout-builder-modal input.bs-field-padding,
+#layout-builder-modal input.bs-field-padding-left,
+#layout-builder-modal input.bs-field-padding-top,
+#layout-builder-modal input.bs-field-padding-right,
+#layout-builder-modal input.bs-field-padding-bottom {
+  -webkit-appearance: none;
+  height: 6px;
+  width: 100%;
+}
+
+#drupal-off-canvas input.bs-field-margin::-webkit-slider-thumb,
+#drupal-off-canvas input.bs-field-margin-left::-webkit-slider-thumb,
+#drupal-off-canvas input.bs-field-margin-top::-webkit-slider-thumb,
+#drupal-off-canvas input.bs-field-margin-right::-webkit-slider-thumb,
+#drupal-off-canvas input.bs-field-margin-bottom::-webkit-slider-thumb,
+#drupal-off-canvas input.bs-field-padding::-webkit-slider-thumb,
+#drupal-off-canvas input.bs-field-padding-left::-webkit-slider-thumb,
+#drupal-off-canvas input.bs-field-padding-top::-webkit-slider-thumb,
+#drupal-off-canvas input.bs-field-padding-right::-webkit-slider-thumb,
+#drupal-off-canvas input.bs-field-padding-bottom::-webkit-slider-thumb,
+#layout-builder-modal input.bs-field-margin::-webkit-slider-thumb,
+#layout-builder-modal input.bs-field-margin-left::-webkit-slider-thumb,
+#layout-builder-modal input.bs-field-margin-top::-webkit-slider-thumb,
+#layout-builder-modal input.bs-field-margin-right::-webkit-slider-thumb,
+#layout-builder-modal input.bs-field-margin-bottom::-webkit-slider-thumb,
+#layout-builder-modal input.bs-field-padding::-webkit-slider-thumb,
+#layout-builder-modal input.bs-field-padding-left::-webkit-slider-thumb,
+#layout-builder-modal input.bs-field-padding-top::-webkit-slider-thumb,
+#layout-builder-modal input.bs-field-padding-right::-webkit-slider-thumb,
+#layout-builder-modal input.bs-field-padding-bottom::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #969AA2;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#drupal-off-canvas input.bs-field-margin::-moz-focus-outer,
+#drupal-off-canvas input.bs-field-margin-left::-moz-focus-outer,
+#drupal-off-canvas input.bs-field-margin-top::-moz-focus-outer,
+#drupal-off-canvas input.bs-field-margin-right::-moz-focus-outer,
+#drupal-off-canvas input.bs-field-margin-bottom::-moz-focus-outer,
+#drupal-off-canvas input.bs-field-padding::-moz-focus-outer,
+#drupal-off-canvas input.bs-field-padding-left::-moz-focus-outer,
+#drupal-off-canvas input.bs-field-padding-top::-moz-focus-outer,
+#drupal-off-canvas input.bs-field-padding-right::-moz-focus-outer,
+#drupal-off-canvas input.bs-field-padding-bottom::-moz-focus-outer,
+#layout-builder-modal input.bs-field-margin::-moz-focus-outer,
+#layout-builder-modal input.bs-field-margin-left::-moz-focus-outer,
+#layout-builder-modal input.bs-field-margin-top::-moz-focus-outer,
+#layout-builder-modal input.bs-field-margin-right::-moz-focus-outer,
+#layout-builder-modal input.bs-field-margin-bottom::-moz-focus-outer,
+#layout-builder-modal input.bs-field-padding::-moz-focus-outer,
+#layout-builder-modal input.bs-field-padding-left::-moz-focus-outer,
+#layout-builder-modal input.bs-field-padding-top::-moz-focus-outer,
+#layout-builder-modal input.bs-field-padding-right::-moz-focus-outer,
+#layout-builder-modal input.bs-field-padding-bottom::-moz-focus-outer {
+  border: 0;
+}
+
+#drupal-off-canvas input.bs-field-padding,
+#drupal-off-canvas input.bs-field-padding-left,
+#drupal-off-canvas input.bs-field-padding-top,
+#drupal-off-canvas input.bs-field-padding-right,
+#drupal-off-canvas input.bs-field-padding-bottom,
+#layout-builder-modal input.bs-field-padding,
+#layout-builder-modal input.bs-field-padding-left,
+#layout-builder-modal input.bs-field-padding-top,
+#layout-builder-modal input.bs-field-padding-right,
+#layout-builder-modal input.bs-field-padding-bottom {
+  background: #7FB58A;
+}
+
+#drupal-off-canvas input.bs-field-margin,
+#drupal-off-canvas input.bs-field-margin-left,
+#drupal-off-canvas input.bs-field-margin-top,
+#drupal-off-canvas input.bs-field-margin-right,
+#drupal-off-canvas input.bs-field-margin-bottom,
+#layout-builder-modal input.bs-field-margin,
+#layout-builder-modal input.bs-field-margin-left,
+#layout-builder-modal input.bs-field-margin-top,
+#layout-builder-modal input.bs-field-margin-right,
+#layout-builder-modal input.bs-field-margin-bottom {
+  background: #F1C666;
+}

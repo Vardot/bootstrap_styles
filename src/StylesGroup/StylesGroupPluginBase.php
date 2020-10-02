@@ -132,7 +132,7 @@ abstract class StylesGroupPluginBase extends PluginBase implements StylesGroupPl
   /**
    * {@inheritdoc}
    */
-  public function buildStyleFormElements(array $form, FormStateInterface $form_state, $storage) {
+  public function buildStyleFormElements(array &$form, FormStateInterface $form_state, $storage) {
     return [];
   }
 

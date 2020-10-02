@@ -98,6 +98,89 @@ abstract class StylePluginBase extends PluginBase implements StylePluginInterfac
   }
 
   /**
+   * Helper function to get SVG Markup.
+   *
+   * @param string $path
+   *   The absolute path to the SVG icon.
+   *
+   * @return string
+   *   The icon markup.
+   */
+  public function getSvgIconMarkup(string $path) {
+    $svg = file_get_contents($path);
+    $svg = preg_replace(['/<\?xml.*\?>/i', '/<!DOCTYPE((.|\n|\r)*?)">/i'], '', $svg);
+    $svg = trim($svg);
+    return Markup::create($svg);
+  }
+
+  /**
+   * Helper function to get the class from the options list.
+   *
+   * @param string $name
+   *   A config style name like background_color.
+   * @param int $index
+   *   The index of the class at the option list.
+   *
+   * @return string
+   *   The class name or null.
+   */
+  public function getStyleOptionClassByIndex(string $name, int $index) {
+    $class = '';
+    $options = $this->getStyleOptions($name);
+    $count = 0;
+    foreach ($options as $key => $value) {
+      if ($count == $index) {
+        $class = $key;
+        break;
+      }
+      $count++;
+    }
+
+    return $class;
+  }
+
+  /**
+   * Helper function to get the index of the class at options list.
+   *
+   * @param string $name
+   *   A config style name like background_color.
+   * @param string $class
+   *   The class name.
+   *
+   * @return int
+   *   The index.
+   */
+  public function getStyleOptionIndexByClass(string $name, string $class) {
+    $index = 0;
+    $options = $this->getStyleOptions($name);
+    $count = 0;
+    foreach ($options as $key => $value) {
+      if ($key == $class) {
+        $index = $count;
+        break;
+      }
+      $count++;
+    }
+
+    return $index;
+  }
+
+  /**
+   * Helper function to get the options of given style name.
+   *
+   * @param string $name
+   *   A config style name like background_color.
+   *
+   * @return array
+   *   Array of key => value of style name options.
+   */
+  public function getStyleOptionsCount(string $name) {
+    // -1 to drop the _none option from the count.
+    $count = count($this->getStyleOptions($name)) - 1;
+    return $count;
+  }
+
+  /**
    * {@inheritdoc}
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
@@ -119,7 +202,7 @@ abstract class StylePluginBase extends PluginBase implements StylePluginInterfac
   /**
    * {@inheritdoc}
    */
-  public function buildStyleFormElements(array $form, FormStateInterface $form_state, $storage) {
+  public function buildStyleFormElements(array &$form, FormStateInterface $form_state, $storage) {
     return $form;
   }
 

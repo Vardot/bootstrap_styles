@@ -35,7 +35,7 @@ class Background extends StylesGroupPluginBase {
   /**
    * {@inheritdoc}
    */
-  public function buildStyleFormElements(array $form, FormStateInterface $form_state, $storage) {
+  public function buildStyleFormElements(array &$form, FormStateInterface $form_state, $storage) {
     $form['background_type'] = [
       '#type' => 'radios',
       '#options' => [

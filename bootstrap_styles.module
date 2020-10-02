@@ -17,6 +17,9 @@ function bootstrap_styles_theme() {
         'children' => [],
       ],
     ],
+    'spacing_preview' => [
+      'render element' => 'element',
+    ],
   ];
 }
 

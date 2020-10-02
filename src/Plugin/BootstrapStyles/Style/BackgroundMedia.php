@@ -223,7 +223,7 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
   /**
    * {@inheritdoc}
    */
-  public function buildStyleFormElements(array $form, FormStateInterface $form_state, $storage) {
+  public function buildStyleFormElements(array &$form, FormStateInterface $form_state, $storage) {
     // Background media.
     $config = $this->config();
     // Check if the bundle exist.

@@ -32,4 +32,15 @@ class Spacing extends StylesGroupPluginBase {
     return $form;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function buildStyleFormElements(array &$form, FormStateInterface $form_state, $storage) {
+    $form['spacing_preview'] = [
+      '#theme' => 'spacing_preview',
+    ];
+
+    return $form;
+  }
+
 }

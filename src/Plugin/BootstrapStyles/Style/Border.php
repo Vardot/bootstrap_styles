@@ -215,7 +215,7 @@ class Border extends StylePluginBase {
   /**
    * {@inheritdoc}
    */
-  public function buildStyleFormElements(array $form, FormStateInterface $form_state, $storage) {
+  public function buildStyleFormElements(array &$form, FormStateInterface $form_state, $storage) {
     $directions = [
       'left',
       'top',
