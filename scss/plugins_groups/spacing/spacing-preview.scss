@@ -7,6 +7,7 @@
     display: none;
     visibility: hidden;
   }
+
   .spacing-preview {
     display: flex;
     flex-direction: column;
@@ -14,11 +15,13 @@
     position: relative;
     margin-top: 0.5rem;
     margin-bottom: 1.5rem;
+
     .margin-box {
       width: 281px;;
       height: 217px;
       background: #F1C666;
       position: relative;
+
       .title {
         color: $gray-383;
         top: 0.5rem;
@@ -26,6 +29,7 @@
         left: 0.5rem;
         font-size: 12px;
       }
+
       .margin-left,
       .margin-top,
       .margin-right,
@@ -34,33 +38,40 @@
         font-size: 12px;
         color: $gray-383;
       }
+
       .margin-left,
       .margin-right {
         width: 2rem;
         text-align: center;
         top: 50%;
       }
+
       .margin-left {
         left: 0;
       }
+
       .margin-right {
         right: 0;
       }
+
       .margin-top {
         top: 0.5rem;
         left: 50%;
       }
+
       .margin-bottom {
         bottom: 0.5rem;
         left: 50%;
       }
     }
+
     .padding-box {
       width: 217px;
       height: 153px;
       background: #7FB58A;
       position: absolute;
       top: 2rem;
+
       .title {
         color: $gray-383;
         top: 0.5rem;
@@ -68,6 +79,7 @@
         left: 0.5rem;
         font-size: 12px;
       }
+
       .padding-left,
       .padding-top,
       .padding-right,
@@ -76,27 +88,33 @@
         color: $gray-383;
         position: absolute;
       }
+
       .padding-left,
       .padding-right {
         width: 2rem;
         text-align: center;
         top: 50%;
       }
+
       .padding-left {
         left: 0;
       }
+
       .padding-right {
         right: 0;
       }
+
       .padding-top {
         top: 0.5rem;
         left: 50%;
       }
+
       .padding-bottom {
         bottom: 0.5rem;
         left: 50%;
       }
     }
+
     .box {
       width: 153px;
       height: 89px;
@@ -105,10 +123,12 @@
       top: 4rem;
     }
   }
+
   // Range sliders
   input[type=range]:focus {
     outline: none;
   }
+
   input.bs-field-margin,
   input.bs-field-margin-left,
   input.bs-field-margin-top,
@@ -122,6 +142,7 @@
     -webkit-appearance: none;
     height: 6px;
     width: 100%;
+
     &::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
@@ -131,10 +152,12 @@
       border-radius: 50%;
       cursor: pointer;
     }
+
     &::-moz-focus-outer {
       border: 0;
     }
   }
+
   input.bs-field-padding,
   input.bs-field-padding-left,
   input.bs-field-padding-top,
@@ -142,6 +165,7 @@
   input.bs-field-padding-bottom {
     background: #7FB58A;
   }
+
   input.bs-field-margin,
   input.bs-field-margin-left,
   input.bs-field-margin-top,

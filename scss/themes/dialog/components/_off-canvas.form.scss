@@ -111,6 +111,10 @@ label {
   background-color: $white;
 }
 
+.cke_reset_all, .cke_reset_all *, .cke_reset_all a, .cke_reset_all textarea {
+  color: inherit;
+}
+
 .form-type-textarea {
   margin-bottom: 0;
 }
