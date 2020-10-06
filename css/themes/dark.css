@@ -2821,13 +2821,17 @@
 #layout-builder-modal .spacing-preview .preview-box .right,
 #layout-builder-modal .spacing-preview .preview-box .bottom {
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5rem;
   z-index: 1;
   color: #383A40;
 }
 
 #drupal-off-canvas .spacing-preview .preview-box .title,
 #layout-builder-modal .spacing-preview .preview-box .title {
-  top: -1.125rem;
+  top: -1.5rem;
   left: -.125rem;
 }
 
@@ -2840,10 +2844,6 @@
 #layout-builder-modal .spacing-preview .preview-box .top,
 #layout-builder-modal .spacing-preview .preview-box .bottom {
   width: 1.5rem;
-  height: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 #drupal-off-canvas .spacing-preview .preview-box .left,

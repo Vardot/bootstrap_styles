@@ -21,12 +21,16 @@
     .right,
     .bottom {
       position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 1.5rem;
       z-index: 1;
       color: $panel_bg_color;
     }
 
     .title {
-      top: -1.125rem;
+      top: -1.5rem;
       left: -.125rem;
     }
 
@@ -35,10 +39,6 @@
     .top,
     .bottom {
       width: 1.5rem;
-      height: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .left {
