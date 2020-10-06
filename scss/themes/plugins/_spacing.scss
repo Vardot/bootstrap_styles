@@ -1,0 +1,128 @@
+#bs_spacing_preview_calc {
+  display: none;
+  visibility: hidden;
+}
+
+// Spacing previewer
+.spacing-preview {
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+
+  // Shared preview box styles.
+  .preview-box {
+    position: relative;
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 10px;
+
+    .title,
+    .left,
+    .top,
+    .right,
+    .bottom {
+      position: absolute;
+      z-index: 1;
+      color: $panel_bg_color;
+    }
+
+    .title {
+      top: -1.125rem;
+      left: -.125rem;
+    }
+
+    .left,
+    .right,
+    .top,
+    .bottom {
+      width: 1.5rem;
+      height: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .left {
+      left: -1.5rem;
+      margin-top: -.75rem;
+      top: 50%;
+    }
+
+    .right {
+      right: -1.5rem;
+      margin-top: -.75rem;
+      top: 50%;
+    }
+
+    .top {
+      top: -1.5rem;
+      margin-left: -.75rem;
+      left: 50%;
+    }
+
+    .bottom {
+      bottom: -1.5rem;
+      margin-left: -.75rem;
+      left: 50%;
+    }
+  }
+
+  .margin-box {
+    height: 150px;
+    box-shadow: 0 0 0 1.5rem $state_warning;
+  }
+
+  .padding-box {
+    height: 100%;
+    box-shadow: 0 0 0 1.5rem $state_success;
+  }
+}
+
+// Range sliders
+input[type=range]:focus {
+  outline: none;
+}
+
+input.bs-field-margin,
+input.bs-field-margin-left,
+input.bs-field-margin-top,
+input.bs-field-margin-right,
+input.bs-field-margin-bottom,
+input.bs-field-padding,
+input.bs-field-padding-left,
+input.bs-field-padding-top,
+input.bs-field-padding-right,
+input.bs-field-padding-bottom {
+  -webkit-appearance: none;
+  height: 6px;
+  width: 100%;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    background: $panel_text_color;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &::-moz-focus-outer {
+    border: 0;
+  }
+}
+
+input.bs-field-padding,
+input.bs-field-padding-left,
+input.bs-field-padding-top,
+input.bs-field-padding-right,
+input.bs-field-padding-bottom {
+  background: $state_success;
+}
+
+input.bs-field-margin,
+input.bs-field-margin-left,
+input.bs-field-margin-top,
+input.bs-field-margin-right,
+input.bs-field-margin-bottom {
+  background: $state_warning;
+}

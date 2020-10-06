@@ -2789,3 +2789,207 @@
   color: #ffffff;
   background-color: #383A40;
 }
+
+#drupal-off-canvas #bs_spacing_preview_calc,
+#layout-builder-modal #bs_spacing_preview_calc {
+  display: none;
+  visibility: hidden;
+}
+
+#drupal-off-canvas .spacing-preview,
+#layout-builder-modal .spacing-preview {
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+}
+
+#drupal-off-canvas .spacing-preview .preview-box,
+#layout-builder-modal .spacing-preview .preview-box {
+  position: relative;
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 10px;
+}
+
+#drupal-off-canvas .spacing-preview .preview-box .title,
+#drupal-off-canvas .spacing-preview .preview-box .left,
+#drupal-off-canvas .spacing-preview .preview-box .top,
+#drupal-off-canvas .spacing-preview .preview-box .right,
+#drupal-off-canvas .spacing-preview .preview-box .bottom,
+#layout-builder-modal .spacing-preview .preview-box .title,
+#layout-builder-modal .spacing-preview .preview-box .left,
+#layout-builder-modal .spacing-preview .preview-box .top,
+#layout-builder-modal .spacing-preview .preview-box .right,
+#layout-builder-modal .spacing-preview .preview-box .bottom {
+  position: absolute;
+  z-index: 1;
+  color: #ffffff;
+}
+
+#drupal-off-canvas .spacing-preview .preview-box .title,
+#layout-builder-modal .spacing-preview .preview-box .title {
+  top: -1.125rem;
+  left: -.125rem;
+}
+
+#drupal-off-canvas .spacing-preview .preview-box .left,
+#drupal-off-canvas .spacing-preview .preview-box .right,
+#drupal-off-canvas .spacing-preview .preview-box .top,
+#drupal-off-canvas .spacing-preview .preview-box .bottom,
+#layout-builder-modal .spacing-preview .preview-box .left,
+#layout-builder-modal .spacing-preview .preview-box .right,
+#layout-builder-modal .spacing-preview .preview-box .top,
+#layout-builder-modal .spacing-preview .preview-box .bottom {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#drupal-off-canvas .spacing-preview .preview-box .left,
+#layout-builder-modal .spacing-preview .preview-box .left {
+  left: -1.5rem;
+  margin-top: -.75rem;
+  top: 50%;
+}
+
+#drupal-off-canvas .spacing-preview .preview-box .right,
+#layout-builder-modal .spacing-preview .preview-box .right {
+  right: -1.5rem;
+  margin-top: -.75rem;
+  top: 50%;
+}
+
+#drupal-off-canvas .spacing-preview .preview-box .top,
+#layout-builder-modal .spacing-preview .preview-box .top {
+  top: -1.5rem;
+  margin-left: -.75rem;
+  left: 50%;
+}
+
+#drupal-off-canvas .spacing-preview .preview-box .bottom,
+#layout-builder-modal .spacing-preview .preview-box .bottom {
+  bottom: -1.5rem;
+  margin-left: -.75rem;
+  left: 50%;
+}
+
+#drupal-off-canvas .spacing-preview .margin-box,
+#layout-builder-modal .spacing-preview .margin-box {
+  height: 150px;
+  box-shadow: 0 0 0 1.5rem #F1C666;
+}
+
+#drupal-off-canvas .spacing-preview .padding-box,
+#layout-builder-modal .spacing-preview .padding-box {
+  height: 100%;
+  box-shadow: 0 0 0 1.5rem #7FB48A;
+}
+
+#drupal-off-canvas input[type=range]:focus,
+#layout-builder-modal input[type=range]:focus {
+  outline: none;
+}
+
+#drupal-off-canvas input.bs-field-margin,
+#drupal-off-canvas input.bs-field-margin-left,
+#drupal-off-canvas input.bs-field-margin-top,
+#drupal-off-canvas input.bs-field-margin-right,
+#drupal-off-canvas input.bs-field-margin-bottom,
+#drupal-off-canvas input.bs-field-padding,
+#drupal-off-canvas input.bs-field-padding-left,
+#drupal-off-canvas input.bs-field-padding-top,
+#drupal-off-canvas input.bs-field-padding-right,
+#drupal-off-canvas input.bs-field-padding-bottom,
+#layout-builder-modal input.bs-field-margin,
+#layout-builder-modal input.bs-field-margin-left,
+#layout-builder-modal input.bs-field-margin-top,
+#layout-builder-modal input.bs-field-margin-right,
+#layout-builder-modal input.bs-field-margin-bottom,
+#layout-builder-modal input.bs-field-padding,
+#layout-builder-modal input.bs-field-padding-left,
+#layout-builder-modal input.bs-field-padding-top,
+#layout-builder-modal input.bs-field-padding-right,
+#layout-builder-modal input.bs-field-padding-bottom {
+  -webkit-appearance: none;
+  height: 6px;
+  width: 100%;
+}
+
+#drupal-off-canvas input.bs-field-margin::-webkit-slider-thumb,
+#drupal-off-canvas input.bs-field-margin-left::-webkit-slider-thumb,
+#drupal-off-canvas input.bs-field-margin-top::-webkit-slider-thumb,
+#drupal-off-canvas input.bs-field-margin-right::-webkit-slider-thumb,
+#drupal-off-canvas input.bs-field-margin-bottom::-webkit-slider-thumb,
+#drupal-off-canvas input.bs-field-padding::-webkit-slider-thumb,
+#drupal-off-canvas input.bs-field-padding-left::-webkit-slider-thumb,
+#drupal-off-canvas input.bs-field-padding-top::-webkit-slider-thumb,
+#drupal-off-canvas input.bs-field-padding-right::-webkit-slider-thumb,
+#drupal-off-canvas input.bs-field-padding-bottom::-webkit-slider-thumb,
+#layout-builder-modal input.bs-field-margin::-webkit-slider-thumb,
+#layout-builder-modal input.bs-field-margin-left::-webkit-slider-thumb,
+#layout-builder-modal input.bs-field-margin-top::-webkit-slider-thumb,
+#layout-builder-modal input.bs-field-margin-right::-webkit-slider-thumb,
+#layout-builder-modal input.bs-field-margin-bottom::-webkit-slider-thumb,
+#layout-builder-modal input.bs-field-padding::-webkit-slider-thumb,
+#layout-builder-modal input.bs-field-padding-left::-webkit-slider-thumb,
+#layout-builder-modal input.bs-field-padding-top::-webkit-slider-thumb,
+#layout-builder-modal input.bs-field-padding-right::-webkit-slider-thumb,
+#layout-builder-modal input.bs-field-padding-bottom::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #383A40;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#drupal-off-canvas input.bs-field-margin::-moz-focus-outer,
+#drupal-off-canvas input.bs-field-margin-left::-moz-focus-outer,
+#drupal-off-canvas input.bs-field-margin-top::-moz-focus-outer,
+#drupal-off-canvas input.bs-field-margin-right::-moz-focus-outer,
+#drupal-off-canvas input.bs-field-margin-bottom::-moz-focus-outer,
+#drupal-off-canvas input.bs-field-padding::-moz-focus-outer,
+#drupal-off-canvas input.bs-field-padding-left::-moz-focus-outer,
+#drupal-off-canvas input.bs-field-padding-top::-moz-focus-outer,
+#drupal-off-canvas input.bs-field-padding-right::-moz-focus-outer,
+#drupal-off-canvas input.bs-field-padding-bottom::-moz-focus-outer,
+#layout-builder-modal input.bs-field-margin::-moz-focus-outer,
+#layout-builder-modal input.bs-field-margin-left::-moz-focus-outer,
+#layout-builder-modal input.bs-field-margin-top::-moz-focus-outer,
+#layout-builder-modal input.bs-field-margin-right::-moz-focus-outer,
+#layout-builder-modal input.bs-field-margin-bottom::-moz-focus-outer,
+#layout-builder-modal input.bs-field-padding::-moz-focus-outer,
+#layout-builder-modal input.bs-field-padding-left::-moz-focus-outer,
+#layout-builder-modal input.bs-field-padding-top::-moz-focus-outer,
+#layout-builder-modal input.bs-field-padding-right::-moz-focus-outer,
+#layout-builder-modal input.bs-field-padding-bottom::-moz-focus-outer {
+  border: 0;
+}
+
+#drupal-off-canvas input.bs-field-padding,
+#drupal-off-canvas input.bs-field-padding-left,
+#drupal-off-canvas input.bs-field-padding-top,
+#drupal-off-canvas input.bs-field-padding-right,
+#drupal-off-canvas input.bs-field-padding-bottom,
+#layout-builder-modal input.bs-field-padding,
+#layout-builder-modal input.bs-field-padding-left,
+#layout-builder-modal input.bs-field-padding-top,
+#layout-builder-modal input.bs-field-padding-right,
+#layout-builder-modal input.bs-field-padding-bottom {
+  background: #7FB48A;
+}
+
+#drupal-off-canvas input.bs-field-margin,
+#drupal-off-canvas input.bs-field-margin-left,
+#drupal-off-canvas input.bs-field-margin-top,
+#drupal-off-canvas input.bs-field-margin-right,
+#drupal-off-canvas input.bs-field-margin-bottom,
+#layout-builder-modal input.bs-field-margin,
+#layout-builder-modal input.bs-field-margin-left,
+#layout-builder-modal input.bs-field-margin-top,
+#layout-builder-modal input.bs-field-margin-right,
+#layout-builder-modal input.bs-field-margin-bottom {
+  background: #F1C666;
+}
