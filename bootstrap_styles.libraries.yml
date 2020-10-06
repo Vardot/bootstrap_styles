@@ -10,11 +10,8 @@ layout_builder_form_style:
 
 # Offcanvas Font
 offcanvas-font:
-  version: 1.x
   css:
     theme:
-      //fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap: { type: external, minified: true }
-      //fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap: { type: external, minified: true }
       //fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap: { type: external, minified: true }
       css/fonts.css: { }
 
@@ -35,6 +32,7 @@ layout_builder_admin_form_style:
 # Themes.
 # Light
 theme.light:
+  version: 1.x
   css:
     theme:
       css/themes/light.css: { }
@@ -43,6 +41,7 @@ theme.light:
 
 # Dark
 theme.dark:
+  version: 1.x
   css:
     theme:
       css/themes/dark.css: { }
@@ -119,7 +118,6 @@ plugin.border.build:
   css:
     theme:
       css/plugins/border/bs-classes.css: { }
-
 
 # scroll_effects
 plugin.scroll_effects.layout_builder_form:
