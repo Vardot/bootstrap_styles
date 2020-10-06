@@ -51,9 +51,6 @@ theme.dark:
 # Plugins' groups.
 # spacing
 plugins_groups.spacing.spacing_preview:
-  css:
-    theme:
-      css/plugins_groups/spacing/spacing-preview.css: { }
   js:
     js/plugins_groups/spacing/spacing-preview.js: { }
 
@@ -62,20 +59,20 @@ plugins_groups.spacing.spacing_preview:
 plugin.background_color.layout_builder_form:
   css:
     theme:
-      css/plugins/background_color/bs-classes.css: { }
+      css/bs_example_classes/background-color-classes.css: { }
   js:
     js/plugins/background_color/layout-builder-form.js: { }
 
 plugin.background_color.build:
   css:
     theme:
-      css/plugins/background_color/bs-classes.css: { }
+      css/bs_example_classes/background-color-classes.css: { }
 
 # background_media
 plugin.background_media.build:
   css:
     theme:
-      css/plugins/background_media/build.css: { }
+      css/build/plugins/background-media.css: { }
   js:
     js/plugins/background_media/build.js: { }
 
@@ -83,35 +80,34 @@ plugin.background_media.build:
 plugin.padding.layout_builder_form:
   css:
     theme:
-      css/plugins/padding/bs-classes.css: { }
+      css/bs_example_classes/padding-classes.css: { }
 
 plugin.padding.build:
   css:
     theme:
-      css/plugins/padding/bs-classes.css: { }
+      css/bs_example_classes/padding-classes.css: { }
 
 # margin
 plugin.margin.layout_builder_form:
   css:
     theme:
-      css/plugins/margin/bs-classes.css: { }
+      css/bs_example_classes/margin-classes.css: { }
 
 plugin.margin.build:
   css:
     theme:
-      css/plugins/margin/bs-classes.css: { }
+      css/bs_example_classes/margin-classes.css: { }
 
 # border
 plugin.border.layout_builder_form:
   css:
     theme:
-      css/plugins/border/layout-builder-form.css: { }
-      css/plugins/border/bs-classes.css: { }
+      css/bs_example_classes/border-classes.css: { }
 
 plugin.border.build:
   css:
     theme:
-      css/plugins/border/bs-classes.css: { }
+      css/bs_example_classes/border-classes.css: { }
 
 # scroll_effects
 plugin.scroll_effects.build:
