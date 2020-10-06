@@ -681,328 +681,6 @@
   border-radius: 0 8px 8px 0;
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-}
-
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div {
-  position: relative;
-  flex: 0 0 50%;
-  max-width: 50%;
-  padding: 0;
-  margin: 0;
-}
-
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input {
-  opacity: 0;
-  position: absolute;
-  width: 0;
-  height: 0;
-  display: block;
-}
-
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label {
-  transition: all .3s ease-in-out;
-  font-size: .75rem;
-  font-weight: normal;
-  border: 2px solid #ffffff;
-  padding: 10px;
-  margin: 3px;
-  min-height: 40px;
-  width: calc(100% - 6px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 8px;
-}
-
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label:hover,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label {
-  color: #383A40;
-  background-color: #ffffff;
-}
-
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div label,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div label {
-  border: 2px solid #ffffff;
-  height: 30px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  cursor: pointer;
-}
-
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div label + input,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div label + input {
-  opacity: 0;
-  position: absolute;
-}
-
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div label.active,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div label.active {
-  color: #383A40;
-  background-color: #ffffff;
-}
-
-#drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div {
-  position: relative;
-  flex: 1;
-  margin: 0;
-  padding: 0;
-}
-
-#drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
-#drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div input + label {
-  border: 2px solid #ffffff;
-  padding: 10px;
-  height: 50px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  cursor: pointer;
-}
-
-#drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div input + label:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-#drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div input:checked + label {
-  color: #444444;
-  background-color: #ffffff;
-}
-
-#drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div label {
-  border: 2px solid #ffffff;
-  height: 50px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  cursor: pointer;
-}
-
-#drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div label + input {
-  opacity: 0;
-  position: absolute;
-}
-
-#drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div label.active {
-  color: #444444;
-  background-color: #ffffff;
-}
-
-#drupal-off-canvas .blb_breakpoint_cols label:hover .blb_breakpoint_col {
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #383A40;
-}
-
-#drupal-off-canvas .blb_breakpoint_cols input:checked + label .blb_breakpoint_col {
-  color: #383A40;
-  background-color: #41A5FF;
-}
-
-#drupal-off-canvas .blb_breakpoint_col {
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-#drupal-off-canvas .blb_breakpoint_col.bp-selected {
-  color: #ffffff;
-  background-color: #41A5FF;
-}
-
-.ui-dialog #bs_nav-tabs {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-  margin: 0 -30px 30px -30px;
-  width: calc(100% + 60px);
-}
-
-.ui-dialog #bs_nav-tabs li {
-  flex: 1 1 auto;
-  margin: 0;
-  list-style: none;
-}
-
-.ui-dialog #bs_nav-tabs li a {
-  transition: all .3s ease-in-out;
-  cursor: pointer;
-  position: relative;
-  padding: .5rem .75rem;
-  min-height: 68px;
-  min-width: 16.666%;
-  color: #979AA1;
-  background: #292C32;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: .2s background-color ease-in-out;
-}
-
-.ui-dialog #bs_nav-tabs li a:after {
-  transition: all .3s ease-in-out;
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #727579;
-  z-index: 1;
-}
-
-.ui-dialog #bs_nav-tabs li a:hover {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.ui-dialog #bs_nav-tabs li a:hover .bs_tooltip {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0px);
-}
-
-.ui-dialog #bs_nav-tabs li a:hover svg * {
-  fill: #ffffff;
-}
-
-.ui-dialog #bs_nav-tabs li a.active, .ui-dialog #bs_nav-tabs li a.active:hover {
-  color: #41A5FF;
-  background-color: #46484E;
-}
-
-.ui-dialog #bs_nav-tabs li a.active:after, .ui-dialog #bs_nav-tabs li a.active:hover:after {
-  background-color: #41A5FF;
-  left: -1px;
-  bottom: 0;
-  right: -1px;
-  width: calc(100% + 2px);
-  height: 5px;
-  border-radius: 8px;
-}
-
-.ui-dialog #bs_nav-tabs li a.active svg *, .ui-dialog #bs_nav-tabs li a.active:hover svg * {
-  fill: #41A5FF;
-}
-
-.ui-dialog #bs_nav-tabs li a .blb_icon,
-.ui-dialog #bs_nav-tabs li a span[role='img'] {
-  max-width: 25px;
-  margin: 0 .75rem;
-}
-
-.ui-dialog #bs_nav-tabs li a svg {
-  max-width: 100%;
-  height: auto;
-  background: none;
-}
-
-.ui-dialog #bs_nav-tabs li a svg * {
-  transition: all .3s ease-in-out;
-  fill: #979AA1;
-}
-
-.ui-dialog #bs_tabContent > .bs_tab-pane {
-  display: none;
-}
-
-.ui-dialog #bs_tabContent > .active {
-  display: block;
-}
-
-#drupal-off-canvas .bs_tooltip,
-#layout-builder-modal .bs_tooltip {
-  bottom: 100%;
-  color: #ffffff;
-  background: #46484E;
-  display: block;
-  left: 50%;
-  margin-left: -37.5px;
-  margin-bottom: 15px;
-  opacity: 0;
-  padding: 9px 10px;
-  pointer-events: none;
-  position: absolute;
-  text-align: center;
-  width: 75px;
-  transform: translateY(-10px);
-  transition: all .25s ease-out;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
-  border-radius: 4px;
-  white-space: normal;
-  z-index: 1;
-  font-size: .875rem;
-}
-
-#drupal-off-canvas .bs_tooltip.bs_tooltip-lg,
-#layout-builder-modal .bs_tooltip.bs_tooltip-lg {
-  width: 150px;
-  margin-left: -75px;
-}
-
-#drupal-off-canvas .bs_tooltip:after,
-#layout-builder-modal .bs_tooltip:after {
-  border-left: solid transparent 10px;
-  border-right: solid transparent 10px;
-  border-top: solid #46484E 10px;
-  bottom: -10px;
-  content: " ";
-  height: 0;
-  left: 50%;
-  margin-left: -13px;
-  position: absolute;
-  width: 0;
-}
-
-#drupal-off-canvas .bs_tooltip[data-placement="bottom"],
-#layout-builder-modal .bs_tooltip[data-placement="bottom"] {
-  bottom: auto;
-  top: 100%;
-  margin-top: 15px;
-  transform: translateY(10px);
-}
-
-#drupal-off-canvas .bs_tooltip[data-placement="bottom"]:after,
-#layout-builder-modal .bs_tooltip[data-placement="bottom"]:after {
-  border-top: 0;
-  border-bottom: solid #46484E 10px;
-  top: -10px;
-  bottom: auto;
-}
-
 #layout-builder-modal {
   color: #ffffff;
   background: #383A40;
@@ -2611,4 +2289,360 @@
 .ui-dialog.ui-dialog-off-canvas .ui-dialog-title:before {
   background: transparent url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzMwMHB4JyB3aWR0aD0nMzAwcHgnICBmaWxsPSIjZmZmZmZmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNjQgNjQiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDY0IDY0IiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48cGF0aCBkPSJNNTEsMzBoLTcuMzVjLTAuODI3LTIuMzI2LTMuMDQ0LTQtNS42NS00cy00LjgyMywxLjY3NC01LjY1LDRIMTNjLTEuMTA0LDAtMiwwLjg5Ni0yLDJzMC44OTYsMiwyLDJoMTkuMzUgICBjMC44MjcsMi4zMjYsMy4wNDQsNCw1LjY1LDRzNC44MjMtMS42NzQsNS42NS00SDUxYzEuMTA0LDAsMi0wLjg5NiwyLTJTNTIuMTA0LDMwLDUxLDMweiI+PC9wYXRoPjxwYXRoIGQ9Ik0xMywxOWg4LjM1YzAuODI3LDIuMzI2LDMuMDQ0LDQsNS42NSw0czQuODIzLTEuNjc0LDUuNjUtNEg1MWMxLjEwNCwwLDItMC44OTYsMi0ycy0wLjg5Ni0yLTItMkgzMi42NSAgIGMtMC44MjctMi4zMjYtMy4wNDQtNC01LjY1LTRzLTQuODIzLDEuNjc0LTUuNjUsNEgxM2MtMS4xMDQsMC0yLDAuODk2LTIsMlMxMS44OTYsMTksMTMsMTl6Ij48L3BhdGg+PHBhdGggZD0iTTUxLDQ1SDMyLjY1Yy0wLjgyNy0yLjMyNi0zLjA0NC00LTUuNjUtNHMtNC44MjMsMS42NzQtNS42NSw0SDEzYy0xLjEwNCwwLTIsMC44OTYtMiwyczAuODk2LDIsMiwyaDguMzUgICBjMC44MjcsMi4zMjYsMy4wNDQsNCw1LjY1LDRzNC44MjMtMS42NzQsNS42NS00SDUxYzEuMTA0LDAsMi0wLjg5NiwyLTJTNTIuMTA0LDQ1LDUxLDQ1eiI+PC9wYXRoPjwvZz48L3N2Zz4=") no-repeat scroll center center;
   background-size: 100% auto;
+}
+
+#drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div,
+#layout-builder-modal .blb_container_type .fieldset-wrapper > div > div {
+  position: relative;
+  flex: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div input,
+#layout-builder-modal .blb_container_type .fieldset-wrapper > div > div input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+#drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div input + label,
+#layout-builder-modal .blb_container_type .fieldset-wrapper > div > div input + label {
+  transition: all .3s ease-in-out;
+  border: 2px solid #ffffff;
+  padding: 10px;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+#drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div input + label:hover,
+#layout-builder-modal .blb_container_type .fieldset-wrapper > div > div input + label:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div input:checked + label,
+#layout-builder-modal .blb_container_type .fieldset-wrapper > div > div input:checked + label {
+  color: #383A40;
+  background-color: #ffffff;
+}
+
+#drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div label,
+#layout-builder-modal .blb_container_type .fieldset-wrapper > div > div label {
+  border: 2px solid #ffffff;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+#drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div label + input,
+#layout-builder-modal .blb_container_type .fieldset-wrapper > div > div label + input {
+  opacity: 0;
+  position: absolute;
+}
+
+#drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div label.active,
+#layout-builder-modal .blb_container_type .fieldset-wrapper > div > div label.active {
+  color: #383A40;
+  background-color: #ffffff;
+}
+
+#drupal-off-canvas .blb_breakpoint_cols label:hover .blb_breakpoint_col,
+#layout-builder-modal .blb_breakpoint_cols label:hover .blb_breakpoint_col {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #383A40;
+}
+
+#drupal-off-canvas input:checked + label .blb_breakpoint_col,
+#layout-builder-modal input:checked + label .blb_breakpoint_col {
+  color: #383A40;
+  background-color: #41A5FF;
+}
+
+#drupal-off-canvas .blb_breakpoint_col,
+#layout-builder-modal .blb_breakpoint_col {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#drupal-off-canvas .blb_breakpoint_col.bp-selected,
+#layout-builder-modal .blb_breakpoint_col.bp-selected {
+  color: #ffffff;
+  background-color: #41A5FF;
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div {
+  position: relative;
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0;
+  margin: 0;
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input {
+  opacity: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+  display: block;
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label {
+  transition: all .3s ease-in-out;
+  font-size: .75rem;
+  font-weight: normal;
+  border: 2px solid #ffffff;
+  padding: 10px;
+  margin: 3px;
+  min-height: 40px;
+  width: calc(100% - 6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label:hover,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label {
+  color: #383A40;
+  background-color: #ffffff;
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div label,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div label {
+  border: 2px solid #ffffff;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div label + input,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div label + input {
+  opacity: 0;
+  position: absolute;
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div label.active,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div label.active {
+  color: #383A40;
+  background-color: #ffffff;
+}
+
+#drupal-off-canvas #bs_nav-tabs,
+#layout-builder-modal #bs_nav-tabs {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin: 0 -30px 30px -30px;
+  width: calc(100% + 60px);
+}
+
+#drupal-off-canvas #bs_nav-tabs li,
+#layout-builder-modal #bs_nav-tabs li {
+  flex: 1 1 auto;
+  margin: 0;
+  list-style: none;
+}
+
+#drupal-off-canvas #bs_nav-tabs li a,
+#layout-builder-modal #bs_nav-tabs li a {
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+  padding: .5rem .75rem;
+  min-height: 68px;
+  min-width: 16.666%;
+  color: #979AA1;
+  background: #292C32;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .2s background-color ease-in-out;
+}
+
+#drupal-off-canvas #bs_nav-tabs li a:after,
+#layout-builder-modal #bs_nav-tabs li a:after {
+  transition: all .3s ease-in-out;
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #727579;
+  z-index: 1;
+}
+
+#drupal-off-canvas #bs_nav-tabs li a:hover,
+#layout-builder-modal #bs_nav-tabs li a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#drupal-off-canvas #bs_nav-tabs li a:hover .bs_tooltip,
+#layout-builder-modal #bs_nav-tabs li a:hover .bs_tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0px);
+}
+
+#drupal-off-canvas #bs_nav-tabs li a:hover svg *,
+#layout-builder-modal #bs_nav-tabs li a:hover svg * {
+  fill: #ffffff;
+}
+
+#drupal-off-canvas #bs_nav-tabs li a.active, #drupal-off-canvas #bs_nav-tabs li a.active:hover,
+#layout-builder-modal #bs_nav-tabs li a.active,
+#layout-builder-modal #bs_nav-tabs li a.active:hover {
+  color: #41A5FF;
+  background-color: #46484E;
+}
+
+#drupal-off-canvas #bs_nav-tabs li a.active:after, #drupal-off-canvas #bs_nav-tabs li a.active:hover:after,
+#layout-builder-modal #bs_nav-tabs li a.active:after,
+#layout-builder-modal #bs_nav-tabs li a.active:hover:after {
+  background-color: #41A5FF;
+  left: -1px;
+  bottom: 0;
+  right: -1px;
+  width: calc(100% + 2px);
+  height: 5px;
+  border-radius: 8px;
+}
+
+#drupal-off-canvas #bs_nav-tabs li a.active svg *, #drupal-off-canvas #bs_nav-tabs li a.active:hover svg *,
+#layout-builder-modal #bs_nav-tabs li a.active svg *,
+#layout-builder-modal #bs_nav-tabs li a.active:hover svg * {
+  fill: #41A5FF;
+}
+
+#drupal-off-canvas #bs_nav-tabs li a .blb_icon,
+#drupal-off-canvas #bs_nav-tabs li a span[role='img'],
+#layout-builder-modal #bs_nav-tabs li a .blb_icon,
+#layout-builder-modal #bs_nav-tabs li a span[role='img'] {
+  max-width: 25px;
+  margin: 0 .75rem;
+}
+
+#drupal-off-canvas #bs_nav-tabs li a svg,
+#layout-builder-modal #bs_nav-tabs li a svg {
+  max-width: 100%;
+  height: auto;
+  background: none;
+}
+
+#drupal-off-canvas #bs_nav-tabs li a svg *,
+#layout-builder-modal #bs_nav-tabs li a svg * {
+  transition: all .3s ease-in-out;
+  fill: #979AA1;
+}
+
+#drupal-off-canvas #bs_tabContent > .bs_tab-pane,
+#layout-builder-modal #bs_tabContent > .bs_tab-pane {
+  display: none;
+}
+
+#drupal-off-canvas #bs_tabContent > .active,
+#layout-builder-modal #bs_tabContent > .active {
+  display: block;
+}
+
+#drupal-off-canvas .bs_tooltip,
+#layout-builder-modal .bs_tooltip {
+  bottom: 100%;
+  color: #ffffff;
+  background: #46484E;
+  display: block;
+  left: 50%;
+  margin-left: -37.5px;
+  margin-bottom: 15px;
+  opacity: 0;
+  padding: 9px 10px;
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+  width: 75px;
+  transform: translateY(-10px);
+  transition: all .25s ease-out;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  border-radius: 4px;
+  white-space: normal;
+  z-index: 1;
+  font-size: .875rem;
+}
+
+#drupal-off-canvas .bs_tooltip.bs_tooltip-lg,
+#layout-builder-modal .bs_tooltip.bs_tooltip-lg {
+  width: 150px;
+  margin-left: -75px;
+}
+
+#drupal-off-canvas .bs_tooltip:after,
+#layout-builder-modal .bs_tooltip:after {
+  border-left: solid transparent 10px;
+  border-right: solid transparent 10px;
+  border-top: solid #46484E 10px;
+  bottom: -10px;
+  content: " ";
+  height: 0;
+  left: 50%;
+  margin-left: -13px;
+  position: absolute;
+  width: 0;
+}
+
+#drupal-off-canvas .bs_tooltip[data-placement="bottom"],
+#layout-builder-modal .bs_tooltip[data-placement="bottom"] {
+  bottom: auto;
+  top: 100%;
+  margin-top: 15px;
+  transform: translateY(10px);
+}
+
+#drupal-off-canvas .bs_tooltip[data-placement="bottom"]:after,
+#layout-builder-modal .bs_tooltip[data-placement="bottom"]:after {
+  border-top: 0;
+  border-bottom: solid #46484E 10px;
+  top: -10px;
+  bottom: auto;
 }
