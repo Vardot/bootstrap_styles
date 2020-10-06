@@ -80,11 +80,6 @@ plugin.background_color.build:
       css/plugins/background_color/bs-classes.css: { }
 
 # background_media
-plugin.background_media.layout_builder_form:
-  css:
-    theme:
-      css/plugins/background_media/layout-builder-form.css: { }
-
 plugin.background_media.build:
   css:
     theme:

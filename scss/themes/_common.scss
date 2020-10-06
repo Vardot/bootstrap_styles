@@ -1,12 +1,12 @@
-// Any plugins that need theme set colors.
-@import "../plugins/background_media/layout-builder-form";
-
-// Our default mixins & modules.
+// Our defaults.
 @import "../mixins";
-@import "../modules/*";
+
+// Load our additional module styling
+@import "modules/*";
 
 // Attach our plugins for our themes to override our colours.
 #drupal-off-canvas,
 #layout-builder-modal {
-  @import "../components/*";
+  @import "components/*";
+  @import "plugins/*";
 }
