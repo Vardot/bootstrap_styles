@@ -20,6 +20,9 @@ function bootstrap_styles_theme() {
     'spacing_preview' => [
       'render element' => 'element',
     ],
+    'border_preview' => [
+      'render element' => 'element',
+    ],
   ];
 }
 

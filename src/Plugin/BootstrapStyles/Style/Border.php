@@ -165,6 +165,14 @@ class Border extends StylePluginBase {
       ],
     ];
 
+    $form['border']['rounded_corners']['rounded_corners'] = [
+      '#type' => 'textarea',
+      '#default_value' => $config->get('rounded_corners'),
+      '#title' => $this->t('Rounded corners (classes)'),
+      '#cols' => 60,
+      '#rows' => 5,
+    ];
+
     $corners = [
       'top_left' => 'Top Left',
       'top_right' => 'Top Right',
@@ -205,6 +213,7 @@ class Border extends StylePluginBase {
       ->set('border_top_color', $form_state->getValue('border_top_color'))
       ->set('border_right_color', $form_state->getValue('border_right_color'))
       ->set('border_bottom_color', $form_state->getValue('border_bottom_color'))
+      ->set('rounded_corners', $form_state->getValue('rounded_corners'))
       ->set('rounded_corner_top_left', $form_state->getValue('rounded_corner_top_left'))
       ->set('rounded_corner_top_right', $form_state->getValue('rounded_corner_top_right'))
       ->set('rounded_corner_bottom_left', $form_state->getValue('rounded_corner_bottom_left'))
@@ -258,11 +267,18 @@ class Border extends StylePluginBase {
       ],
     ];
 
+    $default_value = 0;
+    if (isset($storage['border']['border_width']['class'])) {
+      $default_value = $this->getStyleOptionIndexByClass('border_width', $storage['border']['border_width']['class']);
+    }
+
     $form['border_width'] = [
-      '#type' => 'radios',
-      '#options' => $this->getStyleOptions('border_width'),
       '#title' => $this->t('Border width'),
-      '#default_value' => $storage['border']['border_width']['class'] ?? NULL,
+      '#type' => 'range',
+      '#min' => 0,
+      '#max' => $this->getStyleOptionsCount('border_width'),
+      '#step' => 1,
+      '#default_value' => $default_value,
       '#validated' => TRUE,
       '#attributes' => [
         'class' => ['field-border-width'],
@@ -307,11 +323,18 @@ class Border extends StylePluginBase {
         ],
       ];
 
+      $default_value = 0;
+      if (isset($storage['border']['border_' . $directions[$i] . '_width']['class'])) {
+        $default_value = $this->getStyleOptionIndexByClass('border_' . $directions[$i] . '_width', $storage['border']['border_' . $directions[$i] . '_width']['class']);
+      }
+
       $form['border_' . $directions[$i] . '_width'] = [
-        '#type' => 'radios',
-        '#options' => $this->getStyleOptions('border_' . $directions[$i] . '_width'),
-        '#title' => $this->t('Border width'),
-        '#default_value' => $storage['border']['border_' . $directions[$i] . '_width']['class'] ?? NULL,
+        '#type' => 'range',
+        '#title' => $this->t('Border @direction width', ['@direction' => $directions[$i]]),
+        '#min' => 0,
+        '#max' => $this->getStyleOptionsCount('border_' . $directions[$i] . '_width'),
+        '#step' => 1,
+        '#default_value' => $default_value,
         '#validated' => TRUE,
         '#attributes' => [
           'class' => ['field-border-width-' . $directions[$i]],
@@ -341,65 +364,63 @@ class Border extends StylePluginBase {
     }
 
     // Rounded Corners.
+    $corners = [
+      'top_left' => 'Top Left',
+      'top_right' => 'Top Right',
+      'bottom_left' => 'Bottom Left',
+      'bottom_right' => 'Bottom Right',
+    ];
+
     $form['rounded_corners_description'] = [
       '#type' => 'item',
       '#title' => $this->t('Rounded Corners'),
       '#prefix' => '<hr />',
     ];
 
-    $top_corners = [
-      'top_left' => 'Top Left',
-      'top_right' => 'Top Right',
-    ];
+    $default_value = 0;
+    if (isset($storage['border']['rounded_corners']['class'])) {
+      $default_value = $this->getStyleOptionIndexByClass('rounded_corners', $storage['border']['rounded_corners']['class']);
+    }
 
-    $form['rounded_corners_top_group'] = [
-      '#type' => 'container',
-      '#title' => $this->t('Top Rounded Corners'),
-      '#title_display' => 'invisible',
+    $form['rounded_corners'] = [
+      '#type' => 'range',
+      '#title' => $this->t('Corners'),
+      '#min' => 0,
+      '#max' => $this->getStyleOptionsCount('rounded_corners'),
+      '#step' => 1,
+      '#default_value' => $default_value,
+      '#validated' => TRUE,
       '#attributes' => [
-        'class' => ['bs_flex', 'bs-justify-content-between'],
+        'class' => ['bs-field-rounded-corners'],
       ],
     ];
 
-    foreach ($top_corners as $corner_key => $corner_value) {
-      $form['rounded_corners_top_group']['rounded_corner_' . $corner_key] = [
-        '#type' => 'select',
-        '#options' => $this->getStyleOptions('rounded_corner_' . $corner_key),
-        '#title' => $this->t($corner_value),
-        '#default_value' => $storage['border']['rounded_corner_' . $corner_key]['class'] ?? NULL,
+    foreach ($corners as $corner_key => $corner_value) {
+      $default_value = 0;
+      if (isset($storage['border']['rounded_corner_' . $corner_key]['class'])) {
+        $default_value = $this->getStyleOptionIndexByClass('rounded_corner_' . $corner_key, $storage['border']['rounded_corner_' . $corner_key]['class']);
+      }
+      $form['rounded_corner_' . $corner_key] = [
+        '#type' => 'range',
+        '#title' => $this->t('@corner', ['@corner' => $corner_value]),
+        '#min' => 0,
+        '#max' => $this->getStyleOptionsCount('rounded_corner_' . $corner_key),
+        '#step' => 1,
+        '#default_value' => $default_value,
         '#validated' => TRUE,
         '#attributes' => [
-          'class' => ['field-rounded-border-' . $corner_key],
+          'class' => ['bs-field-rounded-corner-' . $corner_key],
         ],
       ];
     }
 
-    $form['rounded_corners_bottom_group'] = [
-      '#type' => 'container',
-      '#title' => $this->t('Bottom Rounded Corners'),
-      '#title_display' => 'invisible',
-      '#attributes' => [
-        'class' => ['bs_flex', 'bs-justify-content-between'],
-      ],
-    ];
-
-    $bottom_corners = [
-      'bottom_left' => 'Bottom Left',
-      'bottom_right' => 'Bottom Right',
-    ];
-
-    foreach ($bottom_corners as $corner_key => $corner_value) {
-      $form['rounded_corners_bottom_group']['rounded_corner_' . $corner_key] = [
-        '#type' => 'select',
-        '#options' => $this->getStyleOptions('rounded_corner_' . $corner_key),
-        '#title' => $this->t($corner_value),
-        '#default_value' => $storage['border']['rounded_corner_' . $corner_key]['class'] ?? NULL,
-        '#validated' => TRUE,
-        '#attributes' => [
-          'class' => ['field-rounded-border-' . $corner_key],
-        ],
-      ];
+    // Pass round corners options to drupal settings.
+    $rounded_corners_options = [];
+    $rounded_corners_options['rounded_corners'] = array_keys($this->getStyleOptions('rounded_corners'));
+    foreach (array_keys($corners) as $corner_key) {
+      $rounded_corners_options['rounded_corner_' . $corner_key] = array_keys($this->getStyleOptions('rounded_corner_' . $corner_key));
     }
+    $form['#attached']['drupalSettings']['bootstrap_styles']['rounded_corners'] = $rounded_corners_options;
 
     // Attach the Layout Builder form style for this plugin.
     $form['#attached']['library'][] = 'bootstrap_styles/plugin.border.layout_builder_form';
@@ -424,36 +445,33 @@ class Border extends StylePluginBase {
           'class' => $group_elements['border_style'],
         ],
         'border_width' => [
-          'class' => $group_elements['border_width'],
+          'class' => $this->getStyleOptionClassByIndex('border_width', $group_elements['border_width']),
         ],
         'border_color' => [
           'class' => $group_elements['border_color'],
+        ],
+        'rounded_corners' => [
+          'class' => $this->getStyleOptionClassByIndex('rounded_corners', $group_elements['rounded_corners']),
         ],
       ],
     ];
 
     for ($i = 0; $i < 4; $i++) {
       $schema['border']['border_' . $directions[$i] . '_style']['class'] = $group_elements['border_' . $directions[$i] . '_style'];
-      $schema['border']['border_' . $directions[$i] . '_width']['class'] = $group_elements['border_' . $directions[$i] . '_width'];
+      $schema['border']['border_' . $directions[$i] . '_width']['class'] = $this->getStyleOptionClassByIndex('border_' . $directions[$i] . '_width', $group_elements['border_' . $directions[$i] . '_width']);
       $schema['border']['border_' . $directions[$i] . '_color']['class'] = $group_elements['border_' . $directions[$i] . '_color'];
     }
 
     // Rounded corners.
-    $corners_groups = [
-      'rounded_corners_top_group' => [
-        'top_left' => 'Top Left',
-        'top_right' => 'Top Right',
-      ],
-      'rounded_corners_bottom_group' => [
-        'bottom_left' => 'Bottom Left',
-        'bottom_right' => 'Bottom Right',
-      ],
+    $corners = [
+      'top_left' => 'Top Left',
+      'top_right' => 'Top Right',
+      'bottom_left' => 'Bottom Left',
+      'bottom_right' => 'Bottom Right',
     ];
 
-    foreach (array_keys($corners_groups) as $corner_group_key) {
-      foreach (array_keys($corners_groups[$corner_group_key]) as $corner_key) {
-        $schema['border']['rounded_corner_' . $corner_key]['class'] = $group_elements[$corner_group_key]['rounded_corner_' . $corner_key];
-      }
+    foreach (array_keys($corners) as $corner_key) {
+      $schema['border']['rounded_corner_' . $corner_key]['class'] = $this->getStyleOptionClassByIndex('rounded_corner_' . $corner_key, $group_elements['rounded_corner_' . $corner_key]);
     }
 
     return $schema;
@@ -489,6 +507,9 @@ class Border extends StylePluginBase {
     }
 
     // Rounded corners.
+    if (isset($storage['border']['rounded_corners']['class'])) {
+      $classes[] = $storage['border']['rounded_corners']['class'];
+    }
     foreach (array_keys($corners) as $corner_key) {
       $classes[] = $storage['border']['rounded_corner_' . $corner_key]['class'];
     }

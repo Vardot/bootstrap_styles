@@ -58,6 +58,14 @@ plugins_groups.spacing.spacing_preview:
   js:
     js/plugins_groups/spacing/spacing-preview.js: { }
 
+# border
+plugins_groups.border.border_preview:
+  css:
+    theme:
+      css/plugins_groups/border/border-preview.css: { }
+  js:
+    js/plugins_groups/border/border-preview.js: { }
+
 # Plugins.
 # background_color
 plugin.background_color.layout_builder_form:

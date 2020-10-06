@@ -1,0 +1,13 @@
+#drupal-off-canvas #bs-border-preview,
+#layout-builder-modal #bs-border-preview {
+  width: 281px;
+  height: 217px;
+  background: #2F3138;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#drupal-off-canvas input[type=range]:focus,
+#layout-builder-modal input[type=range]:focus {
+  outline: none;
+}

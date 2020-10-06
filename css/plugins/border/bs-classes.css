@@ -178,6 +178,18 @@
   border-bottom-color: blue !important;
 }
 
+.bs-border-radius-1 {
+  border-radius: 0.5rem;
+}
+
+.bs-border-radius-2 {
+  border-radius: 1rem;
+}
+
+.bs-border-radius-3 {
+  border-radius: 2rem;
+}
+
 .bs-border-top-left-radius-1 {
   border-top-left-radius: 0.5rem;
 }

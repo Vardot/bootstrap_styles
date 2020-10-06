@@ -32,4 +32,15 @@ class Border extends StylesGroupPluginBase {
     return $form;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function buildStyleFormElements(array &$form, FormStateInterface $form_state, $storage) {
+    $form['border_preview'] = [
+      '#theme' => 'border_preview',
+    ];
+
+    return $form;
+  }
+
 }
