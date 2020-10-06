@@ -16,9 +16,13 @@
 
       $(".fieldgroup.field-background-color .fieldset-wrapper label", context).on('click', function () {
         $(this).parents('.fieldset-wrapper').find('label').removeClass('active');
-        $(this).parents('.fieldset-wrapper').find('input').prop("checked", false);
+        $(this).parents('.fieldset-wrapper').addClass('bg-selected').find('input').prop("checked", false);
         $(this).parent().find('input').prop('checked', true);
         $(this).addClass('active');
+
+        if($(this).hasClass('_none')) {
+          $(this).parents('.fieldset-wrapper').removeClass('bg-selected');
+        }
       });
 
       // Custom solution for bootstrap 3 & Bario drupal theme issues.

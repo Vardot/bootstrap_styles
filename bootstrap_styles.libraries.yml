@@ -62,7 +62,6 @@ plugins_groups.spacing.spacing_preview:
 plugin.background_color.layout_builder_form:
   css:
     theme:
-      css/plugins/background_color/layout-builder-form.css: { }
       css/plugins/background_color/bs-classes.css: { }
   js:
     js/plugins/background_color/layout-builder-form.js: { }
@@ -120,11 +119,6 @@ plugin.border.build:
       css/plugins/border/bs-classes.css: { }
 
 # scroll_effects
-plugin.scroll_effects.layout_builder_form:
-  css:
-    theme:
-     css/plugins/scroll_effects/layout-builder-form.css: { }
-
 plugin.scroll_effects.build:
   remote: https://michalsnik.github.io/aos
   version: 1.x
