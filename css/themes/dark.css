@@ -1616,15 +1616,6 @@
   background-size: 100% auto;
 }
 
-#drupal-off-canvas,
-#layout-builder-modal {
-  /**
-* The media library item container receives screen reader focus when items are
-* removed. Since it is not an interactive element, it does not need an
-* outline.
-*/
-}
-
 #drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div,
 #layout-builder-modal .blb_container_type .fieldset-wrapper > div > div {
   position: relative;
@@ -2047,7 +2038,6 @@
   border: none;
   margin: 0 auto;
   background: #ffffff;
-  border-radius: 8px;
   transition: border-color 0.2s, color 0.2s, background 0.2s;
   padding: .5rem;
 }
