@@ -102,7 +102,7 @@ class Padding extends StylePluginBase {
       '#type' => 'radios',
       '#options' => [
     // $this->getSvgIconMarkup($icon_path . 'icon.svg'),
-        'padding' => $this->t('padding'),
+        'padding' => $this->getSvgIconMarkup($icon_path . 'icon.svg'), //$this->t('padding'),
         'padding_left' => $this->t('Left'),
         'padding_top' => $this->t('Top'),
         'padding_right' => $this->t('Right'),

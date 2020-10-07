@@ -258,7 +258,7 @@ class Border extends StylePluginBase {
       '#default_value' => $storage['border']['border_style']['class'] ?? NULL,
       '#validated' => TRUE,
       '#attributes' => [
-        'class' => ['field-border-style'],
+        'class' => ['bs-field-border-style'],
       ],
       '#states' => [
         'visible' => [
@@ -281,7 +281,7 @@ class Border extends StylePluginBase {
       '#default_value' => $default_value,
       '#validated' => TRUE,
       '#attributes' => [
-        'class' => ['field-border-width'],
+        'class' => ['bs-field-border-width'],
       ],
       '#states' => [
         'visible' => [
@@ -297,7 +297,7 @@ class Border extends StylePluginBase {
       '#default_value' => $storage['border']['border_color']['class'] ?? NULL,
       '#validated' => TRUE,
       '#attributes' => [
-        'class' => ['field-border-color'],
+        'class' => ['bs-field-border-color'],
       ],
       '#states' => [
         'visible' => [
@@ -314,7 +314,7 @@ class Border extends StylePluginBase {
         '#default_value' => $storage['border']['border_' . $directions[$i] . '_style']['class'] ?? NULL,
         '#validated' => TRUE,
         '#attributes' => [
-          'class' => ['field-border-style-' . $directions[$i]],
+          'class' => ['bs-field-border-' . $directions[$i] . '-style'],
         ],
         '#states' => [
           'visible' => [
@@ -337,7 +337,7 @@ class Border extends StylePluginBase {
         '#default_value' => $default_value,
         '#validated' => TRUE,
         '#attributes' => [
-          'class' => ['field-border-width-' . $directions[$i]],
+          'class' => ['bs-field-border-' . $directions[$i] . '-width'],
         ],
         '#states' => [
           'visible' => [
@@ -353,7 +353,7 @@ class Border extends StylePluginBase {
         '#default_value' => $storage['border']['border_' . $directions[$i] . '_color']['class'] ?? NULL,
         '#validated' => TRUE,
         '#attributes' => [
-          'class' => ['field-border-color-' . $directions[$i]],
+          'class' => ['bs-field-border-' . $directions[$i] . '-color'],
         ],
         '#states' => [
           'visible' => [
@@ -414,13 +414,23 @@ class Border extends StylePluginBase {
       ];
     }
 
-    // Pass round corners options to drupal settings.
+    // Pass border width and round corners options to drupal settings.
+    $border_width_options = [];
+    $border_width_options['border_width'] = array_keys($this->getStyleOptions('border_width'));
+    for ($i = 0; $i < 4; $i++) {
+      $border_width_options['border_' . $directions[$i] . '_width'] = array_keys($this->getStyleOptions('border_' . $directions[$i] . '_width'));
+    }
     $rounded_corners_options = [];
     $rounded_corners_options['rounded_corners'] = array_keys($this->getStyleOptions('rounded_corners'));
     foreach (array_keys($corners) as $corner_key) {
       $rounded_corners_options['rounded_corner_' . $corner_key] = array_keys($this->getStyleOptions('rounded_corner_' . $corner_key));
     }
-    $form['#attached']['drupalSettings']['bootstrap_styles']['rounded_corners'] = $rounded_corners_options;
+    $border_options = [
+      'border_width' => $border_width_options,
+      'rounded_corners' => $rounded_corners_options,
+    ];
+
+    $form['#attached']['drupalSettings']['bootstrap_styles']['border'] = $border_options;
 
     // Attach the Layout Builder form style for this plugin.
     $form['#attached']['library'][] = 'bootstrap_styles/plugin.border.layout_builder_form';
