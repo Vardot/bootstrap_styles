@@ -102,7 +102,7 @@ class Padding extends StylePluginBase {
       '#type' => 'radios',
       '#options' => [
     // $this->getSvgIconMarkup($icon_path . 'icon.svg'),
-        'padding' => $this->t('padding'),
+        'padding' => $this->t('Padding'),
         'padding_left' => $this->t('Left'),
         'padding_top' => $this->t('Top'),
         'padding_right' => $this->t('Right'),
@@ -113,7 +113,7 @@ class Padding extends StylePluginBase {
       '#default_value' => 'padding',
       '#validated' => TRUE,
       '#attributes' => [
-        'class' => ['bs_col--full', 'bs_radio-tabs', 'bs_padding--type'],
+        'class' => ['bs_col--full', 'bs_input-boxes', 'bs_padding--type'],
       ],
     ];
 
