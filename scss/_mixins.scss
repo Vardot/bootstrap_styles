@@ -15,7 +15,7 @@
   transition: all .3s ease-in-out;
 }
 
-// Rounded input style
+// Rounded input style (container/background)
 @mixin blb_box_inputs($width: 100%) {
   position: relative;
   flex: $width;
@@ -87,7 +87,6 @@
 
     + label {
       @include smooth-all-transition;
-      //border: 2px solid $panel_text_color;
       padding: 8px;
       height: 35px;
       width: 100%;
@@ -106,12 +105,15 @@
     // Active state.
     &:checked + label {
       background-color: $gray-464;
+
+      &:after {
+        border-color: $gray-2f3;
+      }
     }
   }
 
   // Custom fix for Bootstrap 3 Drupal theme.
   label {
-    //border: 2px solid $panel_text_color;
     height: 35px;
     width: 100%;
     display: flex;

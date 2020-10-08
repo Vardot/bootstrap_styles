@@ -56,9 +56,6 @@ plugins_groups.spacing.spacing_preview:
 
 # border
 plugins_groups.border.border_preview:
-  css:
-    theme:
-      css/plugins_groups/border/border-preview.css: { }
   js:
     js/plugins_groups/border/border-preview.js: { }
 

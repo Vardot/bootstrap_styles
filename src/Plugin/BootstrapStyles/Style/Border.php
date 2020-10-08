@@ -236,18 +236,18 @@ class Border extends StylePluginBase {
     $form['border_type'] = [
       '#type' => 'radios',
       '#options' => [
-        'border' => $this->t('Border'),
-        'border_left' => $this->t('Left'),
-        'border_top' => $this->t('Top'),
-        'border_right' => $this->t('Right'),
-        'border_bottom' => $this->t('Bottom'),
+        'border' => $this->t('Border') . '<div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('All') .'</div>',
+        'border_left' => $this->t('Left') . '<div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('Left') .'</div>',
+        'border_top' => $this->t('Top') . '<div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('Top') .'</div>',
+        'border_right' => $this->t('Right') . '<div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('Right') .'</div>',
+        'border_bottom' => $this->t('Bottom') . '<div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('Bottom') .'</div>',
       ],
       '#title' => $this->t('Border type'),
       '#title_display' => 'invisible',
       '#default_value' => 'border',
       '#validated' => TRUE,
       '#attributes' => [
-        'class' => ['bs_col--full', 'bs_radio-tabs', 'bs_border--type'],
+        'class' => ['bs_col--full', 'bs_input-boxes', 'bs_border--type'],
       ],
     ];
 

@@ -1667,6 +1667,11 @@
   background-color: #46484E;
 }
 
+#drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input:checked + label:after,
+#layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input:checked + label:after {
+  border-color: #2F3138;
+}
+
 #drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div label,
 #layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div label {
   height: 35px;
@@ -1901,6 +1906,11 @@
   border-radius: 0 8px 8px 0;
 }
 
+#drupal-off-canvas input[type=range]:focus,
+#layout-builder-modal input[type=range]:focus {
+  outline: none;
+}
+
 #drupal-off-canvas #bs_nav-tabs,
 #layout-builder-modal #bs_nav-tabs {
   position: relative;
@@ -2082,6 +2092,18 @@
   border-bottom: solid #46484E 10px;
   top: -10px;
   bottom: auto;
+}
+
+#drupal-off-canvas label,
+#layout-builder-modal label {
+  position: relative;
+}
+
+#drupal-off-canvas label:hover .bs_tooltip,
+#layout-builder-modal label:hover .bs_tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0px);
 }
 
 #drupal-off-canvas .fieldgroup.field-background-color .form-radios > div, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper > div,
@@ -2864,6 +2886,64 @@
   border-radius: 0 8px 8px 0;
 }
 
+#drupal-off-canvas #bs-border-preview,
+#layout-builder-modal #bs-border-preview {
+  width: 100%;
+  height: 200px;
+  background: #2F3138;
+  margin: 0.5rem 0 1.5rem;
+}
+
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border"]:hover + label:after {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border"]:checked + label:after {
+  border-color: #41A5FF;
+}
+
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border_left"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border_left"]:hover + label:after {
+  border-left-color: rgba(255, 255, 255, 0.6);
+}
+
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border_left"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border_left"]:checked + label:after {
+  border-left-color: #41A5FF;
+}
+
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border_top"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border_top"]:hover + label:after {
+  border-top-color: rgba(255, 255, 255, 0.6);
+}
+
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border_top"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border_top"]:checked + label:after {
+  border-top-color: #41A5FF;
+}
+
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border_right"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border_right"]:hover + label:after {
+  border-right-color: rgba(255, 255, 255, 0.6);
+}
+
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border_right"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border_right"]:checked + label:after {
+  border-right-color: #41A5FF;
+}
+
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border_bottom"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border_bottom"]:hover + label:after {
+  border-bottom-color: rgba(255, 255, 255, 0.6);
+}
+
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border_bottom"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border_bottom"]:checked + label:after {
+  border-bottom-color: #41A5FF;
+}
+
 #drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div,
 #layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div {
   display: flex;
@@ -3038,105 +3118,105 @@
   box-shadow: 0 0 0 1.5rem #7FB48A;
 }
 
-#drupal-off-canvas input[value="padding"]:hover + label:after, #drupal-off-canvas input[value="margin"]:hover + label:after,
-#layout-builder-modal input[value="padding"]:hover + label:after,
-#layout-builder-modal input[value="margin"]:hover + label:after {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding"]:hover + label:after, #drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin"]:hover + label:after {
   border-color: rgba(255, 255, 255, 0.6);
 }
 
-#drupal-off-canvas input[value="padding"]:checked + label:after,
-#layout-builder-modal input[value="padding"]:checked + label:after {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding"]:checked + label:after {
   border-color: #7FB48A;
 }
 
-#drupal-off-canvas input[value="margin"]:checked + label:after,
-#layout-builder-modal input[value="margin"]:checked + label:after {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin"]:checked + label:after {
   border-color: #F1C666;
 }
 
-#drupal-off-canvas input[value="padding_left"]:hover + label:after,
-#layout-builder-modal input[value="padding_left"]:hover + label:after {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_left"] + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_left"] + label:after {
   border-left-color: rgba(255, 255, 255, 0.6);
 }
 
-#drupal-off-canvas input[value="padding_left"]:checked + label:after,
-#layout-builder-modal input[value="padding_left"]:checked + label:after {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_left"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_left"]:hover + label:after {
+  border-left-color: rgba(255, 255, 255, 0.6);
+}
+
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_left"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_left"]:checked + label:after {
   border-left-color: #7FB48A;
 }
 
-#drupal-off-canvas input[value="margin_left"]:hover + label:after,
-#layout-builder-modal input[value="margin_left"]:hover + label:after {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_left"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_left"]:hover + label:after {
   border-left-color: rgba(255, 255, 255, 0.6);
 }
 
-#drupal-off-canvas input[value="margin_left"]:checked + label:after,
-#layout-builder-modal input[value="margin_left"]:checked + label:after {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_left"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_left"]:checked + label:after {
   border-left-color: #F1C666;
 }
 
-#drupal-off-canvas input[value="padding_top"]:hover + label:after,
-#layout-builder-modal input[value="padding_top"]:hover + label:after {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_top"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_top"]:hover + label:after {
   border-top-color: rgba(255, 255, 255, 0.6);
 }
 
-#drupal-off-canvas input[value="padding_top"]:checked + label:after,
-#layout-builder-modal input[value="padding_top"]:checked + label:after {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_top"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_top"]:checked + label:after {
   border-top-color: #7FB48A;
 }
 
-#drupal-off-canvas input[value="margin_top"]:hover + label:after,
-#layout-builder-modal input[value="margin_top"]:hover + label:after {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_top"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_top"]:hover + label:after {
   border-top-color: rgba(255, 255, 255, 0.6);
 }
 
-#drupal-off-canvas input[value="margin_top"]:checked + label:after,
-#layout-builder-modal input[value="margin_top"]:checked + label:after {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_top"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_top"]:checked + label:after {
   border-top-color: #F1C666;
 }
 
-#drupal-off-canvas input[value="padding_right"]:hover + label:after,
-#layout-builder-modal input[value="padding_right"]:hover + label:after {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_right"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_right"]:hover + label:after {
   border-right-color: rgba(255, 255, 255, 0.6);
 }
 
-#drupal-off-canvas input[value="padding_right"]:checked + label:after,
-#layout-builder-modal input[value="padding_right"]:checked + label:after {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_right"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_right"]:checked + label:after {
   border-right-color: #7FB48A;
 }
 
-#drupal-off-canvas input[value="margin_right"]:hover + label:after,
-#layout-builder-modal input[value="margin_right"]:hover + label:after {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_right"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_right"]:hover + label:after {
   border-right-color: rgba(255, 255, 255, 0.6);
 }
 
-#drupal-off-canvas input[value="margin_right"]:checked + label:after,
-#layout-builder-modal input[value="margin_right"]:checked + label:after {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_right"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_right"]:checked + label:after {
   border-right-color: #F1C666;
 }
 
-#drupal-off-canvas input[value="padding_bottom"]:hover + label:after,
-#layout-builder-modal input[value="padding_bottom"]:hover + label:after {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_bottom"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_bottom"]:hover + label:after {
   border-bottom-color: rgba(255, 255, 255, 0.6);
 }
 
-#drupal-off-canvas input[value="padding_bottom"]:checked + label:after,
-#layout-builder-modal input[value="padding_bottom"]:checked + label:after {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_bottom"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_bottom"]:checked + label:after {
   border-bottom-color: #7FB48A;
 }
 
-#drupal-off-canvas input[value="margin_bottom"]:hover + label:after,
-#layout-builder-modal input[value="margin_bottom"]:hover + label:after {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_bottom"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_bottom"]:hover + label:after {
   border-bottom-color: rgba(255, 255, 255, 0.6);
 }
 
-#drupal-off-canvas input[value="margin_bottom"]:checked + label:after,
-#layout-builder-modal input[value="margin_bottom"]:checked + label:after {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_bottom"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_bottom"]:checked + label:after {
   border-bottom-color: #F1C666;
-}
-
-#drupal-off-canvas input[type=range]:focus,
-#layout-builder-modal input[type=range]:focus {
-  outline: none;
 }
 
 #drupal-off-canvas input.bs-field-margin,
@@ -3184,6 +3264,7 @@
 #layout-builder-modal input.bs-field-padding-top::-webkit-slider-thumb,
 #layout-builder-modal input.bs-field-padding-right::-webkit-slider-thumb,
 #layout-builder-modal input.bs-field-padding-bottom::-webkit-slider-thumb {
+  transition: all .3s ease-in-out;
   -webkit-appearance: none;
   appearance: none;
   width: 14px;
@@ -3191,6 +3272,30 @@
   background: #ffffff;
   border-radius: 50%;
   cursor: pointer;
+}
+
+#drupal-off-canvas input.bs-field-margin::-webkit-slider-thumb:hover,
+#drupal-off-canvas input.bs-field-margin-left::-webkit-slider-thumb:hover,
+#drupal-off-canvas input.bs-field-margin-top::-webkit-slider-thumb:hover,
+#drupal-off-canvas input.bs-field-margin-right::-webkit-slider-thumb:hover,
+#drupal-off-canvas input.bs-field-margin-bottom::-webkit-slider-thumb:hover,
+#drupal-off-canvas input.bs-field-padding::-webkit-slider-thumb:hover,
+#drupal-off-canvas input.bs-field-padding-left::-webkit-slider-thumb:hover,
+#drupal-off-canvas input.bs-field-padding-top::-webkit-slider-thumb:hover,
+#drupal-off-canvas input.bs-field-padding-right::-webkit-slider-thumb:hover,
+#drupal-off-canvas input.bs-field-padding-bottom::-webkit-slider-thumb:hover,
+#layout-builder-modal input.bs-field-margin::-webkit-slider-thumb:hover,
+#layout-builder-modal input.bs-field-margin-left::-webkit-slider-thumb:hover,
+#layout-builder-modal input.bs-field-margin-top::-webkit-slider-thumb:hover,
+#layout-builder-modal input.bs-field-margin-right::-webkit-slider-thumb:hover,
+#layout-builder-modal input.bs-field-margin-bottom::-webkit-slider-thumb:hover,
+#layout-builder-modal input.bs-field-padding::-webkit-slider-thumb:hover,
+#layout-builder-modal input.bs-field-padding-left::-webkit-slider-thumb:hover,
+#layout-builder-modal input.bs-field-padding-top::-webkit-slider-thumb:hover,
+#layout-builder-modal input.bs-field-padding-right::-webkit-slider-thumb:hover,
+#layout-builder-modal input.bs-field-padding-bottom::-webkit-slider-thumb:hover {
+  width: 18px;
+  height: 18px;
 }
 
 #drupal-off-canvas input.bs-field-margin::-moz-focus-outer,

@@ -55,3 +55,14 @@
     }
   }
 }
+
+// Show on hover
+label {
+  position: relative;
+
+  &:hover .bs_tooltip {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0px);
+  }
+}

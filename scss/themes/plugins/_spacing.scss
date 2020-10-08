@@ -77,115 +77,115 @@
   }
 }
 
-// Box input highlighting
-input {
+// Padding/Margin Highlighting
+.bs_input-boxes .fieldset-wrapper > div > div {
+  input {
 
-  // all
-  &[value="padding"],
-  &[value="margin"] {
-    &:hover + label:after {
-      border-color: rgba($white, .6);
+    // all
+    &[value="padding"],
+    &[value="margin"] {
+      &:hover + label:after {
+        border-color: rgba($white, .6);
+      }
+    }
+
+    // padding/margin all
+    &[value="padding"]:checked + label:after {
+      border-color: $state_success;
+    }
+
+    &[value="margin"]:checked + label:after {
+      border-color: $state_warning;
+    }
+
+    // left
+    &[value="padding_left"] {
+      + label:after {
+        border-left-color: rgba($white, .6);
+      }
+
+      &:hover + label:after {
+        border-left-color: rgba($white, .6);
+      }
+
+      &:checked + label:after {
+        border-left-color: $state_success;
+      }
+    }
+
+    &[value="margin_left"] {
+      &:hover + label:after {
+        border-left-color: rgba($white, .6);
+      }
+
+      &:checked + label:after {
+        border-left-color: $state_warning;
+      }
+    }
+
+    // top
+    &[value="padding_top"] {
+      &:hover + label:after {
+        border-top-color: rgba($white, .6);
+      }
+
+      &:checked + label:after {
+        border-top-color: $state_success;
+      }
+    }
+
+    &[value="margin_top"] {
+      &:hover + label:after {
+        border-top-color: rgba($white, .6);
+      }
+
+      &:checked + label:after {
+        border-top-color: $state_warning;
+      }
+    }
+
+    // right
+    &[value="padding_right"] {
+      &:hover + label:after {
+        border-right-color: rgba($white, .6);
+      }
+
+      &:checked + label:after {
+        border-right-color: $state_success;
+      }
+    }
+
+    &[value="margin_right"] {
+      &:hover + label:after {
+        border-right-color: rgba($white, .6);
+      }
+
+      &:checked + label:after {
+        border-right-color: $state_warning;
+      }
+    }
+
+    // bottom
+    &[value="padding_bottom"] {
+      &:hover + label:after {
+        border-bottom-color: rgba($white, .6);
+      }
+
+      &:checked + label:after {
+        border-bottom-color: $state_success;
+      }
+    }
+
+    &[value="margin_bottom"] {
+      &:hover + label:after {
+        border-bottom-color: rgba($white, .6);
+      }
+
+      &:checked + label:after {
+        border-bottom-color: $state_warning;
+      }
     }
   }
-
-  // padding/margin all
-  &[value="padding"]:checked + label:after {
-    border-color: $state_success;
-  }
-
-  &[value="margin"]:checked + label:after {
-    border-color: $state_warning;
-  }
-
-  // left
-  &[value="padding_left"] {
-    &:hover + label:after {
-      border-left-color: rgba($white, .6);
-    }
-
-    &:checked + label:after {
-      border-left-color: $state_success;
-    }
-  }
-
-  &[value="margin_left"] {
-    &:hover + label:after {
-      border-left-color: rgba($white, .6);
-    }
-
-    &:checked + label:after {
-      border-left-color: $state_warning;
-    }
-  }
-
-  // top
-  &[value="padding_top"] {
-    &:hover + label:after {
-      border-top-color: rgba($white, .6);
-    }
-
-    &:checked + label:after {
-      border-top-color: $state_success;
-    }
-  }
-
-  &[value="margin_top"] {
-    &:hover + label:after {
-      border-top-color: rgba($white, .6);
-    }
-
-    &:checked + label:after {
-      border-top-color: $state_warning;
-    }
-  }
-
-  // right
-  &[value="padding_right"] {
-    &:hover + label:after {
-      border-right-color: rgba($white, .6);
-    }
-
-    &:checked + label:after {
-      border-right-color: $state_success;
-    }
-  }
-
-  &[value="margin_right"] {
-    &:hover + label:after {
-      border-right-color: rgba($white, .6);
-    }
-
-    &:checked + label:after {
-      border-right-color: $state_warning;
-    }
-  }
-
-  // bottom
-  &[value="padding_bottom"] {
-    &:hover + label:after {
-      border-bottom-color: rgba($white, .6);
-    }
-
-    &:checked + label:after {
-      border-bottom-color: $state_success;
-    }
-  }
-
-  &[value="margin_bottom"] {
-    &:hover + label:after {
-      border-bottom-color: rgba($white, .6);
-    }
-
-    &:checked + label:after {
-      border-bottom-color: $state_warning;
-    }
-  }
-}
-
-
-// Range sliders
-input[type=range]:focus {
-  outline: none;
 }
 
 input.bs-field-margin,
@@ -203,6 +203,7 @@ input.bs-field-padding-bottom {
   width: 100%;
 
   &::-webkit-slider-thumb {
+    @include smooth-all-transition;
     -webkit-appearance: none;
     appearance: none;
     width: 14px;
@@ -210,6 +211,11 @@ input.bs-field-padding-bottom {
     background: $panel_text_color;
     border-radius: 50%;
     cursor: pointer;
+
+    &:hover {
+      width: 18px;
+      height: 18px;
+    }
   }
 
   &::-moz-focus-outer {
