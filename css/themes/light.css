@@ -1616,6 +1616,95 @@
   background-size: 100% auto;
 }
 
+#drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div,
+#layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div {
+  display: flex;
+}
+
+#drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div,
+#layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div {
+  position: relative;
+  flex: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input,
+#layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+#drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input + label,
+#layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input + label {
+  transition: all .3s ease-in-out;
+  padding: 8px;
+  height: 35px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  background-color: #292C32;
+}
+
+#drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input + label:hover,
+#layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input + label:hover {
+  background-color: rgba(70, 72, 78, 0.1);
+}
+
+#drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input:checked + label,
+#layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input:checked + label {
+  background-color: #46484E;
+}
+
+#drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div label,
+#layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div label {
+  height: 35px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+#drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div label + input,
+#layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div label + input {
+  opacity: 0;
+  position: absolute;
+}
+
+#drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div label.active,
+#layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div label.active {
+  color: #ffffff;
+  background-color: #383A40;
+}
+
+#drupal-off-canvas .fieldgroup.bs_input-boxes input ~ label,
+#layout-builder-modal .fieldgroup.bs_input-boxes input ~ label {
+  font-size: 0;
+  text-indent: -999em;
+}
+
+#drupal-off-canvas .fieldgroup.bs_input-boxes input ~ label:after,
+#layout-builder-modal .fieldgroup.bs_input-boxes input ~ label:after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  display: block;
+  border: 2px solid #666666;
+}
+
 #drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div,
 #layout-builder-modal .blb_container_type .fieldset-wrapper > div > div {
   position: relative;
@@ -1709,6 +1798,107 @@
 #layout-builder-modal .blb_breakpoint_col.bp-selected {
   color: #383A40;
   background-color: #26A5FF;
+}
+
+#drupal-off-canvas .bs_radio-tabs legend,
+#layout-builder-modal .bs_radio-tabs legend {
+  margin-bottom: 10px;
+}
+
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div,
+#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div {
+  display: flex;
+}
+
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div,
+#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div > div {
+  position: relative;
+  flex: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div input,
+#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div > div input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div input + label,
+#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div > div input + label {
+  transition: all .3s ease-in-out;
+  border: 2px solid #383A40;
+  padding: 10px;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div input + label:hover,
+#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div > div input + label:hover {
+  background-color: rgba(56, 58, 64, 0.1);
+}
+
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div input:checked + label,
+#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div > div input:checked + label {
+  color: #ffffff;
+  background-color: #383A40;
+}
+
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div label,
+#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div > div label {
+  border: 2px solid #383A40;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div label + input,
+#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div > div label + input {
+  opacity: 0;
+  position: absolute;
+}
+
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div label.active,
+#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div > div label.active {
+  color: #ffffff;
+  background-color: #383A40;
+}
+
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div:first-child input + label,
+#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div > div:first-child input + label {
+  border-right: 0;
+}
+
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div:last-child input + label,
+#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div > div:last-child input + label {
+  border-left: 0;
+}
+
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div:first-child input + label,
+#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div > div:first-child input + label {
+  border-radius: 8px 0 0 8px;
+}
+
+#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div:last-child input + label,
+#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div > div:last-child input + label {
+  border-radius: 0 8px 8px 0;
 }
 
 #drupal-off-canvas #bs_nav-tabs,
@@ -2236,12 +2426,10 @@
   width: 100%;
 }
 
-#drupal-off-canvas .bs_radio-tabs legend,
 #drupal-off-canvas .bs_background--options legend,
 #drupal-off-canvas .bs_background--attachment legend,
 #drupal-off-canvas .bs_background--size legend,
 #drupal-off-canvas .bs_background--type legend,
-#layout-builder-modal .bs_radio-tabs legend,
 #layout-builder-modal .bs_background--options legend,
 #layout-builder-modal .bs_background--attachment legend,
 #layout-builder-modal .bs_background--size legend,
@@ -2528,22 +2716,18 @@
   border-right: 0;
 }
 
-#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div,
-#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div,
 #layout-builder-modal .bs_background--attachment .fieldset-wrapper > div,
 #layout-builder-modal .bs_background--size .fieldset-wrapper > div,
 #layout-builder-modal .bs_background--type .fieldset-wrapper > div {
   display: flex;
 }
 
-#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div > div,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div,
-#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div > div,
 #layout-builder-modal .bs_background--attachment .fieldset-wrapper > div > div,
 #layout-builder-modal .bs_background--size .fieldset-wrapper > div > div,
 #layout-builder-modal .bs_background--type .fieldset-wrapper > div > div {
@@ -2554,11 +2738,9 @@
   padding: 0;
 }
 
-#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div input,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div input,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div > div input,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div input,
-#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div > div input,
 #layout-builder-modal .bs_background--attachment .fieldset-wrapper > div > div input,
 #layout-builder-modal .bs_background--size .fieldset-wrapper > div > div input,
 #layout-builder-modal .bs_background--type .fieldset-wrapper > div > div input {
@@ -2573,11 +2755,9 @@
   border: 0;
 }
 
-#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div input + label,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div input + label,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div > div input + label,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div input + label,
-#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div > div input + label,
 #layout-builder-modal .bs_background--attachment .fieldset-wrapper > div > div input + label,
 #layout-builder-modal .bs_background--size .fieldset-wrapper > div > div input + label,
 #layout-builder-modal .bs_background--type .fieldset-wrapper > div > div input + label {
@@ -2593,22 +2773,18 @@
   cursor: pointer;
 }
 
-#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div input + label:hover,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div input + label:hover,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div > div input + label:hover,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div input + label:hover,
-#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div > div input + label:hover,
 #layout-builder-modal .bs_background--attachment .fieldset-wrapper > div > div input + label:hover,
 #layout-builder-modal .bs_background--size .fieldset-wrapper > div > div input + label:hover,
 #layout-builder-modal .bs_background--type .fieldset-wrapper > div > div input + label:hover {
   background-color: rgba(56, 58, 64, 0.1);
 }
 
-#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div input:checked + label,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div input:checked + label,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div > div input:checked + label,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div input:checked + label,
-#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div > div input:checked + label,
 #layout-builder-modal .bs_background--attachment .fieldset-wrapper > div > div input:checked + label,
 #layout-builder-modal .bs_background--size .fieldset-wrapper > div > div input:checked + label,
 #layout-builder-modal .bs_background--type .fieldset-wrapper > div > div input:checked + label {
@@ -2616,11 +2792,9 @@
   background-color: #383A40;
 }
 
-#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div label,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div label,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div > div label,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div label,
-#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div > div label,
 #layout-builder-modal .bs_background--attachment .fieldset-wrapper > div > div label,
 #layout-builder-modal .bs_background--size .fieldset-wrapper > div > div label,
 #layout-builder-modal .bs_background--type .fieldset-wrapper > div > div label {
@@ -2634,11 +2808,9 @@
   cursor: pointer;
 }
 
-#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div label + input,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div label + input,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div > div label + input,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div label + input,
-#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div > div label + input,
 #layout-builder-modal .bs_background--attachment .fieldset-wrapper > div > div label + input,
 #layout-builder-modal .bs_background--size .fieldset-wrapper > div > div label + input,
 #layout-builder-modal .bs_background--type .fieldset-wrapper > div > div label + input {
@@ -2646,11 +2818,9 @@
   position: absolute;
 }
 
-#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div label.active,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div label.active,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div > div label.active,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div label.active,
-#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div > div label.active,
 #layout-builder-modal .bs_background--attachment .fieldset-wrapper > div > div label.active,
 #layout-builder-modal .bs_background--size .fieldset-wrapper > div > div label.active,
 #layout-builder-modal .bs_background--type .fieldset-wrapper > div > div label.active {
@@ -2658,44 +2828,36 @@
   background-color: #383A40;
 }
 
-#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div:first-child input + label,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div:first-child input + label,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div > div:first-child input + label,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div:first-child input + label,
-#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div > div:first-child input + label,
 #layout-builder-modal .bs_background--attachment .fieldset-wrapper > div > div:first-child input + label,
 #layout-builder-modal .bs_background--size .fieldset-wrapper > div > div:first-child input + label,
 #layout-builder-modal .bs_background--type .fieldset-wrapper > div > div:first-child input + label {
   border-right: 0;
 }
 
-#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div:last-child input + label,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div:last-child input + label,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div > div:last-child input + label,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div:last-child input + label,
-#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div > div:last-child input + label,
 #layout-builder-modal .bs_background--attachment .fieldset-wrapper > div > div:last-child input + label,
 #layout-builder-modal .bs_background--size .fieldset-wrapper > div > div:last-child input + label,
 #layout-builder-modal .bs_background--type .fieldset-wrapper > div > div:last-child input + label {
   border-left: 0;
 }
 
-#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div:first-child input + label,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div:first-child input + label,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div > div:first-child input + label,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div:first-child input + label,
-#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div > div:first-child input + label,
 #layout-builder-modal .bs_background--attachment .fieldset-wrapper > div > div:first-child input + label,
 #layout-builder-modal .bs_background--size .fieldset-wrapper > div > div:first-child input + label,
 #layout-builder-modal .bs_background--type .fieldset-wrapper > div > div:first-child input + label {
   border-radius: 8px 0 0 8px;
 }
 
-#drupal-off-canvas .bs_radio-tabs .fieldset-wrapper > div > div:last-child input + label,
 #drupal-off-canvas .bs_background--attachment .fieldset-wrapper > div > div:last-child input + label,
 #drupal-off-canvas .bs_background--size .fieldset-wrapper > div > div:last-child input + label,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div:last-child input + label,
-#layout-builder-modal .bs_radio-tabs .fieldset-wrapper > div > div:last-child input + label,
 #layout-builder-modal .bs_background--attachment .fieldset-wrapper > div > div:last-child input + label,
 #layout-builder-modal .bs_background--size .fieldset-wrapper > div > div:last-child input + label,
 #layout-builder-modal .bs_background--type .fieldset-wrapper > div > div:last-child input + label {
@@ -2874,6 +3036,102 @@
 #layout-builder-modal .spacing-preview .padding-box {
   height: 100%;
   box-shadow: 0 0 0 1.5rem #7FB48A;
+}
+
+#drupal-off-canvas input[value="padding"]:hover + label:after, #drupal-off-canvas input[value="margin"]:hover + label:after,
+#layout-builder-modal input[value="padding"]:hover + label:after,
+#layout-builder-modal input[value="margin"]:hover + label:after {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+#drupal-off-canvas input[value="padding"]:checked + label:after,
+#layout-builder-modal input[value="padding"]:checked + label:after {
+  border-color: #7FB48A;
+}
+
+#drupal-off-canvas input[value="margin"]:checked + label:after,
+#layout-builder-modal input[value="margin"]:checked + label:after {
+  border-color: #F1C666;
+}
+
+#drupal-off-canvas input[value="padding_left"]:hover + label:after,
+#layout-builder-modal input[value="padding_left"]:hover + label:after {
+  border-left-color: rgba(255, 255, 255, 0.6);
+}
+
+#drupal-off-canvas input[value="padding_left"]:checked + label:after,
+#layout-builder-modal input[value="padding_left"]:checked + label:after {
+  border-left-color: #7FB48A;
+}
+
+#drupal-off-canvas input[value="margin_left"]:hover + label:after,
+#layout-builder-modal input[value="margin_left"]:hover + label:after {
+  border-left-color: rgba(255, 255, 255, 0.6);
+}
+
+#drupal-off-canvas input[value="margin_left"]:checked + label:after,
+#layout-builder-modal input[value="margin_left"]:checked + label:after {
+  border-left-color: #F1C666;
+}
+
+#drupal-off-canvas input[value="padding_top"]:hover + label:after,
+#layout-builder-modal input[value="padding_top"]:hover + label:after {
+  border-top-color: rgba(255, 255, 255, 0.6);
+}
+
+#drupal-off-canvas input[value="padding_top"]:checked + label:after,
+#layout-builder-modal input[value="padding_top"]:checked + label:after {
+  border-top-color: #7FB48A;
+}
+
+#drupal-off-canvas input[value="margin_top"]:hover + label:after,
+#layout-builder-modal input[value="margin_top"]:hover + label:after {
+  border-top-color: rgba(255, 255, 255, 0.6);
+}
+
+#drupal-off-canvas input[value="margin_top"]:checked + label:after,
+#layout-builder-modal input[value="margin_top"]:checked + label:after {
+  border-top-color: #F1C666;
+}
+
+#drupal-off-canvas input[value="padding_right"]:hover + label:after,
+#layout-builder-modal input[value="padding_right"]:hover + label:after {
+  border-right-color: rgba(255, 255, 255, 0.6);
+}
+
+#drupal-off-canvas input[value="padding_right"]:checked + label:after,
+#layout-builder-modal input[value="padding_right"]:checked + label:after {
+  border-right-color: #7FB48A;
+}
+
+#drupal-off-canvas input[value="margin_right"]:hover + label:after,
+#layout-builder-modal input[value="margin_right"]:hover + label:after {
+  border-right-color: rgba(255, 255, 255, 0.6);
+}
+
+#drupal-off-canvas input[value="margin_right"]:checked + label:after,
+#layout-builder-modal input[value="margin_right"]:checked + label:after {
+  border-right-color: #F1C666;
+}
+
+#drupal-off-canvas input[value="padding_bottom"]:hover + label:after,
+#layout-builder-modal input[value="padding_bottom"]:hover + label:after {
+  border-bottom-color: rgba(255, 255, 255, 0.6);
+}
+
+#drupal-off-canvas input[value="padding_bottom"]:checked + label:after,
+#layout-builder-modal input[value="padding_bottom"]:checked + label:after {
+  border-bottom-color: #7FB48A;
+}
+
+#drupal-off-canvas input[value="margin_bottom"]:hover + label:after,
+#layout-builder-modal input[value="margin_bottom"]:hover + label:after {
+  border-bottom-color: rgba(255, 255, 255, 0.6);
+}
+
+#drupal-off-canvas input[value="margin_bottom"]:checked + label:after,
+#layout-builder-modal input[value="margin_bottom"]:checked + label:after {
+  border-bottom-color: #F1C666;
 }
 
 #drupal-off-canvas input[type=range]:focus,

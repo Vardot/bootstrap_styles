@@ -8,7 +8,6 @@ $bg-pos-toggle-size: 16px;
   border: none;
   margin: 0 auto;
   background: $panel_text_color;
-  //border-radius: $border_radius;
   transition: border-color 0.2s, color 0.2s, background 0.2s;
   padding: .5rem;
 
@@ -177,7 +176,6 @@ $bg-pos-toggle-size: 16px;
 }
 
 // Give our legends a bit more space.
-.bs_radio-tabs,
 .bs_background--options,
 .bs_background--attachment,
 .bs_background--size,
@@ -369,7 +367,6 @@ $bg-pos-toggle-size: 16px;
 }
 
 // Background attachment/size
-.bs_radio-tabs,
 .bs_background--attachment,
 .bs_background--size,
 .bs_background--type {

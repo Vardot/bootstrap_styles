@@ -100,7 +100,7 @@ class Margin extends StylePluginBase {
     $form['margin_type'] = [
       '#type' => 'radios',
       '#options' => [
-        'margin' => $this->t('margin'),
+        'margin' => $this->t('Margin'),
         'margin_left' => $this->t('Left'),
         'margin_top' => $this->t('Top'),
         'margin_right' => $this->t('Right'),
@@ -111,7 +111,7 @@ class Margin extends StylePluginBase {
       '#default_value' => 'margin',
       '#validated' => TRUE,
       '#attributes' => [
-        'class' => ['bs_col--full', 'bs_radio-tabs', 'bs_margin--type'],
+        'class' => ['bs_col--full', 'bs_input-boxes', 'bs_margin--type'],
       ],
     ];
 

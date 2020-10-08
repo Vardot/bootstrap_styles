@@ -1,0 +1,25 @@
+.fieldgroup.bs_input-boxes {
+  .fieldset-wrapper > div {
+    display: flex;
+
+    // Our actual form item.
+    > div {
+      @include blb_boxed_inputs;
+    }
+  }
+
+  input ~ label {
+    font-size: 0;
+    text-indent: -999em;
+
+    &:after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      display: block;
+      border: 2px solid $gray-666;
+    }
+  }
+}
+
+
