@@ -43,5 +43,14 @@ $button_text_color_hover:   $panel_text_color;
 $button_bg_color:           $blue-26a;
 $button_bg_color_hover:     darken($button_bg_color, 10%);
 
+// Box Inputs
+$box_input_bg:              darken($panel_bg_color, 10%);
+$box_input_bg_hover:        darken($box_input_bg, 20%);
+$box_input_bg_checked:      darken($box_input_bg_hover, 40%);
+$box_input_checked_border:  $box_input_bg;
+
+// Border
+$border_preview_box_bg:     darken($panel_bg_color, 8%);
+
 // Import our components with our newly overridden vars from above.
 @import "common";

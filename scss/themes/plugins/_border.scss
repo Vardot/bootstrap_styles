@@ -1,15 +1,20 @@
 #bs-border-preview {
   width: 100%;
   height: 200px;
-  background: $gray-2f3;
+  background: $border_preview_box_bg;
   margin: 0.5rem 0 1.5rem;
 }
 
+// Border Highlighting
 .bs_input-boxes .fieldset-wrapper > div > div {
   input {
 
     // all
     &[value="border"] {
+      + label:after {
+        border-color: rgba($white, 1);
+      }
+
       &:hover + label:after {
         border-color: rgba($white, .6);
       }
@@ -21,6 +26,10 @@
 
     // left
     &[value="border_left"] {
+      + label:after {
+        border-color: rgba($white, 1);
+      }
+
       &:hover + label:after {
         border-left-color: rgba($white, .6);
       }
@@ -64,3 +73,5 @@
     }
   }
 }
+
+// Border Styles

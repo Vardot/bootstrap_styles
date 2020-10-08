@@ -1,7 +1,5 @@
 .fieldgroup.field-background-color {
-
-  // fieldset-wrapper to solve Bootstrap 3 drupal theme issue.
-  .form-radios, .fieldset-wrapper {
+  .fieldset-wrapper {
 
     // Solve Barrio bootstrap 4 issue.
     > div {

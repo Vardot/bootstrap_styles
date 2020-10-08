@@ -99,4 +99,13 @@
     }
   };
 
+  // Configure Section.
+  Drupal.behaviors.backgroundColorLayoutBuilderForm = {
+    attach: function (context) {
+      $(".fieldgroup.field-background-color input:radio", context).once('blb_bg-color').each(function () {
+        $(this).next('label').addClass($(this).val());
+      });
+    }
+  };
+
 })(window.jQuery, window._, window.Drupal, window.drupalSettings);

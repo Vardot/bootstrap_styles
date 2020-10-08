@@ -1,4 +1,8 @@
 // Range sliders
-input[type=range]:focus {
-  outline: none;
+input[type=range] {
+  border-radius: $border_radius;
+
+  &:focus {
+    outline: none;
+  }
 }

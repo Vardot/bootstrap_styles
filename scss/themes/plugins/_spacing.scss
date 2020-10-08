@@ -101,7 +101,7 @@
     // left
     &[value="padding_left"] {
       + label:after {
-        border-left-color: rgba($white, .6);
+        border-left-color: rgba($white, 1);
       }
 
       &:hover + label:after {
@@ -114,6 +114,10 @@
     }
 
     &[value="margin_left"] {
+      + label:after {
+        border-left-color: rgba($white, 1);
+      }
+
       &:hover + label:after {
         border-left-color: rgba($white, .6);
       }
@@ -125,6 +129,10 @@
 
     // top
     &[value="padding_top"] {
+      + label:after {
+        border-top-color: rgba($white, 1);
+      }
+
       &:hover + label:after {
         border-top-color: rgba($white, .6);
       }
@@ -135,6 +143,10 @@
     }
 
     &[value="margin_top"] {
+      + label:after {
+        border-top-color: rgba($white, 1);
+      }
+
       &:hover + label:after {
         border-top-color: rgba($white, .6);
       }
@@ -146,6 +158,10 @@
 
     // right
     &[value="padding_right"] {
+      + label:after {
+        border-right-color: rgba($white, 1);
+      }
+
       &:hover + label:after {
         border-right-color: rgba($white, .6);
       }
@@ -156,6 +172,10 @@
     }
 
     &[value="margin_right"] {
+      + label:after {
+        border-right-color: rgba($white, 1);
+      }
+
       &:hover + label:after {
         border-right-color: rgba($white, .6);
       }
@@ -167,6 +187,10 @@
 
     // bottom
     &[value="padding_bottom"] {
+      + label:after {
+        border-bottom-color: rgba($white, 1);
+      }
+
       &:hover + label:after {
         border-bottom-color: rgba($white, .6);
       }
@@ -177,6 +201,10 @@
     }
 
     &[value="margin_bottom"] {
+      + label:after {
+        border-bottom-color: rgba($white, 1);
+      }
+
       &:hover + label:after {
         border-bottom-color: rgba($white, .6);
       }

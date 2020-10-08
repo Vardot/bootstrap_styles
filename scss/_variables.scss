@@ -104,3 +104,12 @@ $button_text_color:         $panel_bg_color !default;
 $button_text_color_hover:   $panel_text_color !default;
 $button_bg_color:           $blue-26a !default;
 $button_bg_color_hover:     darken($button_bg_color, 10%) !default;
+
+// Box Inputs
+$box_input_bg:              $tab_bg_color !default;
+$box_input_bg_hover:        $tab_text_color !default;
+$box_input_bg_checked:      $tab_bg_color_active !default;
+$box_input_checked_border:  $gray-2f3;
+
+// Border
+$border_preview_box_bg:     $gray-2f3 !default;

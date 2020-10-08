@@ -95,19 +95,19 @@
       justify-content: center;
       text-align: center;
       cursor: pointer;
-      background-color: $gray-292;
+      background-color: $box_input_bg;
 
       &:hover {
-        background-color: rgba($gray-464, .1);
+        background-color: $box_input_bg_hover;
       }
     }
 
     // Active state.
     &:checked + label {
-      background-color: $gray-464;
+      background-color: $box_input_bg_checked;
 
       &:after {
-        border-color: $gray-2f3;
+        border-color: $box_input_checked_border;
       }
     }
   }

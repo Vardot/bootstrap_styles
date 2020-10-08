@@ -1654,22 +1654,22 @@
   justify-content: center;
   text-align: center;
   cursor: pointer;
-  background-color: #292C32;
+  background-color: #e6e6e6;
 }
 
 #drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input + label:hover,
 #layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input + label:hover {
-  background-color: rgba(70, 72, 78, 0.1);
+  background-color: #b3b3b3;
 }
 
 #drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input:checked + label,
 #layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input:checked + label {
-  background-color: #46484E;
+  background-color: #4d4d4d;
 }
 
 #drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input:checked + label:after,
 #layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input:checked + label:after {
-  border-color: #2F3138;
+  border-color: #e6e6e6;
 }
 
 #drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div label,
@@ -1906,6 +1906,11 @@
   border-radius: 0 8px 8px 0;
 }
 
+#drupal-off-canvas input[type=range],
+#layout-builder-modal input[type=range] {
+  border-radius: 8px;
+}
+
 #drupal-off-canvas input[type=range]:focus,
 #layout-builder-modal input[type=range]:focus {
   outline: none;
@@ -2106,20 +2111,17 @@
   transform: translateY(0px);
 }
 
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios > div, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper > div,
-#layout-builder-modal .fieldgroup.field-background-color .form-radios > div,
+#drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper > div,
 #layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper > div {
   display: flex;
 }
 
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios .form-item-layout-settings-ui-tab-content-appearance-container-wrapper-bg-color-class, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper .form-item-layout-settings-ui-tab-content-appearance-container-wrapper-bg-color-class,
-#layout-builder-modal .fieldgroup.field-background-color .form-radios .form-item-layout-settings-ui-tab-content-appearance-container-wrapper-bg-color-class,
+#drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper .form-item-layout-settings-ui-tab-content-appearance-container-wrapper-bg-color-class,
 #layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper .form-item-layout-settings-ui-tab-content-appearance-container-wrapper-bg-color-class {
   padding: 0;
 }
 
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios input, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper input,
-#layout-builder-modal .fieldgroup.field-background-color .form-radios input,
+#drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper input,
 #layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper input {
   position: absolute;
   width: 1px;
@@ -2132,14 +2134,12 @@
   border: 0;
 }
 
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios input:checked + label.option, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper input:checked + label.option,
-#layout-builder-modal .fieldgroup.field-background-color .form-radios input:checked + label.option,
+#drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper input:checked + label.option,
 #layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper input:checked + label.option {
   border-color: #26A5FF;
 }
 
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios input:checked + label.option:before, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper input:checked + label.option:before,
-#layout-builder-modal .fieldgroup.field-background-color .form-radios input:checked + label.option:before,
+#drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper input:checked + label.option:before,
 #layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper input:checked + label.option:before {
   transition: all .3s ease-in-out;
   width: calc(100% - 2px);
@@ -2153,8 +2153,7 @@
   background: linear-gradient(to top left, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.1) 50%, rgba(56, 58, 64, 0.1) 50%, rgba(56, 58, 64, 0) 100%);
 }
 
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios input:checked + label.option:after, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper input:checked + label.option:after,
-#layout-builder-modal .fieldgroup.field-background-color .form-radios input:checked + label.option:after,
+#drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper input:checked + label.option:after,
 #layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper input:checked + label.option:after {
   transition: all .3s ease-in-out;
   width: 20px;
@@ -2168,33 +2167,28 @@
   background-size: contain;
 }
 
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios input[value="_none"] label, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper input[value="_none"] label,
-#layout-builder-modal .fieldgroup.field-background-color .form-radios input[value="_none"] label,
+#drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper input[value="_none"] label,
 #layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper input[value="_none"] label {
   background: #ffffff;
 }
 
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios input[value="_none"]:checked + label.option:before, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper input[value="_none"]:checked + label.option:before,
-#layout-builder-modal .fieldgroup.field-background-color .form-radios input[value="_none"]:checked + label.option:before,
+#drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper input[value="_none"]:checked + label.option:before,
 #layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper input[value="_none"]:checked + label.option:before {
   display: none;
 }
 
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios input[value="_none"]:checked + label.option:after, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper input[value="_none"]:checked + label.option:after,
-#layout-builder-modal .fieldgroup.field-background-color .form-radios input[value="_none"]:checked + label.option:after,
+#drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper input[value="_none"]:checked + label.option:after,
 #layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper input[value="_none"]:checked + label.option:after {
   background: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzMwMHB4JyB3aWR0aD0nMzAwcHgnICBmaWxsPSIjZjM1NjU2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI0IDI0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZGlzcGxheTpub25lO30KPC9zdHlsZT48Zz48Zz48Zz48cGF0aCBkPSJNMiwyMi41Yy0wLjEyOCwwLTAuMjU2LTAuMDQ5LTAuMzU0LTAuMTQ2Yy0wLjE5NS0wLjE5NS0wLjE5NS0wLjUxMiwwLTAuNzA3bDIwLTIwYzAuMTk1LTAuMTk1LDAuNTEyLTAuMTk1LDAuNzA3LDAgICAgIHMwLjE5NSwwLjUxMiwwLDAuNzA3bC0yMCwyMEMyLjI1NiwyMi40NTEsMi4xMjgsMjIuNSwyLDIyLjV6Ij48L3BhdGg+PC9nPjxnPjxwYXRoIGQ9Ik0yMiwyMi41Yy0wLjEyOCwwLTAuMjU2LTAuMDQ5LTAuMzU0LTAuMTQ2bC0yMC0yMGMtMC4xOTUtMC4xOTUtMC4xOTUtMC41MTIsMC0wLjcwN3MwLjUxMi0wLjE5NSwwLjcwNywwbDIwLDIwICAgICBjMC4xOTUsMC4xOTUsMC4xOTUsMC41MTIsMCwwLjcwN0MyMi4yNTYsMjIuNDUxLDIyLjEyOCwyMi41LDIyLDIyLjV6Ij48L3BhdGg+PC9nPjwvZz48L2c+PC9zdmc+") center center no-repeat;
   background-size: contain;
 }
 
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios.bg-selected label, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper.bg-selected label,
-#layout-builder-modal .fieldgroup.field-background-color .form-radios.bg-selected label,
+#drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper.bg-selected label,
 #layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper.bg-selected label {
   opacity: 0.3;
 }
 
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios label, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper label,
-#layout-builder-modal .fieldgroup.field-background-color .form-radios label,
+#drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper label,
 #layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper label {
   transition: all .3s ease-in-out;
   cursor: pointer !important;
@@ -2212,20 +2206,17 @@
   box-shadow: 2px 2px 3px 1px rgba(255, 255, 255, 0.15);
 }
 
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios label:hover, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper label:hover,
-#layout-builder-modal .fieldgroup.field-background-color .form-radios label:hover,
+#drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper label:hover,
 #layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper label:hover {
   opacity: 0.8;
 }
 
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios label.active, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper label.active,
-#layout-builder-modal .fieldgroup.field-background-color .form-radios label.active,
+#drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper label.active,
 #layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper label.active {
   opacity: 1;
 }
 
-#drupal-off-canvas .fieldgroup.field-background-color .form-radios label:after, #drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper label:after,
-#layout-builder-modal .fieldgroup.field-background-color .form-radios label:after,
+#drupal-off-canvas .fieldgroup.field-background-color .fieldset-wrapper label:after,
 #layout-builder-modal .fieldgroup.field-background-color .fieldset-wrapper label:after {
   display: table;
   position: absolute;
@@ -2890,8 +2881,13 @@
 #layout-builder-modal #bs-border-preview {
   width: 100%;
   height: 200px;
-  background: #2F3138;
+  background: #ebebeb;
   margin: 0.5rem 0 1.5rem;
+}
+
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border"] + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border"] + label:after {
+  border-color: white;
 }
 
 #drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border"]:hover + label:after,
@@ -2902,6 +2898,11 @@
 #drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border"]:checked + label:after,
 #layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border"]:checked + label:after {
   border-color: #26A5FF;
+}
+
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border_left"] + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border_left"] + label:after {
+  border-color: white;
 }
 
 #drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border_left"]:hover + label:after,
@@ -3136,7 +3137,7 @@
 
 #drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_left"] + label:after,
 #layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_left"] + label:after {
-  border-left-color: rgba(255, 255, 255, 0.6);
+  border-left-color: white;
 }
 
 #drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_left"]:hover + label:after,
@@ -3149,6 +3150,11 @@
   border-left-color: #7FB48A;
 }
 
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_left"] + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_left"] + label:after {
+  border-left-color: white;
+}
+
 #drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_left"]:hover + label:after,
 #layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_left"]:hover + label:after {
   border-left-color: rgba(255, 255, 255, 0.6);
@@ -3157,6 +3163,11 @@
 #drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_left"]:checked + label:after,
 #layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_left"]:checked + label:after {
   border-left-color: #F1C666;
+}
+
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_top"] + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_top"] + label:after {
+  border-top-color: white;
 }
 
 #drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_top"]:hover + label:after,
@@ -3169,6 +3180,11 @@
   border-top-color: #7FB48A;
 }
 
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_top"] + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_top"] + label:after {
+  border-top-color: white;
+}
+
 #drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_top"]:hover + label:after,
 #layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_top"]:hover + label:after {
   border-top-color: rgba(255, 255, 255, 0.6);
@@ -3177,6 +3193,11 @@
 #drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_top"]:checked + label:after,
 #layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_top"]:checked + label:after {
   border-top-color: #F1C666;
+}
+
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_right"] + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_right"] + label:after {
+  border-right-color: white;
 }
 
 #drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_right"]:hover + label:after,
@@ -3189,6 +3210,11 @@
   border-right-color: #7FB48A;
 }
 
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_right"] + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_right"] + label:after {
+  border-right-color: white;
+}
+
 #drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_right"]:hover + label:after,
 #layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_right"]:hover + label:after {
   border-right-color: rgba(255, 255, 255, 0.6);
@@ -3199,6 +3225,11 @@
   border-right-color: #F1C666;
 }
 
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_bottom"] + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_bottom"] + label:after {
+  border-bottom-color: white;
+}
+
 #drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_bottom"]:hover + label:after,
 #layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_bottom"]:hover + label:after {
   border-bottom-color: rgba(255, 255, 255, 0.6);
@@ -3207,6 +3238,11 @@
 #drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_bottom"]:checked + label:after,
 #layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_bottom"]:checked + label:after {
   border-bottom-color: #7FB48A;
+}
+
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_bottom"] + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_bottom"] + label:after {
+  border-bottom-color: white;
 }
 
 #drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_bottom"]:hover + label:after,
