@@ -84,8 +84,9 @@
     // all
     &[value="padding"],
     &[value="margin"] {
+      + label:after,
       &:hover + label:after {
-        border-color: rgba($white, .6);
+        border-left-color: $white;
       }
     }
 
@@ -100,12 +101,9 @@
 
     // left
     &[value="padding_left"] {
-      + label:after {
-        border-left-color: rgba($white, 1);
-      }
-
+      + label:after,
       &:hover + label:after {
-        border-left-color: rgba($white, .6);
+        border-left-color: $white;
       }
 
       &:checked + label:after {
@@ -114,12 +112,9 @@
     }
 
     &[value="margin_left"] {
-      + label:after {
-        border-left-color: rgba($white, 1);
-      }
-
+      + label:after,
       &:hover + label:after {
-        border-left-color: rgba($white, .6);
+        border-left-color: $white;
       }
 
       &:checked + label:after {
@@ -129,12 +124,9 @@
 
     // top
     &[value="padding_top"] {
-      + label:after {
-        border-top-color: rgba($white, 1);
-      }
-
+      + label:after,
       &:hover + label:after {
-        border-top-color: rgba($white, .6);
+        border-top-color: $white;
       }
 
       &:checked + label:after {
@@ -143,12 +135,9 @@
     }
 
     &[value="margin_top"] {
-      + label:after {
-        border-top-color: rgba($white, 1);
-      }
-
+      + label:after,
       &:hover + label:after {
-        border-top-color: rgba($white, .6);
+        border-top-color: $white;
       }
 
       &:checked + label:after {
@@ -158,12 +147,9 @@
 
     // right
     &[value="padding_right"] {
-      + label:after {
-        border-right-color: rgba($white, 1);
-      }
-
+      + label:after,
       &:hover + label:after {
-        border-right-color: rgba($white, .6);
+        border-right-color: $white;
       }
 
       &:checked + label:after {
@@ -172,12 +158,9 @@
     }
 
     &[value="margin_right"] {
-      + label:after {
-        border-right-color: rgba($white, 1);
-      }
-
+      + label:after,
       &:hover + label:after {
-        border-right-color: rgba($white, .6);
+        border-right-color: $white;
       }
 
       &:checked + label:after {
@@ -187,12 +170,9 @@
 
     // bottom
     &[value="padding_bottom"] {
-      + label:after {
-        border-bottom-color: rgba($white, 1);
-      }
-
+      + label:after ,
       &:hover + label:after {
-        border-bottom-color: rgba($white, .6);
+        border-bottom-color: $white;
       }
 
       &:checked + label:after {
@@ -201,12 +181,9 @@
     }
 
     &[value="margin_bottom"] {
-      + label:after {
-        border-bottom-color: rgba($white, 1);
-      }
-
+      + label:after,
       &:hover + label:after {
-        border-bottom-color: rgba($white, .6);
+        border-bottom-color: $white;
       }
 
       &:checked + label:after {

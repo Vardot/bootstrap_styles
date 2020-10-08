@@ -57,7 +57,7 @@ class BackgroundColor extends StylePluginBase {
       '#default_value' => $storage['background_color']['class'] ?? NULL,
       '#validated' => TRUE,
       '#attributes' => [
-        'class' => ['field-background-color'],
+        'class' => ['field-background-color', 'bs_input-circles'],
       ],
       '#states' => [
         'visible' => [

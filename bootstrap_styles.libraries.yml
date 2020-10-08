@@ -5,6 +5,7 @@ layout_builder_form_style:
       css/general-styles.css: { }
   js:
     js/components/tabs.js: { }
+    js/components/inputs.js: { }
   dependencies:
     - bootstrap_styles/themes-overrides
 

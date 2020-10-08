@@ -23,7 +23,7 @@ $blue-277:                  #277abd;
 // Grays
 $gray-979:                  #979AA1;
 $gray-727:                  #727579;
-$gray-727:                  #5C606B;
+$gray-5c6:                  #5C606B;
 $gray-464:                  #46484E;
 $gray-383:                  #383A40;
 $gray-2f3:                  #2F3138;
@@ -90,6 +90,9 @@ $tab_bg_color_active:       $gray-464 !default;
 $tooltip_text_color:        $panel_text_color !default;
 $tooltip_bg_color:          $gray-464 !default;
 
+// Dividers
+$hr_color:                  $gray-2f3 !default;
+
 // Details & Summary
 $summary_link_color:              rgba($panel_bg_color, .6) !default;
 $summary_link_color_hover:        $blue-26a !default;
@@ -97,7 +100,7 @@ $summary_link_color_active:       $summary_link_color_hover !default;
 
 $summary_bg_color:                transparent !default;
 $summary_bg_color_hover:          rgba($summary_link_color_hover, .14) !default;
-$summary_bg_color_active:         $gray-464;
+$summary_bg_color_active:         $gray-464 !default;;
 
 // Buttons
 $button_text_color:         $panel_bg_color !default;
@@ -107,9 +110,9 @@ $button_bg_color_hover:     darken($button_bg_color, 10%) !default;
 
 // Box Inputs
 $box_input_bg:              $tab_bg_color !default;
-$box_input_bg_hover:        $tab_text_color !default;
-$box_input_bg_checked:      $tab_bg_color_active !default;
-$box_input_checked_border:  $gray-2f3;
+$box_input_bg_hover:        lighten($box_input_bg, 15%) !default;
+$box_input_bg_checked:      $gray-5c6 !default;
+$box_input_checked_border:  $gray-2f3 !default;;
 
 // Border
 $border_preview_box_bg:     $gray-2f3 !default;

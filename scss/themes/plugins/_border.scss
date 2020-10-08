@@ -3,6 +3,11 @@
   height: 200px;
   background: $border_preview_box_bg;
   margin: 0.5rem 0 1.5rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: rgba($panel_text_color, .3)
 }
 
 // Border Highlighting
@@ -11,12 +16,9 @@
 
     // all
     &[value="border"] {
-      + label:after {
-        border-color: rgba($white, 1);
-      }
-
+      + label:after,
       &:hover + label:after {
-        border-color: rgba($white, .6);
+        border-color: $white;
       }
 
       &:checked + label:after {
@@ -26,12 +28,9 @@
 
     // left
     &[value="border_left"] {
-      + label:after {
-        border-color: rgba($white, 1);
-      }
-
+      + label:after,
       &:hover + label:after {
-        border-left-color: rgba($white, .6);
+        border-left-color: $white;
       }
 
       &:checked + label:after {
@@ -41,8 +40,9 @@
 
     // top
     &[value="border_top"] {
+      + label:after,
       &:hover + label:after {
-        border-top-color: rgba($white, .6);
+        border-top-color: $white;
       }
 
       &:checked + label:after {
@@ -52,8 +52,9 @@
 
     // right
     &[value="border_right"] {
+      + label:after,
       &:hover + label:after {
-        border-right-color: rgba($white, .6);
+        border-right-color: $white;
       }
 
       &:checked + label:after {
@@ -63,8 +64,9 @@
 
     // bottom
     &[value="border_bottom"] {
+      + label:after,
       &:hover + label:after {
-        border-bottom-color: rgba($white, .6);
+        border-bottom-color: $white;
       }
 
       &:checked + label:after {
@@ -74,4 +76,7 @@
   }
 }
 
-// Border Styles
+// Border colour (increase our border width to fake a filled background color).
+.bs_input-circles.bs-field-border-color .fieldset-wrapper input + label.option:not(._none) {
+  border-width: 20px;
+}

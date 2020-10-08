@@ -258,7 +258,7 @@ class Border extends StylePluginBase {
       '#default_value' => $storage['border']['border_style']['class'] ?? NULL,
       '#validated' => TRUE,
       '#attributes' => [
-        'class' => ['bs-field-border-style'],
+        'class' => ['bs-field-border-style', 'bs_input-circles'],
       ],
       '#states' => [
         'visible' => [
@@ -297,7 +297,7 @@ class Border extends StylePluginBase {
       '#default_value' => $storage['border']['border_color']['class'] ?? NULL,
       '#validated' => TRUE,
       '#attributes' => [
-        'class' => ['bs-field-border-color'],
+        'class' => ['bs-field-border-color', 'bs_input-circles'],
       ],
       '#states' => [
         'visible' => [
@@ -307,6 +307,23 @@ class Border extends StylePluginBase {
     ];
 
     for ($i = 0; $i < 4; $i++) {
+
+      $form['border_' . $directions[$i] . '_color'] = [
+        '#type' => 'radios',
+        '#options' => $this->getStyleOptions('border_' . $directions[$i] . '_color'),
+        '#title' => $this->t('Border color'),
+        '#default_value' => $storage['border']['border_' . $directions[$i] . '_color']['class'] ?? NULL,
+        '#validated' => TRUE,
+        '#attributes' => [
+          'class' => ['bs-field-border-' . $directions[$i] . '-color'],
+        ],
+        '#states' => [
+          'visible' => [
+            ':input.bs_border--type' => ['value' => 'border_' . $directions[$i]],
+          ],
+        ],
+      ];
+
       $form['border_' . $directions[$i] . '_style'] = [
         '#type' => 'radios',
         '#options' => $this->getStyleOptions('border_' . $directions[$i] . '_style'),
@@ -345,22 +362,6 @@ class Border extends StylePluginBase {
           ],
         ],
       ];
-
-      $form['border_' . $directions[$i] . '_color'] = [
-        '#type' => 'radios',
-        '#options' => $this->getStyleOptions('border_' . $directions[$i] . '_color'),
-        '#title' => $this->t('Border color'),
-        '#default_value' => $storage['border']['border_' . $directions[$i] . '_color']['class'] ?? NULL,
-        '#validated' => TRUE,
-        '#attributes' => [
-          'class' => ['bs-field-border-' . $directions[$i] . '-color'],
-        ],
-        '#states' => [
-          'visible' => [
-            ':input.bs_border--type' => ['value' => 'border_' . $directions[$i]],
-          ],
-        ],
-      ];
     }
 
     // Rounded Corners.
@@ -374,7 +375,7 @@ class Border extends StylePluginBase {
     $form['rounded_corners_description'] = [
       '#type' => 'item',
       '#title' => $this->t('Rounded Corners'),
-      '#prefix' => '<hr />',
+      '#prefix' => '<hr class="bs_divider"/>',
     ];
 
     $default_value = 0;
