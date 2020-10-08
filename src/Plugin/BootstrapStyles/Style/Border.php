@@ -372,9 +372,10 @@ class Border extends StylePluginBase {
       'bottom_right' => 'Bottom Right',
     ];
 
+
     $form['rounded_corners_description'] = [
-      '#type' => 'item',
-      '#title' => $this->t('Rounded Corners'),
+      '#type' => 'inline_template',
+      '#template' => "<strong>{% trans %}Border Radius <small>(Round Corners)</small>{% endtrans %}</strong>",
       '#prefix' => '<hr class="bs_divider"/>',
     ];
 

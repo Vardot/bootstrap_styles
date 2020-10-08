@@ -112,7 +112,8 @@ $button_bg_color_hover:     darken($button_bg_color, 10%) !default;
 $box_input_bg:              $tab_bg_color !default;
 $box_input_bg_hover:        lighten($box_input_bg, 15%) !default;
 $box_input_bg_checked:      $gray-5c6 !default;
-$box_input_checked_border:  $gray-2f3 !default;;
+$box_input_hover_border:    $gray-2f3 !default;
+$box_input_checked_border:  $box_input_hover_border !default;
 
 // Border
 $border_preview_box_bg:     $gray-2f3 !default;

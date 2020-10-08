@@ -101,7 +101,7 @@
         background-color: $box_input_bg_hover;
 
         &:after {
-          border-color: $box_input_checked_border;
+          border-color: $box_input_hover_border;
         }
       }
     }
@@ -224,6 +224,35 @@
       vertical-align: middle;
       width: 100%;
       height: 100%;
+    }
+  }
+}
+
+// Override input slider colours (padding/margin)
+@mixin bs_range_sliders($track_color: $panel_link_color) {
+  &::-webkit-slider-runnable-track {
+    background: $track_color;
+  }
+
+  &::-moz-range-track {
+    background: $track_color;
+  }
+
+  &::-ms-fill-lower {
+    background: $track_color;
+  }
+
+  &:focus {
+    &::-webkit-slider-runnable-track {
+      background: darken($track_color, 25%);
+    }
+
+    &::-ms-fill-lower {
+      background: darken($track_color, 25%);
+    }
+
+    &::-ms-fill-upper {
+      background: darken($track_color, 25%);
     }
   }
 }

@@ -2021,12 +2021,114 @@
 
 #drupal-off-canvas input[type=range],
 #layout-builder-modal input[type=range] {
+  -webkit-appearance: none;
   border-radius: 8px;
+  background: transparent;
+  height: 20px;
+  width: 100%;
+}
+
+#drupal-off-canvas input[type=range]::-webkit-slider-runnable-track,
+#layout-builder-modal input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  box-shadow: none;
+  background: #979AA1;
+  border: 0;
+  border-radius: 8px;
+}
+
+#drupal-off-canvas input[type=range]::-webkit-slider-thumb,
+#layout-builder-modal input[type=range]::-webkit-slider-thumb {
+  box-shadow: none;
+  height: 14px;
+  width: 14px;
+  border-radius: 25px;
+  background: #727579;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -5px;
+}
+
+#drupal-off-canvas input[type=range]::-moz-range-track,
+#layout-builder-modal input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: #979AA1;
+  border-radius: 1px;
+  border: 0;
+}
+
+#drupal-off-canvas input[type=range]::-moz-range-thumb,
+#layout-builder-modal input[type=range]::-moz-range-thumb {
+  border: 0;
+  height: 14px;
+  width: 14px;
+  border-radius: 25px;
+  background: #727579;
+  cursor: pointer;
+}
+
+#drupal-off-canvas input[type=range]::-moz-focus-outer,
+#layout-builder-modal input[type=range]::-moz-focus-outer {
+  border: 0;
+}
+
+#drupal-off-canvas input[type=range]::-ms-track,
+#layout-builder-modal input[type=range]::-ms-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+#drupal-off-canvas input[type=range]::-ms-fill-lower,
+#layout-builder-modal input[type=range]::-ms-fill-lower {
+  background: #41A5FF;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+#drupal-off-canvas input[type=range]::-ms-fill-upper,
+#layout-builder-modal input[type=range]::-ms-fill-upper {
+  background: #41A5FF;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+#drupal-off-canvas input[type=range]::-ms-thumb,
+#layout-builder-modal input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: none;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: #727579;
+  cursor: pointer;
 }
 
 #drupal-off-canvas input[type=range]:focus,
 #layout-builder-modal input[type=range]:focus {
   outline: none;
+}
+
+#drupal-off-canvas input[type=range]:focus::-webkit-slider-runnable-track,
+#layout-builder-modal input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #41A5FF;
+}
+
+#drupal-off-canvas input[type=range]:focus::-ms-fill-lower, #drupal-off-canvas input[type=range]:focus::-ms-fill-upper,
+#layout-builder-modal input[type=range]:focus::-ms-fill-lower,
+#layout-builder-modal input[type=range]:focus::-ms-fill-upper {
+  background: #41A5FF;
 }
 
 #drupal-off-canvas #bs_nav-tabs,
@@ -3082,6 +3184,7 @@
 #layout-builder-modal .spacing-preview .preview-box .top,
 #layout-builder-modal .spacing-preview .preview-box .right,
 #layout-builder-modal .spacing-preview .preview-box .bottom {
+  transition: all .3s ease-in-out;
   position: absolute;
   display: flex;
   align-items: center;
@@ -3155,7 +3258,7 @@
 #layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding"]:hover + label:after,
 #layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin"] + label:after,
 #layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin"]:hover + label:after {
-  border-left-color: #ffffff;
+  border-color: #ffffff;
 }
 
 #drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding"]:checked + label:after,
@@ -3264,130 +3367,62 @@
   border-bottom-color: #F1C666;
 }
 
-#drupal-off-canvas input.bs-field-margin,
-#drupal-off-canvas input.bs-field-margin-left,
-#drupal-off-canvas input.bs-field-margin-top,
-#drupal-off-canvas input.bs-field-margin-right,
-#drupal-off-canvas input.bs-field-margin-bottom,
-#drupal-off-canvas input.bs-field-padding,
-#drupal-off-canvas input.bs-field-padding-left,
-#drupal-off-canvas input.bs-field-padding-top,
-#drupal-off-canvas input.bs-field-padding-right,
-#drupal-off-canvas input.bs-field-padding-bottom,
-#layout-builder-modal input.bs-field-margin,
-#layout-builder-modal input.bs-field-margin-left,
-#layout-builder-modal input.bs-field-margin-top,
-#layout-builder-modal input.bs-field-margin-right,
-#layout-builder-modal input.bs-field-margin-bottom,
-#layout-builder-modal input.bs-field-padding,
-#layout-builder-modal input.bs-field-padding-left,
-#layout-builder-modal input.bs-field-padding-top,
-#layout-builder-modal input.bs-field-padding-right,
-#layout-builder-modal input.bs-field-padding-bottom {
-  -webkit-appearance: none;
-  height: 6px;
-  width: 100%;
-}
-
-#drupal-off-canvas input.bs-field-margin::-webkit-slider-thumb,
-#drupal-off-canvas input.bs-field-margin-left::-webkit-slider-thumb,
-#drupal-off-canvas input.bs-field-margin-top::-webkit-slider-thumb,
-#drupal-off-canvas input.bs-field-margin-right::-webkit-slider-thumb,
-#drupal-off-canvas input.bs-field-margin-bottom::-webkit-slider-thumb,
-#drupal-off-canvas input.bs-field-padding::-webkit-slider-thumb,
-#drupal-off-canvas input.bs-field-padding-left::-webkit-slider-thumb,
-#drupal-off-canvas input.bs-field-padding-top::-webkit-slider-thumb,
-#drupal-off-canvas input.bs-field-padding-right::-webkit-slider-thumb,
-#drupal-off-canvas input.bs-field-padding-bottom::-webkit-slider-thumb,
-#layout-builder-modal input.bs-field-margin::-webkit-slider-thumb,
-#layout-builder-modal input.bs-field-margin-left::-webkit-slider-thumb,
-#layout-builder-modal input.bs-field-margin-top::-webkit-slider-thumb,
-#layout-builder-modal input.bs-field-margin-right::-webkit-slider-thumb,
-#layout-builder-modal input.bs-field-margin-bottom::-webkit-slider-thumb,
-#layout-builder-modal input.bs-field-padding::-webkit-slider-thumb,
-#layout-builder-modal input.bs-field-padding-left::-webkit-slider-thumb,
-#layout-builder-modal input.bs-field-padding-top::-webkit-slider-thumb,
-#layout-builder-modal input.bs-field-padding-right::-webkit-slider-thumb,
-#layout-builder-modal input.bs-field-padding-bottom::-webkit-slider-thumb {
-  transition: all .3s ease-in-out;
-  -webkit-appearance: none;
-  appearance: none;
-  width: 14px;
-  height: 14px;
-  background: #ffffff;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-#drupal-off-canvas input.bs-field-margin::-webkit-slider-thumb:hover,
-#drupal-off-canvas input.bs-field-margin-left::-webkit-slider-thumb:hover,
-#drupal-off-canvas input.bs-field-margin-top::-webkit-slider-thumb:hover,
-#drupal-off-canvas input.bs-field-margin-right::-webkit-slider-thumb:hover,
-#drupal-off-canvas input.bs-field-margin-bottom::-webkit-slider-thumb:hover,
-#drupal-off-canvas input.bs-field-padding::-webkit-slider-thumb:hover,
-#drupal-off-canvas input.bs-field-padding-left::-webkit-slider-thumb:hover,
-#drupal-off-canvas input.bs-field-padding-top::-webkit-slider-thumb:hover,
-#drupal-off-canvas input.bs-field-padding-right::-webkit-slider-thumb:hover,
-#drupal-off-canvas input.bs-field-padding-bottom::-webkit-slider-thumb:hover,
-#layout-builder-modal input.bs-field-margin::-webkit-slider-thumb:hover,
-#layout-builder-modal input.bs-field-margin-left::-webkit-slider-thumb:hover,
-#layout-builder-modal input.bs-field-margin-top::-webkit-slider-thumb:hover,
-#layout-builder-modal input.bs-field-margin-right::-webkit-slider-thumb:hover,
-#layout-builder-modal input.bs-field-margin-bottom::-webkit-slider-thumb:hover,
-#layout-builder-modal input.bs-field-padding::-webkit-slider-thumb:hover,
-#layout-builder-modal input.bs-field-padding-left::-webkit-slider-thumb:hover,
-#layout-builder-modal input.bs-field-padding-top::-webkit-slider-thumb:hover,
-#layout-builder-modal input.bs-field-padding-right::-webkit-slider-thumb:hover,
-#layout-builder-modal input.bs-field-padding-bottom::-webkit-slider-thumb:hover {
-  width: 18px;
-  height: 18px;
-}
-
-#drupal-off-canvas input.bs-field-margin::-moz-focus-outer,
-#drupal-off-canvas input.bs-field-margin-left::-moz-focus-outer,
-#drupal-off-canvas input.bs-field-margin-top::-moz-focus-outer,
-#drupal-off-canvas input.bs-field-margin-right::-moz-focus-outer,
-#drupal-off-canvas input.bs-field-margin-bottom::-moz-focus-outer,
-#drupal-off-canvas input.bs-field-padding::-moz-focus-outer,
-#drupal-off-canvas input.bs-field-padding-left::-moz-focus-outer,
-#drupal-off-canvas input.bs-field-padding-top::-moz-focus-outer,
-#drupal-off-canvas input.bs-field-padding-right::-moz-focus-outer,
-#drupal-off-canvas input.bs-field-padding-bottom::-moz-focus-outer,
-#layout-builder-modal input.bs-field-margin::-moz-focus-outer,
-#layout-builder-modal input.bs-field-margin-left::-moz-focus-outer,
-#layout-builder-modal input.bs-field-margin-top::-moz-focus-outer,
-#layout-builder-modal input.bs-field-margin-right::-moz-focus-outer,
-#layout-builder-modal input.bs-field-margin-bottom::-moz-focus-outer,
-#layout-builder-modal input.bs-field-padding::-moz-focus-outer,
-#layout-builder-modal input.bs-field-padding-left::-moz-focus-outer,
-#layout-builder-modal input.bs-field-padding-top::-moz-focus-outer,
-#layout-builder-modal input.bs-field-padding-right::-moz-focus-outer,
-#layout-builder-modal input.bs-field-padding-bottom::-moz-focus-outer {
-  border: 0;
-}
-
-#drupal-off-canvas input.bs-field-padding,
-#drupal-off-canvas input.bs-field-padding-left,
-#drupal-off-canvas input.bs-field-padding-top,
-#drupal-off-canvas input.bs-field-padding-right,
-#drupal-off-canvas input.bs-field-padding-bottom,
-#layout-builder-modal input.bs-field-padding,
-#layout-builder-modal input.bs-field-padding-left,
-#layout-builder-modal input.bs-field-padding-top,
-#layout-builder-modal input.bs-field-padding-right,
-#layout-builder-modal input.bs-field-padding-bottom {
+#drupal-off-canvas input[type=range][class^="bs-field-padding"]::-webkit-slider-runnable-track,
+#layout-builder-modal input[type=range][class^="bs-field-padding"]::-webkit-slider-runnable-track {
   background: #7FB48A;
 }
 
-#drupal-off-canvas input.bs-field-margin,
-#drupal-off-canvas input.bs-field-margin-left,
-#drupal-off-canvas input.bs-field-margin-top,
-#drupal-off-canvas input.bs-field-margin-right,
-#drupal-off-canvas input.bs-field-margin-bottom,
-#layout-builder-modal input.bs-field-margin,
-#layout-builder-modal input.bs-field-margin-left,
-#layout-builder-modal input.bs-field-margin-top,
-#layout-builder-modal input.bs-field-margin-right,
-#layout-builder-modal input.bs-field-margin-bottom {
+#drupal-off-canvas input[type=range][class^="bs-field-padding"]::-moz-range-track,
+#layout-builder-modal input[type=range][class^="bs-field-padding"]::-moz-range-track {
+  background: #7FB48A;
+}
+
+#drupal-off-canvas input[type=range][class^="bs-field-padding"]::-ms-fill-lower,
+#layout-builder-modal input[type=range][class^="bs-field-padding"]::-ms-fill-lower {
+  background: #7FB48A;
+}
+
+#drupal-off-canvas input[type=range][class^="bs-field-padding"]:focus::-webkit-slider-runnable-track,
+#layout-builder-modal input[type=range][class^="bs-field-padding"]:focus::-webkit-slider-runnable-track {
+  background: #42714c;
+}
+
+#drupal-off-canvas input[type=range][class^="bs-field-padding"]:focus::-ms-fill-lower,
+#layout-builder-modal input[type=range][class^="bs-field-padding"]:focus::-ms-fill-lower {
+  background: #42714c;
+}
+
+#drupal-off-canvas input[type=range][class^="bs-field-padding"]:focus::-ms-fill-upper,
+#layout-builder-modal input[type=range][class^="bs-field-padding"]:focus::-ms-fill-upper {
+  background: #42714c;
+}
+
+#drupal-off-canvas input[type=range][class^="bs-field-margin"]::-webkit-slider-runnable-track,
+#layout-builder-modal input[type=range][class^="bs-field-margin"]::-webkit-slider-runnable-track {
   background: #F1C666;
+}
+
+#drupal-off-canvas input[type=range][class^="bs-field-margin"]::-moz-range-track,
+#layout-builder-modal input[type=range][class^="bs-field-margin"]::-moz-range-track {
+  background: #F1C666;
+}
+
+#drupal-off-canvas input[type=range][class^="bs-field-margin"]::-ms-fill-lower,
+#layout-builder-modal input[type=range][class^="bs-field-margin"]::-ms-fill-lower {
+  background: #F1C666;
+}
+
+#drupal-off-canvas input[type=range][class^="bs-field-margin"]:focus::-webkit-slider-runnable-track,
+#layout-builder-modal input[type=range][class^="bs-field-margin"]:focus::-webkit-slider-runnable-track {
+  background: #c58e12;
+}
+
+#drupal-off-canvas input[type=range][class^="bs-field-margin"]:focus::-ms-fill-lower,
+#layout-builder-modal input[type=range][class^="bs-field-margin"]:focus::-ms-fill-lower {
+  background: #c58e12;
+}
+
+#drupal-off-canvas input[type=range][class^="bs-field-margin"]:focus::-ms-fill-upper,
+#layout-builder-modal input[type=range][class^="bs-field-margin"]:focus::-ms-fill-upper {
+  background: #c58e12;
 }

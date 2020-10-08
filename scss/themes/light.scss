@@ -29,7 +29,7 @@ $tab_bg_color:              $white;
 $tab_bg_color_active:       $white;
 
 // Dividers
-$hr_color:                  $gray-979;
+$hr_color:                  darken($panel_bg_color, 10%);
 
 // Details Summary
 $summary_link_color:              rgba($panel_text_color, .6);
@@ -50,6 +50,7 @@ $button_bg_color_hover:     darken($button_bg_color, 10%);
 $box_input_bg:              darken($panel_bg_color, 10%);
 $box_input_bg_hover:        darken($box_input_bg, 20%);
 $box_input_bg_checked:      darken($box_input_bg_hover, 40%);
+$box_input_hover_border:    $box_input_bg_checked;
 $box_input_checked_border:  $box_input_bg;
 
 // Border

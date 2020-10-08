@@ -20,6 +20,7 @@
     .top,
     .right,
     .bottom {
+      @include smooth-all-transition;
       position: absolute;
       display: flex;
       align-items: center;
@@ -86,7 +87,7 @@
     &[value="margin"] {
       + label:after,
       &:hover + label:after {
-        border-left-color: $white;
+        border-color: $white;
       }
     }
 
@@ -193,56 +194,12 @@
   }
 }
 
-input.bs-field-margin,
-input.bs-field-margin-left,
-input.bs-field-margin-top,
-input.bs-field-margin-right,
-input.bs-field-margin-bottom,
-input.bs-field-padding,
-input.bs-field-padding-left,
-input.bs-field-padding-top,
-input.bs-field-padding-right,
-input.bs-field-padding-bottom {
-  -webkit-appearance: none;
-  height: 6px;
-  width: 100%;
-
-  &::-webkit-slider-thumb {
-    @include smooth-all-transition;
-    -webkit-appearance: none;
-    appearance: none;
-    width: 14px;
-    height: 14px;
-    background: $panel_text_color;
-    border-radius: 50%;
-    cursor: pointer;
-
-    &:hover {
-      width: 18px;
-      height: 18px;
-    }
-  }
-
-  &::-moz-focus-outer {
-    border: 0;
-  }
-}
-
 // Padding range sliders
-input.bs-field-padding,
-input.bs-field-padding-left,
-input.bs-field-padding-top,
-input.bs-field-padding-right,
-input.bs-field-padding-bottom {
-  background: $state_success;
+input[type=range][class^="bs-field-padding"] {
+  @include bs_range_sliders($state_success);
 }
 
 // Margin range sliders
-input.bs-field-margin,
-input.bs-field-margin-left,
-input.bs-field-margin-top,
-input.bs-field-margin-right,
-input.bs-field-margin-bottom {
-  background: $state_warning;
+input[type=range][class^="bs-field-margin"] {
+  @include bs_range_sliders($state_warning);
 }
-
