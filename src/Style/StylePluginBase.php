@@ -108,7 +108,7 @@ abstract class StylePluginBase extends PluginBase implements StylePluginInterfac
    *   The icon markup.
    */
   public function getSvgIconMarkup(string $path) {
-    $svg = file_get_contents($path);
+    $svg = file_get_contents(DRUPAL_ROOT . $path);
     $svg = preg_replace(['/<\?xml.*\?>/i', '/<!DOCTYPE((.|\n|\r)*?)">/i'], '', $svg);
     $svg = trim($svg);
     return Markup::create($svg);
