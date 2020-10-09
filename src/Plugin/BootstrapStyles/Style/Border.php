@@ -406,7 +406,10 @@ class Border extends StylePluginBase {
 
       $form['rounded_corner_' . $corner_key] = [
         '#type' => 'range',
-        '#title' => $this->getSvgIconMarkup($icon_path . 'background-icon.svg') . '<span class="sr-only">' . $this->t('@corner', ['@corner' => $corner_value])   . '</span><div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('@corner', ['@corner' => $corner_value]) .'</div>',
+        '#title' => [
+          '#markup' => $this->getSvgIconMarkup($icon_path . 'plugins/background-icon.svg'),
+//          '#prefix' => '<span class="sr-only">' . $this->t('@corner', ['@corner' => $corner_value])   . '</span><div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('@corner', ['@corner' => $corner_value]) .'</div>',
+        ],
         '#min' => 0,
         '#max' => $this->getStyleOptionsCount('rounded_corner_' . $corner_key),
         '#step' => 1,
@@ -416,8 +419,7 @@ class Border extends StylePluginBase {
           'class' => ['bs-field-rounded-corner-' . $corner_key],
         ],
       ];
-
-//      dd($this->getSvgIconMarkup($icon_path . 'background-icon.svg'));
+//      var_dump($icon_path, $this->getSvgIconMarkup($icon_path . 'plugins/background-icon.svg'));
 //      die;
     }
 
