@@ -10,6 +10,7 @@
 
   // Shared preview box styles.
   .preview-box {
+    @include smooth-all-transition;
     position: relative;
     width: 100%;
     padding: 1.5rem;

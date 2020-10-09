@@ -11,6 +11,10 @@
     attach: function (context) {
       var spacing = drupalSettings.bootstrap_styles.spacing;
 
+      var padding_box_shadow = $('.spacing-preview .padding-box').css('box-shadow');
+      var margin_box_shadow = $('.spacing-preview .margin-box').css('box-shadow');
+      var box_shadow = '0 0 0 1.5rem';
+
       // Padding.
       function calcPadding() {
         var padding_val = $('input.bs-field-padding').val();
@@ -97,15 +101,43 @@
       // Calculate the maring on load.
       calcMargin();
 
+      // Padding Actions
       // Calculate the padding on change.
-      $('input.bs-field-padding, input.bs-field-padding-left, input.bs-field-padding-top, input.bs-field-padding-right, input.bs-field-padding-bottom', context).on('change', function() {
+      $('input[class^="bs-field-padding"]', context).on('change', function() {
         calcPadding();
       });
 
+      // On focus, gray out margin box so we can "focus" on changing padding values.
+      $('input[class^="bs-field-padding"]', context).on('focus', function() {
+        var panel_bg = $(this).parents('details').find('summary').css('background-color');
+        var inactive_box_shadow = box_shadow + ' ' + panel_bg;
+        $('.spacing-preview .margin-box').css('box-shadow', inactive_box_shadow);
+      });
+
+      // On focusout, turn it back to our original colour.
+      $('input[class^="bs-field-padding"]', context).on('focusout', function() {
+        $('.spacing-preview .margin-box').css('box-shadow', margin_box_shadow);
+      });
+
+
+      // Margin Actions
       // Calculate the margin on change.
-      $('input.bs-field-margin, input.bs-field-margin-left, input.bs-field-margin-top, input.bs-field-margin-right, input.bs-field-margin-bottom', context).on('change', function() {
+      $('input[class^="bs-field-margin"]', context).on('change', function() {
         calcMargin();
       });
+
+      // On focus, gray out margin box so we can "focus" on changing padding values.
+      $('input[class^="bs-field-margin"]', context).on('focus', function() {
+        var panel_bg = $(this).parents('details').find('summary').css('background-color');
+        var inactive_box_shadow = box_shadow + ' ' + panel_bg;
+        $('.spacing-preview .padding-box').css('box-shadow', inactive_box_shadow);
+      });
+
+      // On focusout, turn it back to our original colour.
+      $('input[class^="bs-field-margin"]', context).on('focusout', function() {
+        $('.spacing-preview .padding-box').css('box-shadow', padding_box_shadow);
+      });
+
 
     }
   };

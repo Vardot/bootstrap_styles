@@ -3223,6 +3223,7 @@
 
 #drupal-off-canvas .spacing-preview .preview-box,
 #layout-builder-modal .spacing-preview .preview-box {
+  transition: all .3s ease-in-out;
   position: relative;
   width: 100%;
   padding: 1.5rem;
@@ -3439,17 +3440,17 @@
 
 #drupal-off-canvas input[type=range][class^="bs-field-padding"]:focus::-webkit-slider-runnable-track,
 #layout-builder-modal input[type=range][class^="bs-field-padding"]:focus::-webkit-slider-runnable-track {
-  background: #42714c;
+  background: #9fc7a7;
 }
 
 #drupal-off-canvas input[type=range][class^="bs-field-padding"]:focus::-ms-fill-lower,
 #layout-builder-modal input[type=range][class^="bs-field-padding"]:focus::-ms-fill-lower {
-  background: #42714c;
+  background: #9fc7a7;
 }
 
 #drupal-off-canvas input[type=range][class^="bs-field-padding"]:focus::-ms-fill-upper,
 #layout-builder-modal input[type=range][class^="bs-field-padding"]:focus::-ms-fill-upper {
-  background: #42714c;
+  background: #9fc7a7;
 }
 
 #drupal-off-canvas input[type=range][class^="bs-field-margin"]::-webkit-slider-runnable-track,
@@ -3469,15 +3470,15 @@
 
 #drupal-off-canvas input[type=range][class^="bs-field-margin"]:focus::-webkit-slider-runnable-track,
 #layout-builder-modal input[type=range][class^="bs-field-margin"]:focus::-webkit-slider-runnable-track {
-  background: #c58e12;
+  background: #f5d795;
 }
 
 #drupal-off-canvas input[type=range][class^="bs-field-margin"]:focus::-ms-fill-lower,
 #layout-builder-modal input[type=range][class^="bs-field-margin"]:focus::-ms-fill-lower {
-  background: #c58e12;
+  background: #f5d795;
 }
 
 #drupal-off-canvas input[type=range][class^="bs-field-margin"]:focus::-ms-fill-upper,
 #layout-builder-modal input[type=range][class^="bs-field-margin"]:focus::-ms-fill-upper {
-  background: #c58e12;
+  background: #f5d795;
 }

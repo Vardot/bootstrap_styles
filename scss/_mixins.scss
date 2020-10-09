@@ -250,15 +250,15 @@
 
   &:focus {
     &::-webkit-slider-runnable-track {
-      background: darken($track_color, 25%);
+      background: lighten($track_color, 10%);
     }
 
     &::-ms-fill-lower {
-      background: darken($track_color, 25%);
+      background: lighten($track_color, 10%);
     }
 
     &::-ms-fill-upper {
-      background: darken($track_color, 25%);
+      background: lighten($track_color, 10%);
     }
   }
 }
