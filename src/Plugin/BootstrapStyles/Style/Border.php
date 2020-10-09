@@ -396,7 +396,7 @@ class Border extends StylePluginBase {
       '#attributes' => [
         'class' => ['bs-field-rounded-corners'],
       ],
-      '#prefix' => $this->getSvgIconMarkup($icon_path . 'plugins/background-icon.svg'),
+      '#description' => $this->getSvgIconMarkup($icon_path . 'plugins/border/border-radius.svg'),
     ];
 
     foreach ($corners as $corner_key => $corner_value) {
@@ -416,8 +416,9 @@ class Border extends StylePluginBase {
         '#attributes' => [
           'class' => ['bs-field-rounded-corner-' . $corner_key],
         ],
-        '#prefix' => $this->getSvgIconMarkup($icon_path . 'plugins/background-icon.svg'),
+        '#description' => $this->getSvgIconMarkup($icon_path . 'plugins/border/border-radius-' . $corner_key . '.svg'),
       ];
+
     }
 
     // Pass border width and round corners options to drupal settings.

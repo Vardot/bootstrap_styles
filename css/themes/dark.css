@@ -3074,23 +3074,61 @@
 #drupal-off-canvas [class*="border-rounded-corner"],
 #layout-builder-modal [class*="border-rounded-corners"],
 #layout-builder-modal [class*="border-rounded-corner"] {
+  position: relative;
   display: flex;
   align-items: center;
-  padding: .5rem 0;
+  padding: 0;
+  margin: 1rem 0;
+  min-height: 35px;
+}
+
+#drupal-off-canvas [class*="border-rounded-corners"] label,
+#drupal-off-canvas [class*="border-rounded-corners"] .description,
+#drupal-off-canvas [class*="border-rounded-corner"] label,
+#drupal-off-canvas [class*="border-rounded-corner"] .description,
+#layout-builder-modal [class*="border-rounded-corners"] label,
+#layout-builder-modal [class*="border-rounded-corners"] .description,
+#layout-builder-modal [class*="border-rounded-corner"] label,
+#layout-builder-modal [class*="border-rounded-corner"] .description {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 35px;
   margin: 0;
+  padding: 0;
+}
+
+#drupal-off-canvas [class*="border-rounded-corners"] .description,
+#drupal-off-canvas [class*="border-rounded-corner"] .description,
+#layout-builder-modal [class*="border-rounded-corners"] .description,
+#layout-builder-modal [class*="border-rounded-corner"] .description {
+  background: #292C32;
+}
+
+#drupal-off-canvas [class*="border-rounded-corners"] .description svg,
+#drupal-off-canvas [class*="border-rounded-corner"] .description svg,
+#layout-builder-modal [class*="border-rounded-corners"] .description svg,
+#layout-builder-modal [class*="border-rounded-corner"] .description svg {
+  width: 24px;
+  height: 24px;
+  display: block;
 }
 
 #drupal-off-canvas [class*="border-rounded-corners"] label,
 #drupal-off-canvas [class*="border-rounded-corner"] label,
 #layout-builder-modal [class*="border-rounded-corners"] label,
 #layout-builder-modal [class*="border-rounded-corner"] label {
-  width: 45px;
-  height: 35px;
-  margin: 0 1rem 0 0;
-  display: flex;
-  align-items: center;
-  background: #292C32;
-  padding: .5rem;
+  z-index: 1;
+}
+
+#drupal-off-canvas [class*="border-rounded-corners"] input,
+#drupal-off-canvas [class*="border-rounded-corner"] input,
+#layout-builder-modal [class*="border-rounded-corners"] input,
+#layout-builder-modal [class*="border-rounded-corner"] input {
+  margin-left: 45px;
+  padding-left: 1rem;
 }
 
 #drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div,
