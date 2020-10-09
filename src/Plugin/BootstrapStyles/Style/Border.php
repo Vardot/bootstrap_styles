@@ -383,9 +383,11 @@ class Border extends StylePluginBase {
       $default_value = $this->getStyleOptionIndexByClass('rounded_corners', $storage['border']['rounded_corners']['class']);
     }
 
+    $icon_path = base_path() . drupal_get_path('module', 'bootstrap_styles') . '/images/';
+
     $form['rounded_corners'] = [
       '#type' => 'range',
-      '#title' => '<span class="sr-only">' . $this->t('Corners')  . '</span><div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('All Corners') .'</div>',
+      '#title' => '<span class="sr-only">' . $this->t('Corners') . '</span><div class="bs_tooltip" data-placement="top" role="tooltip">' . $this->t('All Corners') . '</div>',
       '#min' => 0,
       '#max' => $this->getStyleOptionsCount('rounded_corners'),
       '#step' => 1,
@@ -394,6 +396,7 @@ class Border extends StylePluginBase {
       '#attributes' => [
         'class' => ['bs-field-rounded-corners'],
       ],
+      '#prefix' => $this->getSvgIconMarkup($icon_path . 'plugins/background-icon.svg'),
     ];
 
     foreach ($corners as $corner_key => $corner_value) {
@@ -402,14 +405,9 @@ class Border extends StylePluginBase {
         $default_value = $this->getStyleOptionIndexByClass('rounded_corner_' . $corner_key, $storage['border']['rounded_corner_' . $corner_key]['class']);
       }
 
-      $icon_path = base_path() . drupal_get_path('module', 'bootstrap_styles') . '/images/';
-
       $form['rounded_corner_' . $corner_key] = [
         '#type' => 'range',
-        '#title' => [
-          '#markup' => $this->getSvgIconMarkup($icon_path . 'plugins/background-icon.svg'),
-//          '#prefix' => '<span class="sr-only">' . $this->t('@corner', ['@corner' => $corner_value])   . '</span><div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('@corner', ['@corner' => $corner_value]) .'</div>',
-        ],
+        '#title' => '<span class="sr-only">' . $this->t('@corner', ['@corner' => $corner_value]) . '</span><div class="bs_tooltip" data-placement="top" role="tooltip">' . $this->t('@corner', ['@corner' => $corner_value]) . '</div>',
         '#min' => 0,
         '#max' => $this->getStyleOptionsCount('rounded_corner_' . $corner_key),
         '#step' => 1,
@@ -418,9 +416,8 @@ class Border extends StylePluginBase {
         '#attributes' => [
           'class' => ['bs-field-rounded-corner-' . $corner_key],
         ],
+        '#prefix' => $this->getSvgIconMarkup($icon_path . 'plugins/background-icon.svg'),
       ];
-//      var_dump($icon_path, $this->getSvgIconMarkup($icon_path . 'plugins/background-icon.svg'));
-//      die;
     }
 
     // Pass border width and round corners options to drupal settings.
