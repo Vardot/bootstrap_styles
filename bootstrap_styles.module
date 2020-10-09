@@ -8,8 +8,28 @@
 /**
  * Implements hook_theme().
  */
-function bootstrap_styles_theme() {
+function bootstrap_styles_theme($existing, $type, $theme, $path) {
   return [
+    'form_element__bs' => [
+      'template' => 'form-element--bs',
+      'base hook' => 'form-element',
+      'path' => $path . '/templates/form',
+    ],
+    'fieldset__bs' => [
+      'template' => 'fieldset--bs',
+      'base hook' => 'fieldset',
+      'path' => $path . '/templates/form',
+    ],
+    'input__bs' => [
+      'template' => 'input--bs',
+      'base hook' => 'input',
+      'path' => $path . '/templates/form',
+    ],
+    'radios__bs' => [
+      'template' => 'radios--bs',
+      'base hook' => 'radios',
+      'path' => $path . '/templates/form',
+    ],
     'bs_video_background' => [
       'variables' => [
         'video_background_url' => '',
@@ -48,5 +68,21 @@ function bootstrap_styles_page_attachments_alter(array &$page) {
       // Attach the default dark theme.
       $page['#attached']['library'][] = 'bootstrap_styles/theme.dark';
     }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_alter().
+ */
+function bootstrap_styles_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+  if (
+    isset($variables['element'])
+    && isset($variables['element']['#array_parents'])
+    && in_array('ui', $variables['element']['#array_parents'])
+    && in_array('tab_content', $variables['element']['#array_parents'])
+    && (in_array('appearance', $variables['element']['#array_parents']) || in_array('layout_settings', $variables['element']['#array_parents']))
+  ) {
+    $suggestions[] = $hook . '__bs';
+    return $suggestions;
   }
 }
