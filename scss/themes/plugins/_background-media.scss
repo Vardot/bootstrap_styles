@@ -220,6 +220,7 @@ $bg-pos-toggle-size: 16px;
         height: $bg-pos-toggle-size;
         font-size: 0;
         cursor: pointer;
+        margin: 0;
 
         transform: perspective(1px) translateZ(0);
         transition-duration: 0.5s;
@@ -303,6 +304,7 @@ $bg-pos-toggle-size: 16px;
           border-left: 0;
           border-bottom: 0;
           font-size: 0;
+          margin: 0;
 
           &:before {
             content: '';
