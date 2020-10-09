@@ -42,14 +42,14 @@
         // Loop through the directions.
         for (var i = 0; i < directions.length; i++) {
           // Border style.
-          $('input.bs-field-border-' + directions[i] + '-style').each(function() {
+          $('input.bs-field-border-style-' + directions[i]).each(function() {
             if ($(this).is(':checked') && $(this).val() != '_none') { 
               border_classes += $(this).val() + ' ';
             }
           });
 
           // Border width
-          border_width_val = $('input.bs-field-border-' + directions[i] + '-width').val();
+          border_width_val = $('input.bs-field-border-width-' + directions[i]).val();
           if (border_width_val) {
             border_width_class = border_width['border_' + directions[i] + '_width'][border_width_val];
             if (border_width_class != '_none') {
@@ -58,7 +58,7 @@
           }
 
           // Border color.
-          $('input.bs-field-border-' + directions[i] + '-color').each(function() {
+          $('input.bs-field-border-color-' + directions[i]).each(function() {
             if ($(this).is(':checked') && $(this).val() != '_none') { 
               border_classes += $(this).val() + ' ';
             }
@@ -92,8 +92,18 @@
       refreshPreviewClasses();
 
       // Refresh the border classes on change.
-      $('input.bs-field-border-style, input.bs-field-border-left-style, input.bs-field-border-top-style, input.bs-field-border-right-style, input.bs-field-border-bottom-style, input.bs-field-border-width, input.bs-field-border-left-width, input.bs-field-border-top-width, input.bs-field-border-right-width, input.bs-field-border-bottom-width, input.bs-field-border-color, input.bs-field-border-left-color, input.bs-field-border-top-color, input.bs-field-border-right-color, input.bs-field-border-bottom-color, input.bs-field-rounded-corners, input.bs-field-rounded-corner-top_left, input.bs-field-rounded-corner-top_right, input.bs-field-rounded-corner-bottom_left, input.bs-field-rounded-corner-bottom_right', context).on('change', function() {
-        refreshPreviewClasses();
+      var input_triggers = [
+        'input[class^="bs-field-border-style"]',
+        'input[class^="bs-field-border-width"]',
+        'input[class^="bs-field-border-color"]',
+        'input[class^="bs-field-rounded-corner"]'
+      ];
+
+      $.each(input_triggers, function (index, value) {
+        $(value, context).on('change', function() {
+          $(this).parents('.fieldset-wrapper').addClass('style-selected');
+          refreshPreviewClasses();
+        });
       });
   
     }

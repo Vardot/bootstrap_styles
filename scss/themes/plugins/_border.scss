@@ -77,6 +77,25 @@
 }
 
 // Border colour (increase our border width to fake a filled background color).
-.bs_input-circles.bs-field-border-color .fieldset-wrapper input + label.option:not(._none) {
-  border-width: 20px;
+//[class="bs-field-border-color"] .fieldset-wrapper input + label.option:not(._none) {
+//  border-width: 20px;
+//}
+
+// Border Radius
+[class*="border-rounded-corners"],
+[class*="border-rounded-corner"] {
+  display: flex;
+  align-items: center;
+  padding: .5rem 0;
+  margin: 0;
+
+  label {
+    width: 45px;
+    height: 35px;
+    margin: 0 1rem 0 0;
+    display: flex;
+    align-items: center;
+    background: $box_input_bg;
+    padding: .5rem;
+  }
 }

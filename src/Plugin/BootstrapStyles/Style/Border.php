@@ -308,22 +308,6 @@ class Border extends StylePluginBase {
 
     for ($i = 0; $i < 4; $i++) {
 
-      $form['border_' . $directions[$i] . '_color'] = [
-        '#type' => 'radios',
-        '#options' => $this->getStyleOptions('border_' . $directions[$i] . '_color'),
-        '#title' => $this->t('Border color'),
-        '#default_value' => $storage['border']['border_' . $directions[$i] . '_color']['class'] ?? NULL,
-        '#validated' => TRUE,
-        '#attributes' => [
-          'class' => ['bs-field-border-' . $directions[$i] . '-color'],
-        ],
-        '#states' => [
-          'visible' => [
-            ':input.bs_border--type' => ['value' => 'border_' . $directions[$i]],
-          ],
-        ],
-      ];
-
       $form['border_' . $directions[$i] . '_style'] = [
         '#type' => 'radios',
         '#options' => $this->getStyleOptions('border_' . $directions[$i] . '_style'),
@@ -331,7 +315,7 @@ class Border extends StylePluginBase {
         '#default_value' => $storage['border']['border_' . $directions[$i] . '_style']['class'] ?? NULL,
         '#validated' => TRUE,
         '#attributes' => [
-          'class' => ['bs-field-border-' . $directions[$i] . '-style'],
+          'class' => ['bs-field-border-style-' . $directions[$i], 'bs_input-circles'],
         ],
         '#states' => [
           'visible' => [
@@ -354,7 +338,23 @@ class Border extends StylePluginBase {
         '#default_value' => $default_value,
         '#validated' => TRUE,
         '#attributes' => [
-          'class' => ['bs-field-border-' . $directions[$i] . '-width'],
+          'class' => ['bs-field-border-width-' . $directions[$i]],
+        ],
+        '#states' => [
+          'visible' => [
+            ':input.bs_border--type' => ['value' => 'border_' . $directions[$i]],
+          ],
+        ],
+      ];
+
+      $form['border_' . $directions[$i] . '_color'] = [
+        '#type' => 'radios',
+        '#options' => $this->getStyleOptions('border_' . $directions[$i] . '_color'),
+        '#title' => $this->t('Border color'),
+        '#default_value' => $storage['border']['border_' . $directions[$i] . '_color']['class'] ?? NULL,
+        '#validated' => TRUE,
+        '#attributes' => [
+          'class' => ['bs-field-border-color-' . $directions[$i], 'bs_input-circles'],
         ],
         '#states' => [
           'visible' => [
@@ -372,7 +372,6 @@ class Border extends StylePluginBase {
       'bottom_right' => 'Bottom Right',
     ];
 
-
     $form['rounded_corners_description'] = [
       '#type' => 'inline_template',
       '#template' => "<strong>{% trans %}Border Radius <small>(Round Corners)</small>{% endtrans %}</strong>",
@@ -386,7 +385,7 @@ class Border extends StylePluginBase {
 
     $form['rounded_corners'] = [
       '#type' => 'range',
-      '#title' => $this->t('Corners'),
+      '#title' => '<span class="sr-only">' . $this->t('Corners')  . '</span><div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('All Corners') .'</div>',
       '#min' => 0,
       '#max' => $this->getStyleOptionsCount('rounded_corners'),
       '#step' => 1,
@@ -404,7 +403,7 @@ class Border extends StylePluginBase {
       }
       $form['rounded_corner_' . $corner_key] = [
         '#type' => 'range',
-        '#title' => $this->t('@corner', ['@corner' => $corner_value]),
+        '#title' => '<span class="sr-only">' . $this->t('@corner', ['@corner' => $corner_value])   . '</span><div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('@corner', ['@corner' => $corner_value]) .'</div>',
         '#min' => 0,
         '#max' => $this->getStyleOptionsCount('rounded_corner_' . $corner_key),
         '#step' => 1,
