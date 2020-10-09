@@ -66,6 +66,17 @@
       margin-left: -.75rem;
       left: 50%;
     }
+
+    // When our range slider gets adjusted
+    &.bs-adjusting > {
+      .title,
+      .left,
+      .top,
+      .right,
+      .bottom {
+        font-weight: bold;
+      }
+    }
   }
 
   .margin-box {

@@ -112,11 +112,13 @@
         var panel_bg = $(this).parents('details').find('summary').css('background-color');
         var inactive_box_shadow = box_shadow + ' ' + panel_bg;
         $('.spacing-preview .margin-box').css('box-shadow', inactive_box_shadow);
+        $('.spacing-preview .padding-box').addClass('bs-adjusting');
       });
 
       // On focusout, turn it back to our original colour.
       $('input[class^="bs-field-padding"]', context).on('focusout', function() {
         $('.spacing-preview .margin-box').css('box-shadow', margin_box_shadow);
+        $('.spacing-preview .padding-box').removeClass('bs-adjusting');
       });
 
 
@@ -131,11 +133,13 @@
         var panel_bg = $(this).parents('details').find('summary').css('background-color');
         var inactive_box_shadow = box_shadow + ' ' + panel_bg;
         $('.spacing-preview .padding-box').css('box-shadow', inactive_box_shadow);
+        $('.spacing-preview .margin-box').addClass('bs-adjusting');
       });
 
       // On focusout, turn it back to our original colour.
       $('input[class^="bs-field-margin"]', context).on('focusout', function() {
         $('.spacing-preview .padding-box').css('box-shadow', padding_box_shadow);
+        $('.spacing-preview .margin-box').removeClass('bs-adjusting');
       });
 
 

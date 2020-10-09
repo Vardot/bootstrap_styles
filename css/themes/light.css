@@ -3295,6 +3295,19 @@
   left: 50%;
 }
 
+#drupal-off-canvas .spacing-preview .preview-box.bs-adjusting > .title,
+#drupal-off-canvas .spacing-preview .preview-box.bs-adjusting > .left,
+#drupal-off-canvas .spacing-preview .preview-box.bs-adjusting > .top,
+#drupal-off-canvas .spacing-preview .preview-box.bs-adjusting > .right,
+#drupal-off-canvas .spacing-preview .preview-box.bs-adjusting > .bottom,
+#layout-builder-modal .spacing-preview .preview-box.bs-adjusting > .title,
+#layout-builder-modal .spacing-preview .preview-box.bs-adjusting > .left,
+#layout-builder-modal .spacing-preview .preview-box.bs-adjusting > .top,
+#layout-builder-modal .spacing-preview .preview-box.bs-adjusting > .right,
+#layout-builder-modal .spacing-preview .preview-box.bs-adjusting > .bottom {
+  font-weight: bold;
+}
+
 #drupal-off-canvas .spacing-preview .margin-box,
 #layout-builder-modal .spacing-preview .margin-box {
   height: 150px;
