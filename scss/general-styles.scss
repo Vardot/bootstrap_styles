@@ -9,6 +9,10 @@
     padding: 0;
     margin: 0;
   }
+
+  .form-control {
+    border: 0;
+  }
   
   // Bario theme.
   .custom-control-input {
@@ -46,5 +50,16 @@
 
   .bs-group-title {
     margin-left: 15px;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
   }
 }

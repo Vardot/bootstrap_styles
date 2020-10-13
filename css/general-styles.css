@@ -18,6 +18,10 @@
   margin: 0;
 }
 
+#drupal-off-canvas .form-control {
+  border: 0;
+}
+
 #drupal-off-canvas .custom-control-input {
   opacity: 1;
   margin-top: 10px;
@@ -53,4 +57,15 @@
 
 #drupal-off-canvas .bs-group-title {
   margin-left: 15px;
+}
+
+#drupal-off-canvas .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
