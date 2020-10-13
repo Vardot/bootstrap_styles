@@ -73,7 +73,7 @@ class Border extends StylePluginBase {
     $form['border']['width_description'] = [
       '#type' => 'item',
       '#title' => $this->t('Border width'),
-      '#markup' => $this->t('<p>Enter one value per line, in the format <b>key|label</b> where <em>key</em> is the CSS class name (without the .), and <em>label</em> is the human readable name of the border width.</p>'),
+      '#markup' => $this->t('<p>Enter one value per line, in the format <b>key|label</b> where <em>key</em> is the CSS class name (without the .), and <em>label</em> is the human readable name of the border width. <br /> <b>Note:</b> These options will be reflected on the range slider at the Layout Builder form, so make sure to sort them from lowest to greatest.</p>'),
     ];
 
     $form['border']['width_group'] = [
@@ -149,7 +149,7 @@ class Border extends StylePluginBase {
     $form['border']['rounded_corners_description'] = [
       '#type' => 'item',
       '#title' => $this->t('Rounded Corners'),
-      '#markup' => $this->t('<p>Enter one value per line, in the format <b>key|label</b> where <em>key</em> is the CSS class name (without the .), and <em>label</em> is the human readable name of the rounded corner.</p>'),
+      '#markup' => $this->t('<p>Enter one value per line, in the format <b>key|label</b> where <em>key</em> is the CSS class name (without the .), and <em>label</em> is the human readable name of the rounded corner. <br /> <b>Note:</b> These options will be reflected on the range slider at the Layout Builder form, so make sure to sort them from lowest to greatest.</p>'),
     ];
 
     $form['border']['rounded_corners'] = [

@@ -78,7 +78,7 @@ class SettingsForm extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildForm($form, $form_state);
-
+    $this->messenger()->addWarning('Important: the following classes are only used as an example to explain how to use this module. You should use your own theme classes.');
     // Layout builder theme toggler.
     $options = [
       'dark' => $this->t('Dark'),

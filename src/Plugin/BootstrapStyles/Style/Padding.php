@@ -35,7 +35,7 @@ class Padding extends StylePluginBase {
     $form['spacing']['padding_description'] = [
       '#type' => 'item',
       '#title' => $this->t('Padding'),
-      '#markup' => $this->t('<p>Enter one value per line, in the format <b>key|label</b> where <em>key</em> is the CSS class name (without the .), and <em>label</em> is the human readable name of the padding.</p>'),
+      '#markup' => $this->t('<p>Enter one value per line, in the format <b>key|label</b> where <em>key</em> is the CSS class name (without the .), and <em>label</em> is the human readable name of the padding. <br /> <b>Note:</b> These options will be reflected on the range slider at the Layout Builder form, so make sure to sort them from lowest to greatest.</p>'),
     ];
 
     $form['spacing']['padding_group'] = [
