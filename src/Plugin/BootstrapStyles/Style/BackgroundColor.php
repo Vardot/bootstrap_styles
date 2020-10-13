@@ -50,6 +50,9 @@ class BackgroundColor extends StylePluginBase {
    * {@inheritdoc}
    */
   public function buildStyleFormElements(array &$form, FormStateInterface $form_state, $storage) {
+    $form['background_type']['#options']['color'] = $this->t('Color');
+    $form['background_type']['#default_value'] = $storage['background']['background_type'] ?? 'color';
+
     $form['background_color'] = [
       '#type' => 'radios',
       '#options' => $this->getStyleOptions('background_colors'),

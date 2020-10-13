@@ -38,14 +38,10 @@ class Background extends StylesGroupPluginBase {
   public function buildStyleFormElements(array &$form, FormStateInterface $form_state, $storage) {
     $form['background_type'] = [
       '#type' => 'radios',
-      '#options' => [
-        'color' => $this->t('Color'),
-        'image' => $this->t('Image'),
-        'video' => $this->t('Video'),
-      ],
+      '#options' => [],
       '#title' => $this->t('Background type'),
       '#title_display' => 'invisible',
-      '#default_value' => $storage['background']['background_type'] ?? 'color',
+      '#default_value' => NULL,
       '#validated' => TRUE,
       '#attributes' => [
         'class' => ['bs_col--full', 'bs_background--type'],
