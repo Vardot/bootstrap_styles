@@ -96,17 +96,15 @@ class Padding extends StylePluginBase {
       'bottom',
     ];
 
-    $icon_path = base_path() . drupal_get_path('module', 'bootstrap_styles') . '/images\/';
     // This only for frontend no storage needed for this field.
     $form['padding_type'] = [
       '#type' => 'radios',
       '#options' => [
-    // $this->getSvgIconMarkup($icon_path . 'icon.svg'),
-        'padding' => $this->t('Padding') . '<div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('All') .'</div>',
-        'padding_left' => $this->t('Left') . '<div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('Left') .'</div>',
-        'padding_top' => $this->t('Top') . '<div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('Top') .'</div>',
-        'padding_right' => $this->t('Right') . '<div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('Right') .'</div>',
-        'padding_bottom' => $this->t('Bottom') . '<div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('Bottom') .'</div>',
+        'padding' => $this->t('Padding') . '<div class="bs_tooltip" data-placement="top" role="tooltip">' . $this->t('All') . '</div>',
+        'padding_left' => $this->t('Left') . '<div class="bs_tooltip" data-placement="top" role="tooltip">' . $this->t('Left') . '</div>',
+        'padding_top' => $this->t('Top') . '<div class="bs_tooltip" data-placement="top" role="tooltip">' . $this->t('Top') . '</div>',
+        'padding_right' => $this->t('Right') . '<div class="bs_tooltip" data-placement="top" role="tooltip">' . $this->t('Right') . '</div>',
+        'padding_bottom' => $this->t('Bottom') . '<div class="bs_tooltip" data-placement="top" role="tooltip">' . $this->t('Bottom') . '</div>',
       ],
       '#title' => $this->t('padding type'),
       '#title_display' => 'invisible',

@@ -100,11 +100,11 @@ class Margin extends StylePluginBase {
     $form['margin_type'] = [
       '#type' => 'radios',
       '#options' => [
-        'margin' => $this->t('Margin') . '<div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('All') .'</div>',
-        'margin_left' => $this->t('Left') . '<div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('Left') .'</div>',
-        'margin_top' => $this->t('Top') . '<div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('Top') .'</div>',
-        'margin_right' => $this->t('Right') . '<div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('Right') .'</div>',
-        'margin_bottom' => $this->t('Bottom') . '<div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('Bottom') .'</div>',
+        'margin' => $this->t('Margin') . '<div class="bs_tooltip" data-placement="top" role="tooltip">' . $this->t('All') . '</div>',
+        'margin_left' => $this->t('Left') . '<div class="bs_tooltip" data-placement="top" role="tooltip">' . $this->t('Left') . '</div>',
+        'margin_top' => $this->t('Top') . '<div class="bs_tooltip" data-placement="top" role="tooltip">' . $this->t('Top') . '</div>',
+        'margin_right' => $this->t('Right') . '<div class="bs_tooltip" data-placement="top" role="tooltip">' . $this->t('Right') . '</div>',
+        'margin_bottom' => $this->t('Bottom') . '<div class="bs_tooltip" data-placement="top" role="tooltip">' . $this->t('Bottom') . '</div>',
       ],
       '#title' => $this->t('margin type'),
       '#title_display' => 'invisible',

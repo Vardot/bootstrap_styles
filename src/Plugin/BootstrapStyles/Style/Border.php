@@ -236,11 +236,11 @@ class Border extends StylePluginBase {
     $form['border_type'] = [
       '#type' => 'radios',
       '#options' => [
-        'border' => $this->t('Border') . '<div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('All') .'</div>',
-        'border_left' => $this->t('Left') . '<div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('Left') .'</div>',
-        'border_top' => $this->t('Top') . '<div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('Top') .'</div>',
-        'border_right' => $this->t('Right') . '<div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('Right') .'</div>',
-        'border_bottom' => $this->t('Bottom') . '<div class="bs_tooltip" data-placement="top" role="tooltip">'. $this->t('Bottom') .'</div>',
+        'border' => $this->t('Border') . '<div class="bs_tooltip" data-placement="top" role="tooltip">' . $this->t('All') . '</div>',
+        'border_left' => $this->t('Left') . '<div class="bs_tooltip" data-placement="top" role="tooltip">' . $this->t('Left') . '</div>',
+        'border_top' => $this->t('Top') . '<div class="bs_tooltip" data-placement="top" role="tooltip">' . $this->t('Top') . '</div>',
+        'border_right' => $this->t('Right') . '<div class="bs_tooltip" data-placement="top" role="tooltip">' . $this->t('Right') . '</div>',
+        'border_bottom' => $this->t('Bottom') . '<div class="bs_tooltip" data-placement="top" role="tooltip">' . $this->t('Bottom') . '</div>',
       ],
       '#title' => $this->t('Border type'),
       '#title_display' => 'invisible',
@@ -383,7 +383,7 @@ class Border extends StylePluginBase {
       $default_value = $this->getStyleOptionIndexByClass('rounded_corners', $storage['border']['rounded_corners']['class']);
     }
 
-    $icon_path = base_path() . drupal_get_path('module', 'bootstrap_styles') . '/images/';
+    $icon_path = drupal_get_path('module', 'bootstrap_styles') . '/images/';
 
     $form['rounded_corners'] = [
       '#type' => 'range',

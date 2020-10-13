@@ -3176,7 +3176,8 @@
   cursor: pointer;
   border-radius: 0;
   background-color: #2F3138;
-  min-height: 68px;
+  min-height: 80px;
+  flex-direction: column;
 }
 
 #drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label:hover,
@@ -3194,6 +3195,134 @@
   font-weight: bold;
   color: #41A5FF;
   background-color: #5C606B;
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label .effect-icon,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label .effect-icon {
+  filter: invert(46%) sepia(100%) saturate(313%) hue-rotate(169deg) brightness(91%) contrast(94%);
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 10px;
+  background-repeat: no-repeat;
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon._none,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon._none {
+  background-image: url("../../images/plugins/scroll-effects/none.svg");
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-up,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-up {
+  background-image: url("../../images/plugins/scroll-effects/fade-up.svg");
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-down,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-down {
+  background-image: url("../../images/plugins/scroll-effects/fade-down.svg");
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-left,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-left {
+  background-image: url("../../images/plugins/scroll-effects/fade-left.svg");
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-right,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-right {
+  background-image: url("../../images/plugins/scroll-effects/fade-right.svg");
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-up-right,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-up-right {
+  background-image: url("../../images/plugins/scroll-effects/fade-up-right.svg");
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-down-right,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-down-right {
+  background-image: url("../../images/plugins/scroll-effects/fade-down-right.svg");
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-up-left,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-up-left {
+  background-image: url("../../images/plugins/scroll-effects/fade-up-left.svg");
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-down-left,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-down-left {
+  background-image: url("../../images/plugins/scroll-effects/fade-down-left.svg");
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.flip-left,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.flip-left {
+  background-image: url("../../images/plugins/scroll-effects/flip-left.svg");
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.flip-right,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.flip-right {
+  background-image: url("../../images/plugins/scroll-effects/flip-right.svg");
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.flip-up,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.flip-up {
+  background-image: url("../../images/plugins/scroll-effects/flip-up.svg");
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.flip-down,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.flip-down {
+  background-image: url("../../images/plugins/scroll-effects/flip-down.svg");
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-in,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-in {
+  background-image: url("../../images/plugins/scroll-effects/zoom-in.svg");
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-in-up,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-in-up {
+  background-image: url("../../images/plugins/scroll-effects/zoom-in-up.svg");
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-in-down,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-in-down {
+  background-image: url("../../images/plugins/scroll-effects/zoom-in-down.svg");
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-in-left,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-in-left {
+  background-image: url("../../images/plugins/scroll-effects/zoom-in-left.svg");
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-in-right,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-in-right {
+  background-image: url("../../images/plugins/scroll-effects/zoom-in-right.svg");
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-out,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-out {
+  background-image: url("../../images/plugins/scroll-effects/zoom-out.svg");
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-out-up,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-out-up {
+  background-image: url("../../images/plugins/scroll-effects/zoom-out-up.svg");
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-out-down,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-out-down {
+  background-image: url("../../images/plugins/scroll-effects/zoom-out-down.svg");
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-out-left,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-out-left {
+  background-image: url("../../images/plugins/scroll-effects/zoom-out-left.svg");
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-out-right,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-out-right {
+  background-image: url("../../images/plugins/scroll-effects/zoom-out-right.svg");
 }
 
 #drupal-off-canvas #bs_spacing_preview_calc,

@@ -91,7 +91,7 @@ abstract class StylePluginBase extends PluginBase implements StylePluginInterfac
     foreach ($lines as $line) {
       $line = explode('|', $line);
       if ($line && isset($line[0]) && isset($line[1])) {
-        $options[$line[0]] = $line[1] . '<div class="bs_tooltip" data-placement="top" role="tooltip">'. $line[1] .'</div>';
+        $options[$line[0]] = $line[1] . '<div class="bs_tooltip" data-placement="top" role="tooltip">' . $line[1] . '</div>';
       }
     }
 
@@ -108,7 +108,7 @@ abstract class StylePluginBase extends PluginBase implements StylePluginInterfac
    *   The icon markup.
    */
   public function getSvgIconMarkup(string $path) {
-    $svg = file_get_contents(DRUPAL_ROOT . $path);
+    $svg = file_get_contents(DRUPAL_ROOT . '/' . $path);
     $svg = preg_replace(['/<\?xml.*\?>/i', '/<!DOCTYPE((.|\n|\r)*?)">/i'], '', $svg);
     $svg = trim($svg);
     return Markup::create($svg);
