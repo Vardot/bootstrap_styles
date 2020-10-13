@@ -86,8 +86,8 @@ abstract class StylesGroupPluginBase extends PluginBase implements StylesGroupPl
   /**
    * {@inheritdoc}
    */
-  public function getIcon() {
-    $svg = file_get_contents(DRUPAL_ROOT . '/' . $this->getIconPath());
+  public function getSvgIconMarkup(string $path) {
+    $svg = file_get_contents(DRUPAL_ROOT . '/' . $path);
     $svg = preg_replace(['/<\?xml.*\?>/i', '/<!DOCTYPE((.|\n|\r)*?)">/i'], '', $svg);
     $svg = trim($svg);
     return Markup::create($svg);
@@ -98,7 +98,7 @@ abstract class StylesGroupPluginBase extends PluginBase implements StylesGroupPl
    */
   public function getTitleWithIcon() {
     return [
-      '#markup' => $this->getIcon(),
+      '#markup' => $this->getSvgIconMarkup($this->getIconPath()),
       '#suffix' => '<span class="bs-group-title">' . $this->getTitle() . '</span>',
     ];
   }
