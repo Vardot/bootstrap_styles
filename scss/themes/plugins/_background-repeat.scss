@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     border-top: 1px solid $box_input_hover_border;
     overflow: hidden;
+    min-width: 70px;
     max-width: 50%;
 
     // Our actual form item.

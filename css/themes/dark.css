@@ -2729,6 +2729,7 @@
   position: relative;
   width: 100%;
   max-width: 50%;
+  margin-top: 4px;
 }
 
 #drupal-off-canvas .bs_background--position .form-radios > div,
@@ -2840,6 +2841,7 @@
   flex-wrap: wrap;
   border-top: 1px solid #2F3138;
   overflow: hidden;
+  min-width: 70px;
   max-width: 50%;
 }
 
