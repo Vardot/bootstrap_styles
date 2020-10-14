@@ -3,7 +3,8 @@
 @import "animations";
 
 // General styles.
-#drupal-off-canvas {
+#drupal-off-canvas,
+#layout-builder-modal {
   .form-type-checkbox,
   .form-radios > div {
     padding: 0;
@@ -46,6 +47,16 @@
     max-width: 100%;
     padding-right: 15px;
     padding-left: 15px;
+
+    &--50 {
+      flex: 50%;
+      max-width: 50%;
+    }
+
+    &--100 {
+      flex: 100%;
+      max-width: 100%;
+    }
   }
 
   .bs-group-title {

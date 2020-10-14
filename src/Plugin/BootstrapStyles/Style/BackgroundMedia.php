@@ -224,8 +224,9 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
    * {@inheritdoc}
    */
   public function buildStyleFormElements(array &$form, FormStateInterface $form_state, $storage) {
-    $form['background_type']['#options']['image'] = $this->t('Image');
-    $form['background_type']['#options']['video'] = $this->t('Video');
+    $icon_path = base_path() . drupal_get_path('module', 'bootstrap_styles') . '/images/';
+    $form['background_type']['#options']['image'] = $this->getSvgIconMarkup($icon_path . 'plugins/background/background-image.svg');
+    $form['background_type']['#options']['video'] = $this->getSvgIconMarkup($icon_path . 'plugins/background/background-video.svg');
     $form['background_type']['#default_value'] = $storage['background']['background_type'] ?? 'image';
 
     // Background media.
@@ -264,7 +265,7 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
     $form['background_options'] = [
       '#type' => 'container',
       '#attributes' => [
-        'class' => ['bs_background--options'],
+        'class' => ['bs_background--options bs_row'],
       ],
       '#states' => [
         'visible' => [
@@ -289,7 +290,7 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
       ],
       '#default_value' => $storage['background_media']['background_options']['background_position'] ?? 'center',
       '#attributes' => [
-        'class' => ['bs_background--position'],
+        'class' => ['bs_background--position bs_col bs_col--50'],
       ],
     ];
 
@@ -297,14 +298,14 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
       '#type' => 'radios',
       '#title' => $this->t('Repeat'),
       '#options' => [
-        'no-repeat' => $this->t('No Repeat'),
-        'repeat' => $this->t('Repeat'),
-        'repeat-x' => $this->t('Repeat X'),
-        'repeat-y' => $this->t('Repeat Y'),
+        'no-repeat' => $this->getSvgIconMarkup($icon_path . 'plugins/background-repeat/background-no-repeat.svg'),
+        'repeat' => $this->getSvgIconMarkup($icon_path . 'plugins/background-repeat/background-repeat.svg'),
+        'repeat-x' => $this->getSvgIconMarkup($icon_path . 'plugins/background-repeat/background-repeat-xy.svg'),
+        'repeat-y' => $this->getSvgIconMarkup($icon_path . 'plugins/background-repeat/background-repeat-xy.svg'),
       ],
       '#default_value' => $storage['background_media']['background_options']['background_repeat'] ?? 'no-repeat',
       '#attributes' => [
-        'class' => ['bs_background--repeat'],
+        'class' => ['bs_background--repeat bs_col bs_col--50'],
       ],
     ];
 
@@ -317,8 +318,10 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
       ],
       '#default_value' => $storage['background_media']['background_options']['background_attachment'] ?? 'not_fixed',
       '#attributes' => [
-        'class' => ['bs_col--full bs_background--attachment'],
+        'class' => ['bs_background--attachment bs_col bs_col--100'],
       ],
+      '#prefix' => '<hr class="bs_divider"/>',
+      '#suffix' => '<hr class="bs_divider"/>',
     ];
 
     $form['background_options']['background_size'] = [
@@ -331,8 +334,9 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
       ],
       '#default_value' => $storage['background_media']['background_options']['background_size'] ?? 'cover',
       '#attributes' => [
-        'class' => ['bs_col--full bs_background--size'],
+        'class' => ['bs_background--size bs_col bs_col--100'],
       ],
+      '#suffix' => '<hr class="bs_divider"/>',
     ];
 
     return $form;

@@ -62,7 +62,7 @@ abstract class StylePluginBase extends PluginBase implements StylePluginInterfac
    * {@inheritdoc}
    */
   public function getTitle() {
-    return $this->pluginDefinition['tite'];
+    return $this->pluginDefinition['title'];
   }
 
   /**

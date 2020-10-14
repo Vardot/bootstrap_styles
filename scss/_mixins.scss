@@ -16,66 +16,92 @@
 }
 
 // Rounded input style toggles (container & background type)
-@mixin blb_box_inputs($width: 100%) {
+@mixin blb_box_inputs($width: 100%, $rounded: false, $height: 40px, $border-color: $box_input_bg_checked) {
   position: relative;
   flex: $width;
   width: $width;
   margin: 0;
   padding: 0;
 
+  @if $rounded {
+    &:first-child input + label {
+      border-right: 0;
+      border-radius: 8px 0 0 8px;
+    }
+
+    &:last-child input + label {
+      border-left: 0;
+      border-radius: 0 8px 8px 0;
+    }
+  }
+
   input {
     @include sr-only;
 
     + label {
       @include smooth-all-transition;
-      border: 2px solid $panel_text_color;
+      font-size: .875rem;
+      border: 1px solid $border-color;
       padding: 10px;
-      height: 50px;
+      height: $height;
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       cursor: pointer;
+      margin: 0;
 
       &:hover {
         background-color: rgba($panel_text_color, .1);
+      }
+
+      svg {
+        height: 18px;
+        width: 18px;
       }
     }
 
     // Active state.
     &:checked + label {
-      color: $panel_bg_color;
-      background-color: $panel_text_color;
+      color: $white;
+      background-color: $box_input_bg_checked;
+
+      svg,
+      svg * {
+        color: $white;
+      }
     }
   }
 
   // Custom fix for Bootstrap 3 Drupal theme.
-  label {
-    border: 2px solid $panel_text_color;
-    height: 50px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    cursor: pointer;
-
-    + input {
-      opacity: 0;
-      position: absolute;
-    }
-
-    // Active state.
-    &.active {
-      color: $panel_bg_color;
-      background-color: $panel_text_color;
-    }
-  }
+  //label {
+  //  @include smooth-all-transition;
+  //  font-size: .875rem;
+  //  border: 1px solid $box_input_bg_checked;
+  //  height: $height;
+  //  width: 100%;
+  //  display: flex;
+  //  align-items: center;
+  //  justify-content: center;
+  //  text-align: center;
+  //  cursor: pointer;
+  //
+  //  + input {
+  //    opacity: 0;
+  //    position: absolute;
+  //  }
+  //
+  //  // Active state.
+  //  &.active {
+  //    color: $panel_bg_color;
+  //    background-color: $box_input_bg_checked;
+  //  }
+  //}
 }
 
 // Squared input style (spacing/borders inputs)
-@mixin bs_boxed_inputs($width: 100%) {
+@mixin bs_boxed_inputs($width: 100%, $height: 35px, $bg: $box_input_bg, $active_color: inherit, $active_bg: $box_input_bg_checked) {
   position: relative;
   flex: $width;
   width: $width;
@@ -88,7 +114,7 @@
     + label {
       @include smooth-all-transition;
       padding: 8px;
-      height: 35px;
+      height: $height;
       width: 100%;
       display: flex;
       align-items: center;
@@ -108,7 +134,13 @@
 
     // Active state.
     &:checked + label {
-      background-color: $box_input_bg_checked;
+      color: $active_color;
+      background-color: $active_bg;
+
+      svg,
+      svg * {
+        color: $active_color;
+      }
 
       &:after {
         border-color: $box_input_checked_border;
@@ -117,26 +149,26 @@
   }
 
   // Custom fix for Bootstrap 3 Drupal theme.
-  label {
-    height: 35px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    cursor: pointer;
-
-    + input {
-      opacity: 0;
-      position: absolute;
-    }
-
-    // Active state.
-    &.active {
-      color: $panel_bg_color;
-      background-color: $panel_text_color;
-    }
-  }
+  //label {
+  //  height: $height;
+  //  width: 100%;
+  //  display: flex;
+  //  align-items: center;
+  //  justify-content: center;
+  //  text-align: center;
+  //  cursor: pointer;
+  //
+  //  + input {
+  //    opacity: 0;
+  //    position: absolute;
+  //  }
+  //
+  //  // Active state.
+  //  &.active {
+  //    color: $panel_bg_color;
+  //    background-color: $panel_text_color;
+  //  }
+  //}
 }
 
 

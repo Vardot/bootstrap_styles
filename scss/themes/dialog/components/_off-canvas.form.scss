@@ -37,8 +37,11 @@ label {
 }
 
 .fieldset-legend {
+  font-size: .875rem;
   margin-bottom: 0.5rem;
   display: block;
+  font-weight: normal;
+  color: rgba($panel_text_color, .6);
 }
 
 /* Set size and position for all inputs. */
