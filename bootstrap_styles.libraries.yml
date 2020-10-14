@@ -82,6 +82,19 @@ plugin.background_media.build:
   js:
     js/plugins/background_media/build.js: { }
 
+# text_color
+plugin.text_color.layout_builder_form:
+  css:
+    theme:
+      css/bs_example_classes/text-color-classes.css: { }
+  js:
+    js/plugins/text_color/layout-builder-form.js: { }
+
+plugin.text_color.build:
+  css:
+    theme:
+      css/bs_example_classes/text-color-classes.css: { }
+
 # padding
 plugin.padding.layout_builder_form:
   css:

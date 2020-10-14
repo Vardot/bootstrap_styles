@@ -6,26 +6,26 @@ use Drupal\bootstrap_styles\StylesGroup\StylesGroupPluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class Animation.
+ * Class Typography.
  *
  * @package Drupal\bootstrap_styles\Plugin\StylesGroup
  *
  * @StylesGroup(
- *   id = "animation",
- *   title = @Translation("Animation"),
- *   weight = 5,
- *   icon = "bootstrap_styles/images/plugins/animation-icon.svg"
+ *   id = "typography",
+ *   title = @Translation("Typography"),
+ *   weight = 2,
+ *   icon = "bootstrap_styles/images/plugins/typography-icon.svg"
  * )
  */
-class Animation extends StylesGroupPluginBase {
+class Typography extends StylesGroupPluginBase {
 
   /**
    * {@inheritdoc}
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
-    $form['animation'] = [
+    $form['typography'] = [
       '#type' => 'details',
-      '#title' => $this->t('Animation'),
+      '#title' => $this->t('Typography'),
       '#open' => FALSE,
     ];
 
