@@ -182,6 +182,33 @@ abstract class StylePluginBase extends PluginBase implements StylePluginInterfac
   }
 
   /**
+   * Helper function to add the classes to the build.
+   *
+   * @param array $build
+   *   The build array.
+   * @param array $classes
+   *   Array of the classes that we need to assign to build.
+   * @param string $theme_wrapper
+   *   The theme wrapper if exists.
+   *
+   * @return array
+   *   The build array.
+   */
+  public function addClassesToBuild(array $build, array $classes, $theme_wrapper = NULL) {
+    // Assign the style to element or its theme wrapper if exist.
+    if ($theme_wrapper && isset($build['#theme_wrappers'][$theme_wrapper])) {
+      $build['#theme_wrappers'][$theme_wrapper]['#attributes']['class'] = array_merge($build['#theme_wrappers'][$theme_wrapper]['#attributes']['class'], $classes);
+    }
+    elseif (isset($build['#attributes']['class'])) {
+      $build['#attributes']['class'] = array_merge($build['#attributes']['class'], $classes);
+    }
+    else {
+      $build['#attributes']['class'] = $classes;
+    }
+    return $build;
+  }
+
+  /**
    * {@inheritdoc}
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
