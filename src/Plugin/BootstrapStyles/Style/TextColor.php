@@ -88,18 +88,13 @@ class TextColor extends StylePluginBase {
    * {@inheritdoc}
    */
   public function build(array $build, array $storage, $theme_wrapper = NULL) {
-    // Backwards compatibility for layouts created on the 1.x version.
-    $text_type = $storage['text']['text_type'] ?? 'color';
-
-    if ($text_type == 'color') {
-      // Assign the style to element or its theme wrapper if exist.
-      if ($theme_wrapper && isset($build['#theme_wrappers'][$theme_wrapper])) {
-        $build['#theme_wrappers'][$theme_wrapper]['#attributes']['class'][] = $storage['text_color']['class'];
-      }
-      else {
-        $build['#attributes']['class'][] = $storage['text_color']['class'];
-      }
+    $classes = [];
+    if (isset($storage['text_color']['class'])) {
+      $classes[] = $storage['text_color']['class'];
     }
+
+    // Add the classes to the build.
+    $build = $this->addClassesToBuild($build, $classes, $theme_wrapper);
 
     // Attach bs-classes to the build.
     $build['#attached']['library'][] = 'bootstrap_styles/plugin.text_color.build';
