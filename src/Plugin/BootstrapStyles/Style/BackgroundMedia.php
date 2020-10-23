@@ -227,7 +227,9 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
     $icon_path = base_path() . drupal_get_path('module', 'bootstrap_styles') . '/images/';
     $form['background_type']['#options']['image'] = $this->getSvgIconMarkup($icon_path . 'plugins/background/background-image.svg');
     $form['background_type']['#options']['video'] = $this->getSvgIconMarkup($icon_path . 'plugins/background/background-video.svg');
-    $form['background_type']['#default_value'] = $storage['background']['background_type'] ?? 'image';
+    if (!$form['background_type']['#default_value']) {
+      $form['background_type']['#default_value'] = $storage['background']['background_type'] ?? 'image';
+    }
 
     // Background media.
     $config = $this->config();
