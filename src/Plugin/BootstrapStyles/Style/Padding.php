@@ -222,13 +222,8 @@ class Padding extends StylePluginBase {
       }
     }
 
-    // Assign the style to element or its theme wrapper if exist.
-    if ($theme_wrapper && isset($build['#theme_wrappers'][$theme_wrapper])) {
-      $build['#theme_wrappers'][$theme_wrapper]['#attributes']['class'] = array_merge($build['#theme_wrappers'][$theme_wrapper]['#attributes']['class'], $classes);;
-    }
-    else {
-      $build['#attributes']['class'] = array_merge($build['#attributes']['class'], $classes);
-    }
+    // Add the classes to the build.
+    $build = $this->addClassesToBuild($build, $classes, $theme_wrapper);
 
     // Attach bs-classes to the build.
     $build['#attached']['library'][] = 'bootstrap_styles/plugin.padding.build';
