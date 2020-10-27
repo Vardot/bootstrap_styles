@@ -54,6 +54,7 @@ function bootstrap_styles_page_attachments_alter(array &$page) {
   $entity_types = array_keys(\Drupal::entityTypeManager()->getDefinitions());
   $layout_routes = [];
   foreach ($entity_types as $entity_type_id) {
+    $layout_routes[] = 'layout_builder.defaults.node.view';
     $layout_routes[] = 'layout_builder.overrides.' . $entity_type_id . '.view';
   }
   $route_match = \Drupal::routeMatch();
