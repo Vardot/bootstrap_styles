@@ -95,6 +95,17 @@ plugin.text_color.build:
     theme:
       css/bs_example_classes/text-color-classes.css: { }
 
+# text_alignment
+plugin.text_alignment.layout_builder_form:
+  css:
+    theme:
+      css/bs_example_classes/text-alignment-classes.css: { }
+
+plugin.text_alignment.build:
+  css:
+    theme:
+      css/bs_example_classes/text-alignment-classes.css: { }
+
 # padding
 plugin.padding.layout_builder_form:
   css:

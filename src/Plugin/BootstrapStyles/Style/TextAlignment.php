@@ -6,18 +6,18 @@ use Drupal\bootstrap_styles\Style\StylePluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class TextColor.
+ * Class TextAlignment.
  *
  * @package Drupal\bootstrap_styles\Plugin\Style
  *
  * @Style(
- *   id = "text_color",
- *   title = @Translation("Text Color"),
+ *   id = "text_alignment",
+ *   title = @Translation("Text Alignment"),
  *   group_id = "typography",
- *   weight = 1
+ *   weight = 2
  * )
  */
-class TextColor extends StylePluginBase {
+class TextAlignment extends StylePluginBase {
 
   /**
    * {@inheritdoc}
@@ -25,10 +25,10 @@ class TextColor extends StylePluginBase {
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
     $config = $this->config();
 
-    $form['typography']['text_colors'] = [
+    $form['typography']['text_alignment'] = [
       '#type' => 'textarea',
-      '#default_value' => $config->get('text_colors'),
-      '#title' => $this->t('Text colors (classes)'),
+      '#default_value' => $config->get('text_alignment'),
+      '#title' => $this->t('Text alignment (classes)'),
       '#description' => $this->t('<p>Enter one value per line, in the format <b>key|label</b> where <em>key</em> is the CSS class name (without the .), and <em>label</em> is the human readable name of the text.</p>'),
       '#cols' => 60,
       '#rows' => 5,
@@ -42,7 +42,7 @@ class TextColor extends StylePluginBase {
    */
   public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
     $this->config()
-      ->set('text_colors', $form_state->getValue('text_colors'))
+      ->set('text_alignment', $form_state->getValue('text_alignment'))
       ->save();
   }
 
@@ -51,19 +51,19 @@ class TextColor extends StylePluginBase {
    */
   public function buildStyleFormElements(array &$form, FormStateInterface $form_state, $storage) {
 
-    $form['text_color'] = [
+    $form['text_alignment'] = [
       '#type' => 'radios',
-      '#options' => $this->getStyleOptions('text_colors'),
-      '#title' => $this->t('Text Color'),
-      '#default_value' => $storage['text_color']['class'] ?? NULL,
+      '#options' => $this->getStyleOptions('text_alignment'),
+      '#title' => $this->t('Alignment'),
+      '#default_value' => $storage['text_alignment']['class'] ?? NULL,
       '#validated' => TRUE,
       '#attributes' => [
-        'class' => ['field-text-color', 'bs_input-circles'],
+        'class' => ['field-text-alignment', 'bs_radio-tabs'],
       ],
     ];
 
     // Attach the Layout Builder form style for this plugin.
-    $form['#attached']['library'][] = 'bootstrap_styles/plugin.text_color.layout_builder_form';
+    $form['#attached']['library'][] = 'bootstrap_styles/plugin.text_alignment.layout_builder_form';
 
     return $form;
   }
@@ -73,8 +73,8 @@ class TextColor extends StylePluginBase {
    */
   public function submitStyleFormElements(array $group_elements) {
     return [
-      'text_color' => [
-        'class' => $group_elements['text_color'],
+      'text_alignment' => [
+        'class' => $group_elements['text_alignment'],
       ],
     ];
   }
@@ -84,15 +84,15 @@ class TextColor extends StylePluginBase {
    */
   public function build(array $build, array $storage, $theme_wrapper = NULL) {
     $classes = [];
-    if (isset($storage['text_color']['class'])) {
-      $classes[] = $storage['text_color']['class'];
+    if (isset($storage['text_alignment']['class'])) {
+      $classes[] = $storage['text_alignment']['class'];
     }
 
     // Add the classes to the build.
     $build = $this->addClassesToBuild($build, $classes, $theme_wrapper);
 
     // Attach bs-classes to the build.
-    $build['#attached']['library'][] = 'bootstrap_styles/plugin.text_color.build';
+    $build['#attached']['library'][] = 'bootstrap_styles/plugin.text_alignment.build';
 
     return $build;
   }
