@@ -63,6 +63,7 @@ label {
 }
 
 /* Reduce contrast for fields against dark background. */
+.form-select,
 .form-text,
 .form-tel,
 .form-email,
@@ -82,6 +83,7 @@ label {
   box-shadow: none;
 }
 
+.form-select:focus,
 .form-text:focus,
 .form-tel:focus,
 .form-email:focus,

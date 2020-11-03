@@ -175,6 +175,7 @@
 @mixin bs_circle_inputs($width: 100%) {
   > div {
     display: flex;
+    flex-wrap: wrap;
   }
 
   input {

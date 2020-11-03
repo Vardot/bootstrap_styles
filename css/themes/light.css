@@ -412,6 +412,7 @@
   width: 100%;
 }
 
+#layout-builder-modal .form-select,
 #layout-builder-modal .form-text,
 #layout-builder-modal .form-tel,
 #layout-builder-modal .form-email,
@@ -431,6 +432,7 @@
   box-shadow: none;
 }
 
+#layout-builder-modal .form-select:focus,
 #layout-builder-modal .form-text:focus,
 #layout-builder-modal .form-tel:focus,
 #layout-builder-modal .form-email:focus,
@@ -1216,6 +1218,7 @@
   width: 100%;
 }
 
+#drupal-off-canvas .form-select,
 #drupal-off-canvas .form-text,
 #drupal-off-canvas .form-tel,
 #drupal-off-canvas .form-email,
@@ -1235,6 +1238,7 @@
   box-shadow: none;
 }
 
+#drupal-off-canvas .form-select:focus,
 #drupal-off-canvas .form-text:focus,
 #drupal-off-canvas .form-tel:focus,
 #drupal-off-canvas .form-email:focus,
@@ -1720,6 +1724,7 @@
 #drupal-off-canvas .fieldgroup.bs_input-circles .fieldset-wrapper > div,
 #layout-builder-modal .fieldgroup.bs_input-circles .fieldset-wrapper > div {
   display: flex;
+  flex-wrap: wrap;
 }
 
 #drupal-off-canvas .fieldgroup.bs_input-circles .fieldset-wrapper input,
