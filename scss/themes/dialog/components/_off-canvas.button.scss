@@ -24,22 +24,25 @@ input[type="submit"].button {
   font-weight: normal;
   border: 0;
   width: 100%;
-}
 
-input[type="submit"].button:hover,
-input[type="submit"].button:focus,
-input[type="submit"].button:active {
-  color: $button_text_color;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $button_text_color;
+    background: $button_bg_color_hover;
+  }
 }
 
 button.button--primary,
 input[type="submit"].button--primary {
   color: $button_text_color;
   background: $button_bg_color;
+  border: 0;
 
   &:hover,
   &:focus,
   &:active {
+    color: $button_text_color;
     background: $button_bg_color_hover;
   }
 }
@@ -53,16 +56,18 @@ input[type="submit"].button--primary {
 }
 
 .button--danger {
-  color: #c72100;
+  color: $state_error;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: darken($state_error, 10%);
+  }
+
+  &:disabled,
+  &.is-disabled {
+    color: #737373;
+  }
 }
 
-.button--danger:hover,
-.button--danger:focus,
-.button--danger:active {
-  color: #ff2a00;
-}
 
-.button--danger:disabled,
-.button--danger.is-disabled {
-  color: #737373;
-}

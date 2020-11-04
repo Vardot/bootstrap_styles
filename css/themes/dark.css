@@ -41,7 +41,6 @@
  * @file
  * Visual styling for forms in the off-canvas dialog.
  */
-  /* Set size and position for all inputs. */
   /* Reduce contrast for fields against dark background. */
   /**
  * @file
@@ -177,22 +176,26 @@
   width: 100%;
 }
 
+#layout-builder-modal button.button:hover, #layout-builder-modal button.button:focus, #layout-builder-modal button.button:active,
 #layout-builder-modal input[type="submit"].button:hover,
 #layout-builder-modal input[type="submit"].button:focus,
 #layout-builder-modal input[type="submit"].button:active {
   color: #383A40;
+  background: #008ef2;
 }
 
 #layout-builder-modal button.button--primary,
 #layout-builder-modal input[type="submit"].button--primary {
   color: #383A40;
   background: #26A5FF;
+  border: 0;
 }
 
 #layout-builder-modal button.button--primary:hover, #layout-builder-modal button.button--primary:focus, #layout-builder-modal button.button--primary:active,
 #layout-builder-modal input[type="submit"].button--primary:hover,
 #layout-builder-modal input[type="submit"].button--primary:focus,
 #layout-builder-modal input[type="submit"].button--primary:active {
+  color: #383A40;
   background: #008ef2;
 }
 
@@ -205,17 +208,14 @@
 }
 
 #layout-builder-modal .button--danger {
-  color: #c72100;
+  color: #DC7C7C;
 }
 
-#layout-builder-modal .button--danger:hover,
-#layout-builder-modal .button--danger:focus,
-#layout-builder-modal .button--danger:active {
-  color: #ff2a00;
+#layout-builder-modal .button--danger:hover, #layout-builder-modal .button--danger:focus, #layout-builder-modal .button--danger:active {
+  color: #d15454;
 }
 
-#layout-builder-modal .button--danger:disabled,
-#layout-builder-modal .button--danger.is-disabled {
+#layout-builder-modal .button--danger:disabled, #layout-builder-modal .button--danger.is-disabled {
   color: #737373;
 }
 
@@ -387,6 +387,14 @@
   margin-bottom: 1.5rem;
 }
 
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) and (display: flow-root) {
+    #layout-builder-modal .form-item {
+      display: block;
+    }
+  }
+}
+
 #layout-builder-modal .fieldset-legend {
   font-size: .875rem;
   margin-bottom: 0.5rem;
@@ -395,21 +403,14 @@
   color: rgba(255, 255, 255, 0.6);
 }
 
-#layout-builder-modal .form-select,
-#layout-builder-modal .form-text,
-#layout-builder-modal .form-tel,
-#layout-builder-modal .form-email,
-#layout-builder-modal .form-url,
-#layout-builder-modal .form-search,
-#layout-builder-modal .form-number,
-#layout-builder-modal .form-color,
-#layout-builder-modal .form-file,
-#layout-builder-modal .form-textarea,
-#layout-builder-modal .form-date,
-#layout-builder-modal .form-time {
-  color: inherit;
-  font-size: 1rem;
-  width: 100%;
+#layout-builder-modal .form-select {
+  background: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzMwMHB4JyB3aWR0aD0nMzAwcHgnICBmaWxsPSIjRTNFM0UzIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTAwIDEwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBhdGggZmlsbD0iI0UzRTNFMyIgZD0iTTUwLjExMSw3Mi42NTljLTEuMDYxLDAtMi4wNzgtMC40MjItMi44MjktMS4xNzJMMTcuMjc1LDQxLjQ3NGMtMS41NjItMS41NjItMS41NjItNC4wOTUsMC4wMDEtNS42NTcgIGMxLjU2My0xLjU2Miw0LjA5Ni0xLjU2Miw1LjY1NywwbDI3LjE3OCwyNy4xODVsMjcuMTc4LTI3LjE4NWMxLjU2Mi0xLjU2Miw0LjA5NS0xLjU2Miw1LjY1NywwICBjMS41NjIsMS41NjIsMS41NjIsNC4wOTQsMC4wMDEsNS42NTdMNTIuOTQsNzEuNDg3QzUyLjE4OSw3Mi4yMzcsNTEuMTcyLDcyLjY1OSw1MC4xMTEsNzIuNjU5eiI+PC9wYXRoPjwvc3ZnPg==");
+  background-size: 25px;
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 #layout-builder-modal .form-select,
@@ -425,11 +426,29 @@
 #layout-builder-modal .form-date,
 #layout-builder-modal .form-time {
   transition: all .3s ease-in-out;
+  color: inherit;
+  font-size: 1rem;
+  width: 100%;
   border-radius: 8px;
   padding: .65rem 1rem;
   border: 2px solid #727579;
   background-color: transparent;
   box-shadow: none;
+}
+
+#layout-builder-modal .form-select:hover,
+#layout-builder-modal .form-text:hover,
+#layout-builder-modal .form-tel:hover,
+#layout-builder-modal .form-email:hover,
+#layout-builder-modal .form-url:hover,
+#layout-builder-modal .form-search:hover,
+#layout-builder-modal .form-number:hover,
+#layout-builder-modal .form-color:hover,
+#layout-builder-modal .form-file:hover,
+#layout-builder-modal .form-textarea:hover,
+#layout-builder-modal .form-date:hover,
+#layout-builder-modal .form-time:hover {
+  border-color: rgba(255, 255, 255, 0.75);
 }
 
 #layout-builder-modal .form-select:focus,
@@ -450,26 +469,73 @@
   outline: 0;
 }
 
-#layout-builder-modal .container-inline {
+#layout-builder-modal .container-inline,
+#layout-builder-modal .ief-form .form-wrapper .form-wrapper:last-child[data-drupal-selector$="-actions"],
+#layout-builder-modal .ief-form > .fieldset-wrapper > .form-wrapper:last-child[data-drupal-selector$="-actions"] {
   display: flex;
-  margin: 0 -15px;
+  margin: 0 -1rem;
 }
 
-#layout-builder-modal .container-inline > div {
+#layout-builder-modal .container-inline > div,
+#layout-builder-modal .ief-form .form-wrapper .form-wrapper:last-child[data-drupal-selector$="-actions"] > div,
+#layout-builder-modal .ief-form > .fieldset-wrapper > .form-wrapper:last-child[data-drupal-selector$="-actions"] > div {
   flex-grow: 1;
-  padding: 0 15px;
+  padding: 0 1rem;
 }
 
-#layout-builder-modal .cke {
+#layout-builder-modal .container-inline > input[type="submit"].button,
+#layout-builder-modal .ief-form .form-wrapper .form-wrapper:last-child[data-drupal-selector$="-actions"] > input[type="submit"].button,
+#layout-builder-modal .ief-form > .fieldset-wrapper > .form-wrapper:last-child[data-drupal-selector$="-actions"] > input[type="submit"].button {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+#layout-builder-modal .ief-form {
+  background-color: rgba(255, 255, 255, 0.035);
+  padding: 1rem 2rem 2rem 2rem;
+  border-radius: 8px;
+}
+
+#layout-builder-modal .ief-form > legend {
+  float: left;
+}
+
+#layout-builder-modal .ief-entity-table tr:hover td {
+  background-color: rgba(255, 255, 255, 0.035);
+}
+
+#layout-builder-modal .ief-entity-table .ief-row-entity td:last-child {
+  width: 200px;
+}
+
+#layout-builder-modal .ief-entity-operations {
+  display: flex;
+}
+
+#layout-builder-modal .ief-entity-operations input[type="submit"].button {
+  font-size: .85rem;
+  padding: .5rem .75rem;
+  margin: .5rem;
+}
+
+#layout-builder-modal .cke,
+#layout-builder-modal .filter-wrapper {
   background-color: #ffffff;
 }
 
-#layout-builder-modal .cke_reset_all, #layout-builder-modal .cke_reset_all *, #layout-builder-modal .cke_reset_all a, #layout-builder-modal .cke_reset_all textarea {
-  color: inherit;
+#layout-builder-modal .cke_reset_all,
+#layout-builder-modal .cke_reset_all *,
+#layout-builder-modal .cke_reset_all a,
+#layout-builder-modal .cke_reset_all textarea {
+  color: #000000;
 }
 
-#layout-builder-modal .form-type-textarea {
+#layout-builder-modal .js-text-format-wrapper .form-type-textarea {
   margin-bottom: 0;
+}
+
+#layout-builder-modal .filter-wrapper {
+  border-radius: 0 0 8px 8px;
 }
 
 #layout-builder-modal .inline-block-create-button,
@@ -547,6 +613,24 @@
   background-color: transparent;
 }
 
+#layout-builder-modal textarea::placeholder,
+#layout-builder-modal select::placeholder,
+#layout-builder-modal input[type="date"]::placeholder,
+#layout-builder-modal input[type="datetime"]::placeholder,
+#layout-builder-modal input[type="datetime-local"]::placeholder,
+#layout-builder-modal input[type="email"]::placeholder,
+#layout-builder-modal input[type="month"]::placeholder,
+#layout-builder-modal input[type="number"]::placeholder,
+#layout-builder-modal input[type="password"]::placeholder,
+#layout-builder-modal input[type="search"]::placeholder,
+#layout-builder-modal input[type="tel"]::placeholder,
+#layout-builder-modal input[type="text"]::placeholder,
+#layout-builder-modal input[type="time"]::placeholder,
+#layout-builder-modal input[type="url"]::placeholder,
+#layout-builder-modal input[type="week"]::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 #layout-builder-modal textarea[disabled],
 #layout-builder-modal select[disabled],
 #layout-builder-modal input[type="date"][disabled],
@@ -600,11 +684,16 @@
 
 #layout-builder-modal td,
 #layout-builder-modal th {
-  border-bottom: 1px solid #777;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 #layout-builder-modal td {
   color: #ffffff;
+  vertical-align: middle;
+}
+
+#layout-builder-modal tr:hover td {
+  background-color: rgba(255, 255, 255, 0.035);
 }
 
 #layout-builder-modal .drag {
@@ -847,7 +936,6 @@
  * @file
  * Visual styling for forms in the off-canvas dialog.
  */
-  /* Set size and position for all inputs. */
   /* Reduce contrast for fields against dark background. */
   /**
  * @file
@@ -983,22 +1071,26 @@
   width: 100%;
 }
 
+#drupal-off-canvas button.button:hover, #drupal-off-canvas button.button:focus, #drupal-off-canvas button.button:active,
 #drupal-off-canvas input[type="submit"].button:hover,
 #drupal-off-canvas input[type="submit"].button:focus,
 #drupal-off-canvas input[type="submit"].button:active {
   color: #383A40;
+  background: #008ef2;
 }
 
 #drupal-off-canvas button.button--primary,
 #drupal-off-canvas input[type="submit"].button--primary {
   color: #383A40;
   background: #26A5FF;
+  border: 0;
 }
 
 #drupal-off-canvas button.button--primary:hover, #drupal-off-canvas button.button--primary:focus, #drupal-off-canvas button.button--primary:active,
 #drupal-off-canvas input[type="submit"].button--primary:hover,
 #drupal-off-canvas input[type="submit"].button--primary:focus,
 #drupal-off-canvas input[type="submit"].button--primary:active {
+  color: #383A40;
   background: #008ef2;
 }
 
@@ -1011,17 +1103,14 @@
 }
 
 #drupal-off-canvas .button--danger {
-  color: #c72100;
+  color: #DC7C7C;
 }
 
-#drupal-off-canvas .button--danger:hover,
-#drupal-off-canvas .button--danger:focus,
-#drupal-off-canvas .button--danger:active {
-  color: #ff2a00;
+#drupal-off-canvas .button--danger:hover, #drupal-off-canvas .button--danger:focus, #drupal-off-canvas .button--danger:active {
+  color: #d15454;
 }
 
-#drupal-off-canvas .button--danger:disabled,
-#drupal-off-canvas .button--danger.is-disabled {
+#drupal-off-canvas .button--danger:disabled, #drupal-off-canvas .button--danger.is-disabled {
   color: #737373;
 }
 
@@ -1193,6 +1282,14 @@
   margin-bottom: 1.5rem;
 }
 
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) and (display: flow-root) {
+    #drupal-off-canvas .form-item {
+      display: block;
+    }
+  }
+}
+
 #drupal-off-canvas .fieldset-legend {
   font-size: .875rem;
   margin-bottom: 0.5rem;
@@ -1201,21 +1298,14 @@
   color: rgba(255, 255, 255, 0.6);
 }
 
-#drupal-off-canvas .form-select,
-#drupal-off-canvas .form-text,
-#drupal-off-canvas .form-tel,
-#drupal-off-canvas .form-email,
-#drupal-off-canvas .form-url,
-#drupal-off-canvas .form-search,
-#drupal-off-canvas .form-number,
-#drupal-off-canvas .form-color,
-#drupal-off-canvas .form-file,
-#drupal-off-canvas .form-textarea,
-#drupal-off-canvas .form-date,
-#drupal-off-canvas .form-time {
-  color: inherit;
-  font-size: 1rem;
-  width: 100%;
+#drupal-off-canvas .form-select {
+  background: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzMwMHB4JyB3aWR0aD0nMzAwcHgnICBmaWxsPSIjRTNFM0UzIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTAwIDEwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBhdGggZmlsbD0iI0UzRTNFMyIgZD0iTTUwLjExMSw3Mi42NTljLTEuMDYxLDAtMi4wNzgtMC40MjItMi44MjktMS4xNzJMMTcuMjc1LDQxLjQ3NGMtMS41NjItMS41NjItMS41NjItNC4wOTUsMC4wMDEtNS42NTcgIGMxLjU2My0xLjU2Miw0LjA5Ni0xLjU2Miw1LjY1NywwbDI3LjE3OCwyNy4xODVsMjcuMTc4LTI3LjE4NWMxLjU2Mi0xLjU2Miw0LjA5NS0xLjU2Miw1LjY1NywwICBjMS41NjIsMS41NjIsMS41NjIsNC4wOTQsMC4wMDEsNS42NTdMNTIuOTQsNzEuNDg3QzUyLjE4OSw3Mi4yMzcsNTEuMTcyLDcyLjY1OSw1MC4xMTEsNzIuNjU5eiI+PC9wYXRoPjwvc3ZnPg==");
+  background-size: 25px;
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 #drupal-off-canvas .form-select,
@@ -1231,11 +1321,29 @@
 #drupal-off-canvas .form-date,
 #drupal-off-canvas .form-time {
   transition: all .3s ease-in-out;
+  color: inherit;
+  font-size: 1rem;
+  width: 100%;
   border-radius: 8px;
   padding: .65rem 1rem;
   border: 2px solid #727579;
   background-color: transparent;
   box-shadow: none;
+}
+
+#drupal-off-canvas .form-select:hover,
+#drupal-off-canvas .form-text:hover,
+#drupal-off-canvas .form-tel:hover,
+#drupal-off-canvas .form-email:hover,
+#drupal-off-canvas .form-url:hover,
+#drupal-off-canvas .form-search:hover,
+#drupal-off-canvas .form-number:hover,
+#drupal-off-canvas .form-color:hover,
+#drupal-off-canvas .form-file:hover,
+#drupal-off-canvas .form-textarea:hover,
+#drupal-off-canvas .form-date:hover,
+#drupal-off-canvas .form-time:hover {
+  border-color: rgba(255, 255, 255, 0.75);
 }
 
 #drupal-off-canvas .form-select:focus,
@@ -1256,26 +1364,73 @@
   outline: 0;
 }
 
-#drupal-off-canvas .container-inline {
+#drupal-off-canvas .container-inline,
+#drupal-off-canvas .ief-form .form-wrapper .form-wrapper:last-child[data-drupal-selector$="-actions"],
+#drupal-off-canvas .ief-form > .fieldset-wrapper > .form-wrapper:last-child[data-drupal-selector$="-actions"] {
   display: flex;
-  margin: 0 -15px;
+  margin: 0 -1rem;
 }
 
-#drupal-off-canvas .container-inline > div {
+#drupal-off-canvas .container-inline > div,
+#drupal-off-canvas .ief-form .form-wrapper .form-wrapper:last-child[data-drupal-selector$="-actions"] > div,
+#drupal-off-canvas .ief-form > .fieldset-wrapper > .form-wrapper:last-child[data-drupal-selector$="-actions"] > div {
   flex-grow: 1;
-  padding: 0 15px;
+  padding: 0 1rem;
 }
 
-#drupal-off-canvas .cke {
+#drupal-off-canvas .container-inline > input[type="submit"].button,
+#drupal-off-canvas .ief-form .form-wrapper .form-wrapper:last-child[data-drupal-selector$="-actions"] > input[type="submit"].button,
+#drupal-off-canvas .ief-form > .fieldset-wrapper > .form-wrapper:last-child[data-drupal-selector$="-actions"] > input[type="submit"].button {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+#drupal-off-canvas .ief-form {
+  background-color: rgba(255, 255, 255, 0.035);
+  padding: 1rem 2rem 2rem 2rem;
+  border-radius: 8px;
+}
+
+#drupal-off-canvas .ief-form > legend {
+  float: left;
+}
+
+#drupal-off-canvas .ief-entity-table tr:hover td {
+  background-color: rgba(255, 255, 255, 0.035);
+}
+
+#drupal-off-canvas .ief-entity-table .ief-row-entity td:last-child {
+  width: 200px;
+}
+
+#drupal-off-canvas .ief-entity-operations {
+  display: flex;
+}
+
+#drupal-off-canvas .ief-entity-operations input[type="submit"].button {
+  font-size: .85rem;
+  padding: .5rem .75rem;
+  margin: .5rem;
+}
+
+#drupal-off-canvas .cke,
+#drupal-off-canvas .filter-wrapper {
   background-color: #ffffff;
 }
 
-#drupal-off-canvas .cke_reset_all, #drupal-off-canvas .cke_reset_all *, #drupal-off-canvas .cke_reset_all a, #drupal-off-canvas .cke_reset_all textarea {
-  color: inherit;
+#drupal-off-canvas .cke_reset_all,
+#drupal-off-canvas .cke_reset_all *,
+#drupal-off-canvas .cke_reset_all a,
+#drupal-off-canvas .cke_reset_all textarea {
+  color: #000000;
 }
 
-#drupal-off-canvas .form-type-textarea {
+#drupal-off-canvas .js-text-format-wrapper .form-type-textarea {
   margin-bottom: 0;
+}
+
+#drupal-off-canvas .filter-wrapper {
+  border-radius: 0 0 8px 8px;
 }
 
 #drupal-off-canvas .inline-block-create-button,
@@ -1353,6 +1508,24 @@
   background-color: transparent;
 }
 
+#drupal-off-canvas textarea::placeholder,
+#drupal-off-canvas select::placeholder,
+#drupal-off-canvas input[type="date"]::placeholder,
+#drupal-off-canvas input[type="datetime"]::placeholder,
+#drupal-off-canvas input[type="datetime-local"]::placeholder,
+#drupal-off-canvas input[type="email"]::placeholder,
+#drupal-off-canvas input[type="month"]::placeholder,
+#drupal-off-canvas input[type="number"]::placeholder,
+#drupal-off-canvas input[type="password"]::placeholder,
+#drupal-off-canvas input[type="search"]::placeholder,
+#drupal-off-canvas input[type="tel"]::placeholder,
+#drupal-off-canvas input[type="text"]::placeholder,
+#drupal-off-canvas input[type="time"]::placeholder,
+#drupal-off-canvas input[type="url"]::placeholder,
+#drupal-off-canvas input[type="week"]::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 #drupal-off-canvas textarea[disabled],
 #drupal-off-canvas select[disabled],
 #drupal-off-canvas input[type="date"][disabled],
@@ -1406,11 +1579,16 @@
 
 #drupal-off-canvas td,
 #drupal-off-canvas th {
-  border-bottom: 1px solid #777;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 #drupal-off-canvas td {
   color: #ffffff;
+  vertical-align: middle;
+}
+
+#drupal-off-canvas tr:hover td {
+  background-color: rgba(255, 255, 255, 0.035);
 }
 
 #drupal-off-canvas .drag {
@@ -2732,6 +2910,7 @@
   border: 1px solid #2F3138;
   height: 70px;
   position: relative;
+  display: flex;
   width: 100%;
   max-width: 50%;
   margin-top: 4px;

@@ -27,7 +27,12 @@ input[type="week"] {
   border-radius: $border_radius;
   border: 2px solid $tabs_bottom_border_color;
   background-color: transparent;
+
+  &::placeholder {
+    color: rgba($panel_text_color, .5);
+  }
 }
+
 textarea[disabled],
 select[disabled],
 input[type="date"][disabled],

@@ -15,6 +15,49 @@
   transition: all .3s ease-in-out;
 }
 
+// Buttons
+@mixin button-variant($background, $border, $hover-background: darken($background, 7.5%), $hover-border: darken($border, 10%), $active-background: darken($background, 10%), $active-border: darken($border, 12.5%)) {
+  color: color-yiq($background);
+  @include gradient-bg($background);
+  border-color: $border;
+  @include box-shadow($btn-box-shadow);
+
+  @include hover() {
+    color: color-yiq($hover-background);
+    @include gradient-bg($hover-background);
+    border-color: $hover-border;
+  }
+
+  &:focus,
+  &.focus {
+    color: color-yiq($hover-background);
+    @include gradient-bg($hover-background);
+    border-color: $hover-border;
+    @if $enable-shadows {
+      @include box-shadow($btn-box-shadow, 0 0 0 $btn-focus-width rgba(mix(color-yiq($background), $border, 15%), .5));
+    } @else {
+      // Avoid using mixin so we can pass custom focus shadow properly
+      box-shadow: 0 0 0 $btn-focus-width rgba(mix(color-yiq($background), $border, 15%), .5);
+    }
+  }
+}
+
+@mixin button-outline-variant($color, $color-hover: color-yiq($color), $active-background: $color, $active-border: $color) {
+  color: $color;
+  border-color: $color;
+
+  @include hover() {
+    color: $color-hover;
+    background-color: $active-background;
+    border-color: $active-border;
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: 0 0 0 $btn-focus-width rgba($color, .5);
+  }
+}
+
 // Rounded input style toggles (container & background type)
 @mixin blb_box_inputs($width: 100%, $rounded: false, $height: 40px, $border-color: $box_input_bg_checked) {
   position: relative;
@@ -147,28 +190,6 @@
       }
     }
   }
-
-  // Custom fix for Bootstrap 3 Drupal theme.
-  //label {
-  //  height: $height;
-  //  width: 100%;
-  //  display: flex;
-  //  align-items: center;
-  //  justify-content: center;
-  //  text-align: center;
-  //  cursor: pointer;
-  //
-  //  + input {
-  //    opacity: 0;
-  //    position: absolute;
-  //  }
-  //
-  //  // Active state.
-  //  &.active {
-  //    color: $panel_bg_color;
-  //    background-color: $panel_text_color;
-  //  }
-  //}
 }
 
 

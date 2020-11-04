@@ -9,9 +9,14 @@ table {
 
 td,
 th {
-  border-bottom: 1px solid #777;
+  border-bottom: 1px solid rgba($panel_text_color, .2);
 }
 
 td {
   color: $panel_text_color;
+  vertical-align: middle;
+}
+
+tr:hover td {
+  background-color: rgba($panel_text_color, .035);
 }
