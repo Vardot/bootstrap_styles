@@ -95,12 +95,12 @@ class ScrollEffects extends StylePluginBase {
       '#attributes' => [
         'class' => ['field-scroll-effects'],
       ],
-      '#prefix' => '<span class="effect-icon"></span>',
+      '#prefix' => '<span class="input-icon"></span>',
     ];
 
     // Add icons to the effets.
     foreach ($form['scroll_effects']['#options'] as $key => $value) {
-      $form['scroll_effects']['#options'][$key] = '<span class="effect-icon ' . $key . '"></span>' . $value;
+      $form['scroll_effects']['#options'][$key] = '<span class="input-icon ' . $key . '"></span>' . $value;
     }
 
     return $form;

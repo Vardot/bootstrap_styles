@@ -247,7 +247,7 @@ class Border extends StylePluginBase {
       '#default_value' => 'border',
       '#validated' => TRUE,
       '#attributes' => [
-        'class' => ['bs_col--full', 'bs_input-boxes', 'bs_border--type'],
+        'class' => ['bs_col--full', 'bs_input-boxes', 'bs_input-boxes--box-model', 'bs_border--type'],
       ],
     ];
 

@@ -111,7 +111,7 @@ class Padding extends StylePluginBase {
       '#default_value' => 'padding',
       '#validated' => TRUE,
       '#attributes' => [
-        'class' => ['bs_col--full', 'bs_input-boxes', 'bs_padding--type'],
+        'class' => ['bs_col--full', 'bs_input-boxes', 'bs_input-boxes--box-model', 'bs_padding--type'],
       ],
     ];
 

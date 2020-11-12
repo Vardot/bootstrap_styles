@@ -5,9 +5,18 @@
     // Our actual form item.
     > div {
       @include bs_boxed_inputs;
+
+      .input-icon {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 10px;
+        background-repeat: no-repeat;
+      }
     }
   }
+}
 
+.fieldgroup.bs_input-boxes--box-model {
   input ~ label {
     font-size: 0;
     text-indent: -999em;

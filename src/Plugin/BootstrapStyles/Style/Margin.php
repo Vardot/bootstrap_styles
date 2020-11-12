@@ -111,7 +111,7 @@ class Margin extends StylePluginBase {
       '#default_value' => 'margin',
       '#validated' => TRUE,
       '#attributes' => [
-        'class' => ['bs_col--full', 'bs_input-boxes', 'bs_margin--type'],
+        'class' => ['bs_col--full', 'bs_input-boxes', 'bs_input-boxes--box-model', 'bs_margin--type'],
       ],
     ];
 

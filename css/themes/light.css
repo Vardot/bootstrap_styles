@@ -1918,6 +1918,316 @@
   background-size: 100% auto;
 }
 
+#drupal-off-canvas .fieldgroup.blb_container_type .fieldset-wrapper > div,
+#layout-builder-modal .fieldgroup.blb_container_type .fieldset-wrapper > div {
+  display: flex;
+}
+
+#drupal-off-canvas .fieldgroup.blb_container_type .fieldset-wrapper > div > div,
+#layout-builder-modal .fieldgroup.blb_container_type .fieldset-wrapper > div > div {
+  position: relative;
+  flex: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#drupal-off-canvas .fieldgroup.blb_container_type .fieldset-wrapper > div > div input,
+#layout-builder-modal .fieldgroup.blb_container_type .fieldset-wrapper > div > div input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+#drupal-off-canvas .fieldgroup.blb_container_type .fieldset-wrapper > div > div input + label,
+#layout-builder-modal .fieldgroup.blb_container_type .fieldset-wrapper > div > div input + label {
+  transition: all .3s ease-in-out;
+  padding: 8px;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  background-color: #e6e6e6;
+}
+
+#drupal-off-canvas .fieldgroup.blb_container_type .fieldset-wrapper > div > div input + label:hover,
+#layout-builder-modal .fieldgroup.blb_container_type .fieldset-wrapper > div > div input + label:hover {
+  background-color: #b3b3b3;
+}
+
+#drupal-off-canvas .fieldgroup.blb_container_type .fieldset-wrapper > div > div input + label:hover:after,
+#layout-builder-modal .fieldgroup.blb_container_type .fieldset-wrapper > div > div input + label:hover:after {
+  border-color: #4d4d4d;
+}
+
+#drupal-off-canvas .fieldgroup.blb_container_type .fieldset-wrapper > div > div input:checked + label,
+#layout-builder-modal .fieldgroup.blb_container_type .fieldset-wrapper > div > div input:checked + label {
+  color: inherit;
+  background-color: #4d4d4d;
+}
+
+#drupal-off-canvas .fieldgroup.blb_container_type .fieldset-wrapper > div > div input:checked + label svg,
+#drupal-off-canvas .fieldgroup.blb_container_type .fieldset-wrapper > div > div input:checked + label svg *,
+#layout-builder-modal .fieldgroup.blb_container_type .fieldset-wrapper > div > div input:checked + label svg,
+#layout-builder-modal .fieldgroup.blb_container_type .fieldset-wrapper > div > div input:checked + label svg * {
+  color: inherit;
+}
+
+#drupal-off-canvas .fieldgroup.blb_container_type .fieldset-wrapper > div > div input:checked + label:after,
+#layout-builder-modal .fieldgroup.blb_container_type .fieldset-wrapper > div > div input:checked + label:after {
+  border-color: #e6e6e6;
+}
+
+#drupal-off-canvas .fieldgroup.blb_container_type .fieldset-wrapper > div > div input + label,
+#layout-builder-modal .fieldgroup.blb_container_type .fieldset-wrapper > div > div input + label {
+  font-size: 10px;
+  font-weight: normal;
+  padding: 8px;
+  margin: 2px;
+  width: calc(100% - 4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0;
+  background-color: #f2f2f2;
+  flex-direction: column;
+}
+
+#drupal-off-canvas .fieldgroup.blb_container_type .fieldset-wrapper > div > div input + label:hover,
+#layout-builder-modal .fieldgroup.blb_container_type .fieldset-wrapper > div > div input + label:hover {
+  background-color: #e6e6e6;
+}
+
+#drupal-off-canvas .fieldgroup.blb_container_type .fieldset-wrapper > div > div input:checked + label,
+#layout-builder-modal .fieldgroup.blb_container_type .fieldset-wrapper > div > div input:checked + label {
+  font-weight: bold;
+  color: #26A5FF;
+  background-color: #d9d9d9;
+}
+
+#drupal-off-canvas .fieldgroup.blb_container_type .fieldset-wrapper > div > div input:checked + label .input-icon:after,
+#layout-builder-modal .fieldgroup.blb_container_type .fieldset-wrapper > div > div input:checked + label .input-icon:after {
+  background-image: url("../../images/layout/container-active.svg");
+}
+
+#drupal-off-canvas .fieldgroup.blb_container_type .fieldset-wrapper > div > div .input-icon,
+#layout-builder-modal .fieldgroup.blb_container_type .fieldset-wrapper > div > div .input-icon {
+  width: 50px !important;
+  height: 26px;
+  margin-bottom: 10px;
+  background: url("../../images/layout/stripe-sm.svg") center top repeat;
+}
+
+#drupal-off-canvas .fieldgroup.blb_container_type .fieldset-wrapper > div > div .input-icon:after,
+#layout-builder-modal .fieldgroup.blb_container_type .fieldset-wrapper > div > div .input-icon:after {
+  content: '';
+  display: block;
+  margin: 0 auto 1rem auto;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../images/layout/container.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #e6e6e6;
+  background-size: 100% 26px;
+}
+
+#drupal-off-canvas .fieldgroup.blb_container_type .fieldset-wrapper > div > div .input-icon.container:after,
+#layout-builder-modal .fieldgroup.blb_container_type .fieldset-wrapper > div > div .input-icon.container:after {
+  width: 60%;
+}
+
+#drupal-off-canvas .fieldgroup.blb_container_type .fieldset-wrapper > div > div .input-icon.container-fluid:after,
+#layout-builder-modal .fieldgroup.blb_container_type .fieldset-wrapper > div > div .input-icon.container-fluid:after {
+  width: 80%;
+}
+
+#drupal-off-canvas .fieldgroup.blb_container_type .fieldset-wrapper > div > div .input-icon.w-100:after,
+#layout-builder-modal .fieldgroup.blb_container_type .fieldset-wrapper > div > div .input-icon.w-100:after {
+  width: 100%;
+}
+
+#drupal-off-canvas .fieldgroup.blb_gutter_type .fieldset-wrapper > div,
+#layout-builder-modal .fieldgroup.blb_gutter_type .fieldset-wrapper > div {
+  display: flex;
+}
+
+#drupal-off-canvas .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div,
+#layout-builder-modal .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div {
+  position: relative;
+  flex: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#drupal-off-canvas .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div input,
+#layout-builder-modal .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+#drupal-off-canvas .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div input + label,
+#layout-builder-modal .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div input + label {
+  transition: all .3s ease-in-out;
+  padding: 8px;
+  height: 105px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  background-color: #e6e6e6;
+}
+
+#drupal-off-canvas .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div input + label:hover,
+#layout-builder-modal .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div input + label:hover {
+  background-color: #b3b3b3;
+}
+
+#drupal-off-canvas .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div input + label:hover:after,
+#layout-builder-modal .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div input + label:hover:after {
+  border-color: #4d4d4d;
+}
+
+#drupal-off-canvas .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div input:checked + label,
+#layout-builder-modal .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div input:checked + label {
+  color: inherit;
+  background-color: transparent;
+}
+
+#drupal-off-canvas .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div input:checked + label svg,
+#drupal-off-canvas .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div input:checked + label svg *,
+#layout-builder-modal .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div input:checked + label svg,
+#layout-builder-modal .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div input:checked + label svg * {
+  color: inherit;
+}
+
+#drupal-off-canvas .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div input:checked + label:after,
+#layout-builder-modal .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div input:checked + label:after {
+  border-color: #e6e6e6;
+}
+
+#drupal-off-canvas .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div input + label,
+#layout-builder-modal .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div input + label {
+  font-size: 10px;
+  font-weight: normal;
+  padding: 8px;
+  margin: 2px;
+  width: calc(100% - 4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0;
+  background-color: transparent;
+  flex-direction: column;
+}
+
+#drupal-off-canvas .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div input + label:hover,
+#layout-builder-modal .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div input + label:hover {
+  background-color: transparent;
+}
+
+#drupal-off-canvas .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div input:checked + label,
+#layout-builder-modal .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div input:checked + label {
+  font-weight: bold;
+  color: #26A5FF;
+}
+
+#drupal-off-canvas .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div input:checked + label .input-icon:after,
+#layout-builder-modal .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div input:checked + label .input-icon:after {
+  background-image: url("../../images/layout/gutter-active.svg");
+}
+
+#drupal-off-canvas .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div .input-icon,
+#layout-builder-modal .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div .input-icon {
+  width: 80%;
+  height: 66px;
+  margin-bottom: 10px;
+  background: url("../../images/layout/stripe-lg.svg") center top repeat;
+}
+
+#drupal-off-canvas .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div .input-icon:after,
+#layout-builder-modal .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div .input-icon:after {
+  content: '';
+  display: block;
+  margin: 0 auto 1rem auto;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../images/layout/gutter.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #e6e6e6;
+  background-size: cover;
+}
+
+#drupal-off-canvas .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div .input-icon.container:after,
+#layout-builder-modal .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div .input-icon.container:after {
+  width: 60%;
+}
+
+#drupal-off-canvas .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div .input-icon.container-fluid:after,
+#layout-builder-modal .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div .input-icon.container-fluid:after {
+  width: 70%;
+}
+
+#drupal-off-canvas .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div .input-icon.w-100:after,
+#layout-builder-modal .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div .input-icon.w-100:after {
+  width: 100%;
+}
+
+#drupal-off-canvas .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div .input-icon.gutter-icon-0:after,
+#layout-builder-modal .fieldgroup.blb_gutter_type .fieldset-wrapper > div > div .input-icon.gutter-icon-0:after {
+  width: 80%;
+}
+
+#drupal-off-canvas .blb_breakpoint_cols label:hover .blb_breakpoint_col,
+#layout-builder-modal .blb_breakpoint_cols label:hover .blb_breakpoint_col {
+  background-color: rgba(56, 58, 64, 0.8);
+  color: #ffffff;
+}
+
+#drupal-off-canvas input:checked + label .blb_breakpoint_col,
+#layout-builder-modal input:checked + label .blb_breakpoint_col {
+  color: #ffffff;
+  background-color: #26A5FF;
+}
+
+#drupal-off-canvas .blb_breakpoint_col,
+#layout-builder-modal .blb_breakpoint_col {
+  color: #383A40;
+  background-color: rgba(56, 58, 64, 0.2);
+}
+
+#drupal-off-canvas .blb_breakpoint_col.bp-selected,
+#layout-builder-modal .blb_breakpoint_col.bp-selected {
+  color: #383A40;
+  background-color: #26A5FF;
+}
+
 #drupal-off-canvas .bs_divider,
 #layout-builder-modal .bs_divider {
   margin: 1rem 0 1.5rem;
@@ -1961,6 +2271,7 @@
   height: 35px;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -1996,14 +2307,22 @@
   border-color: #e6e6e6;
 }
 
-#drupal-off-canvas .fieldgroup.bs_input-boxes input ~ label,
-#layout-builder-modal .fieldgroup.bs_input-boxes input ~ label {
+#drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div .input-icon,
+#layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div .input-icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 10px;
+  background-repeat: no-repeat;
+}
+
+#drupal-off-canvas .fieldgroup.bs_input-boxes--box-model input ~ label,
+#layout-builder-modal .fieldgroup.bs_input-boxes--box-model input ~ label {
   font-size: 0;
   text-indent: -999em;
 }
 
-#drupal-off-canvas .fieldgroup.bs_input-boxes input ~ label:after,
-#layout-builder-modal .fieldgroup.bs_input-boxes input ~ label:after {
+#drupal-off-canvas .fieldgroup.bs_input-boxes--box-model input ~ label:after,
+#layout-builder-modal .fieldgroup.bs_input-boxes--box-model input ~ label:after {
   content: '';
   width: 20px;
   height: 20px;
@@ -2111,92 +2430,6 @@
   vertical-align: middle;
   width: 100%;
   height: 100%;
-}
-
-#drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div,
-#layout-builder-modal .blb_container_type .fieldset-wrapper > div > div {
-  position: relative;
-  flex: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-#drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div input,
-#layout-builder-modal .blb_container_type .fieldset-wrapper > div > div input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-#drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div input + label,
-#layout-builder-modal .blb_container_type .fieldset-wrapper > div > div input + label {
-  transition: all .3s ease-in-out;
-  font-size: .875rem;
-  border: 1px solid #4d4d4d;
-  padding: 10px;
-  height: 40px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  cursor: pointer;
-  margin: 0;
-}
-
-#drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div input + label:hover,
-#layout-builder-modal .blb_container_type .fieldset-wrapper > div > div input + label:hover {
-  background-color: rgba(56, 58, 64, 0.1);
-}
-
-#drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div input + label svg,
-#layout-builder-modal .blb_container_type .fieldset-wrapper > div > div input + label svg {
-  height: 18px;
-  width: 18px;
-}
-
-#drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div input:checked + label,
-#layout-builder-modal .blb_container_type .fieldset-wrapper > div > div input:checked + label {
-  color: #ffffff;
-  background-color: #4d4d4d;
-}
-
-#drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div input:checked + label svg,
-#drupal-off-canvas .blb_container_type .fieldset-wrapper > div > div input:checked + label svg *,
-#layout-builder-modal .blb_container_type .fieldset-wrapper > div > div input:checked + label svg,
-#layout-builder-modal .blb_container_type .fieldset-wrapper > div > div input:checked + label svg * {
-  color: #ffffff;
-}
-
-#drupal-off-canvas .blb_breakpoint_cols label:hover .blb_breakpoint_col,
-#layout-builder-modal .blb_breakpoint_cols label:hover .blb_breakpoint_col {
-  background-color: rgba(56, 58, 64, 0.8);
-  color: #ffffff;
-}
-
-#drupal-off-canvas input:checked + label .blb_breakpoint_col,
-#layout-builder-modal input:checked + label .blb_breakpoint_col {
-  color: #ffffff;
-  background-color: #26A5FF;
-}
-
-#drupal-off-canvas .blb_breakpoint_col,
-#layout-builder-modal .blb_breakpoint_col {
-  color: #383A40;
-  background-color: rgba(56, 58, 64, 0.2);
-}
-
-#drupal-off-canvas .blb_breakpoint_col.bp-selected,
-#layout-builder-modal .blb_breakpoint_col.bp-selected {
-  color: #383A40;
-  background-color: #26A5FF;
 }
 
 #drupal-off-canvas .bs_radio-tabs legend,
@@ -2876,6 +3109,7 @@
   height: 42px;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -3374,27 +3608,72 @@
 #drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div,
 #layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div {
   position: relative;
-  flex: 0 0 33%;
-  max-width: 33%;
-  padding: 0;
+  flex: 33%;
+  width: 33%;
   margin: 0;
+  padding: 0;
 }
 
 #drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input,
 #layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input {
-  opacity: 0;
   position: absolute;
-  width: 0;
-  height: 0;
-  display: block;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 #drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label,
 #layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label {
   transition: all .3s ease-in-out;
+  padding: 8px;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  background-color: #e6e6e6;
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label:hover,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label:hover {
+  background-color: #b3b3b3;
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label:hover:after,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label:hover:after {
+  border-color: #4d4d4d;
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label {
+  color: inherit;
+  background-color: #4d4d4d;
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label svg,
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label svg *,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label svg,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label svg * {
+  color: inherit;
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label:after,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label:after {
+  border-color: #e6e6e6;
+}
+
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label {
   font-size: 10px;
   font-weight: normal;
-  border: 0;
   padding: 8px;
   margin: 2px;
   width: calc(100% - 4px);
@@ -3426,138 +3705,136 @@
   background-color: #d9d9d9;
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label .effect-icon,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label .effect-icon {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label .input-icon,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label .input-icon {
   filter: invert(46%) sepia(100%) saturate(313%) hue-rotate(169deg) brightness(91%) contrast(94%);
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon {
   width: 30px;
   height: 30px;
   margin-bottom: 10px;
   background-repeat: no-repeat;
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon._none,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon._none {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon._none,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon._none {
   background-image: url("../../images/plugins/scroll-effects/none.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-up,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-up {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-up,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-up {
   background-image: url("../../images/plugins/scroll-effects/fade-up.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-down,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-down {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-down,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-down {
   background-image: url("../../images/plugins/scroll-effects/fade-down.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-left,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-left {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-left,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-left {
   background-image: url("../../images/plugins/scroll-effects/fade-left.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-right,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-right {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-right,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-right {
   background-image: url("../../images/plugins/scroll-effects/fade-right.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-up-right,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-up-right {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-up-right,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-up-right {
   background-image: url("../../images/plugins/scroll-effects/fade-up-right.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-down-right,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-down-right {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-down-right,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-down-right {
   background-image: url("../../images/plugins/scroll-effects/fade-down-right.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-up-left,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-up-left {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-up-left,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-up-left {
   background-image: url("../../images/plugins/scroll-effects/fade-up-left.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-down-left,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.fade-down-left {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-down-left,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-down-left {
   background-image: url("../../images/plugins/scroll-effects/fade-down-left.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.flip-left,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.flip-left {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.flip-left,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.flip-left {
   background-image: url("../../images/plugins/scroll-effects/flip-left.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.flip-right,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.flip-right {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.flip-right,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.flip-right {
   background-image: url("../../images/plugins/scroll-effects/flip-right.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.flip-up,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.flip-up {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.flip-up,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.flip-up {
   background-image: url("../../images/plugins/scroll-effects/flip-up.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.flip-down,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.flip-down {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.flip-down,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.flip-down {
   background-image: url("../../images/plugins/scroll-effects/flip-down.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-in,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-in {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in {
   background-image: url("../../images/plugins/scroll-effects/zoom-in.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-in-up,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-in-up {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in-up,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in-up {
   background-image: url("../../images/plugins/scroll-effects/zoom-in-up.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-in-down,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-in-down {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in-down,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in-down {
   background-image: url("../../images/plugins/scroll-effects/zoom-in-down.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-in-left,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-in-left {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in-left,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in-left {
   background-image: url("../../images/plugins/scroll-effects/zoom-in-left.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-in-right,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-in-right {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in-right,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in-right {
   background-image: url("../../images/plugins/scroll-effects/zoom-in-right.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-out,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-out {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out {
   background-image: url("../../images/plugins/scroll-effects/zoom-out.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-out-up,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-out-up {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out-up,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out-up {
   background-image: url("../../images/plugins/scroll-effects/zoom-out-up.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-out-down,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-out-down {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out-down,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out-down {
   background-image: url("../../images/plugins/scroll-effects/zoom-out-down.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-out-left,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-out-left {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out-left,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out-left {
   background-image: url("../../images/plugins/scroll-effects/zoom-out-left.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-out-right,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .effect-icon.zoom-out-right {
+#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out-right,
+#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out-right {
   background-image: url("../../images/plugins/scroll-effects/zoom-out-right.svg");
 }
 
 #drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div label,
 #layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div label {
-  border: 2px solid #383A40;
-  height: 30px;
   width: 100%;
   display: flex;
   align-items: center;
