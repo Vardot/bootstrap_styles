@@ -150,9 +150,12 @@ label {
 
 
 // Fixes for CKEditor
-.cke,
-.filter-wrapper {
+.cke {
   background-color: $white;
+}
+
+.filter-wrapper .form-item {
+  margin-bottom: .25rem;
 }
 
 .cke_reset_all,

@@ -36,19 +36,31 @@ hr {
 }
 
 .messages--status {
-  color: $state_success;
+  color: darken($state_success, 20%);
   background-color: lighten($state_success, 30%);
   background-image: $state_success_icon;
+
+  div, em {
+    color: darken($state_success, 20%);
+  }
 }
 
 .messages--warning {
-  color: $state_warning;
+  color: darken($state_warning, 20%);
   background-color: lighten($state_warning, 30%);
   background-image: $state_warning_icon;
+
+  div, em {
+    color: darken($state_warning, 20%);
+  }
 }
 
 .messages--error {
-  color: $state_error;
+  color: darken($state_error, 20%);
   background-color: lighten($state_error, 30%);
   background-image: $state_error_icon;
+
+  div, em {
+    color: darken($state_error, 20%);
+  }
 }
