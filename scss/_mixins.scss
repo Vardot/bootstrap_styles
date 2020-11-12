@@ -193,6 +193,17 @@
   }
 }
 
+@mixin bs_invert_icon_color_when_checked {
+  &:checked + label {
+    font-weight: bold;
+    color: $panel_link_color;
+    background-color: $icon_box_input_bg_checked;
+
+    .input-icon {
+      filter: invert(46%) sepia(100%) saturate(313%) hue-rotate(169deg) brightness(91%) contrast(94%);
+    }
+  }
+}
 
 @mixin bs_circle_inputs($width: 100%) {
   > div {

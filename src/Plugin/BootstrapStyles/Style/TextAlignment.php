@@ -58,9 +58,14 @@ class TextAlignment extends StylePluginBase {
       '#default_value' => $storage['text_alignment']['class'] ?? NULL,
       '#validated' => TRUE,
       '#attributes' => [
-        'class' => ['field-text-alignment', 'bs_radio-tabs'],
+        'class' => ['field-text-alignment', 'bs_input-boxes'],
       ],
     ];
+
+    // Add icons to the container types.
+    foreach ($form['text_alignment']['#options'] as $key => $value) {
+      $form['text_alignment']['#options'][$key] = '<span class="input-icon ' . $key . '"></span>' . $value;
+    }
 
     // Attach the Layout Builder form style for this plugin.
     $form['#attached']['library'][] = 'bootstrap_styles/plugin.text_alignment.layout_builder_form';

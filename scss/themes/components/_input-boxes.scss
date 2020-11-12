@@ -1,4 +1,5 @@
-.fieldgroup.bs_input-boxes {
+// Input boxes
+.bs_input-boxes {
   .fieldset-wrapper > div {
     display: flex;
 
@@ -6,17 +7,31 @@
     > div {
       @include bs_boxed_inputs;
 
-      .input-icon {
-        width: 30px;
-        height: 30px;
-        margin-bottom: 10px;
-        background-repeat: no-repeat;
+      input {
+        @include bs_invert_icon_color_when_checked;
       }
     }
   }
 }
 
-.fieldgroup.bs_input-boxes--box-model {
+// Input boxes with icons
+.input-icon {
+  @include smooth-all-transition;
+  content: '';
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  &._none {
+    background-image: url('../../images/plugins/none.svg');
+  }
+}
+
+.bs_input-boxes--box-model .fieldset-wrapper > div > div {
   input ~ label {
     font-size: 0;
     text-indent: -999em;
@@ -30,5 +45,3 @@
     }
   }
 }
-
-

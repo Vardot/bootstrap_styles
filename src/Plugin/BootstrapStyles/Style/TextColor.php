@@ -58,7 +58,7 @@ class TextColor extends StylePluginBase {
       '#default_value' => $storage['text_color']['class'] ?? NULL,
       '#validated' => TRUE,
       '#attributes' => [
-        'class' => ['field-text-color', 'bs_input-circles'],
+        'class' => ['field-text-color', 'bs_input-circles', 'with-selected-gradient'],
       ],
     ];
 

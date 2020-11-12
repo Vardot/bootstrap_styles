@@ -2237,13 +2237,13 @@
   max-width: 100%;
 }
 
-#drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div,
-#layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div {
   display: flex;
 }
 
-#drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div,
-#layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div {
   position: relative;
   flex: 100%;
   width: 100%;
@@ -2251,8 +2251,8 @@
   padding: 0;
 }
 
-#drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input,
-#layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -2264,8 +2264,8 @@
   border: 0;
 }
 
-#drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input + label,
-#layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input + label {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input + label,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input + label {
   transition: all .3s ease-in-out;
   padding: 8px;
   height: 35px;
@@ -2279,50 +2279,72 @@
   background-color: #e6e6e6;
 }
 
-#drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input + label:hover,
-#layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input + label:hover {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input + label:hover,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input + label:hover {
   background-color: #b3b3b3;
 }
 
-#drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input + label:hover:after,
-#layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input + label:hover:after {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input + label:hover:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input + label:hover:after {
   border-color: #4d4d4d;
 }
 
-#drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input:checked + label,
-#layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input:checked + label {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input:checked + label,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input:checked + label {
   color: inherit;
   background-color: #4d4d4d;
 }
 
-#drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input:checked + label svg,
-#drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input:checked + label svg *,
-#layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input:checked + label svg,
-#layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input:checked + label svg * {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input:checked + label svg,
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input:checked + label svg *,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input:checked + label svg,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input:checked + label svg * {
   color: inherit;
 }
 
-#drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input:checked + label:after,
-#layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div input:checked + label:after {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input:checked + label:after,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input:checked + label:after {
   border-color: #e6e6e6;
 }
 
-#drupal-off-canvas .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div .input-icon,
-#layout-builder-modal .fieldgroup.bs_input-boxes .fieldset-wrapper > div > div .input-icon {
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input:checked + label,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input:checked + label {
+  font-weight: bold;
+  color: #26A5FF;
+  background-color: #d9d9d9;
+}
+
+#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input:checked + label .input-icon,
+#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input:checked + label .input-icon {
+  filter: invert(46%) sepia(100%) saturate(313%) hue-rotate(169deg) brightness(91%) contrast(94%);
+}
+
+#drupal-off-canvas .input-icon,
+#layout-builder-modal .input-icon {
+  transition: all .3s ease-in-out;
+  content: '';
+  display: block;
   width: 30px;
   height: 30px;
   margin-bottom: 10px;
   background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
-#drupal-off-canvas .fieldgroup.bs_input-boxes--box-model input ~ label,
-#layout-builder-modal .fieldgroup.bs_input-boxes--box-model input ~ label {
+#drupal-off-canvas .input-icon._none,
+#layout-builder-modal .input-icon._none {
+  background-image: url("../../images/plugins/none.svg");
+}
+
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input ~ label,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input ~ label {
   font-size: 0;
   text-indent: -999em;
 }
 
-#drupal-off-canvas .fieldgroup.bs_input-boxes--box-model input ~ label:after,
-#layout-builder-modal .fieldgroup.bs_input-boxes--box-model input ~ label:after {
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input ~ label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input ~ label:after {
   content: '';
   width: 20px;
   height: 20px;
@@ -2330,14 +2352,14 @@
   border: 2px solid #666666;
 }
 
-#drupal-off-canvas .fieldgroup.bs_input-circles .fieldset-wrapper > div,
-#layout-builder-modal .fieldgroup.bs_input-circles .fieldset-wrapper > div {
+#drupal-off-canvas .bs_input-circles .fieldset-wrapper > div,
+#layout-builder-modal .bs_input-circles .fieldset-wrapper > div {
   display: flex;
   flex-wrap: wrap;
 }
 
-#drupal-off-canvas .fieldgroup.bs_input-circles .fieldset-wrapper input,
-#layout-builder-modal .fieldgroup.bs_input-circles .fieldset-wrapper input {
+#drupal-off-canvas .bs_input-circles .fieldset-wrapper input,
+#layout-builder-modal .bs_input-circles .fieldset-wrapper input {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -2349,13 +2371,13 @@
   border: 0;
 }
 
-#drupal-off-canvas .fieldgroup.bs_input-circles .fieldset-wrapper input:checked + label.option,
-#layout-builder-modal .fieldgroup.bs_input-circles .fieldset-wrapper input:checked + label.option {
+#drupal-off-canvas .bs_input-circles .fieldset-wrapper input:checked + label.option,
+#layout-builder-modal .bs_input-circles .fieldset-wrapper input:checked + label.option {
   border-color: #26A5FF;
 }
 
-#drupal-off-canvas .fieldgroup.bs_input-circles .fieldset-wrapper input:checked + label.option:after,
-#layout-builder-modal .fieldgroup.bs_input-circles .fieldset-wrapper input:checked + label.option:after {
+#drupal-off-canvas .bs_input-circles .fieldset-wrapper input:checked + label.option:after,
+#layout-builder-modal .bs_input-circles .fieldset-wrapper input:checked + label.option:after {
   transition: all .3s ease-in-out;
   width: 20px;
   height: 20px;
@@ -2368,8 +2390,8 @@
   background-size: contain;
 }
 
-#drupal-off-canvas .fieldgroup.bs_input-circles .fieldset-wrapper input[value="_none"] + label:after,
-#layout-builder-modal .fieldgroup.bs_input-circles .fieldset-wrapper input[value="_none"] + label:after {
+#drupal-off-canvas .bs_input-circles .fieldset-wrapper input[value="_none"] + label:after,
+#layout-builder-modal .bs_input-circles .fieldset-wrapper input[value="_none"] + label:after {
   transition: all .3s ease-in-out;
   width: 20px;
   height: 20px;
@@ -2382,24 +2404,24 @@
   background-size: contain;
 }
 
-#drupal-off-canvas .fieldgroup.bs_input-circles .fieldset-wrapper input[value="_none"]:checked + label.option:before,
-#layout-builder-modal .fieldgroup.bs_input-circles .fieldset-wrapper input[value="_none"]:checked + label.option:before {
+#drupal-off-canvas .bs_input-circles .fieldset-wrapper input[value="_none"]:checked + label.option:before,
+#layout-builder-modal .bs_input-circles .fieldset-wrapper input[value="_none"]:checked + label.option:before {
   display: none;
 }
 
-#drupal-off-canvas .fieldgroup.bs_input-circles .fieldset-wrapper input[value="_none"]:checked + label.option:after,
-#layout-builder-modal .fieldgroup.bs_input-circles .fieldset-wrapper input[value="_none"]:checked + label.option:after {
+#drupal-off-canvas .bs_input-circles .fieldset-wrapper input[value="_none"]:checked + label.option:after,
+#layout-builder-modal .bs_input-circles .fieldset-wrapper input[value="_none"]:checked + label.option:after {
   background: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzMwMHB4JyB3aWR0aD0nMzAwcHgnICBmaWxsPSIjZjM1NjU2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI0IDI0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZGlzcGxheTpub25lO30KPC9zdHlsZT48Zz48Zz48Zz48cGF0aCBkPSJNMiwyMi41Yy0wLjEyOCwwLTAuMjU2LTAuMDQ5LTAuMzU0LTAuMTQ2Yy0wLjE5NS0wLjE5NS0wLjE5NS0wLjUxMiwwLTAuNzA3bDIwLTIwYzAuMTk1LTAuMTk1LDAuNTEyLTAuMTk1LDAuNzA3LDAgICAgIHMwLjE5NSwwLjUxMiwwLDAuNzA3bC0yMCwyMEMyLjI1NiwyMi40NTEsMi4xMjgsMjIuNSwyLDIyLjV6Ij48L3BhdGg+PC9nPjxnPjxwYXRoIGQ9Ik0yMiwyMi41Yy0wLjEyOCwwLTAuMjU2LTAuMDQ5LTAuMzU0LTAuMTQ2bC0yMC0yMGMtMC4xOTUtMC4xOTUtMC4xOTUtMC41MTIsMC0wLjcwN3MwLjUxMi0wLjE5NSwwLjcwNywwbDIwLDIwICAgICBjMC4xOTUsMC4xOTUsMC4xOTUsMC41MTIsMCwwLjcwN0MyMi4yNTYsMjIuNDUxLDIyLjEyOCwyMi41LDIyLDIyLjV6Ij48L3BhdGg+PC9nPjwvZz48L2c+PC9zdmc+") center center no-repeat;
   background-size: contain;
 }
 
-#drupal-off-canvas .fieldgroup.bs_input-circles .fieldset-wrapper.style-selected input:not(:checked) + label,
-#layout-builder-modal .fieldgroup.bs_input-circles .fieldset-wrapper.style-selected input:not(:checked) + label {
+#drupal-off-canvas .bs_input-circles .fieldset-wrapper.style-selected input:not(:checked) + label,
+#layout-builder-modal .bs_input-circles .fieldset-wrapper.style-selected input:not(:checked) + label {
   opacity: 0.3;
 }
 
-#drupal-off-canvas .fieldgroup.bs_input-circles .fieldset-wrapper label,
-#layout-builder-modal .fieldgroup.bs_input-circles .fieldset-wrapper label {
+#drupal-off-canvas .bs_input-circles .fieldset-wrapper label,
+#layout-builder-modal .bs_input-circles .fieldset-wrapper label {
   transition: all .3s ease-in-out;
   cursor: pointer !important;
   border: 2px solid #383A40;
@@ -2416,8 +2438,8 @@
   box-shadow: 2px 2px 3px 1px rgba(255, 255, 255, 0.15);
 }
 
-#drupal-off-canvas .fieldgroup.bs_input-circles .fieldset-wrapper label:after,
-#layout-builder-modal .fieldgroup.bs_input-circles .fieldset-wrapper label:after {
+#drupal-off-canvas .bs_input-circles .fieldset-wrapper label:after,
+#layout-builder-modal .bs_input-circles .fieldset-wrapper label:after {
   display: table;
   position: absolute;
   top: 3px;
@@ -2430,6 +2452,33 @@
   vertical-align: middle;
   width: 100%;
   height: 100%;
+}
+
+#drupal-off-canvas .bs_input-circles.with-selected-gradient input,
+#layout-builder-modal .bs_input-circles.with-selected-gradient input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+#drupal-off-canvas .bs_input-circles.with-selected-gradient input:checked + label.option:before,
+#layout-builder-modal .bs_input-circles.with-selected-gradient input:checked + label.option:before {
+  transition: all .3s ease-in-out;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  top: 0;
+  left: 0;
+  margin: 1px;
+  content: '';
+  position: absolute;
+  border-radius: 40px;
+  background: linear-gradient(to top left, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.1) 50%, rgba(56, 58, 64, 0.1) 50%, rgba(56, 58, 64, 0) 100%);
 }
 
 #drupal-off-canvas .bs_radio-tabs legend,
@@ -2781,6 +2830,7 @@
   white-space: normal;
   z-index: 1;
   font-size: .875rem;
+  font-weight: normal;
 }
 
 #drupal-off-canvas .bs_tooltip.bs_tooltip-lg,
@@ -2829,33 +2879,6 @@
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0px);
-}
-
-#drupal-off-canvas .bs_input-circles.field-background-color .fieldset-wrapper input,
-#layout-builder-modal .bs_input-circles.field-background-color .fieldset-wrapper input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-#drupal-off-canvas .bs_input-circles.field-background-color .fieldset-wrapper input:checked + label.option:before,
-#layout-builder-modal .bs_input-circles.field-background-color .fieldset-wrapper input:checked + label.option:before {
-  transition: all .3s ease-in-out;
-  width: calc(100% - 2px);
-  height: calc(100% - 2px);
-  top: 0;
-  left: 0;
-  margin: 1px;
-  content: '';
-  position: absolute;
-  border-radius: 40px;
-  background: linear-gradient(to top left, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.1) 50%, rgba(56, 58, 64, 0.1) 50%, rgba(56, 58, 64, 0) 100%);
 }
 
 #drupal-off-canvas .media-library-item,
@@ -3477,63 +3500,63 @@
   color: rgba(56, 58, 64, 0.3);
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border"] + label:after,
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border"]:hover + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border"] + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border"]:hover + label:after {
+#drupal-off-canvas .bs_border--type .fieldset-wrapper > div > div input[value="border"] + label:after,
+#drupal-off-canvas .bs_border--type .fieldset-wrapper > div > div input[value="border"]:hover + label:after,
+#layout-builder-modal .bs_border--type .fieldset-wrapper > div > div input[value="border"] + label:after,
+#layout-builder-modal .bs_border--type .fieldset-wrapper > div > div input[value="border"]:hover + label:after {
   border-color: #ffffff;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border"]:checked + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border"]:checked + label:after {
+#drupal-off-canvas .bs_border--type .fieldset-wrapper > div > div input[value="border"]:checked + label:after,
+#layout-builder-modal .bs_border--type .fieldset-wrapper > div > div input[value="border"]:checked + label:after {
   border-color: #26A5FF;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border_left"] + label:after,
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border_left"]:hover + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border_left"] + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border_left"]:hover + label:after {
+#drupal-off-canvas .bs_border--type .fieldset-wrapper > div > div input[value="border_left"] + label:after,
+#drupal-off-canvas .bs_border--type .fieldset-wrapper > div > div input[value="border_left"]:hover + label:after,
+#layout-builder-modal .bs_border--type .fieldset-wrapper > div > div input[value="border_left"] + label:after,
+#layout-builder-modal .bs_border--type .fieldset-wrapper > div > div input[value="border_left"]:hover + label:after {
   border-left-color: #ffffff;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border_left"]:checked + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border_left"]:checked + label:after {
+#drupal-off-canvas .bs_border--type .fieldset-wrapper > div > div input[value="border_left"]:checked + label:after,
+#layout-builder-modal .bs_border--type .fieldset-wrapper > div > div input[value="border_left"]:checked + label:after {
   border-left-color: #26A5FF;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border_top"] + label:after,
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border_top"]:hover + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border_top"] + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border_top"]:hover + label:after {
+#drupal-off-canvas .bs_border--type .fieldset-wrapper > div > div input[value="border_top"] + label:after,
+#drupal-off-canvas .bs_border--type .fieldset-wrapper > div > div input[value="border_top"]:hover + label:after,
+#layout-builder-modal .bs_border--type .fieldset-wrapper > div > div input[value="border_top"] + label:after,
+#layout-builder-modal .bs_border--type .fieldset-wrapper > div > div input[value="border_top"]:hover + label:after {
   border-top-color: #ffffff;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border_top"]:checked + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border_top"]:checked + label:after {
+#drupal-off-canvas .bs_border--type .fieldset-wrapper > div > div input[value="border_top"]:checked + label:after,
+#layout-builder-modal .bs_border--type .fieldset-wrapper > div > div input[value="border_top"]:checked + label:after {
   border-top-color: #26A5FF;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border_right"] + label:after,
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border_right"]:hover + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border_right"] + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border_right"]:hover + label:after {
+#drupal-off-canvas .bs_border--type .fieldset-wrapper > div > div input[value="border_right"] + label:after,
+#drupal-off-canvas .bs_border--type .fieldset-wrapper > div > div input[value="border_right"]:hover + label:after,
+#layout-builder-modal .bs_border--type .fieldset-wrapper > div > div input[value="border_right"] + label:after,
+#layout-builder-modal .bs_border--type .fieldset-wrapper > div > div input[value="border_right"]:hover + label:after {
   border-right-color: #ffffff;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border_right"]:checked + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border_right"]:checked + label:after {
+#drupal-off-canvas .bs_border--type .fieldset-wrapper > div > div input[value="border_right"]:checked + label:after,
+#layout-builder-modal .bs_border--type .fieldset-wrapper > div > div input[value="border_right"]:checked + label:after {
   border-right-color: #26A5FF;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border_bottom"] + label:after,
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border_bottom"]:hover + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border_bottom"] + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border_bottom"]:hover + label:after {
+#drupal-off-canvas .bs_border--type .fieldset-wrapper > div > div input[value="border_bottom"] + label:after,
+#drupal-off-canvas .bs_border--type .fieldset-wrapper > div > div input[value="border_bottom"]:hover + label:after,
+#layout-builder-modal .bs_border--type .fieldset-wrapper > div > div input[value="border_bottom"] + label:after,
+#layout-builder-modal .bs_border--type .fieldset-wrapper > div > div input[value="border_bottom"]:hover + label:after {
   border-bottom-color: #ffffff;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="border_bottom"]:checked + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="border_bottom"]:checked + label:after {
+#drupal-off-canvas .bs_border--type .fieldset-wrapper > div > div input[value="border_bottom"]:checked + label:after,
+#layout-builder-modal .bs_border--type .fieldset-wrapper > div > div input[value="border_bottom"]:checked + label:after {
   border-bottom-color: #26A5FF;
 }
 
@@ -3598,15 +3621,15 @@
   padding-left: 1rem;
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div {
   position: relative;
   flex: 33%;
   width: 33%;
@@ -3614,8 +3637,8 @@
   padding: 0;
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div input,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div input {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -3627,8 +3650,8 @@
   border: 0;
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div input + label,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div input + label {
   transition: all .3s ease-in-out;
   padding: 8px;
   height: 70px;
@@ -3642,36 +3665,36 @@
   background-color: #e6e6e6;
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label:hover,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label:hover {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div input + label:hover,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div input + label:hover {
   background-color: #b3b3b3;
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label:hover:after,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label:hover:after {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div input + label:hover:after,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div input + label:hover:after {
   border-color: #4d4d4d;
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div input:checked + label,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div input:checked + label {
   color: inherit;
   background-color: #4d4d4d;
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label svg,
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label svg *,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label svg,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label svg * {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div input:checked + label svg,
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div input:checked + label svg *,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div input:checked + label svg,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div input:checked + label svg * {
   color: inherit;
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label:after,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label:after {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div input:checked + label:after,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div input:checked + label:after {
   border-color: #e6e6e6;
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div input + label,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div input + label {
   font-size: 10px;
   font-weight: normal;
   padding: 8px;
@@ -3688,153 +3711,140 @@
   flex-direction: column;
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label:hover,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label:hover {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div input + label:hover,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div input + label:hover {
   background-color: #e6e6e6;
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label .bs_tooltip,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input + label .bs_tooltip {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div input + label .bs_tooltip,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div input + label .bs_tooltip {
   display: none;
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div input:checked + label,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div input:checked + label {
   font-weight: bold;
   color: #26A5FF;
   background-color: #d9d9d9;
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label .input-icon,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div input:checked + label .input-icon {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div input:checked + label .input-icon,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div input:checked + label .input-icon {
   filter: invert(46%) sepia(100%) saturate(313%) hue-rotate(169deg) brightness(91%) contrast(94%);
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon {
-  width: 30px;
-  height: 30px;
-  margin-bottom: 10px;
-  background-repeat: no-repeat;
-}
-
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon._none,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon._none {
-  background-image: url("../../images/plugins/scroll-effects/none.svg");
-}
-
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-up,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-up {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-up,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-up {
   background-image: url("../../images/plugins/scroll-effects/fade-up.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-down,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-down {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-down,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-down {
   background-image: url("../../images/plugins/scroll-effects/fade-down.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-left,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-left {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-left,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-left {
   background-image: url("../../images/plugins/scroll-effects/fade-left.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-right,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-right {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-right,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-right {
   background-image: url("../../images/plugins/scroll-effects/fade-right.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-up-right,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-up-right {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-up-right,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-up-right {
   background-image: url("../../images/plugins/scroll-effects/fade-up-right.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-down-right,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-down-right {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-down-right,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-down-right {
   background-image: url("../../images/plugins/scroll-effects/fade-down-right.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-up-left,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-up-left {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-up-left,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-up-left {
   background-image: url("../../images/plugins/scroll-effects/fade-up-left.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-down-left,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-down-left {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-down-left,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div .input-icon.fade-down-left {
   background-image: url("../../images/plugins/scroll-effects/fade-down-left.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.flip-left,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.flip-left {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div .input-icon.flip-left,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div .input-icon.flip-left {
   background-image: url("../../images/plugins/scroll-effects/flip-left.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.flip-right,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.flip-right {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div .input-icon.flip-right,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div .input-icon.flip-right {
   background-image: url("../../images/plugins/scroll-effects/flip-right.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.flip-up,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.flip-up {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div .input-icon.flip-up,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div .input-icon.flip-up {
   background-image: url("../../images/plugins/scroll-effects/flip-up.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.flip-down,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.flip-down {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div .input-icon.flip-down,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div .input-icon.flip-down {
   background-image: url("../../images/plugins/scroll-effects/flip-down.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in {
   background-image: url("../../images/plugins/scroll-effects/zoom-in.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in-up,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in-up {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in-up,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in-up {
   background-image: url("../../images/plugins/scroll-effects/zoom-in-up.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in-down,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in-down {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in-down,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in-down {
   background-image: url("../../images/plugins/scroll-effects/zoom-in-down.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in-left,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in-left {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in-left,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in-left {
   background-image: url("../../images/plugins/scroll-effects/zoom-in-left.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in-right,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in-right {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in-right,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-in-right {
   background-image: url("../../images/plugins/scroll-effects/zoom-in-right.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out {
   background-image: url("../../images/plugins/scroll-effects/zoom-out.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out-up,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out-up {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out-up,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out-up {
   background-image: url("../../images/plugins/scroll-effects/zoom-out-up.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out-down,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out-down {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out-down,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out-down {
   background-image: url("../../images/plugins/scroll-effects/zoom-out-down.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out-left,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out-left {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out-left,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out-left {
   background-image: url("../../images/plugins/scroll-effects/zoom-out-left.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out-right,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out-right {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out-right,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div .input-icon.zoom-out-right {
   background-image: url("../../images/plugins/scroll-effects/zoom-out-right.svg");
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div label,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div label {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div label,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div label {
   width: 100%;
   display: flex;
   align-items: center;
@@ -3845,14 +3855,14 @@
   height: 75px;
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div label + input,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div label + input {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div label + input,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div label + input {
   opacity: 0;
   position: absolute;
 }
 
-#drupal-off-canvas .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div label.active,
-#layout-builder-modal .fieldgroup.field-scroll-effects .fieldset-wrapper > div > div label.active {
+#drupal-off-canvas .field-scroll-effects .fieldset-wrapper > div > div label.active,
+#layout-builder-modal .field-scroll-effects .fieldset-wrapper > div > div label.active {
   color: #ffffff;
   background-color: #383A40;
 }
@@ -3969,119 +3979,119 @@
   box-shadow: 0 0 0 1.5rem #7FB48A;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding"] + label:after,
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding"]:hover + label:after, #drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin"] + label:after,
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin"]:hover + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding"] + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding"]:hover + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin"] + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin"]:hover + label:after {
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding"] + label:after,
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding"]:hover + label:after, #drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin"] + label:after,
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding"] + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin"] + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin"]:hover + label:after {
   border-color: #ffffff;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding"]:checked + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding"]:checked + label:after {
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding"]:checked + label:after {
   border-color: #7FB48A;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin"]:checked + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin"]:checked + label:after {
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin"]:checked + label:after {
   border-color: #F1C666;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_left"] + label:after,
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_left"]:hover + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_left"] + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_left"]:hover + label:after {
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding_left"] + label:after,
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding_left"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding_left"] + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding_left"]:hover + label:after {
   border-left-color: #ffffff;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_left"]:checked + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_left"]:checked + label:after {
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding_left"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding_left"]:checked + label:after {
   border-left-color: #7FB48A;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_left"] + label:after,
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_left"]:hover + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_left"] + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_left"]:hover + label:after {
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin_left"] + label:after,
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin_left"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin_left"] + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin_left"]:hover + label:after {
   border-left-color: #ffffff;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_left"]:checked + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_left"]:checked + label:after {
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin_left"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin_left"]:checked + label:after {
   border-left-color: #F1C666;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_top"] + label:after,
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_top"]:hover + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_top"] + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_top"]:hover + label:after {
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding_top"] + label:after,
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding_top"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding_top"] + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding_top"]:hover + label:after {
   border-top-color: #ffffff;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_top"]:checked + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_top"]:checked + label:after {
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding_top"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding_top"]:checked + label:after {
   border-top-color: #7FB48A;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_top"] + label:after,
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_top"]:hover + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_top"] + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_top"]:hover + label:after {
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin_top"] + label:after,
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin_top"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin_top"] + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin_top"]:hover + label:after {
   border-top-color: #ffffff;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_top"]:checked + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_top"]:checked + label:after {
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin_top"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin_top"]:checked + label:after {
   border-top-color: #F1C666;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_right"] + label:after,
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_right"]:hover + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_right"] + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_right"]:hover + label:after {
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding_right"] + label:after,
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding_right"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding_right"] + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding_right"]:hover + label:after {
   border-right-color: #ffffff;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_right"]:checked + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_right"]:checked + label:after {
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding_right"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding_right"]:checked + label:after {
   border-right-color: #7FB48A;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_right"] + label:after,
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_right"]:hover + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_right"] + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_right"]:hover + label:after {
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin_right"] + label:after,
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin_right"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin_right"] + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin_right"]:hover + label:after {
   border-right-color: #ffffff;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_right"]:checked + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_right"]:checked + label:after {
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin_right"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin_right"]:checked + label:after {
   border-right-color: #F1C666;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_bottom"] + label:after,
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_bottom"]:hover + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_bottom"] + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_bottom"]:hover + label:after {
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding_bottom"] + label:after,
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding_bottom"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding_bottom"] + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding_bottom"]:hover + label:after {
   border-bottom-color: #ffffff;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_bottom"]:checked + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="padding_bottom"]:checked + label:after {
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding_bottom"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="padding_bottom"]:checked + label:after {
   border-bottom-color: #7FB48A;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_bottom"] + label:after,
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_bottom"]:hover + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_bottom"] + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_bottom"]:hover + label:after {
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin_bottom"] + label:after,
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin_bottom"]:hover + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin_bottom"] + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin_bottom"]:hover + label:after {
   border-bottom-color: #ffffff;
 }
 
-#drupal-off-canvas .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_bottom"]:checked + label:after,
-#layout-builder-modal .bs_input-boxes .fieldset-wrapper > div > div input[value="margin_bottom"]:checked + label:after {
+#drupal-off-canvas .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin_bottom"]:checked + label:after,
+#layout-builder-modal .bs_input-boxes--box-model .fieldset-wrapper > div > div input[value="margin_bottom"]:checked + label:after {
   border-bottom-color: #F1C666;
 }
 
@@ -4145,29 +4155,33 @@
   background: #f5d795;
 }
 
-#drupal-off-canvas .bs_input-circles.field-background-color .fieldset-wrapper input,
-#layout-builder-modal .bs_input-circles.field-background-color .fieldset-wrapper input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+#drupal-off-canvas .field-text-alignment .fieldset-wrapper > div > div input + label,
+#layout-builder-modal .field-text-alignment .fieldset-wrapper > div > div input + label {
+  font-size: 0;
+  text-indent: -999em;
 }
 
-#drupal-off-canvas .bs_input-circles.field-background-color .fieldset-wrapper input:checked + label.option:before,
-#layout-builder-modal .bs_input-circles.field-background-color .fieldset-wrapper input:checked + label.option:before {
-  transition: all .3s ease-in-out;
-  width: calc(100% - 2px);
-  height: calc(100% - 2px);
-  top: 0;
-  left: 0;
-  margin: 1px;
-  content: '';
-  position: absolute;
-  border-radius: 40px;
-  background: linear-gradient(to top left, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.1) 50%, rgba(56, 58, 64, 0.1) 50%, rgba(56, 58, 64, 0) 100%);
+#drupal-off-canvas .field-text-alignment .fieldset-wrapper > div > div input + label .input-icon,
+#layout-builder-modal .field-text-alignment .fieldset-wrapper > div > div input + label .input-icon {
+  margin-bottom: 0;
+}
+
+#drupal-off-canvas .field-text-alignment .fieldset-wrapper > div > div input + label .input-icon[class*="left"],
+#layout-builder-modal .field-text-alignment .fieldset-wrapper > div > div input + label .input-icon[class*="left"] {
+  background-image: url("../../images/plugins/text-alignment/text-left.svg");
+}
+
+#drupal-off-canvas .field-text-alignment .fieldset-wrapper > div > div input + label .input-icon[class*="center"],
+#layout-builder-modal .field-text-alignment .fieldset-wrapper > div > div input + label .input-icon[class*="center"] {
+  background-image: url("../../images/plugins/text-alignment/text-center.svg");
+}
+
+#drupal-off-canvas .field-text-alignment .fieldset-wrapper > div > div input + label .input-icon[class*="right"],
+#layout-builder-modal .field-text-alignment .fieldset-wrapper > div > div input + label .input-icon[class*="right"] {
+  background-image: url("../../images/plugins/text-alignment/text-right.svg");
+}
+
+#drupal-off-canvas .field-text-alignment .fieldset-wrapper > div > div input + label .input-icon[class*="justify"],
+#layout-builder-modal .field-text-alignment .fieldset-wrapper > div > div input + label .input-icon[class*="justify"] {
+  background-image: url("../../images/plugins/text-alignment/text-justify.svg");
 }
