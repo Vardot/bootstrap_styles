@@ -6,7 +6,7 @@
 (function ($, _, Drupal, drupalSettings) {
   "use strict";
   
-  // Configure Section.
+  // Background color.
   Drupal.behaviors.backgroundColorLayoutBuilderForm = {
     attach: function (context) {
 

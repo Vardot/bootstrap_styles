@@ -133,6 +133,8 @@ plugin.border.layout_builder_form:
   css:
     theme:
       css/bs_example_classes/border-classes.css: { }
+  js:
+    js/plugins/border/layout-builder-form.js: { }
 
 plugin.border.build:
   css:
