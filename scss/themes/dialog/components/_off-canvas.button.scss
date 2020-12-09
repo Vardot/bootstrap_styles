@@ -24,6 +24,7 @@ input[type="submit"].button {
   font-weight: normal;
   border: 0;
   width: 100%;
+  min-width: auto;
 
   &:hover,
   &:focus,

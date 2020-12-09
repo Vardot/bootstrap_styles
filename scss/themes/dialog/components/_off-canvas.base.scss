@@ -3,14 +3,6 @@
  * Set base styles for the off-canvas dialog.
  */
 
-/* Set some global attributes. */
-*,
-*:not(div) {
-  color: $panel_text_color;
-  background: unset;
-  font-family: inherit;
-}
-
 /* Generic elements. */
 a,
 .link {

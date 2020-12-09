@@ -61,6 +61,10 @@ label {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
+
+  option {
+    color: $black;
+  }
 }
 
 /* Reduce contrast for fields against dark background. */
