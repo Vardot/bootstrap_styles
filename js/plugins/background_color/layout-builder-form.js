@@ -14,12 +14,10 @@
         if($(this).val() != '_none') {
           $(this).next('label').addClass($(this).val());
 
-          // Add a contrast class for our "selected" checkmarks.
+          // Set a contrast class so we can see our checkmarks on light vs. dark backgrounds.s.
           var bgColor = $(this).next('label').css('background-color');
           var bgColorHex = rgb2hex(bgColor);
           var bgColorContrast = getContrast(bgColorHex);
-
-          // Add bg class to our label so we get a little preview, then set our yiq() contrast class for selected state.
           $(this).next('label').addClass('bs_yiq-' + bgColorContrast);
         }
       });
