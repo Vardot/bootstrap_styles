@@ -8,7 +8,6 @@ layout_builder_form_style:
     js/components/inputs.js: { }
   dependencies:
     - bootstrap_styles/themes-overrides
-    - bootstrap_styles/bs_input_circles
 
 # Offcanvas Font
 offcanvas-font:
