@@ -10,7 +10,10 @@
   Drupal.behaviors.bootstrapStylesInputCircles = {
     attach: function (context) {
       $(".bs_input-circles input:radio", context).once('bs_input-circles').each(function () {
+
+        // Add the [key] class from the backend to our forms input element (preview our colour).
         $(this).next('label').addClass($(this).val());
+
       });
     }
   };

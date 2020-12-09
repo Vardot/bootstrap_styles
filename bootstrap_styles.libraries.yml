@@ -8,6 +8,7 @@ layout_builder_form_style:
     js/components/inputs.js: { }
   dependencies:
     - bootstrap_styles/themes-overrides
+    - bootstrap_styles/bs_input_circles
 
 # Offcanvas Font
 offcanvas-font:
@@ -29,6 +30,11 @@ layout_builder_admin_form_style:
   css:
     theme:
       css/admin-general-styles.css: { }
+
+# Base components
+bs_yiq:
+  js:
+    js/components/yiq.js: { }
 
 # Themes.
 # Light
@@ -68,6 +74,8 @@ plugin.background_color.layout_builder_form:
       css/bs_example_classes/background-color-classes.css: { }
   js:
     js/plugins/background_color/layout-builder-form.js: { }
+  dependencies:
+    - bootstrap_styles/bs_yiq
 
 plugin.background_color.build:
   css:
@@ -89,6 +97,8 @@ plugin.text_color.layout_builder_form:
       css/bs_example_classes/text-color-classes.css: { }
   js:
     js/plugins/text_color/layout-builder-form.js: { }
+  dependencies:
+    - bootstrap_styles/bs_yiq
 
 plugin.text_color.build:
   css:
