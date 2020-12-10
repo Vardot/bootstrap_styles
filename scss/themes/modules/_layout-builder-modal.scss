@@ -1,27 +1,35 @@
 #layout-builder-modal {
   color: $panel_text_color;
   background: $panel_bg_color;
-  padding: 0;
+  padding: 1.5rem 2rem;
   border-radius: 0 0 $border_radius $border_radius;
 
   @import "../dialog/components/*";
 
-  .blb_tab-content {
-    padding: 0 2rem;
-  }
-
   // Update Button.
   #bs_ui  {
+    margin: -1.5rem -2rem;
+
     #bs_nav-tabs {
       margin: 0 -40px 30px -40px;
       width: calc(100% + 40px);
     }
 
-    ~ button.button,
-    ~ input[type="submit"].button {
-      float: right;
-      margin: 1.5rem 2rem;
-      width: auto !important;
+    .blb_tab-content {
+      padding: 0 2rem;
+    }
+  }
+
+  // Primary modal action button.
+  form > {
+    #bs_ui,
+    .form-wrapper {
+      ~ button.button,
+      ~ input[type="submit"].button {
+        float: right;
+        margin: 1.5rem 0;
+        width: auto !important;
+      }
     }
   }
 }

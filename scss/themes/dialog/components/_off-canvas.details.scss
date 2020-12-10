@@ -68,14 +68,17 @@ summary {
   }
 }
 
-summary:hover,
-summary:focus {
-  color: $summary_link_color_hover;
-  background-color: $summary_bg_color_hover;
+summary {
+  &[aria-expanded='true'],
+  &:hover,
+  &:focus {
+    color: $summary_link_color_hover;
+    background-color: $summary_bg_color_hover;
 
-  &:after {
-    border-right-color: $summary_link_color_hover;
-    border-bottom-color: $summary_link_color_hover;
+    &:after {
+      border-right-color: $summary_link_color_hover;
+      border-bottom-color: $summary_link_color_hover;
+    }
   }
 }
 

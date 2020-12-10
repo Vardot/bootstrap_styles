@@ -53,17 +53,22 @@ function bootstrap_styles_page_attachments_alter(array &$page) {
   $settings = \Drupal::config('bootstrap_styles.settings');
   $entity_types = array_keys(\Drupal::entityTypeManager()->getDefinitions());
   $layout_routes = [];
+
   foreach ($entity_types as $entity_type_id) {
     $layout_routes[] = 'layout_builder.defaults.node.view';
     $layout_routes[] = 'layout_builder.overrides.' . $entity_type_id . '.view';
     // layout_library module.
     $layout_routes[] = 'layout_builder.layout_library.' . $entity_type_id . '.view';
   }
+
   $route_match = \Drupal::routeMatch();
   // Attach the libraries only in layout route.
   if (in_array($route_match->getRouteName(), $layout_routes)) {
+    // Attach the layout builder form styles.
+    $page['#attached']['library'][] = 'bootstrap_styles/layout_builder_form_style';
     // Attach the font.
     $page['#attached']['library'][] = 'bootstrap_styles/offcanvas-font';
+
     if ($settings->get('layout_builder_theme') && $settings->get('layout_builder_theme') == 'light') {
       $page['#attached']['library'][] = 'bootstrap_styles/theme.light';
     }

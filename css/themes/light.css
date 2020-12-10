@@ -1,7 +1,7 @@
 #layout-builder-modal {
   color: #383A40;
   background: #ffffff;
-  padding: 0;
+  padding: 1.5rem 2rem;
   border-radius: 0 0 8px 8px;
   /**
  * @file
@@ -176,6 +176,7 @@
   border-radius: 8px;
   background: #26A5FF;
   font-weight: normal;
+  font-family: inherit;
   border: 0;
   width: 100%;
   min-width: auto;
@@ -289,14 +290,12 @@
   display: none;
 }
 
-#layout-builder-modal summary:hover,
-#layout-builder-modal summary:focus {
+#layout-builder-modal summary[aria-expanded='true'], #layout-builder-modal summary:hover, #layout-builder-modal summary:focus {
   color: #26A5FF;
   background-color: rgba(56, 58, 64, 0.14);
 }
 
-#layout-builder-modal summary:hover:after,
-#layout-builder-modal summary:focus:after {
+#layout-builder-modal summary[aria-expanded='true']:after, #layout-builder-modal summary:hover:after, #layout-builder-modal summary:focus:after {
   border-right-color: #26A5FF;
   border-bottom-color: #26A5FF;
 }
@@ -896,8 +895,8 @@
   padding: 0 10px 0 0;
 }
 
-#layout-builder-modal .blb_tab-content {
-  padding: 0 2rem;
+#layout-builder-modal #bs_ui {
+  margin: -1.5rem -2rem;
 }
 
 #layout-builder-modal #bs_ui #bs_nav-tabs {
@@ -905,10 +904,16 @@
   width: calc(100% + 40px);
 }
 
-#layout-builder-modal #bs_ui ~ button.button,
-#layout-builder-modal #bs_ui ~ input[type="submit"].button {
+#layout-builder-modal #bs_ui .blb_tab-content {
+  padding: 0 2rem;
+}
+
+#layout-builder-modal form > #bs_ui ~ button.button,
+#layout-builder-modal form > #bs_ui ~ input[type="submit"].button,
+#layout-builder-modal form > .form-wrapper ~ button.button,
+#layout-builder-modal form > .form-wrapper ~ input[type="submit"].button {
   float: right;
-  margin: 1.5rem 2rem;
+  margin: 1.5rem 0;
   width: auto !important;
 }
 
@@ -1132,6 +1137,7 @@
   border-radius: 8px;
   background: #26A5FF;
   font-weight: normal;
+  font-family: inherit;
   border: 0;
   width: 100%;
   min-width: auto;
@@ -1245,14 +1251,12 @@
   display: none;
 }
 
-#drupal-off-canvas summary:hover,
-#drupal-off-canvas summary:focus {
+#drupal-off-canvas summary[aria-expanded='true'], #drupal-off-canvas summary:hover, #drupal-off-canvas summary:focus {
   color: #26A5FF;
   background-color: rgba(56, 58, 64, 0.14);
 }
 
-#drupal-off-canvas summary:hover:after,
-#drupal-off-canvas summary:focus:after {
+#drupal-off-canvas summary[aria-expanded='true']:after, #drupal-off-canvas summary:hover:after, #drupal-off-canvas summary:focus:after {
   border-right-color: #26A5FF;
   border-bottom-color: #26A5FF;
 }
