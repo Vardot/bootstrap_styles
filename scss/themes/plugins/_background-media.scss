@@ -19,13 +19,15 @@
     z-index: 1;
     top: 10px;
     right: 10px;
-    width: 2rem;
-    height: 2rem;
-    margin: 5px;
+    width: 1.5rem;
+    min-width: auto;
+    max-width: 1.5rem;
+    height: 1.5rem;
+    margin: .5rem;
     padding: 0;
     color: transparent;
     font-size: 0;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
     background: #{$close_circle_icon} center center no-repeat $panel_bg_color;
     background-size: contain;
     text-shadow: none;
@@ -35,7 +37,6 @@
     &:focus {
       background: #{$close_circle_icon} center center no-repeat $panel_bg_color;
       background-size: contain;
-      opacity: .7;
     }
 
     &.button {
