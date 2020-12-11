@@ -1,9 +1,9 @@
 .media-library-item {
-  width: 100%;
+  flex: 1 1 auto;
   position: relative;
   justify-content: center;
   vertical-align: top;
-  margin: 0 auto;
+  min-width: 25%;
   background: rgba($panel_text_color, .1);
   border: 1px solid $box_input_hover_border;
   transition: border-color 0.2s, color 0.2s, background 0.2s;
@@ -61,10 +61,6 @@
   flex-wrap: wrap;
 }
 
-.media-library-selection {
-  margin: 1em 0;
-}
-
 .media-library-item__preview {
   padding-bottom: 34px;
 }
@@ -105,6 +101,7 @@
 
 .media-library-selection {
   margin: 0;
+  display: flex;
 }
 
 .media-library-item--grid .field--name-thumbnail {

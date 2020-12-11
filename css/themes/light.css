@@ -2922,11 +2922,11 @@
 
 #drupal-off-canvas .media-library-item,
 #layout-builder-modal .media-library-item {
-  width: 100%;
+  flex: 1 1 auto;
   position: relative;
   justify-content: center;
   vertical-align: top;
-  margin: 0 auto;
+  min-width: 25%;
   background: rgba(56, 58, 64, 0.1);
   border: 1px solid #4d4d4d;
   transition: border-color 0.2s, color 0.2s, background 0.2s;
@@ -2996,11 +2996,6 @@
   flex-wrap: wrap;
 }
 
-#drupal-off-canvas .media-library-selection,
-#layout-builder-modal .media-library-selection {
-  margin: 1em 0;
-}
-
 #drupal-off-canvas .media-library-item__preview,
 #layout-builder-modal .media-library-item__preview {
   padding-bottom: 34px;
@@ -3048,6 +3043,7 @@
 #drupal-off-canvas .media-library-selection,
 #layout-builder-modal .media-library-selection {
   margin: 0;
+  display: flex;
 }
 
 #drupal-off-canvas .media-library-item--grid .field--name-thumbnail,
