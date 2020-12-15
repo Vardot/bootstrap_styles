@@ -76,6 +76,8 @@
 #drupal-off-canvas .bs-group-title,
 #layout-builder-modal .bs-group-title {
   margin-left: 15px;
+  display: flex;
+  align-items: center;
 }
 
 #drupal-off-canvas .sr-only,

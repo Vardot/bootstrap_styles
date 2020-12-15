@@ -56,7 +56,7 @@
   li {
     display: flex;
     padding: 0 0.5rem 1rem 0.5rem;
-    width: 33%;
+    width: 50%;
   }
 }
 
@@ -64,7 +64,7 @@
   font-size: .75rem;
   padding: 11px !important;
   color: $panel_text_color !important;
-  background: $box_input_bg  !important;
+  background: $box_input_bg !important;
   margin: 0 !important;
   display: flex !important;
   flex-direction: column;
@@ -73,18 +73,15 @@
   justify-content: center;
   border-radius: 0;
   min-height: 80px;
-
-  &:before {
-    content: '';
-    //display: block;
-    display: none;
-    width: 30px;
-    height: 30px;
-    margin-bottom: .5rem;
-    border: 1px solid red;
-  }
+  border-radius: $border-radius;
+  border: 2px solid transparent !important;
 
   &:hover {
-    background: $box_input_bg_hover !important;
+    border: 2px solid $panel_link_color !important;
+  }
+
+  &:focus {
+    color: $panel_bg_color !important;
+    background-color: $panel_link_color !important;
   }
 }

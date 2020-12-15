@@ -29,6 +29,7 @@ summary,
 
 .details-wrapper {
   padding: 1rem;
+  display: block;
 }
 
 summary {
@@ -42,11 +43,21 @@ summary {
   display: flex;
   align-items: center;
   background-color: $summary_bg_color;
+  cursor: pointer;
+
+  * {
+    cursor: pointer;
+  }
 
   img,
   svg {
     margin-right: 1rem;
     width: 24px;
+
+    g,
+    path {
+      fill: $panel_text_color;
+    }
   }
 
   &:after {
