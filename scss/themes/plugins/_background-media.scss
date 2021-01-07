@@ -177,14 +177,16 @@
 .bs_background--options,
 .bs_background--attachment,
 .bs_background--size,
-.bs_background--type {
+.bs_background--type,
+.bs_responsive {
   legend {
     margin-bottom: 10px;
   }
 }
 
 // Background type
-.bs_background--type {
+.bs_background--type,
+.bs_responsive {
   .fieldset-wrapper > div {
     display: flex;
 
