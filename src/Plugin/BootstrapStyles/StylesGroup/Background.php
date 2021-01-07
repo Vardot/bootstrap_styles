@@ -36,6 +36,26 @@ class Background extends StylesGroupPluginBase {
    * {@inheritdoc}
    */
   public function buildStyleFormElements(array &$form, FormStateInterface $form_state, $storage) {
+    // Responsive.
+    $form['background_responsive'] = [
+      '#type' => 'radios',
+      '#options' => [
+        'all' => $this->t('All'),
+        'desktop' => $this->t('Desktop'),
+        'laptop' => $this->t('Laptop'),
+        'tablet' => $this->t('Tablet'),
+        'mobile' => $this->t('Mobile'),
+      ],
+      '#title' => $this->t('Responsive'),
+      '#title_display' => 'invisible',
+      '#default_value' => 'all',
+      '#validated' => TRUE,
+      '#attributes' => [
+        'class' => ['bs_col--full', 'bs_responsive'],
+      ],
+    ];
+    // End responsive.
+
     $form['background_type'] = [
       '#type' => 'radios',
       '#options' => [],
