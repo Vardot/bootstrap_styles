@@ -34,6 +34,21 @@ class BackgroundColor extends StylePluginBase {
       '#rows' => 5,
     ];
 
+    // Responsive.
+    $breakpoints = [
+      'desktop',
+      'laptop',
+      'tablet',
+      'mobile',
+    ];
+
+    foreach ($breakpoints as $breakpoint) {
+      $form['background']['background_colors_' . $breakpoint] = $form['background']['background_colors'];
+      $form['background']['background_colors_' . $breakpoint]['#title'] .= ' ' . $breakpoint;
+      $form['background']['background_colors_' . $breakpoint]['#default_value'] = $config->get('background_colors_' . $breakpoint);
+    }
+    // End responsive.
+
     return $form;
   }
 
@@ -44,6 +59,21 @@ class BackgroundColor extends StylePluginBase {
     $this->config()
       ->set('background_colors', $form_state->getValue('background_colors'))
       ->save();
+
+    // Responsive.
+    $breakpoints = [
+      'desktop',
+      'laptop',
+      'tablet',
+      'mobile',
+    ];
+
+    foreach ($breakpoints as $breakpoint) {
+      $this->config()
+        ->set('background_colors_' . $breakpoint, $form_state->getValue('background_colors_' . $breakpoint))
+        ->save();
+    }
+    // End responsive.
   }
 
   /**
@@ -70,6 +100,25 @@ class BackgroundColor extends StylePluginBase {
       ],
     ];
 
+    // Responsive.
+    $breakpoints = [
+      'desktop',
+      'laptop',
+      'tablet',
+      'mobile',
+    ];
+
+    foreach ($breakpoints as $breakpoint) {
+      $form['background_color_' . $breakpoint] = $form['background_color'];
+      $form['background_color_' . $breakpoint]['#options'] = $this->getStyleOptions('background_colors_' . $breakpoint);
+
+      $form['background_color_' . $breakpoint]['#default_value'] = $storage['background_color_' . $breakpoint]['class'] ?? NULL;
+      $form['background_color_' . $breakpoint]['#states']['visible'][':input.bs_responsive']['value'] = $breakpoint;
+      // Hide the generic one.
+      $form['background_color']['#states']['visible'][':input.bs_responsive']['value'] = 'all';
+    }
+    // End Responsive.
+
     // Attach the Layout Builder form style for this plugin.
     $form['#attached']['library'][] = 'bootstrap_styles/plugin.background_color.layout_builder_form';
 
@@ -80,11 +129,27 @@ class BackgroundColor extends StylePluginBase {
    * {@inheritdoc}
    */
   public function submitStyleFormElements(array $group_elements) {
-    return [
+    $storage = [
       'background_color' => [
         'class' => $group_elements['background_color'],
       ],
     ];
+
+    // Responsive.
+    $breakpoints = [
+      'desktop',
+      'laptop',
+      'tablet',
+      'mobile',
+    ];
+
+    foreach ($breakpoints as $breakpoint) {
+      $storage['background_color_' . $breakpoint] = [
+        'class' => $group_elements['background_color_' . $breakpoint],
+      ];
+    }
+    // End Responsive.
+    return $storage;
   }
 
   /**
@@ -97,6 +162,22 @@ class BackgroundColor extends StylePluginBase {
 
     if ($background_type != 'video') {
       $classes[] = $storage['background_color']['class'];
+
+      // Responsive.
+      $breakpoints = [
+        'desktop',
+        'laptop',
+        'tablet',
+        'mobile',
+      ];
+
+      foreach ($breakpoints as $breakpoint) {
+        if (isset($storage['background_color_' . $breakpoint]['class'])) {
+          $classes[] = $storage['background_color_' . $breakpoint]['class'];
+        }
+      }
+      // End Responsive.
+
       // Add the classes to the build.
       $build = $this->addClassesToBuild($build, $classes, $theme_wrapper);
     }
