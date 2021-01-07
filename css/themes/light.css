@@ -3130,20 +3130,26 @@
 #drupal-off-canvas .bs_background--attachment legend,
 #drupal-off-canvas .bs_background--size legend,
 #drupal-off-canvas .bs_background--type legend,
+#drupal-off-canvas .bs_responsive legend,
 #layout-builder-modal .bs_background--options legend,
 #layout-builder-modal .bs_background--attachment legend,
 #layout-builder-modal .bs_background--size legend,
-#layout-builder-modal .bs_background--type legend {
+#layout-builder-modal .bs_background--type legend,
+#layout-builder-modal .bs_responsive legend {
   margin-bottom: 10px;
 }
 
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div,
-#layout-builder-modal .bs_background--type .fieldset-wrapper > div {
+#drupal-off-canvas .bs_responsive .fieldset-wrapper > div,
+#layout-builder-modal .bs_background--type .fieldset-wrapper > div,
+#layout-builder-modal .bs_responsive .fieldset-wrapper > div {
   display: flex;
 }
 
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div,
-#layout-builder-modal .bs_background--type .fieldset-wrapper > div > div {
+#drupal-off-canvas .bs_responsive .fieldset-wrapper > div > div,
+#layout-builder-modal .bs_background--type .fieldset-wrapper > div > div,
+#layout-builder-modal .bs_responsive .fieldset-wrapper > div > div {
   position: relative;
   flex: 100%;
   width: 100%;
@@ -3152,7 +3158,9 @@
 }
 
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div input,
-#layout-builder-modal .bs_background--type .fieldset-wrapper > div > div input {
+#drupal-off-canvas .bs_responsive .fieldset-wrapper > div > div input,
+#layout-builder-modal .bs_background--type .fieldset-wrapper > div > div input,
+#layout-builder-modal .bs_responsive .fieldset-wrapper > div > div input {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -3165,7 +3173,9 @@
 }
 
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div input + label,
-#layout-builder-modal .bs_background--type .fieldset-wrapper > div > div input + label {
+#drupal-off-canvas .bs_responsive .fieldset-wrapper > div > div input + label,
+#layout-builder-modal .bs_background--type .fieldset-wrapper > div > div input + label,
+#layout-builder-modal .bs_responsive .fieldset-wrapper > div > div input + label {
   transition: all .3s ease-in-out;
   padding: 8px;
   height: 42px;
@@ -3180,30 +3190,42 @@
 }
 
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div input + label:hover,
-#layout-builder-modal .bs_background--type .fieldset-wrapper > div > div input + label:hover {
+#drupal-off-canvas .bs_responsive .fieldset-wrapper > div > div input + label:hover,
+#layout-builder-modal .bs_background--type .fieldset-wrapper > div > div input + label:hover,
+#layout-builder-modal .bs_responsive .fieldset-wrapper > div > div input + label:hover {
   background-color: #b3b3b3;
 }
 
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div input + label:hover:after,
-#layout-builder-modal .bs_background--type .fieldset-wrapper > div > div input + label:hover:after {
+#drupal-off-canvas .bs_responsive .fieldset-wrapper > div > div input + label:hover:after,
+#layout-builder-modal .bs_background--type .fieldset-wrapper > div > div input + label:hover:after,
+#layout-builder-modal .bs_responsive .fieldset-wrapper > div > div input + label:hover:after {
   border-color: #4d4d4d;
 }
 
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div input:checked + label,
-#layout-builder-modal .bs_background--type .fieldset-wrapper > div > div input:checked + label {
+#drupal-off-canvas .bs_responsive .fieldset-wrapper > div > div input:checked + label,
+#layout-builder-modal .bs_background--type .fieldset-wrapper > div > div input:checked + label,
+#layout-builder-modal .bs_responsive .fieldset-wrapper > div > div input:checked + label {
   color: #ffffff;
   background-color: #26A5FF;
 }
 
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div input:checked + label svg,
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div input:checked + label svg *,
+#drupal-off-canvas .bs_responsive .fieldset-wrapper > div > div input:checked + label svg,
+#drupal-off-canvas .bs_responsive .fieldset-wrapper > div > div input:checked + label svg *,
 #layout-builder-modal .bs_background--type .fieldset-wrapper > div > div input:checked + label svg,
-#layout-builder-modal .bs_background--type .fieldset-wrapper > div > div input:checked + label svg * {
+#layout-builder-modal .bs_background--type .fieldset-wrapper > div > div input:checked + label svg *,
+#layout-builder-modal .bs_responsive .fieldset-wrapper > div > div input:checked + label svg,
+#layout-builder-modal .bs_responsive .fieldset-wrapper > div > div input:checked + label svg * {
   color: #ffffff;
 }
 
 #drupal-off-canvas .bs_background--type .fieldset-wrapper > div > div input:checked + label:after,
-#layout-builder-modal .bs_background--type .fieldset-wrapper > div > div input:checked + label:after {
+#drupal-off-canvas .bs_responsive .fieldset-wrapper > div > div input:checked + label:after,
+#layout-builder-modal .bs_background--type .fieldset-wrapper > div > div input:checked + label:after,
+#layout-builder-modal .bs_responsive .fieldset-wrapper > div > div input:checked + label:after {
   border-color: #e6e6e6;
 }
 
