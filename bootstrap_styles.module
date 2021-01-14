@@ -83,14 +83,11 @@ function bootstrap_styles_page_attachments_alter(array &$page) {
  * Implements hook_theme_suggestions_alter().
  */
 function bootstrap_styles_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
-  if (
-    isset($variables['element'])
-    && isset($variables['element']['#array_parents'])
-    && in_array('ui', $variables['element']['#array_parents'])
-    && in_array('tab_content', $variables['element']['#array_parents'])
-    && (in_array('appearance', $variables['element']['#array_parents']) || in_array('layout_settings', $variables['element']['#array_parents']))
-  ) {
+  $parents = $variables['element']['#array_parents'] ?? FALSE;
+  $bs_parents = ['ui', 'tab_content', 'appearance', 'layout_settings'];
+
+  // UI/Tab content are expected, and one of appearance or layout settings.
+  if ($parents && count(array_intersect($bs_parents, $parents)) >= 3) {
     $suggestions[] = $hook . '__bs';
-    return $suggestions;
   }
 }
