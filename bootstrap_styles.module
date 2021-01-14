@@ -55,7 +55,7 @@ function bootstrap_styles_page_attachments_alter(array &$page) {
   $layout_routes = [];
 
   foreach ($entity_types as $entity_type_id) {
-    $layout_routes[] = 'layout_builder.defaults.node.view';
+    $layout_routes[] = 'layout_builder.defaults.' . $entity_type_id . '.view';
     $layout_routes[] = 'layout_builder.overrides.' . $entity_type_id . '.view';
     // layout_library module.
     $layout_routes[] = 'layout_builder.layout_library.' . $entity_type_id . '.view';
