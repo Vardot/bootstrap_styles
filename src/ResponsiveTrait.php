@@ -18,11 +18,39 @@ trait ResponsiveTrait {
    */
   protected function getBreakpoints() {
     return [
-      'desktop' => 'Desktop',
-      'laptop' => 'Laptop',
-      'tablet' => 'Tablet',
-      'mobile' => 'Mobile',
+      'desktop' => $this->t('Desktop'),
+      'laptop' => $this->t('Laptop'),
+      'tablet' => $this->t('Tablet'),
+      'mobile' => $this->t('Mobile'),
     ];
+  }
+
+  /**
+   * Build the breakpoints style form elements.
+   *
+   * @param array $form
+   *   An associative array containing the structure of the form.
+   * @param string $group_name
+   *   The name of group that we like to add responsive to its plugins.
+   */
+  protected function buildBreakpointsFields(array &$form, $group_name) {
+    $form[$group_name . '_background_responsive'] = [
+      '#type' => 'radios',
+      '#options' => [
+        'all' => $this->t('All'),
+      ],
+      '#title' => $this->t('Responsive'),
+      '#title_display' => 'invisible',
+      '#default_value' => 'all',
+      '#validated' => TRUE,
+      '#attributes' => [
+        'class' => ['bs_col--full', 'bs_responsive'],
+      ],
+    ];
+    // Loop through the breakpoints.
+    foreach ($this->getBreakpoints() as $breakpoint_key => $breakpoint_value) {
+      $form[$group_name . '_background_responsive']['#options'][$breakpoint_key] = $breakpoint_value;
+    }
   }
 
   /**
@@ -87,8 +115,10 @@ trait ResponsiveTrait {
    *   An associative array containing the structure of the form.
    * @param array $fields
    *   The array of fields, the style options key and keyed by field name.
+   * @param array $storage
+   *   An associative array containing the form storage.
    */
-  protected function buildBreakpointsStyleFormElements(array &$form, array $fields) {
+  protected function buildBreakpointsStyleFormElements(array &$form, array $fields, array $storage) {
     // Loop through the fields.
     foreach ($fields as $field_name => $style_options_key) {
       // Loop through the breakpoints.
@@ -136,7 +166,7 @@ trait ResponsiveTrait {
    * @param array $fields
    *   The array of field names.
    */
-  protected function buildBreakpoints(array &$classes, $storage, array $fields) {
+  protected function buildBreakpoints(array &$classes, array $storage, array $fields) {
     // Loop through the fields.
     foreach ($fields as $field_name) {
       // Loop through the breakpoints.
