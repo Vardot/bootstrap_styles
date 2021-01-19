@@ -86,23 +86,10 @@ class BackgroundColor extends StylePluginBase {
     ];
 
     // Responsive.
-    $breakpoints = [
-      'desktop',
-      'laptop',
-      'tablet',
-      'mobile',
+    $fields = [
+      'background_color' => 'background_colors',
     ];
-
-    foreach ($breakpoints as $breakpoint) {
-      $form['background_color_' . $breakpoint] = $form['background_color'];
-      $form['background_color_' . $breakpoint]['#options'] = $this->getStyleOptions('background_colors_' . $breakpoint);
-
-      $form['background_color_' . $breakpoint]['#default_value'] = $storage['background_color_' . $breakpoint]['class'] ?? NULL;
-      $form['background_color_' . $breakpoint]['#states']['visible'][':input.bs_responsive']['value'] = $breakpoint;
-      // Hide the generic one.
-      $form['background_color']['#states']['visible'][':input.bs_responsive']['value'] = 'all';
-    }
-    // End Responsive.
+    $this->buildBreakpointsStyleFormElements($form, $fields);
 
     // Attach the Layout Builder form style for this plugin.
     $form['#attached']['library'][] = 'bootstrap_styles/plugin.background_color.layout_builder_form';
@@ -121,19 +108,11 @@ class BackgroundColor extends StylePluginBase {
     ];
 
     // Responsive.
-    $breakpoints = [
-      'desktop',
-      'laptop',
-      'tablet',
-      'mobile',
+    $fields = [
+      'background_color',
     ];
 
-    foreach ($breakpoints as $breakpoint) {
-      $storage['background_color_' . $breakpoint] = [
-        'class' => $group_elements['background_color_' . $breakpoint],
-      ];
-    }
-    // End Responsive.
+    $this->submitBreakpointsStyleFormElements($group_elements, $storage, $fields);
     return $storage;
   }
 
@@ -149,19 +128,10 @@ class BackgroundColor extends StylePluginBase {
       $classes[] = $storage['background_color']['class'];
 
       // Responsive.
-      $breakpoints = [
-        'desktop',
-        'laptop',
-        'tablet',
-        'mobile',
+      $fields = [
+        'background_color',
       ];
-
-      foreach ($breakpoints as $breakpoint) {
-        if (isset($storage['background_color_' . $breakpoint]['class'])) {
-          $classes[] = $storage['background_color_' . $breakpoint]['class'];
-        }
-      }
-      // End Responsive.
+      $this->buildBreakpoints($classes, $storage, $fields);
 
       // Add the classes to the build.
       $build = $this->addClassesToBuild($build, $classes, $theme_wrapper);
