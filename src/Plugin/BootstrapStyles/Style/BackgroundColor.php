@@ -4,6 +4,7 @@ namespace Drupal\bootstrap_styles\Plugin\BootstrapStyles\Style;
 
 use Drupal\bootstrap_styles\Style\StylePluginBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\bootstrap_styles\ResponsiveTrait;
 
 /**
  * Class BackgroundColor.
@@ -18,6 +19,7 @@ use Drupal\Core\Form\FormStateInterface;
  * )
  */
 class BackgroundColor extends StylePluginBase {
+  use ResponsiveTrait;
 
   /**
    * {@inheritdoc}
@@ -35,19 +37,10 @@ class BackgroundColor extends StylePluginBase {
     ];
 
     // Responsive.
-    $breakpoints = [
-      'desktop',
-      'laptop',
-      'tablet',
-      'mobile',
+    $fields = [
+      'background_colors' => ['background'],
     ];
-
-    foreach ($breakpoints as $breakpoint) {
-      $form['background']['background_colors_' . $breakpoint] = $form['background']['background_colors'];
-      $form['background']['background_colors_' . $breakpoint]['#title'] .= ' ' . $breakpoint;
-      $form['background']['background_colors_' . $breakpoint]['#default_value'] = $config->get('background_colors_' . $breakpoint);
-    }
-    // End responsive.
+    $this->buildBreakpointsConfigurationForm($form, $fields);
 
     return $form;
   }
@@ -61,19 +54,11 @@ class BackgroundColor extends StylePluginBase {
       ->save();
 
     // Responsive.
-    $breakpoints = [
-      'desktop',
-      'laptop',
-      'tablet',
-      'mobile',
+    $fields = [
+      'background_colors',
     ];
 
-    foreach ($breakpoints as $breakpoint) {
-      $this->config()
-        ->set('background_colors_' . $breakpoint, $form_state->getValue('background_colors_' . $breakpoint))
-        ->save();
-    }
-    // End responsive.
+    $this->submitBreakpointsConfigurationForm($form_state, $fields);
   }
 
   /**
