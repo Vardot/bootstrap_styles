@@ -4,6 +4,7 @@ namespace Drupal\bootstrap_styles\Plugin\BootstrapStyles\StylesGroup;
 
 use Drupal\bootstrap_styles\StylesGroup\StylesGroupPluginBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\bootstrap_styles\ResponsiveTrait;
 
 /**
  * Class Background.
@@ -18,6 +19,7 @@ use Drupal\Core\Form\FormStateInterface;
  * )
  */
 class Background extends StylesGroupPluginBase {
+  use ResponsiveTrait;
 
   /**
    * {@inheritdoc}
@@ -37,24 +39,7 @@ class Background extends StylesGroupPluginBase {
    */
   public function buildStyleFormElements(array &$form, FormStateInterface $form_state, $storage) {
     // Responsive.
-    $form['background_responsive'] = [
-      '#type' => 'radios',
-      '#options' => [
-        'all' => $this->t('All'),
-        'desktop' => $this->t('Desktop'),
-        'laptop' => $this->t('Laptop'),
-        'tablet' => $this->t('Tablet'),
-        'mobile' => $this->t('Mobile'),
-      ],
-      '#title' => $this->t('Responsive'),
-      '#title_display' => 'invisible',
-      '#default_value' => 'all',
-      '#validated' => TRUE,
-      '#attributes' => [
-        'class' => ['bs_col--full', 'bs_responsive'],
-      ],
-    ];
-    // End responsive.
+    $this->buildBreakpointsFields($form, 'background');
 
     $form['background_type'] = [
       '#type' => 'radios',
