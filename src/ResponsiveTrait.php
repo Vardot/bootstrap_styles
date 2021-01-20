@@ -242,7 +242,7 @@ trait ResponsiveTrait {
    */
   protected function createBreakpointsStyleFormClassIndexBasedFields(array &$form, string $field_name, string $group_id, array $storage, string $storage_key = NULL) {
     foreach ($this->getBreakpointsKeys() as $breakpoint_key) {
-      $this->create_keyStyleFormClassIndexBasedField($form, $field_name, $breakpoint_key, $group_id, $storage, $storage_key);
+      $this->createBreakpointStyleFormClassIndexBasedField($form, $field_name, $breakpoint_key, $group_id, $storage, $storage_key);
     }
   }
 
