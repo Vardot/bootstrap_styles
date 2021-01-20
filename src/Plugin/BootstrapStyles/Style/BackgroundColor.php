@@ -86,10 +86,7 @@ class BackgroundColor extends StylePluginBase {
     ];
 
     // Responsive.
-    $fields = [
-      'background_color' => 'background_colors',
-    ];
-    $this->buildBreakpointsStyleFormElements($form, $fields, $storage);
+    $this->createBreakpointsStyleFormFields($form, 'background_color', 'background', $storage, 'background_colors');
 
     // Attach the Layout Builder form style for this plugin.
     $form['#attached']['library'][] = 'bootstrap_styles/plugin.background_color.layout_builder_form';

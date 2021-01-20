@@ -4,6 +4,7 @@ namespace Drupal\bootstrap_styles\Plugin\BootstrapStyles\Style;
 
 use Drupal\bootstrap_styles\Style\StylePluginBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\bootstrap_styles\ResponsiveTrait;
 
 /**
  * Class Padding.
@@ -18,6 +19,7 @@ use Drupal\Core\Form\FormStateInterface;
  * )
  */
 class Padding extends StylePluginBase {
+  use ResponsiveTrait;
 
   /**
    * {@inheritdoc}
@@ -51,6 +53,12 @@ class Padding extends StylePluginBase {
       ],
     ];
 
+    // Responsive.
+    // Loop through the breakpoints keys.
+    foreach ($this->getBreakpointsKeys() as $breakpoint_key) {
+      $this->createBreakpointFormField($form, $breakpoint_key, 'padding_group', ['spacing']);
+    }
+
     $form['spacing']['padding_group']['padding'] = [
       '#type' => 'textarea',
       '#default_value' => $config->get('padding'),
@@ -58,6 +66,25 @@ class Padding extends StylePluginBase {
       '#cols' => 60,
       '#rows' => 5,
     ];
+
+    // Responsive.
+    // Loop through the breakpoints keys.
+    foreach ($this->getBreakpointsKeys() as $breakpoint_key) {
+      // Then create a field for breakpoint.
+      $this->createBreakpointFormField(
+        $form,
+        $breakpoint_key,
+        'padding',
+        [
+          'spacing',
+          'padding_group',
+        ],
+        [
+          'spacing',
+          'padding_group_' . $breakpoint_key,
+        ],
+      );
+    }
 
     for ($i = 0; $i < 4; $i++) {
       $form['spacing']['padding_group']['padding_' . $directions[$i]] = [
@@ -67,6 +94,24 @@ class Padding extends StylePluginBase {
         '#cols' => 60,
         '#rows' => 5,
       ];
+      // Responsive.
+      // Loop through the breakpoints keys.
+      foreach ($this->getBreakpointsKeys() as $breakpoint_key) {
+        // Then create a field for each breakpoint.
+        $this->createBreakpointFormField(
+          $form,
+          $breakpoint_key,
+          'padding_' . $directions[$i],
+          [
+            'spacing',
+            'padding_group',
+          ],
+          [
+            'spacing',
+            'padding_group_' . $breakpoint_key,
+          ],
+        );
+      }
     }
 
     return $form;
@@ -83,6 +128,17 @@ class Padding extends StylePluginBase {
       ->set('padding_right', $form_state->getValue('padding_right'))
       ->set('padding_bottom', $form_state->getValue('padding_bottom'))
       ->save();
+
+    // Responsive.
+    $fields = [
+      'padding',
+      'padding_left',
+      'padding_top',
+      'padding_right',
+      'padding_bottom',
+    ];
+
+    $this->submitBreakpointsConfigurationForm($form_state, $fields);
   }
 
   /**
@@ -137,6 +193,9 @@ class Padding extends StylePluginBase {
       ],
     ];
 
+    // Responsive.
+    $this->createBreakpointsStyleFormClassIndexBasedFields($form, 'padding', 'spacing', $storage);
+
     // Loop through the directions.
     for ($i = 0; $i < 4; $i++) {
       $default_value = 0;
@@ -160,6 +219,9 @@ class Padding extends StylePluginBase {
           ],
         ],
       ];
+
+      // Responsive.
+      $this->createBreakpointsStyleFormClassIndexBasedFields($form, 'padding_' . $directions[$i], 'spacing', $storage);
     }
 
     // Pass padding options to drupal settings.
