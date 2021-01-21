@@ -227,10 +227,25 @@ class Padding extends StylePluginBase {
     // Pass padding options to drupal settings.
     $padding_options = [];
     $padding_options['padding'] = array_keys($this->getStyleOptions('padding'));
+
+    // Responsive.
+    foreach ($this->getBreakpointsKeys() as $breakpoint_key) {
+      $padding_options['padding_' . $breakpoint_key] = array_keys($this->getStyleOptions('padding_' . $breakpoint_key));
+    }
+
     for ($i = 0; $i < 4; $i++) {
       $padding_options['padding_' . $directions[$i]] = array_keys($this->getStyleOptions('padding_' . $directions[$i]));
+
+      // Responsive.
+      foreach ($this->getBreakpointsKeys() as $breakpoint_key) {
+        $padding_options['padding_' . $directions[$i] . '_' . $breakpoint_key] = array_keys($this->getStyleOptions('padding_' . $directions[$i] . '_' . $breakpoint_key));
+      }
+
     }
     $form['#attached']['drupalSettings']['bootstrap_styles']['spacing']['padding_classes_options'] = $padding_options;
+
+    // Responsive.
+    $form['#attached']['drupalSettings']['bootstrap_styles']['breakpoints'] = $this->getBreakpointsKeys();
 
     // Attach the Layout Builder form style for this plugin.
     $form['#attached']['library'][] = 'bootstrap_styles/plugin.padding.layout_builder_form';
@@ -249,17 +264,27 @@ class Padding extends StylePluginBase {
       'bottom',
     ];
 
-    $schema = [
+    $storage = [
       'padding' => [
         'class' => $this->getStyleOptionClassByIndex('padding', $group_elements['padding']),
       ],
     ];
 
+    // Responsive.
+    $responsive_target_fields = [
+      'padding',
+    ];
+
     for ($i = 0; $i < 4; $i++) {
-      $schema['padding_' . $directions[$i]]['class'] = $this->getStyleOptionClassByIndex('padding_' . $directions[$i], $group_elements['padding_' . $directions[$i]]);
+      $storage['padding_' . $directions[$i]]['class'] = $this->getStyleOptionClassByIndex('padding_' . $directions[$i], $group_elements['padding_' . $directions[$i]]);
+      // Responsive.
+      $responsive_target_fields[] = 'padding_' . $directions[$i];
     }
 
-    return $schema;
+    // Responsive.
+    $this->saveBreakpointsStyleFormClassIndexBasedFields($group_elements, $storage, $responsive_target_fields);
+
+    return $storage;
   }
 
   /**
@@ -278,11 +303,21 @@ class Padding extends StylePluginBase {
       $classes[] = $storage['padding']['class'];
     }
 
+    // Responsive.
+    $responsive_target_fields = [
+      'padding',
+    ];
+
     for ($i = 0; $i < 4; $i++) {
       if (isset($storage['padding_' . $directions[$i]]['class'])) {
         $classes[] = $storage['padding_' . $directions[$i]]['class'];
+        // Responsive.
+        $responsive_target_fields[] = 'padding_' . $directions[$i];
       }
     }
+
+    // Responsive.
+    $this->buildBreakpoints($classes, $storage, $responsive_target_fields);
 
     // Add the classes to the build.
     $build = $this->addClassesToBuild($build, $classes, $theme_wrapper);
