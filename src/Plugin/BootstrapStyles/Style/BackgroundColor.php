@@ -108,8 +108,8 @@ class BackgroundColor extends StylePluginBase {
     $fields = [
       'background_color',
     ];
+    $this->saveBreakpointsStyleFormFields($group_elements, $storage, $fields);
 
-    $this->submitBreakpointsStyleFormElements($group_elements, $storage, $fields);
     return $storage;
   }
 
