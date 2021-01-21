@@ -44,3 +44,27 @@ data_key: aos
 scroll_effects_attr_type: 1
 scroll_effects_data_key: data-aos
 scroll_effects_library_type: external
+background_colors_desktop: ''
+background_colors_laptop: ''
+background_colors_tablet: ''
+background_colors_mobile: ''
+padding_desktop: "bs-p-xl-1|Padding 1\r\nbs-p-xl-2|Padding 2\r\nbs-p-xl-3|Padding 3\r\nbs-p-xl-4|Padding 4\r\nbs-p-xl-5|Padding 5"
+padding_laptop: "bs-p-lg-1|Padding 1\r\nbs-p-lg-2|Padding 2\r\nbs-p-lg-3|Padding 3\r\nbs-p-lg-4|Padding 4\r\nbs-p-lg-5|Padding 5"
+padding_tablet: "bs-p-md-1|Padding 1\r\nbs-p-md-2|Padding 2\r\nbs-p-md-3|Padding 3\r\nbs-p-md-4|Padding 4\r\nbs-p-md-5|Padding 5"
+padding_mobile: "bs-p-sm-1|Padding 1\r\nbs-p-sm-2|Padding 2\r\nbs-p-sm-3|Padding 3\r\nbs-p-sm-4|Padding 4\r\nbs-p-sm-5|Padding 5"
+padding_left_desktop: "bs-pl-xl-1|Padding Left 1\r\nbs-pl-xl-2|Padding Left 2\r\nbs-pl-xl-3|Padding Left 3\r\nbs-pl-xl-4|Padding Left 4\r\nbs-pl-xl-5|Padding Left 5"
+padding_left_laptop: "bs-pl-lg-1|Padding Left 1\r\nbs-pl-lg-2|Padding Left 2\r\nbs-pl-lg-3|Padding Left 3\r\nbs-pl-lg-4|Padding Left 4\r\nbs-pl-lg-5|Padding Left 5"
+padding_left_tablet: "bs-pl-md-1|Padding Left 1\r\nbs-pl-md-2|Padding Left 2\r\nbs-pl-md-3|Padding Left 3\r\nbs-pl-md-4|Padding Left 4\r\nbs-pl-md-5|Padding Left 5"
+padding_left_mobile: "bs-pl-sm-1|Padding Left 1\r\nbs-pl-sm-2|Padding Left 2\r\nbs-pl-sm-3|Padding Left 3\r\nbs-pl-sm-4|Padding Left 4\r\nbs-pl-sm-5|Padding Left 5"
+padding_top_desktop: "bs-pt-xl-1|Padding Top 1\r\nbs-pt-xl-2|Padding Top 2\r\nbs-pt-xl-3|Padding Top 3\r\nbs-pt-xl-4|Padding Top 4\r\nbs-pt-xl-5|Padding Top 5"
+padding_top_laptop: "bs-pt-lg-1|Padding Top 1\r\nbs-pt-lg-2|Padding Top 2\r\nbs-pt-lg-3|Padding Top 3\r\nbs-pt-lg-4|Padding Top 4\r\nbs-pt-lg-5|Padding Top 5"
+padding_top_tablet: "bs-pt-md-1|Padding Top 1\r\nbs-pt-md-2|Padding Top 2\r\nbs-pt-md-3|Padding Top 3\r\nbs-pt-md-4|Padding Top 4\r\nbs-pt-md-5|Padding Top 5"
+padding_top_mobile: "bs-pt-sm-1|Padding Top 1\r\nbs-pt-sm-2|Padding Top 2\r\nbs-pt-sm-3|Padding Top 3\r\nbs-pt-sm-4|Padding Top 4\r\nbs-pt-sm-5|Padding Top 5"
+padding_right_desktop: "bs-pr-xl-1|Padding Right 1\r\nbs-pr-xl-2|Padding Right 2\r\nbs-pr-xl-3|Padding Right 3\r\nbs-pr-xl-4|Padding Right 4\r\nbs-pr-xl-5|Padding Right 5"
+padding_right_laptop: "bs-pr-lg-1|Padding Right 1\r\nbs-pr-lg-2|Padding Right 2\r\nbs-pr-lg-3|Padding Right 3\r\nbs-pr-lg-4|Padding Right 4\r\nbs-pr-lg-5|Padding Right 5"
+padding_right_tablet: "bs-pr-md-1|Padding Right 1\r\nbs-pr-md-2|Padding Right 2\r\nbs-pr-md-3|Padding Right 3\r\nbs-pr-md-4|Padding Right 4\r\nbs-pr-md-5|Padding Right 5"
+padding_right_mobile: "bs-pr-sm-1|Padding Right 1\r\nbs-pr-sm-2|Padding Right 2\r\nbs-pr-sm-3|Padding Right 3\r\nbs-pr-sm-4|Padding Right 4\r\nbs-pr-sm-5|Padding Right 5"
+padding_bottom_desktop: "bs-pb-xl-1|Padding Bottom 1\r\nbs-pb-xl-2|Padding Bottom 2\r\nbs-pb-xl-3|Padding Bottom 3\r\nbs-pb-xl-4|Padding Bottom 4\r\nbs-pb-xl-5|Padding Bottom 5"
+padding_bottom_laptop: "bs-pb-lg-1|Padding Bottom 1\r\nbs-pb-lg-2|Padding Bottom 2\r\nbs-pb-lg-3|Padding Bottom 3\r\nbs-pb-lg-4|Padding Bottom 4\r\nbs-pb-lg-5|Padding Bottom 5"
+padding_bottom_tablet: "bs-pb-md-1|Padding Bottom 1\r\nbs-pb-md-2|Padding Bottom 2\r\nbs-pb-md-3|Padding Bottom 3\r\nbs-pb-md-4|Padding Bottom 4\r\nbs-pb-md-5|Padding Bottom 5"
+padding_bottom_mobile: "bs-pb-sm-1|Padding Bottom 1\r\nbs-pb-sm-2|Padding Bottom 2\r\nbs-pb-sm-3|Padding Bottom 3\r\nbs-pb-sm-4|Padding Bottom 4\r\nbs-pb-sm-5|Padding Bottom 5"
