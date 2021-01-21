@@ -167,6 +167,7 @@ trait ResponsiveTrait {
     $form[$field_name . '_' . $breakpoint_key]['#options'] = $this->getStyleOptions($storage_key . '_' . $breakpoint_key);
 
     $form[$field_name . '_' . $breakpoint_key]['#default_value'] = $storage[$field_name . '_' . $breakpoint_key]['class'] ?? NULL;
+    $form[$field_name . '_' . $breakpoint_key]['#validated'] = TRUE;
     $form[$field_name . '_' . $breakpoint_key]['#states']['visible'][':input.bs_responsive_' . $group_id]['value'] = $breakpoint_key;
     // Hide the generic one.
     $form[$field_name]['#states']['visible'][':input.bs_responsive_' . $group_id]['value'] = 'all';
@@ -218,8 +219,18 @@ trait ResponsiveTrait {
 
     $form[$field_name . '_' . $breakpoint_key] = $form[$field_name];
     $form[$field_name . '_' . $breakpoint_key]['#options'] = $this->getStyleOptions($field_name . '_' . $breakpoint_key);
+    $form[$field_name . '_' . $breakpoint_key]['#max'] = $this->getStyleOptionsCount($field_name . '_' . $breakpoint_key);
 
     $form[$field_name . '_' . $breakpoint_key]['#default_value'] = $breakpoint_default_value;
+    $form[$field_name . '_' . $breakpoint_key]['#validated'] = TRUE;
+
+    // Add the breakpoints to the classes if exists.
+    if (isset($form[$field_name . '_' . $breakpoint_key]['#attributes']['class'])) {
+      foreach ($form[$field_name . '_' . $breakpoint_key]['#attributes']['class'] as $key => $value) {
+        $form[$field_name . '_' . $breakpoint_key]['#attributes']['class'][$key] = $value . '-' . $breakpoint_key;
+      }
+    }
+
     $form[$field_name . '_' . $breakpoint_key]['#states']['visible'][':input.bs_responsive_' . $group_id]['value'] = $breakpoint_key;
     // Hide the generic one.
     $form[$field_name]['#states']['visible'][':input.bs_responsive_' . $group_id]['value'] = 'all';
@@ -275,7 +286,7 @@ trait ResponsiveTrait {
   }
 
   /**
-   * Save the breakpoints fields values for style form.
+   * Save the breakpoints fields values to the storage.
    *
    * @param array $group_elements
    *   The submitted form values array.
@@ -284,13 +295,35 @@ trait ResponsiveTrait {
    * @param array $fields
    *   The array of field names.
    */
-  protected function submitBreakpointsStyleFormElements(array $group_elements, array &$storage, array $fields) {
+  protected function saveBreakpointsStyleFormFields(array $group_elements, array &$storage, array $fields) {
     // Loop through the fields.
     foreach ($fields as $field_name) {
       // Loop through the breakpoints.
       foreach ($this->getBreakpointsKeys() as $breakpoint) {
         $storage[$field_name . '_' . $breakpoint] = [
           'class' => $group_elements[$field_name . '_' . $breakpoint],
+        ];
+      }
+    }
+  }
+
+  /**
+   * Save the breakpoints fields values to the storage.
+   *
+   * @param array $group_elements
+   *   The submitted form values array.
+   * @param array $storage
+   *   An associative array containing the form storage.
+   * @param array $fields
+   *   The array of field names.
+   */
+  protected function saveBreakpointsStyleFormClassIndexBasedFields(array $group_elements, array &$storage, array $fields) {
+    // Loop through the fields.
+    foreach ($fields as $field_name) {
+      // Loop through the breakpoints.
+      foreach ($this->getBreakpointsKeys() as $breakpoint) {
+        $storage[$field_name . '_' . $breakpoint] = [
+          'class' => $this->getStyleOptionClassByIndex($field_name . '_' . $breakpoint, $group_elements[$field_name . '_' . $breakpoint]),
         ];
       }
     }
