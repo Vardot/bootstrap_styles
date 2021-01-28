@@ -1,0 +1,16 @@
+$bs_class_prefix:                 'bs-';
+$bs_breakpoints: (
+  sm:                          'screen and (max-width: 576px)',
+  md:                          '(min-width: 576px) and (max-width: 992px)',
+  lg:                          '(min-width: 992px) and (max-width: 1200px)',
+  xl:                          '(min-width: 1200px)'
+) !default;
+
+$bs_spacer: 1rem !default;
+$bs_spacers: (
+  1:                           ($bs_spacer * .25),
+  2:                           ($bs_spacer * .5),
+  3:                           $bs_spacer,
+  4:                           ($bs_spacer * 1.5),
+  5:                           ($bs_spacer * 3)
+) !default;
