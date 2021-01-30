@@ -17,11 +17,13 @@ trait ResponsiveTrait {
    *   Array of breakpoints.
    */
   protected function getBreakpoints() {
+    $icon_path = drupal_get_path('module', 'bootstrap_styles') . '/images/';
+
     return [
-      'desktop' => $this->t('Desktop'),
-      'laptop' => $this->t('Laptop'),
-      'tablet' => $this->t('Tablet'),
-      'mobile' => $this->t('Mobile'),
+      'desktop' => $this->getSvgIconMarkup($icon_path . 'responsive/device-desktop.svg'),
+      'laptop' => $this->getSvgIconMarkup($icon_path . 'responsive/device-laptop.svg'),
+      'tablet' => $this->getSvgIconMarkup($icon_path . 'responsive/device-tablet.svg'),
+      'mobile' => $this->getSvgIconMarkup($icon_path . 'responsive/device-mobile.svg'),
     ];
   }
 
@@ -34,10 +36,12 @@ trait ResponsiveTrait {
    *   The name of group that we like to add responsive to its plugins.
    */
   protected function buildBreakpointsFields(array &$form, $group_name) {
+    $icon_path = drupal_get_path('module', 'bootstrap_styles') . '/images/';
+
     $form[$group_name . '_background_responsive'] = [
       '#type' => 'radios',
       '#options' => [
-        'all' => $this->t('All'),
+        'all' => $this->getSvgIconMarkup($icon_path . 'responsive/device-all.svg'),
       ],
       '#title' => $this->t('Responsive'),
       '#title_display' => 'invisible',

@@ -82,7 +82,7 @@ class Padding extends StylePluginBase {
         [
           'spacing',
           'padding_group_' . $breakpoint_key,
-        ],
+        ]
       );
     }
 
