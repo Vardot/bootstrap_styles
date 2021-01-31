@@ -35,6 +35,11 @@ bs_yiq:
   js:
     js/components/yiq.js: { }
 
+# Responsive components
+bs_responsive:
+  js:
+    js/components/responsive.js: { }
+
 # Themes.
 # Light
 theme.light:
