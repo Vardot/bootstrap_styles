@@ -17,13 +17,11 @@ trait ResponsiveTrait {
    *   Array of breakpoints.
    */
   protected function getBreakpoints() {
-    $icon_path = drupal_get_path('module', 'bootstrap_styles') . '/images/';
-
     return [
-      'desktop' => $this->getSvgIconMarkup($icon_path . 'responsive/device-desktop.svg'),
-      'laptop' => $this->getSvgIconMarkup($icon_path . 'responsive/device-laptop.svg'),
-      'tablet' => $this->getSvgIconMarkup($icon_path . 'responsive/device-tablet.svg'),
-      'mobile' => $this->getSvgIconMarkup($icon_path . 'responsive/device-mobile.svg'),
+      'desktop' => $this->t('Desktop'),
+      'laptop' => $this->t('Laptop'),
+      'tablet' => $this->t('Tablet'),
+      'mobile' => $this->t('Mobile'),
     ];
   }
 
@@ -53,8 +51,12 @@ trait ResponsiveTrait {
     ];
     // Loop through the breakpoints.
     foreach ($this->getBreakpoints() as $breakpoint_key => $breakpoint_value) {
-      $form[$group_name . '_background_responsive']['#options'][$breakpoint_key] = $breakpoint_value;
+      $form[$group_name . '_background_responsive']['#options'][$breakpoint_key] = $this->getSvgIconMarkup($icon_path . 'responsive/device-' . $breakpoint_key . '.svg');
     }
+
+    // Attach admin form style.
+    $form['#attached']['library'][] = 'bootstrap_styles/bs_responsive';
+
   }
 
   /**
