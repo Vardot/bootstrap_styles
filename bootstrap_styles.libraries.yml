@@ -65,6 +65,11 @@ plugins_groups.border.border_preview:
   js:
     js/plugins_groups/border/border-preview.js: { }
 
+# shadow
+plugins_groups.shadow.shadow_preview:
+  js:
+    js/plugins_groups/shadow/shadow-preview.js: { }
+
 # Plugins.
 # background_color
 plugin.background_color.layout_builder_form:
@@ -149,6 +154,17 @@ plugin.border.build:
   css:
     theme:
       css/bs_example_classes/border-classes.css: { }
+
+# box_shadow
+plugin.box_shadow.layout_builder_form:
+  css:
+    theme:
+      css/bs_example_classes/box-shadow-classes.css: { }
+
+plugin.box_shadow.build:
+  css:
+    theme:
+      css/bs_example_classes/box-shadow-classes.css: { }
 
 # scroll_effects
 plugin.scroll_effects.build:

@@ -43,6 +43,9 @@ function bootstrap_styles_theme($existing, $type, $theme, $path) {
     'border_preview' => [
       'render element' => 'element',
     ],
+    'shadow_preview' => [
+      'render element' => 'element',
+    ],
   ];
 }
 

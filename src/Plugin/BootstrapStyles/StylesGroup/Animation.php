@@ -13,7 +13,7 @@ use Drupal\Core\Form\FormStateInterface;
  * @StylesGroup(
  *   id = "animation",
  *   title = @Translation("Animation"),
- *   weight = 5,
+ *   weight = 6,
  *   icon = "bootstrap_styles/images/plugins/animation-icon.svg"
  * )
  */
