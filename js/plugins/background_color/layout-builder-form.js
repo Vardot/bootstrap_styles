@@ -25,7 +25,8 @@
       $(".fieldgroup.field-background-color .fieldset-wrapper label", context).on('click', function () {
         $(this).parents('.fieldset-wrapper').find('label').removeClass('active');
         $(this).parents('.fieldset-wrapper').addClass('style-selected').find('input').prop("checked", false);
-        $(this).parent().find('input').prop('checked', true);
+        // Temp comment the following line because of conflict with live preview.
+        // $(this).parent().find('input').prop('checked', true);
 
         if($(this).hasClass('_none')) {
           $(this).parents('.fieldset-wrapper').removeClass('style-selected');

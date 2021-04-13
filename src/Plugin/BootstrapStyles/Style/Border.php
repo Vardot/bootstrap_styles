@@ -249,6 +249,7 @@ class Border extends StylePluginBase {
       '#attributes' => [
         'class' => ['bs_col--full', 'bs_input-boxes', 'bs_input-boxes--box-model', 'bs_border--type'],
       ],
+      '#disable_live_preview' => TRUE,
     ];
 
     $form['border_style'] = [

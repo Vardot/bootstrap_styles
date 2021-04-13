@@ -75,7 +75,6 @@
               var padding_right_val = $('input.bs-field-padding-right-' + breakpoints[i]).val();
               var padding_bottom_val = $('input.bs-field-padding-bottom-' + breakpoints[i]).val();
               var padding_class = spacing.padding_classes_options['padding_' + breakpoints[i]][padding_val];
-              console.log(padding_class);
               if (padding_class != '_none') {
                 padding_classes += padding_class + ' ';
               }

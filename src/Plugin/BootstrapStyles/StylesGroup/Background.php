@@ -51,6 +51,7 @@ class Background extends StylesGroupPluginBase {
       '#attributes' => [
         'class' => ['bs_col--full', 'bs_background--type'],
       ],
+      '#disable_live_preview' => TRUE,
     ];
 
     return $form;

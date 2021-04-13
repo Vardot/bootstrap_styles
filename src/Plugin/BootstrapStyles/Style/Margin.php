@@ -113,6 +113,7 @@ class Margin extends StylePluginBase {
       '#attributes' => [
         'class' => ['bs_col--full', 'bs_input-boxes', 'bs_input-boxes--box-model', 'bs_margin--type'],
       ],
+      '#disable_live_preview' => TRUE,
     ];
 
     $default_value = 0;
