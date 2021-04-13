@@ -35,6 +35,16 @@ bs_yiq:
   js:
     js/components/yiq.js: { }
 
+# Responsive preview
+bs_responsive_preview:
+  css:
+    theme:
+      css/responsive-preview.css: { }
+  js:
+    js/components/responsive-preview.js: { }
+  dependencies:
+    - core/drupal.ajax
+
 # Responsive components
 bs_responsive:
   js:

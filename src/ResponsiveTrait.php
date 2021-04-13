@@ -36,7 +36,7 @@ trait ResponsiveTrait {
   protected function buildBreakpointsFields(array &$form, $group_name) {
     $icon_path = drupal_get_path('module', 'bootstrap_styles') . '/images/';
 
-    $form[$group_name . '_background_responsive'] = [
+    $form['bs_responsive_' . $group_name] = [
       '#type' => 'radios',
       '#options' => [
         'all' => $this->getSvgIconMarkup($icon_path . 'responsive/device-all.svg'),
@@ -48,15 +48,17 @@ trait ResponsiveTrait {
       '#attributes' => [
         'class' => ['bs_col--full', 'bs_responsive', 'bs_responsive_' . $group_name],
       ],
+      '#disable_live_preview' => TRUE,
     ];
+
     // Loop through the breakpoints.
     foreach ($this->getBreakpoints() as $breakpoint_key => $breakpoint_value) {
-      $form[$group_name . '_background_responsive']['#options'][$breakpoint_key] = $this->getSvgIconMarkup($icon_path . 'responsive/device-' . $breakpoint_key . '.svg');
+      $form['bs_responsive_' . $group_name]['#options'][$breakpoint_key] = $this->getSvgIconMarkup($icon_path . 'responsive/device-' . $breakpoint_key . '.svg');
     }
 
     // Attach admin form style.
+    $form['#attached']['library'][] = 'bootstrap_styles/bs_responsive_preview';
     $form['#attached']['library'][] = 'bootstrap_styles/bs_responsive';
-
   }
 
   /**

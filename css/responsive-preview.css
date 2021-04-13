@@ -1,0 +1,9 @@
+.ui-dialog .ui-dialog-content.bs-responsive-preview-wrapper {
+  padding: 0;
+}
+
+.bs-ui-widget-overlay.ui-widget-overlay {
+  background: black;
+  opacity: 1;
+  z-index: 500 !important;
+}
