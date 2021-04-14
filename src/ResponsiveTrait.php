@@ -57,7 +57,6 @@ trait ResponsiveTrait {
     }
 
     // Attach admin form style.
-    $form['#attached']['library'][] = 'bootstrap_styles/bs_responsive_preview';
     $form['#attached']['library'][] = 'bootstrap_styles/bs_responsive';
   }
 

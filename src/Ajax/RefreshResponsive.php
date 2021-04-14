@@ -8,7 +8,7 @@ use Drupal\Core\Ajax\CommandInterface;
  * AJAX command for invoking an arbitrary jQuery method.
  *
  * The 'invoke' command will instruct the client to invoke the given jQuery
- * method with the supplied arguments on the elements matched by the given
+ * method with the supplied data on the elements matched by the given
  * selector. Intended for simple jQuery commands, such as attr(), addClass(),
  * removeClass(), toggleClass(), etc.
  */
@@ -32,11 +32,11 @@ class RefreshResponsive implements CommandInterface {
   protected $method;
 
   /**
-   * An optional list of arguments to pass to the method.
+   * An optional list of data to pass to the method.
    *
    * @var array
    */
-  protected $arguments;
+  protected $data;
 
   /**
    * Constructs an RefreshResponsive object.
@@ -45,13 +45,13 @@ class RefreshResponsive implements CommandInterface {
    *   A jQuery selector.
    * @param string $method
    *   The name of a jQuery method to invoke.
-   * @param array $arguments
-   *   An optional array of arguments to pass to the method.
+   * @param array $data
+   *   An optional array of data to pass to the method.
    */
-  public function __construct($selector, $method, array $arguments = []) {
+  public function __construct($selector, $method, array $data = []) {
     $this->selector = $selector;
     $this->method = $method;
-    $this->arguments = $arguments;
+    $this->data = $data;
   }
 
   /**
@@ -62,7 +62,7 @@ class RefreshResponsive implements CommandInterface {
       'command' => 'bs_refresh_responsive',
       'selector' => $this->selector,
       'method' => NULL,
-      'args' => $this->arguments,
+      'data' => $this->data,
     ];
   }
 
