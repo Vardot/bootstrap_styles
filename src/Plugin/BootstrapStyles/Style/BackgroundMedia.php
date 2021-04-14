@@ -385,7 +385,7 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
         $media_field_name = $config->get('background_image.field');
 
         // Check if the field exist.
-        if ($media_entity->hasField($media_field_name)) {
+        if ($media_entity && $media_entity->hasField($media_field_name)) {
           $background_image_style = $this->buildBackgroundMediaImage($media_entity, $media_field_name, $storage);
           // Assign the style to element or its theme wrapper if exist.
           if ($theme_wrapper && isset($build['#theme_wrappers'][$theme_wrapper])) {
@@ -400,7 +400,7 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
         $media_entity = Media::load($media_id);
         $media_field_name = $config->get('background_local_video.field');
         // Check if the field exist.
-        if ($media_entity->hasField($media_field_name)) {
+        if ($media_entity && $media_entity->hasField($media_field_name)) {
           $background_video_url = $this->buildBackgroundMediaLocalVideo($media_entity, $media_field_name);
 
           $build['#theme_wrappers']['bs_video_background'] = [
