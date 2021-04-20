@@ -1,0 +1,150 @@
+bootstrap_styles.settings:
+  type: config_object
+  label: 'Bootstrap styles settings'
+  mapping:
+    layout_builder_theme:
+      type: string
+      label: "Layout builder theme"
+    background_colors:
+      type: string
+      label: "Background colors"
+    background_colors_hex:
+      type: string
+      label: "Background colors hex"
+    background_image:
+      type: mapping
+      label: 'Relationship'
+      mapping:
+        bundle:
+          type: string
+          label: 'Bundle'
+        field:
+          type: string
+          label: 'Field'
+    background_local_video:
+      type: mapping
+      label: 'Relationship'
+      mapping:
+        bundle:
+          type: string
+          label: 'Bundle'
+        field:
+          type: string
+          label: 'Field'
+    text_colors:
+      type: string
+      label: "Text colors"
+    text_alignment:
+      type: string
+      label: "Text alignment"
+    padding:
+      type: string
+      label: "Padding"
+    padding_left:
+      type: string
+      label: "Left padding"
+    padding_top:
+      type: string
+      label: "Top padding"
+    padding_right:
+      type: string
+      label: "Right padding"
+    padding_bottom:
+      type: string
+      label: "Bottom padding"
+    margin:
+      type: string
+      label: "Margin"
+    margin_left:
+      type: string
+      label: "Left margin"
+    margin_top:
+      type: string
+      label: "Top margin"
+    margin_right:
+      type: string
+      label: "Right margin"
+    margin_bottom:
+      type: string
+      label: "Bottom margin"
+    border_style:
+      type: string
+      label: "Border style"
+    border_left_style:
+      type: string
+      label: "Left border style"
+    border_top_style:
+      type: string
+      label: "Top border style"
+    border_right_style:
+      type: string
+      label: "Right border style"
+    border_bottom_style:
+      type: string
+      label: "Bottom border style"
+    border_width:
+      type: string
+      label: "Border width"
+    border_left_width:
+      type: string
+      label: "Left border width"
+    border_top_width:
+      type: string
+      label: "Top border width"
+    border_right_width:
+      type: string
+      label: "Right border width"
+    border_bottom_width:
+      type: string
+      label: "Bottom border width"
+    border_color:
+      type: string
+      label: "Border color"
+    border_left_color:
+      type: string
+      label: "Left border color"
+    border_top_color:
+      type: string
+      label: "Top border color"
+    border_right_color:
+      type: string
+      label: "Right border color"
+    border_bottom_color:
+      type: string
+      label: "Bottom border color"
+    rounded_corners:
+      type: string
+      label: "Rounded corners"
+    rounded_corner_top_left:
+      type: string
+      label: "Top left rounded corners"
+    rounded_corner_top_right:
+      type: string
+      label: "Top right rounded corners"
+    rounded_corner_bottom_left:
+      type: string
+      label: "Bottom left rounded corners"
+    rounded_corner_bottom_right:
+      type: string
+      label: "Bottom right rounded corners"
+    box_shadow:
+      type: string
+      label: "Box shadow"
+    scroll_effects:
+      type: string
+      label: "Scroll effects"
+    attribute_type:
+      type: string
+      label: "Attribute type"
+    data_key:
+      type: string
+      label: "Data key"
+    scroll_effects_attr_type:
+      type: boolean
+      label: "Scroll effects attribute type"
+    scroll_effects_data_key:
+      type: string
+      label: "Scroll effects data key"
+    scroll_effects_library_type:
+      type: string
+      label: "Scroll effects library type"
