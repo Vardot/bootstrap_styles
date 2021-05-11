@@ -4,11 +4,14 @@ namespace Drupal\bootstrap_styles;
 
 use Drupal\Component\Utility\NestedArray;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\bootstrap_styles\HelperTrait;
 
 /**
  * A Trait for responsive methods.
  */
 trait ResponsiveTrait {
+
+  use HelperTrait;
 
   /**
    * The available breakpoint.
@@ -23,6 +26,40 @@ trait ResponsiveTrait {
       'tablet' => $this->t('Tablet'),
       'mobile' => $this->t('Mobile'),
     ];
+  }
+
+  /**
+   * Build the responsive previewer form elements.
+   *
+   * @param array $form
+   *   An associative array containing the structure of the form.
+   */
+  protected function buildResponsivePreviewer(array &$form) {
+    $icon_path = drupal_get_path('module', 'bootstrap_styles') . '/images/';
+
+    $form['bs_responsive'] = [
+      '#type' => 'radios',
+      '#options' => [
+        'all' => $this->getSvgIconMarkup($icon_path . 'responsive/device-all.svg'),
+      ],
+      '#title' => $this->t('Responsive'),
+      '#title_display' => 'invisible',
+      '#default_value' => 'all',
+      '#validated' => TRUE,
+      '#attributes' => [
+        'class' => ['bs_col--full', 'bs_responsive'],
+      ],
+      '#disable_live_preview' => TRUE,
+      // '#weight' => -90,
+    ];
+
+    // Loop through the breakpoints.
+    foreach ($this->getBreakpoints() as $breakpoint_key => $breakpoint_value) {
+      $form['bs_responsive']['#options'][$breakpoint_key] = $this->getSvgIconMarkup($icon_path . 'responsive/device-' . $breakpoint_key . '.svg');
+    }
+
+    // Attach admin form style.
+    $form['#attached']['library'][] = 'bootstrap_styles/bs_responsive';
   }
 
   /**
@@ -55,9 +92,6 @@ trait ResponsiveTrait {
     foreach ($this->getBreakpoints() as $breakpoint_key => $breakpoint_value) {
       $form['bs_responsive_' . $group_name]['#options'][$breakpoint_key] = $this->getSvgIconMarkup($icon_path . 'responsive/device-' . $breakpoint_key . '.svg');
     }
-
-    // Attach admin form style.
-    $form['#attached']['library'][] = 'bootstrap_styles/bs_responsive';
   }
 
   /**

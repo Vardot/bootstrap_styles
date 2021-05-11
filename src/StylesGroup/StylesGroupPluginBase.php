@@ -8,13 +8,13 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\Core\Render\Markup;
+use Drupal\bootstrap_styles\HelperTrait;
 
 /**
  * A base class to help developers implement their own Styles Group plugins.
  */
 abstract class StylesGroupPluginBase extends PluginBase implements StylesGroupPluginInterface, ContainerFactoryPluginInterface {
-  use StringTranslationTrait;
+  use StringTranslationTrait, HelperTrait;
 
   /**
    * Config settings.
@@ -81,16 +81,6 @@ abstract class StylesGroupPluginBase extends PluginBase implements StylesGroupPl
       }
     }
     return $icon_path;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getSvgIconMarkup(string $path) {
-    $svg = file_get_contents(DRUPAL_ROOT . '/' . $path);
-    $svg = preg_replace(['/<\?xml.*\?>/i', '/<!DOCTYPE((.|\n|\r)*?)">/i'], '', $svg);
-    $svg = trim($svg);
-    return Markup::create($svg);
   }
 
   /**

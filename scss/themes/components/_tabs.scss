@@ -6,6 +6,9 @@
   flex-wrap: nowrap;
   margin: 0 -30px 30px -30px;
   width: calc(100% + 60px);
+  position: sticky;
+  top: 0;
+  z-index: 2;
 
   li {
     flex: 1 1 auto;
