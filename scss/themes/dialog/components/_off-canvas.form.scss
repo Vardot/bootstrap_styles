@@ -34,6 +34,7 @@ label {
 .form-item {
   margin-top: .25rem;
   margin-bottom: 1.5rem;
+  width: 100%;
 
   // Safari only
   @media not all and (min-resolution: .001dpcm) {

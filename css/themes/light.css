@@ -195,6 +195,7 @@
   color: #ffffff;
   background: #26A5FF;
   border: 0;
+  text-align: center;
 }
 
 #layout-builder-modal button.button--primary:hover, #layout-builder-modal button.button--primary:focus, #layout-builder-modal button.button--primary:active,
@@ -402,6 +403,7 @@
 #layout-builder-modal .form-item {
   margin-top: .25rem;
   margin-bottom: 1.5rem;
+  width: 100%;
 }
 
 @media not all and (min-resolution: 0.001dpcm) {
@@ -1280,6 +1282,7 @@
   color: #ffffff;
   background: #26A5FF;
   border: 0;
+  text-align: center;
 }
 
 #drupal-off-canvas button.button--primary:hover, #drupal-off-canvas button.button--primary:focus, #drupal-off-canvas button.button--primary:active,
@@ -1487,6 +1490,7 @@
 #drupal-off-canvas .form-item {
   margin-top: .25rem;
   margin-bottom: 1.5rem;
+  width: 100%;
 }
 
 @media not all and (min-resolution: 0.001dpcm) {
