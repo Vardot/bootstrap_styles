@@ -4,6 +4,7 @@ namespace Drupal\bootstrap_styles\Plugin\BootstrapStyles\StylesGroup;
 
 use Drupal\bootstrap_styles\StylesGroup\StylesGroupPluginBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\bootstrap_styles\ResponsiveTrait;
 
 /**
  * Class Typography.
@@ -18,6 +19,7 @@ use Drupal\Core\Form\FormStateInterface;
  * )
  */
 class Typography extends StylesGroupPluginBase {
+  use ResponsiveTrait;
 
   /**
    * {@inheritdoc}
@@ -28,6 +30,15 @@ class Typography extends StylesGroupPluginBase {
       '#title' => $this->t('Typography'),
       '#open' => FALSE,
     ];
+
+    return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function buildStyleFormElements(array &$form, FormStateInterface $form_state, $storage) {
+    $this->buildBreakpointsFields($form, 'typography');
 
     return $form;
   }

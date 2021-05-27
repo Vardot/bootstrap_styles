@@ -4,7 +4,6 @@ namespace Drupal\bootstrap_styles;
 
 use Drupal\Component\Utility\NestedArray;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\bootstrap_styles\HelperTrait;
 
 /**
  * A Trait for responsive methods.
@@ -125,17 +124,17 @@ trait ResponsiveTrait {
   protected function createBreakpointFormField(array &$form, string $breakpoint_key, string $field_name, array $original_parents, array $new_parents = []) {
     // Loop through the breakpoints.
     // foreach ($this->getBreakpoints() as $breakpoint_key => $breakpoint_value) {
-      // Get the original field.
-      $field = NestedArray::getValue($form, array_merge($original_parents, [$field_name]));
+    // Get the original field.
+    $field = NestedArray::getValue($form, array_merge($original_parents, [$field_name]));
 
-      // Change field attributes.
-      $field['#title'] .= ' - ' . $this->getBreakpointTitle($breakpoint_key);
-      $field['#default_value'] = $this->config()->get($field_name . '_' . $breakpoint_key);
-      $target_parents = $original_parents;
-      if ($new_parents) {
-        $target_parents = $new_parents;
-      }
-      NestedArray::setValue($form, array_merge($target_parents, [$field_name . '_' . $breakpoint_key]), $field);
+    // Change field attributes.
+    $field['#title'] .= ' - ' . $this->getBreakpointTitle($breakpoint_key);
+    $field['#default_value'] = $this->config()->get($field_name . '_' . $breakpoint_key);
+    $target_parents = $original_parents;
+    if ($new_parents) {
+      $target_parents = $new_parents;
+    }
+    NestedArray::setValue($form, array_merge($target_parents, [$field_name . '_' . $breakpoint_key]), $field);
     // }
   }
 

@@ -4,6 +4,7 @@ namespace Drupal\bootstrap_styles\Plugin\BootstrapStyles\Style;
 
 use Drupal\bootstrap_styles\Style\StylePluginBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\bootstrap_styles\ResponsiveTrait;
 
 /**
  * Class TextColor.
@@ -18,6 +19,7 @@ use Drupal\Core\Form\FormStateInterface;
  * )
  */
 class TextColor extends StylePluginBase {
+  use ResponsiveTrait;
 
   /**
    * {@inheritdoc}
@@ -34,6 +36,12 @@ class TextColor extends StylePluginBase {
       '#rows' => 5,
     ];
 
+    // Responsive.
+    $fields = [
+      'text_colors' => ['typography'],
+    ];
+    $this->buildBreakpointsConfigurationForm($form, $fields);
+
     return $form;
   }
 
@@ -44,6 +52,13 @@ class TextColor extends StylePluginBase {
     $this->config()
       ->set('text_colors', $form_state->getValue('text_colors'))
       ->save();
+
+    // Responsive.
+    $fields = [
+      'text_colors',
+    ];
+
+    $this->submitBreakpointsConfigurationForm($form_state, $fields);
   }
 
   /**
@@ -62,6 +77,9 @@ class TextColor extends StylePluginBase {
       ],
     ];
 
+    // Responsive.
+    $this->createBreakpointsStyleFormFields($form, 'text_color', 'typography', $storage, 'text_colors');
+
     // Attach the Layout Builder form style for this plugin.
     $form['#attached']['library'][] = 'bootstrap_styles/plugin.text_color.layout_builder_form';
 
@@ -72,11 +90,20 @@ class TextColor extends StylePluginBase {
    * {@inheritdoc}
    */
   public function submitStyleFormElements(array $group_elements) {
-    return [
+    $storage = [
       'text_color' => [
         'class' => $group_elements['text_color'],
       ],
     ];
+
+    // Responsive.
+    $fields = [
+      'text_color',
+    ];
+
+    $this->saveBreakpointsStyleFormFields($group_elements, $storage, $fields);
+
+    return $storage;
   }
 
   /**
@@ -87,6 +114,12 @@ class TextColor extends StylePluginBase {
     if (isset($storage['text_color']['class'])) {
       $classes[] = $storage['text_color']['class'];
     }
+
+    // Responsive.
+    $fields = [
+      'text_color',
+    ];
+    $this->buildBreakpoints($classes, $storage, $fields);
 
     // Add the classes to the build.
     $build = $this->addClassesToBuild($build, $classes, $theme_wrapper);

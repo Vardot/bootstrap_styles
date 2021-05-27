@@ -4,4 +4,5 @@
 @import "bs-variables";
 @import "mixins/spacing";
 
+// Generate padding classes by make-spacing mixin.
 @include make-spacing(padding, p);
