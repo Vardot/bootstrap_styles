@@ -1,3 +1,5 @@
+@import "variables";
+
 .bs-responsive-preview-wrapper {
   position: fixed;
   z-index: 500;
@@ -75,4 +77,20 @@ iframe#bs-responsive-preview {
 .bs-ui-widget-overlay.ui-widget-overlay {
   opacity: 1;
   z-index: 500 !important;
+}
+
+#drupal-off-canvas {
+  .form-item.bs_responsive_bar {
+    top: 68px;
+    z-index: 2;
+    position: sticky;
+    margin: -68px -30px 68px;
+    width: calc(100% + 60px);
+    background: $gray-292;
+    border-bottom: $gray-727 2px solid;
+    transition: all .3s ease-in-out;
+    legend {
+      margin-bottom: 2px;
+    }
+  }
 }

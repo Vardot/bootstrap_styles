@@ -76,3 +76,18 @@ iframe#bs-responsive-preview {
   opacity: 1;
   z-index: 500 !important;
 }
+
+#drupal-off-canvas .form-item.bs_responsive_bar {
+  top: 68px;
+  z-index: 2;
+  position: sticky;
+  margin: -68px -30px 68px;
+  width: calc(100% + 60px);
+  background: #292C32;
+  border-bottom: #727579 2px solid;
+  transition: all .3s ease-in-out;
+}
+
+#drupal-off-canvas .form-item.bs_responsive_bar legend {
+  margin-bottom: 2px;
+}

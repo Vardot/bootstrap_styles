@@ -46,10 +46,9 @@ trait ResponsiveTrait {
       '#default_value' => 'all',
       '#validated' => TRUE,
       '#attributes' => [
-        'class' => ['bs_col--full', 'bs_responsive'],
+        'class' => ['bs_col--full', 'bs_responsive', 'bs_responsive_bar'],
       ],
       '#disable_live_preview' => TRUE,
-      // '#weight' => -90,
     ];
 
     // Loop through the breakpoints.
