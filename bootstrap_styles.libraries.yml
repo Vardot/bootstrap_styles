@@ -35,16 +35,6 @@ bs_yiq:
   js:
     js/components/yiq.js: { }
 
-# Responsive
-bs_responsive:
-  css:
-    theme:
-      css/responsive.css: { }
-  js:
-    js/components/responsive.js: { }
-  dependencies:
-    - core/drupal.ajax
-
 # Themes.
 # Light
 theme.light:

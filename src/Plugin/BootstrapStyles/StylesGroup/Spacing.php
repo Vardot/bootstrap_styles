@@ -4,7 +4,6 @@ namespace Drupal\bootstrap_styles\Plugin\BootstrapStyles\StylesGroup;
 
 use Drupal\bootstrap_styles\StylesGroup\StylesGroupPluginBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\bootstrap_styles\ResponsiveTrait;
 
 /**
  * Class Spacing.
@@ -19,7 +18,6 @@ use Drupal\bootstrap_styles\ResponsiveTrait;
  * )
  */
 class Spacing extends StylesGroupPluginBase {
-  use ResponsiveTrait;
 
   /**
    * {@inheritdoc}
@@ -38,8 +36,6 @@ class Spacing extends StylesGroupPluginBase {
    * {@inheritdoc}
    */
   public function buildStyleFormElements(array &$form, FormStateInterface $form_state, $storage) {
-    $this->buildBreakpointsFields($form, 'spacing');
-
     $form['spacing_preview'] = [
       '#theme' => 'spacing_preview',
     ];
