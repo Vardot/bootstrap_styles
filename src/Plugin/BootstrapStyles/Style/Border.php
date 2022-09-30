@@ -384,7 +384,7 @@ class Border extends StylePluginBase {
       $default_value = $this->getStyleOptionIndexByClass('rounded_corners', $storage['border']['rounded_corners']['class']);
     }
 
-    $icon_path = drupal_get_path('module', 'bootstrap_styles') . '/images/';
+    $icon_path = \Drupal::service('extension.list.module')->getPath('bootstrap_styles') . '/images/';
 
     $form['rounded_corners'] = [
       '#type' => 'range',

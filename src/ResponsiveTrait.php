@@ -34,7 +34,7 @@ trait ResponsiveTrait {
    *   An associative array containing the structure of the form.
    */
   protected function buildResponsivePreviewer(array &$form) {
-    $icon_path = drupal_get_path('module', 'bootstrap_styles') . '/images/';
+    $icon_path = \Drupal::service('extension.list.module')->getPath('bootstrap_styles') . '/images/';
 
     $form['bs_responsive'] = [
       '#type' => 'radios',
@@ -69,7 +69,7 @@ trait ResponsiveTrait {
    *   The name of group that we like to add responsive to its plugins.
    */
   protected function buildBreakpointsFields(array &$form, $group_name) {
-    $icon_path = drupal_get_path('module', 'bootstrap_styles') . '/images/';
+    $icon_path = \Drupal::service('extension.list.module')->getPath('bootstrap_styles') . '/images/';
 
     $form['bs_responsive_' . $group_name] = [
       '#type' => 'radios',

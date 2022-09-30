@@ -1,8 +1,7 @@
 name: 'Bootstrap Styles'
 description: 'Add a plugins builder and a collection of reusable plugins to the Layout Builder module.'
 type: module
-core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9.3 || ^10
 package: 'Layout Builder'
 configure: bootstrap_styles.settings
 dependencies:
