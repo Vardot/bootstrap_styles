@@ -178,6 +178,11 @@ plugin.box_shadow.build:
 
 # scroll_effects
 plugin.scroll_effects.build:
+  dependencies:
+    - aos.remote
+
+# AOS remote library.
+aos.remote:
   remote: https://michalsnik.github.io/aos
   version: 1.x
   license:
@@ -190,3 +195,12 @@ plugin.scroll_effects.build:
   css:
     theme:
       https://unpkg.com/aos@2.3.1/dist/aos.css: { }
+
+# AOS local library.
+aos.local:
+  js:
+    /libraries/aos/dist/aos.js: { weight: -3, minified: true }
+    js/plugins/scroll_effects/build.js: { }
+  css:
+    theme:
+      /libraries/aos/dist/aos.css: { minified: true }
