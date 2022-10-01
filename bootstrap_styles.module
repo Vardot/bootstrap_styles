@@ -94,3 +94,22 @@ function bootstrap_styles_theme_suggestions_alter(array &$suggestions, array $va
     $suggestions[] = $hook . '__bs';
   }
 }
+
+/**
+ * Implements hook_library_info_alter().
+ */
+function bootstrap_styles_library_info_alter(&$libraries, $extension) {
+
+  if ($extension == 'bootstrap_styles'
+    && isset($libraries['plugin.scroll_effects.build'])
+    && file_exists(DRUPAL_ROOT . '/libraries/aos/dist/aos.js')) {
+
+    if (isset($libraries['plugin.scroll_effects.build']['dependencies'])
+      && ($dependency_key = array_search('aos.remote', $libraries['plugin.scroll_effects.build']['dependencies'])) !== FALSE) {
+
+      unset($libraries['plugin.scroll_effects.build']['dependencies'][$dependency_key]);
+      $libraries['plugin.scroll_effects.build']['dependencies'][] = 'aos.local';
+
+    }
+  }
+}
