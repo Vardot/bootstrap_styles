@@ -74,7 +74,7 @@ abstract class StylesGroupPluginBase extends PluginBase implements StylesGroupPl
     $icon_path = \Drupal::service('extension.list.module')->getPath('bootstrap_styles') . '/images/plugins/plugin-group-default-icon.svg';
     if (isset($this->pluginDefinition['icon'])) {
       $icon = $this->pluginDefinition['icon'];
-      $path_array = explode('/', $icon);
+      $path_array = explode('/', $icon ?? '');
       if (isset($path_array[0])) {
         $module_name = $path_array[0];
         $icon_path = \Drupal::service('extension.list.module')->getPath($module_name) . str_replace($module_name, '', $icon);
