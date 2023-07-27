@@ -98,7 +98,11 @@ class BackgroundColor extends StylePluginBase {
     $background_type = $storage['background']['background_type'] ?? 'color';
 
     if ($background_type != 'video') {
-      $classes[] = $storage['background_color']['class'];
+      $classes[] = $storage['background_color']['class'] !== "_none" ? $storage['background_color']['class'] : "";
+
+      if (!empty($storage['background_color']['class']) && $storage['background_color']['class'] !== "_none") {
+        $classes[] = 'bg-color';
+      }     
 
       // Add the classes to the build.
       $build = $this->addClassesToBuild($build, $classes, $theme_wrapper);

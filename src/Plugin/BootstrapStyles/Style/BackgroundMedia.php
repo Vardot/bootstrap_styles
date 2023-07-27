@@ -390,9 +390,11 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
           // Assign the style to element or its theme wrapper if exist.
           if ($theme_wrapper && isset($build['#theme_wrappers'][$theme_wrapper])) {
             $build['#theme_wrappers'][$theme_wrapper]['#attributes']['style'][] = $background_image_style;
+            $build['#theme_wrappers'][$theme_wrapper]['#attributes']['class'][] = 'bg-image';
           }
           else {
             $build['#attributes']['style'][] = $background_image_style;
+            $build['#attributes']['class'][] = 'bg-image';
           }
         }
       }
