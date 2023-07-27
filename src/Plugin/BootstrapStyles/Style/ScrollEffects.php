@@ -128,7 +128,7 @@ class ScrollEffects extends StylePluginBase {
 
     // Assign the style to element or its theme wrapper if exist.
     if ($theme_wrapper && isset($build['#theme_wrappers'][$theme_wrapper])) {
-      if (isset($attribute_type) && $attribute_type === 1) {
+      if (!empty($attribute_type)) {
         // Output some sort of data attribute.
         $build['#theme_wrappers'][$theme_wrapper]['#attributes'][$data_key][] = $storage['scroll_effects']['class'];
       }
@@ -138,7 +138,7 @@ class ScrollEffects extends StylePluginBase {
       }
     }
     else {
-      if (isset($attribute_type) && $attribute_type === 1) {
+      if (!empty($attribute_type)) {
         // Output some sort of data attribute.
         $build['#attributes'][$data_key][] = $storage['scroll_effects']['class'];
       }
