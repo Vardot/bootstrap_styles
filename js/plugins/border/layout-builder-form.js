@@ -3,18 +3,18 @@
  * Behaviors Border plugin layout builder form scripts.
  */
 
-(function ($, _, Drupal, drupalSettings) {
+(function ($, Drupal, once) {
   "use strict";
   
   // Border.
   Drupal.behaviors.borderLayoutBuilderForm = {
     attach: function (context) {
       // The default border color.
-      $('input.bs-field-border-color', context).once('blb_border').each(function () {
-        var border_color = '';
-        if ($(this).val() !='_none' && typeof $(this).next('label').css('border-color') != 'undefined') {
-          border_color = $(this).next('label').css('border-color');
-          $(this).next('label').attr('style', 'background-color: ' + border_color + ' !important; border-color: white !important;');
+      once('blb_border','input.bs-field-border-color', context).forEach(function (value,i) {
+      var border_color = '';
+        if ($(value).val() !='_none' && typeof $(value).next('label').css('border-color') != 'undefined') {
+          border_color = $(value).next('label').css('border-color');
+          $(value).next('label').attr('style', 'background-color: ' + border_color + ' !important; border-color: white !important;');
         }
       });
 
@@ -22,20 +22,20 @@
       var directions = ['left', 'top', 'right', 'bottom'];
       // Loop through the directions.
       for (var i = 0; i < directions.length; i++) {
-        $('input.bs-field-border-style-' + directions[i], context).once('blb_border').each(function () {
+        once('blb_border','input.bs-field-border-style-' + directions[i], context).forEach(function (value,i) {
           var border_style = '';
-          if ($(this).val() !='_none' && typeof $(this).next('label').css('border-style') != 'undefined') {
-            border_style = $(this).next('label').css('border-' + directions[i] + '-style');
-            $(this).next('label').css('border-style', border_style);
+          if ($(value).val() !='_none' && typeof $(value).next('label').css('border-style') != 'undefined') {
+            border_style = $(value).next('label').css('border-' + directions[i] + '-style');
+            $(value).next('label').css('border-style', border_style);
           }
         });
 
         // Switch border color to background color.
-        $('input.bs-field-border-color-' + directions[i], context).once('blb_border').each(function () {
+        once('blb_border','input.bs-field-border-color-' + directions[i], context).forEach(function (value,i) {
           var border_color = '';
-          if ($(this).val() !='_none' && typeof $(this).next('label').css('border-color') != 'undefined') {
-            border_color = $(this).next('label').css('border-' + directions[i] + '-color');
-            $(this).next('label').attr('style', 'background-color: ' + border_color + ' !important; border-color: white !important;');
+          if ($(value).val() !='_none' && typeof $(value).next('label').css('border-color') != 'undefined') {
+            border_color = $(value).next('label').css('border-' + directions[i] + '-color');
+            $(value).next('label').attr('style', 'background-color: ' + border_color + ' !important; border-color: white !important;');
           }
         });
 
@@ -43,4 +43,4 @@
     }
   };
 
-})(window.jQuery, window._, window.Drupal, window.drupalSettings);
+})(jQuery, Drupal, once);

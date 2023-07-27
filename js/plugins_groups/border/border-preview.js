@@ -3,14 +3,14 @@
  * Behaviors border plugin group.
  */
 
-(function ($, _, Drupal, drupalSettings) {
+(function ($, Drupal, once) {
   "use strict";
   
   // Border preview box.
   Drupal.behaviors.borderPreview = {
-    attach: function (context) {
-      var border_width = drupalSettings.bootstrap_styles.border.border_width;
-      var rounded_corners = drupalSettings.bootstrap_styles.border.rounded_corners;
+    attach: function (context,settings) {
+      var border_width = settings.bootstrap_styles.border.border_width;
+      var rounded_corners = settings.bootstrap_styles.border.rounded_corners;
       var directions = ['left', 'top', 'right', 'bottom'];
       var corners = ['top_left', 'top_right', 'bottom_left', 'bottom_right'];
 
@@ -20,7 +20,7 @@
 
         // Border style.
         $('input.bs-field-border-style').each(function() {
-          if ($(this).is(':checked') && $(this).val() != '_none') { 
+          if ($(this).is(':checked') && $(this).val() != '_none') {
             border_classes += $(this).val() + ' ';
           }
         });
@@ -34,7 +34,7 @@
 
         // Border color.
         $('input.bs-field-border-color').each(function() {
-          if ($(this).is(':checked') && $(this).val() != '_none') { 
+          if ($(this).is(':checked') && $(this).val() != '_none') {
             border_classes += $(this).val() + ' ';
           }
         });
@@ -43,7 +43,7 @@
         for (var i = 0; i < directions.length; i++) {
           // Border style.
           $('input.bs-field-border-style-' + directions[i]).each(function() {
-            if ($(this).is(':checked') && $(this).val() != '_none') { 
+            if ($(this).is(':checked') && $(this).val() != '_none') {
               border_classes += $(this).val() + ' ';
             }
           });
@@ -109,4 +109,4 @@
     }
   };
 
-})(window.jQuery, window._, window.Drupal, window.drupalSettings);
+})(jQuery, Drupal, once);
