@@ -108,7 +108,7 @@ function bootstrap_styles_library_info_alter(&$libraries, $extension) {
       && ($dependency_key = array_search('aos.remote', $libraries['plugin.scroll_effects.build']['dependencies'])) !== FALSE) {
 
       unset($libraries['plugin.scroll_effects.build']['dependencies'][$dependency_key]);
-      $libraries['plugin.scroll_effects.build']['dependencies'][] = 'aos.local';
+      $libraries['plugin.scroll_effects.build']['dependencies'][] = 'bootstrap_styles/aos.local';
 
     }
   }
