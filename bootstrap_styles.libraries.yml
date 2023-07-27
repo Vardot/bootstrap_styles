@@ -179,7 +179,7 @@ plugin.box_shadow.build:
 # scroll_effects
 plugin.scroll_effects.build:
   dependencies:
-    - aos.remote
+    - bootstrap_styles/aos.remote
 
 # AOS remote library.
 aos.remote:
