@@ -3,7 +3,7 @@
  * Behaviors Bootstrap styles themes overrides scripts.
  */
 
-(function ($, _, Drupal, drupalSettings) {
+(function ($, Drupal, once) {
   "use strict";
 
   Drupal.behaviors.bootstrapStylesThemesOverrides = {
@@ -18,12 +18,12 @@
       }
 
       // Remove custom-control class from Barrio theme.
-      $(".bs_tab-pane--appearance input:radio", context).once('bs-themes-overrides').each(function () {
-        $(this).parent().removeClass('custom-control custom-radio');
-        $(this).removeClass('custom-control-input');
-        $(this).next('label').removeClass('custom-control-label');
+      once('bs-themes-overrides',".bs_tab-pane--appearance input[type=radio]",context).forEach(function (value,i) {
+        $(value).parent().removeClass('custom-control custom-radio');
+        $(value).removeClass('custom-control-input');
+        $(value).next('label').removeClass('custom-control-label');
       });
     }
   };
 
-})(window.jQuery, window._, window.Drupal, window.drupalSettings);
+})(jQuery, Drupal, once);

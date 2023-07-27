@@ -3,21 +3,17 @@
  * Behaviors Bootstrap styles input scripts.
  */
 
-(function ($, _, Drupal, drupalSettings) {
+(function ($, Drupal, once) {
   "use strict";
 
   // Adds value from input to the label to emulate a "preview" on our inputs.
   Drupal.behaviors.bootstrapStylesInputCircles = {
     attach: function (context) {
-      $(".bs_input-circles input:radio", context).once('bs_input-circles').each(function () {
-
+      once('bs_input-circles',".bs_input-circles input[type=radio]",context).forEach(function (value,i) {
         // Add the [key] class from the backend to our forms input element (preview our colour).
-        $(this).next('label').addClass($(this).val());
-
+        $(value).next('label').addClass($(value).val());
       });
     }
   };
 
-})(window.jQuery, window._, window.Drupal, window.drupalSettings);
-
-
+})(jQuery, Drupal, once);

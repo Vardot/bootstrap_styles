@@ -3,14 +3,14 @@
  * Behaviors spacing plugin group.
  */
 
-(function ($, _, Drupal, drupalSettings) {
+(function ($, Drupal, once) {
   "use strict";
   
   // Spacing preview box.
   Drupal.behaviors.spacingPreview = {
-    attach: function (context) {
-      var spacing = drupalSettings.bootstrap_styles.spacing;
-      var breakpoints = drupalSettings.bootstrap_styles.breakpoints;
+    attach: function (context,settings) {
+      var spacing = settings.bootstrap_styles.spacing;
+      var breakpoints = settings.bootstrap_styles.breakpoints;
 
       var padding_box_shadow = $('.spacing-preview .padding-box').css('box-shadow');
       var margin_box_shadow = $('.spacing-preview .margin-box').css('box-shadow');
@@ -144,7 +144,7 @@
 
       // Calculate the padding on load.
       calcPadding();
-      // Calculate the maring on load.
+      // Calculate the margin on load.
       calcMargin();
 
       // Padding Actions
@@ -192,4 +192,4 @@
     }
   };
 
-})(window.jQuery, window._, window.Drupal, window.drupalSettings);
+})(jQuery, Drupal, once);

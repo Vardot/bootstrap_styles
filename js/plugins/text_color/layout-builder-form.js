@@ -3,26 +3,26 @@
  * Behaviors Text Color plugin layout builder form scripts.
  */
 
-(function ($, _, Drupal, drupalSettings) {
+(function ($, Drupal, once) {
   "use strict";
   
   // Text color.
   Drupal.behaviors.textColorLayoutBuilderForm = {
     attach: function (context) {
 
-      $(".fieldgroup.field-text-color input:radio", context).once('blb_text-color').each(function () {
-        $(this).next('label').addClass($(this).val());
+      once('blb_text-color',".fieldgroup.field-text-color input[type=radio]", context).forEach(function (value,i) {
+        $(value).next('label').addClass($(value).val());
 
         // Attach the color as a background color to the label AFTER adding the class.
-        if($(this).val() != '_none') {
-          var label_color = $(this).next('label').css('color');
-          $(this).next('label').css('background-color', label_color);
+        if($(value).val() != '_none') {
+          var label_color = $(value).next('label').css('color');
+          $(value).next('label').css('background-color', label_color);
 
           // Set a contrast class so we can see our checkmarks on light vs. dark backgrounds.
-          var bgColor = $(this).next('label').css('background-color');
+          var bgColor = $(value).next('label').css('background-color');
           var bgColorHex = rgb2hex(bgColor);
           var bgColorContrast = getContrast(bgColorHex);
-          $(this).next('label').addClass('bs_yiq-' + bgColorContrast);
+          $(value).next('label').addClass('bs_yiq-' + bgColorContrast);
         }
       });
 
@@ -49,4 +49,4 @@
     }
   };
 
-})(window.jQuery, window._, window.Drupal, window.drupalSettings);
+})(jQuery, Drupal, once);

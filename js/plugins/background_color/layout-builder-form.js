@@ -3,22 +3,22 @@
  * Behaviors Background Color plugin layout builder form scripts.
  */
 
-(function ($, _, Drupal, drupalSettings) {
+(function ($, Drupal, once) {
   "use strict";
   
   // Background color.
   Drupal.behaviors.backgroundColorLayoutBuilderForm = {
     attach: function (context) {
 
-      $(".fieldgroup.field-background-color input:radio", context).once('blb_bg-color').each(function () {
-        if($(this).val() != '_none') {
-          $(this).next('label').addClass($(this).val());
+      once('blb_bg-color',".fieldgroup.field-background-color input[type=radio]", context).forEach(function (value,i) {
+        if($(value).val() != '_none') {
+          $(value).next('label').addClass($(value).val());
 
           // Set a contrast class so we can see our checkmarks on light vs. dark backgrounds.s.
-          var bgColor = $(this).next('label').css('background-color');
+          var bgColor = $(value).next('label').css('background-color');
           var bgColorHex = rgb2hex(bgColor);
           var bgColorContrast = getContrast(bgColorHex);
-          $(this).next('label').addClass('bs_yiq-' + bgColorContrast);
+          $(value).next('label').addClass('bs_yiq-' + bgColorContrast);
         }
       });
 
@@ -44,4 +44,4 @@
     }
   };
 
-})(window.jQuery, window._, window.Drupal, window.drupalSettings);
+})(jQuery, Drupal, once);
