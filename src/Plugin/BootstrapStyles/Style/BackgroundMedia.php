@@ -228,7 +228,14 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
     $form['background_type']['#options']['image'] = $this->getSvgIconMarkup($icon_path . 'plugins/background/background-image.svg');
     $form['background_type']['#options']['video'] = $this->getSvgIconMarkup($icon_path . 'plugins/background/background-video.svg');
     if (!$form['background_type']['#default_value']) {
-      $form['background_type']['#default_value'] = $storage['background']['background_type'] ?? 'image';
+      if (isset($storage['background']) && isset($storage['background']['background_type'])) {
+        if ($storage['background']['background_type'] == 'image') {
+          $form['background_type']['#default_value'] = 'image';
+        }
+        elseif ($storage['background']['background_type'] == 'video') {
+          $form['background_type']['#default_value'] = 'video';
+        }
+      }
     }
 
     // Background media.
@@ -398,7 +405,8 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
           }
         }
       }
-      elseif ($config->get('background_local_video.bundle') && $storage['background']['background_type'] == 'video' && isset($storage['background_media']['video']['media_id']) && ($media_id = $storage['background_media']['video']['media_id'])) {
+
+      if ($config->get('background_local_video.bundle') && $storage['background']['background_type'] == 'video' && isset($storage['background_media']['video']['media_id']) && ($media_id = $storage['background_media']['video']['media_id'])) {
         $media_entity = Media::load($media_id);
         $media_field_name = $config->get('background_local_video.field');
         // Check if the field exist.
@@ -407,7 +415,26 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
 
           $build['#theme_wrappers']['bs_video_background'] = [
             '#video_background_url' => $background_video_url,
+            '#attributes' => ['class' => ['bg-video']],
           ];
+
+          if ($config->get('background_image.bundle') && isset($storage['background_media']['image']['media_id']) && ($media_id = $storage['background_media']['image']['media_id'])) {
+            $media_entity = Media::load($media_id);
+            $media_field_name = $config->get('background_image.field');
+
+            // Check if the field exist.
+            if ($media_entity && $media_entity->hasField($media_field_name)) {
+              $background_image_style = $this->buildBackgroundMediaImage($media_entity, $media_field_name, $storage);
+
+              $build['#theme_wrappers']['bs_video_background']['#attributes']['style'][] = $background_image_style;
+              $build['#theme_wrappers']['bs_video_background']['#attributes']['class'][] = 'bg-image';
+            }
+          }
+
+          if (isset($storage['background_color']['class']) && $storage['background_color']['class'] !== '' && $storage['background_color']['class'] !== '_none') {
+            $build['#theme_wrappers']['bs_video_background']['#attributes']['class'][] = 'bg-color';
+            $build['#theme_wrappers']['bs_video_background']['#attributes']['class'][] = $storage['background_color']['class'];
+          }
         }
       }
     }

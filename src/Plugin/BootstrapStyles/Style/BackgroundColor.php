@@ -52,7 +52,16 @@ class BackgroundColor extends StylePluginBase {
   public function buildStyleFormElements(array &$form, FormStateInterface $form_state, $storage) {
     $icon_path = \Drupal::service('extension.list.module')->getPath('bootstrap_styles') . '/images/';
     $form['background_type']['#options']['color'] = $this->getSvgIconMarkup($icon_path . 'plugins/background/background-color.svg');
-    $form['background_type']['#default_value'] = $storage['background']['background_type'] ?? 'color';
+
+    // When opening the Background tab for the first time
+    // Then the selected tab for background type will be color
+    // But without default value
+    // When the last saved background action was a color
+    // Then keep the background type as color.
+    if ((isset($storage['background']) && isset($storage['background']['background_type']))
+      && ($storage['background']['background_type'] == 'color'|| $storage['background']['background_type'] == '')) {
+      $form['background_type']['#default_value'] = 'color';
+    }
 
     $form['background_color'] = [
       '#type' => 'radios',
@@ -95,15 +104,22 @@ class BackgroundColor extends StylePluginBase {
   public function build(array $build, array $storage, $theme_wrapper = NULL) {
     $classes = [];
     // Backwards compatibility for layouts created on the 1.x version.
-    $background_type = $storage['background']['background_type'] ?? 'color';
+    $background_type = $storage['background']['background_type'];
+    if ($background_type == 'color'
+      || $background_type == '') {
+      $background_type = 'color';
+    }
 
-    if ($background_type != 'video') {
-      $classes[] = $storage['background_color']['class'] !== "_none" ? $storage['background_color']['class'] : "";
+    // When the background color has a useful css class value
+    // Then add the css class to classes.
+    if (isset($storage['background_color']['class'])
+      && $storage['background_color']['class'] !== ''
+      && $storage['background_color']['class'] !== '_none') {
 
-      if (!empty($storage['background_color']['class']) && $storage['background_color']['class'] !== "_none") {
-        $classes[] = 'bg-color';
-      }     
+      $classes = [$storage['background_color']['class'], 'bg-color'];
+    }
 
+    if ($storage['background']['background_type'] !== 'video') {
       // Add the classes to the build.
       $build = $this->addClassesToBuild($build, $classes, $theme_wrapper);
     }

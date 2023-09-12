@@ -56,6 +56,17 @@ class Background extends StylesGroupPluginBase {
    * {@inheritdoc}
    */
   public function submitStyleFormElements(array $group_elements) {
+
+    // When the Background Image config field has a selected media target entity image id.
+    if (isset($group_elements['background_image']) && $group_elements['background_image'] !== '') {
+      $group_elements['background_type'] = 'image';
+    }
+
+    // When the Background Video config field has a selected media target entity video id.
+    if (isset($group_elements['background_video']) && $group_elements['background_video'] !== '') {
+      $group_elements['background_type'] = 'video';
+    }
+
     return [
       'background' => [
         'background_type' => $group_elements['background_type'],
