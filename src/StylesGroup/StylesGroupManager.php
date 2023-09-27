@@ -207,7 +207,7 @@ class StylesGroupManager extends DefaultPluginManager {
    */
   public function submitStylesFormElements(array &$form, FormStateInterface $form_state, array $tree = [], array $storage = [], $filter = NULL) {
     $options = [];
-
+    $form_state->cleanValues();
     // Restrict styles.
     $allowed_plugins = $this->getAllowedPlugins($filter);
     foreach ($this->getStylesGroups() as $group_key => $style_group) {

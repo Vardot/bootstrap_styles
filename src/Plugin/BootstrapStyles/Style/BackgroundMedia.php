@@ -358,10 +358,10 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
     return [
       'background_media' => [
         'image' => [
-          'media_id' => $group_elements['background_image'],
+          'media_id' => $group_elements['background_image']['media_library_selection'] ?? $group_elements['background_image'],
         ],
         'video' => [
-          'media_id' => $group_elements['background_video'],
+          'media_id' => $group_elements['background_video']['media_library_selection'] ?? $group_elements['background_video'],
         ],
         'background_options' => [
           'background_position' => $group_elements['background_options']['background_position'],
