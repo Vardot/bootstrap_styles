@@ -137,9 +137,9 @@
    * Sets the viewport width and height dimensions on the envModel.
    */
   function setPreviewerSize() {
-    if($('#drupal-off-canvas').length > 0) {
+    if($('#drupal-off-canvas-wrapper').length > 0) {
       var viewportWidth = document.documentElement.clientWidth;
-      var offcanvasWidth = $('#drupal-off-canvas').css('width');
+      var offcanvasWidth = $('#drupal-off-canvas-wrapper').css('width');
       var toolbarHeight = $('.ui-dialog-off-canvas').css('top');
 
       $('.bs-responsive-preview-container').css('max-width', (viewportWidth - offcanvasWidth));
@@ -187,13 +187,13 @@
 
   $(window).on({
     'dialog:beforecreate': function dialogBeforecreate(event, dialog, $element) {
-      if ($element.is('#drupal-off-canvas')) {
+      if ($element.is('#drupal-off-canvas-wrapper')) {
         // Reset the active device to all.
         setTempStore('active_device', 'all');
       }
     },
     'dialog:beforeclose': function dialogBeforeclose(event, dialog, $element) {
-      if ($element.is('#drupal-off-canvas')) {
+      if ($element.is('#drupal-off-canvas-wrapper')) {
         // Reset the active device to all.
         setTempStore('active_device', 'all');
       }

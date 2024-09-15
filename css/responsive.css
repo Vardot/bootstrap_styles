@@ -77,7 +77,7 @@ iframe#bs-responsive-preview {
   z-index: 500 !important;
 }
 
-#drupal-off-canvas .form-item.bs_responsive_bar {
+#drupal-off-canvas-wrapper .form-item.bs_responsive_bar {
   top: 68px;
   z-index: 2;
   position: sticky;
@@ -88,6 +88,6 @@ iframe#bs-responsive-preview {
   transition: all .3s ease-in-out;
 }
 
-#drupal-off-canvas .form-item.bs_responsive_bar legend {
+#drupal-off-canvas-wrapper .form-item.bs_responsive_bar legend {
   margin-bottom: 2px;
 }
