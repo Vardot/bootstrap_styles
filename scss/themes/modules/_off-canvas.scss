@@ -1,7 +1,9 @@
 @import "../dialog/off-canvas.theme";
 @import "../dialog/dialog.resizable";
 
-#drupal-off-canvas-wrapper {
+#drupal-off-canvas {
+  width: 100% !important;
+
   /* Set some global attributes. */
   *,
   *:not(div) {

@@ -2,14 +2,14 @@
 
 namespace Drupal\bootstrap_styles\Element;
 
-use Drupal\Core\Render\Element\RenderElementBase;
+use Drupal\Core\Render\Element\RenderElement;
 
 /**
  * Provides a video background render element.
  *
- * @RenderElementBase("bs_video_background")
+ * @RenderElement("bs_video_background")
  */
-class VideoBackground extends RenderElementBase {
+class VideoBackground extends RenderElement {
 
   /**
    * {@inheritdoc}
