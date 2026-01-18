@@ -388,7 +388,7 @@ class Border extends StylePluginBase {
 
     $form['rounded_corners'] = [
       '#type' => 'range',
-      '#title' => '<span class="sr-only">' . $this->t('Corners') . '</span><div class="bs_tooltip" data-placement="top" role="tooltip">' . $this->t('All Corners') . '</div>',
+      '#title' => '<span class="visually-hidden">' . $this->t('Corners') . '</span><div class="bs_tooltip" data-placement="top" role="tooltip">' . $this->t('All Corners') . '</div>',
       '#min' => 0,
       '#max' => $this->getStyleOptionsCount('rounded_corners'),
       '#step' => 1,
@@ -408,7 +408,7 @@ class Border extends StylePluginBase {
 
       $form['rounded_corner_' . $corner_key] = [
         '#type' => 'range',
-        '#title' => '<span class="sr-only">' . $this->t('@corner', ['@corner' => $corner_value]) . '</span><div class="bs_tooltip" data-placement="top" role="tooltip">' . $this->t('@corner', ['@corner' => $corner_value]) . '</div>',
+        '#title' => '<span class="visually-hidden">' . $this->t('@corner', ['@corner' => $corner_value]) . '</span><div class="bs_tooltip" data-placement="top" role="tooltip">' . $this->t('@corner', ['@corner' => $corner_value]) . '</div>',
         '#min' => 0,
         '#max' => $this->getStyleOptionsCount('rounded_corner_' . $corner_key),
         '#step' => 1,
