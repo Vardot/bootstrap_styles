@@ -536,7 +536,12 @@ class Border extends StylePluginBase {
     $build = $this->addClassesToBuild($build, $classes, $theme_wrapper);
 
     // Attach bs-classes to the build.
-    $build['#attached']['library'][] = 'bootstrap_styles/plugin.border.build';
+    foreach ($storage['border'] as $key => $value) {
+      if (isset($value['class']) && $value['class'] !== '' && $value['class'] !== '_none') {
+        $build['#attached']['library'][] = 'bootstrap_styles/plugin.border.build';
+        break;
+      }
+    }
 
     return $build;
   }
