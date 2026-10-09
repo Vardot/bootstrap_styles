@@ -187,12 +187,20 @@ aos.remote:
   css:
     theme:
       https://unpkg.com/aos@2.3.1/dist/aos.css: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
 
 # AOS local library.
 aos.local:
   js:
     /libraries/aos/dist/aos.js: { weight: -3, minified: true }
     js/plugins/scroll_effects/build.js: { }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
   css:
     theme:
       /libraries/aos/dist/aos.css: { minified: true }
