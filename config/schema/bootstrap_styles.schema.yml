@@ -151,7 +151,7 @@ bootstrap_styles.settings:
 
 bootstrap_styles.container_wrapper:
   type: config_entity
-  label: 'Boostrap Styles Container Wrapper'
+  label: 'Bootstrap Styles Container Wrapper'
   mapping:
     background:
       type: mapping

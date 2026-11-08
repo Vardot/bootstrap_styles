@@ -6,7 +6,7 @@ use Drupal\bootstrap_styles\Style\StylePluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class TextAlignment.
+ * Provides the text alignment style plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\Style
  *

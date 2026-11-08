@@ -6,7 +6,7 @@ use Drupal\bootstrap_styles\Style\StylePluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class Border.
+ * Provides the border style plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\Style
  *
@@ -154,7 +154,7 @@ class Border extends StylePluginBase {
 
     $form['border']['rounded_corners'] = [
       '#type' => 'container',
-      '#title' => $this->t('Rounded cornerns'),
+      '#title' => $this->t('Rounded corners'),
       '#title_display' => 'invisible',
       '#tree' => FALSE,
       '#attributes' => [

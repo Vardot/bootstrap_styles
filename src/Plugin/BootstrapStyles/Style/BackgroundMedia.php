@@ -15,7 +15,7 @@ use Drupal\media\Entity\Media;
 use Drupal\file\Entity\File;
 
 /**
- * Class BackgroundMedia.
+ * Provides the background media style plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\Style
  *
@@ -409,7 +409,7 @@ class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginI
       if ($config->get('background_local_video.bundle') && $storage['background']['background_type'] == 'video' && isset($storage['background_media']['video']['media_id']) && ($media_id = $storage['background_media']['video']['media_id'])) {
         // Added to avoid problem about media background style in the section:
         // check if $media_id is an array and extract the value of
-        //  'media_library_selection' if present.
+        // 'media_library_selection' if present.
         if (is_array($media_id) && isset($media_id['media_library_selection'])) {
           $media_id = $media_id['media_library_selection'];
         }

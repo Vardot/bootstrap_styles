@@ -4,7 +4,7 @@
 // Load our additional module styling
 @import "modules/*";
 
-// Attach our plugins for our themes to override our colours.
+// Attach our plugins for our themes to override our colors.
 #drupal-off-canvas,
 #layout-builder-modal {
   @import "layout/*";

@@ -3,6 +3,9 @@
   "description": "Add a plugins builder and a collection of reusable plugins to the Layout Builder module.",
   "author": "Mahmoud Zayed & Aaron Christian",
   "version": "1.0.0",
+  "engines": {
+    "node": ">= 24.0"
+  },
   "scripts": {
     "css:compile": "node-sass --importer node_modules/node-sass-magic-importer/dist/cli.js scss/ --output-style expanded -o css/",
     "css:build": "npm run css:compile",

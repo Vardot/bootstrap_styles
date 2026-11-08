@@ -14,7 +14,7 @@
     // The class style.
     @include base-rule(".#{$bs_class_prefix}#{$abbrev}-#{$color_key}", "#{$prop}", "#{$color_value} !important");
 
-    // Fix the dispaly on off-canvas dialog.
+    // Fix the display on off-canvas dialog.
     #{$bs_off_canvas_selector} {
       @include base-rule(".#{$bs_class_prefix}#{$abbrev}-#{$color_key}", "#{$prop}", "#{$color_value} !important");
     }
@@ -29,7 +29,7 @@
       }
     }
 
-    // Fix the dispaly on off-canvas dialog.
+    // Fix the display on off-canvas dialog.
     @each $color_key, $color_value in $bs_text_colors {
       #{$bs_off_canvas_selector} {
         @include base-rule(".#{$bs_class_prefix}#{$abbrev}-#{$breakpoint_key}-#{$color_key}", "#{$prop}", "#{$color_value} !important");

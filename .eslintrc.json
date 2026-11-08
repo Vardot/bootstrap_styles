@@ -1,0 +1,20 @@
+// Core's config is the parent in CI. These rules flag legacy jQuery and var
+// code that no safe autofix covers, so they warn until it is rewritten.
+{
+  "rules": {
+    "camelcase": "warn",
+    "eqeqeq": "warn",
+    "radix": "warn",
+    "block-scoped-var": "warn",
+    "vars-on-top": "warn",
+    "no-var": "warn",
+    "no-redeclare": "warn",
+    "no-loop-func": "warn",
+    "no-use-before-define": "warn",
+    "no-jquery/no-val": "warn",
+    "no-jquery/no-css": "warn",
+    "no-jquery/no-text": "warn",
+    "no-jquery/no-is": "warn",
+    "no-jquery/no-ajax-events": "warn"
+  }
+}

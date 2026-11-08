@@ -338,7 +338,7 @@
   }
 }
 
-// Override input slider colours (padding/margin)
+// Override input slider colors (padding/margin)
 @mixin bs_range_sliders($track_color: $panel_link_color) {
   &::-webkit-slider-runnable-track {
     background: $track_color;

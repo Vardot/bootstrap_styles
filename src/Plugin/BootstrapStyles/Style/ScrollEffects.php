@@ -6,7 +6,7 @@ use Drupal\bootstrap_styles\Style\StylePluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class Effect.
+ * Provides the scroll effects style plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\Style
  *
@@ -42,7 +42,7 @@ class ScrollEffects extends StylePluginBase {
       '#type' => 'textarea',
       '#default_value' => $config->get('scroll_effects'),
       '#title' => $this->t('Scroll Effects'),
-      '#description' => $this->t('<p>Enter one value per line, in the format <b>key|label</b> where <em>key</em> is the attribute\'s value, and <em>label</em> is the human readable name of the effect.</p>'),
+      '#description' => $this->t("<p>Enter one value per line, in the format <b>key|label</b> where <em>key</em> is the attribute's value, and <em>label</em> is the human readable name of the effect.</p>"),
       '#cols' => 60,
       '#rows' => 5,
     ];
@@ -98,7 +98,7 @@ class ScrollEffects extends StylePluginBase {
       '#prefix' => '<span class="input-icon"></span>',
     ];
 
-    // Add icons to the effets.
+    // Add icons to the effects.
     foreach ($form['scroll_effects']['#options'] as $key => $value) {
       $form['scroll_effects']['#options'][$key] = '<span class="input-icon ' . $key . '"></span>' . $value;
     }

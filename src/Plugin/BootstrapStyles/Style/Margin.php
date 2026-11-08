@@ -6,7 +6,7 @@ use Drupal\bootstrap_styles\Style\StylePluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class Margin.
+ * Provides the margin style plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\Style
  *

@@ -6,7 +6,7 @@ use Drupal\bootstrap_styles\StylesGroup\StylesGroupPluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class Animation.
+ * Provides the animation styles group plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\StylesGroup
  *

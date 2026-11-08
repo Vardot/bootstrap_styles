@@ -1,9 +1,3 @@
-@-webkit-keyframes hover-pop {
-  50% {
-    transform: scale(1.2);
-  }
-}
-
 @keyframes hover-pop {
   50% {
     transform: scale(1.2);
@@ -14,9 +8,9 @@
 #drupal-off-canvas .form-radios > div,
 #layout-builder-modal .form-type-checkbox,
 #layout-builder-modal .form-radios > div {
-  padding: 0;
-  margin: 0;
   width: auto;
+  margin: 0;
+  padding: 0;
 }
 
 #drupal-off-canvas .form-control,
@@ -26,9 +20,9 @@
 
 #drupal-off-canvas .custom-control-input,
 #layout-builder-modal .custom-control-input {
-  opacity: 1;
   margin-top: 10px;
   margin-bottom: 10px;
+  opacity: 1;
 }
 
 #drupal-off-canvas .bs_flex,
@@ -76,19 +70,19 @@
 
 #drupal-off-canvas .bs-group-title,
 #layout-builder-modal .bs-group-title {
-  margin-left: 15px;
   display: flex;
   align-items: center;
+  margin-left: 15px;
 }
 
 #drupal-off-canvas .visually-hidden,
 #layout-builder-modal .visually-hidden {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
   border: 0;
 }
