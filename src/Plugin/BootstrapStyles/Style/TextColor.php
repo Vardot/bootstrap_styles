@@ -6,7 +6,7 @@ use Drupal\bootstrap_styles\Style\StylePluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class TextColor.
+ * Provides the text color style plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\Style
  *

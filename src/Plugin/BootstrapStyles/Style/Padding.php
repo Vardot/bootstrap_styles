@@ -6,7 +6,7 @@ use Drupal\bootstrap_styles\Style\StylePluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class Padding.
+ * Provides the padding style plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\Style
  *

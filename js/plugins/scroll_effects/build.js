@@ -1,15 +1,14 @@
 /**
  * @file
- * Behaviors of Boostrap Layout Builder local video background.
+ * Behaviors of Bootstrap Layout Builder local video background.
  */
 
+/* global AOS */
+
 (function ($, _, Drupal, drupalSettings) {
-  "use strict";
-
   Drupal.behaviors.scrollEffectsInit = {
-    attach: function (context, settings) {
+    attach(context, settings) {
       AOS.init();
-    }
-  }
-
+    },
+  };
 })(window.jQuery, window._, window.Drupal, window.drupalSettings);

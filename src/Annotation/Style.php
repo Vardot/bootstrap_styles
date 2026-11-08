@@ -30,7 +30,7 @@ class Style extends Plugin {
   /**
    * An integer to determine the weight of this style.
    *
-   * @var intoptional
+   * @var int|null
    */
   public $weight = NULL;
 

@@ -6,7 +6,7 @@ use Drupal\bootstrap_styles\StylesGroup\StylesGroupPluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class Background.
+ * Provides the background styles group plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\StylesGroup
  *
@@ -57,12 +57,14 @@ class Background extends StylesGroupPluginBase {
    */
   public function submitStyleFormElements(array $group_elements) {
 
-    // When the Background Image config field has a selected media target entity image id.
+    // When the Background Image config field has a selected media target
+    // entity image id.
     if (isset($group_elements['background_image']) && $group_elements['background_image'] !== '') {
       $group_elements['background_type'] = 'image';
     }
 
-    // When the Background Video config field has a selected media target entity video id.
+    // When the Background Video config field has a selected media target
+    // entity video id.
     if (isset($group_elements['background_video']) && $group_elements['background_video'] !== '') {
       $group_elements['background_type'] = 'video';
     }
