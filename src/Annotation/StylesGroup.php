@@ -30,7 +30,7 @@ class StylesGroup extends Plugin {
   /**
    * An integer to determine the weight of this style group.
    *
-   * @var intoptional
+   * @var int|null
    */
   public $weight = NULL;
 

@@ -1,0 +1,7 @@
+allowtransparency
+bario
+checkmarks
+ferdinandi
+suda
+wght
+zindex

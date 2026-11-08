@@ -7,7 +7,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\bootstrap_styles\ResponsiveTrait;
 
 /**
- * Class Typography.
+ * Provides the typography styles group plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\StylesGroup
  *

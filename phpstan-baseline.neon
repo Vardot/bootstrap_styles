@@ -1,0 +1,97 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^\\Drupal calls should be avoided in classes, use dependency injection instead$#'
+			identifier: globalDrupalDependencyInjection.useDependencyInjection
+			count: 1
+			path: src/Plugin/BootstrapStyles/Style/BackgroundColor.php
+
+		-
+			message: '#^\\Drupal calls should be avoided in classes, use dependency injection instead$#'
+			identifier: globalDrupalDependencyInjection.useDependencyInjection
+			count: 3
+			path: src/Plugin/BootstrapStyles/Style/BackgroundMedia.php
+
+		-
+			message: '#^\\Drupal calls should be avoided in classes, use dependency injection instead$#'
+			identifier: globalDrupalDependencyInjection.useDependencyInjection
+			count: 1
+			path: src/Plugin/BootstrapStyles/Style/Border.php
+
+		-
+			message: '#^Call to an undefined method Drupal\\bootstrap_styles\\Plugin\\BootstrapStyles\\StylesGroup\\Background\:\:getStyleOptionClassByIndex\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Plugin/BootstrapStyles/StylesGroup/Background.php
+
+		-
+			message: '#^Call to an undefined method Drupal\\bootstrap_styles\\Plugin\\BootstrapStyles\\StylesGroup\\Background\:\:getStyleOptionIndexByClass\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Plugin/BootstrapStyles/StylesGroup/Background.php
+
+		-
+			message: '#^Call to an undefined method Drupal\\bootstrap_styles\\Plugin\\BootstrapStyles\\StylesGroup\\Background\:\:getStyleOptions\(\)\.$#'
+			identifier: method.notFound
+			count: 3
+			path: src/Plugin/BootstrapStyles/StylesGroup/Background.php
+
+		-
+			message: '#^Call to an undefined method Drupal\\bootstrap_styles\\Plugin\\BootstrapStyles\\StylesGroup\\Background\:\:getStyleOptionsCount\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Plugin/BootstrapStyles/StylesGroup/Background.php
+
+		-
+			message: '#^Call to an undefined method Drupal\\bootstrap_styles\\Plugin\\BootstrapStyles\\StylesGroup\\Spacing\:\:getStyleOptionClassByIndex\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Plugin/BootstrapStyles/StylesGroup/Spacing.php
+
+		-
+			message: '#^Call to an undefined method Drupal\\bootstrap_styles\\Plugin\\BootstrapStyles\\StylesGroup\\Spacing\:\:getStyleOptionIndexByClass\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Plugin/BootstrapStyles/StylesGroup/Spacing.php
+
+		-
+			message: '#^Call to an undefined method Drupal\\bootstrap_styles\\Plugin\\BootstrapStyles\\StylesGroup\\Spacing\:\:getStyleOptions\(\)\.$#'
+			identifier: method.notFound
+			count: 3
+			path: src/Plugin/BootstrapStyles/StylesGroup/Spacing.php
+
+		-
+			message: '#^Call to an undefined method Drupal\\bootstrap_styles\\Plugin\\BootstrapStyles\\StylesGroup\\Spacing\:\:getStyleOptionsCount\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Plugin/BootstrapStyles/StylesGroup/Spacing.php
+
+		-
+			message: '#^Call to an undefined method Drupal\\bootstrap_styles\\Plugin\\BootstrapStyles\\StylesGroup\\Typography\:\:getStyleOptionClassByIndex\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Plugin/BootstrapStyles/StylesGroup/Typography.php
+
+		-
+			message: '#^Call to an undefined method Drupal\\bootstrap_styles\\Plugin\\BootstrapStyles\\StylesGroup\\Typography\:\:getStyleOptionIndexByClass\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Plugin/BootstrapStyles/StylesGroup/Typography.php
+
+		-
+			message: '#^Call to an undefined method Drupal\\bootstrap_styles\\Plugin\\BootstrapStyles\\StylesGroup\\Typography\:\:getStyleOptions\(\)\.$#'
+			identifier: method.notFound
+			count: 3
+			path: src/Plugin/BootstrapStyles/StylesGroup/Typography.php
+
+		-
+			message: '#^Call to an undefined method Drupal\\bootstrap_styles\\Plugin\\BootstrapStyles\\StylesGroup\\Typography\:\:getStyleOptionsCount\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/Plugin/BootstrapStyles/StylesGroup/Typography.php
+
+		-
+			message: '#^\\Drupal calls should be avoided in classes, use dependency injection instead$#'
+			identifier: globalDrupalDependencyInjection.useDependencyInjection
+			count: 2
+			path: src/StylesGroup/StylesGroupPluginBase.php

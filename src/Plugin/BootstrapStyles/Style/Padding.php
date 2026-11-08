@@ -7,7 +7,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\bootstrap_styles\ResponsiveTrait;
 
 /**
- * Class Padding.
+ * Provides the padding style plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\Style
  *

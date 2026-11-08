@@ -13,6 +13,13 @@ use Drupal\bootstrap_styles\StylesGroup\StylesGroupManager;
 class StylesFilterConfigForm extends ConfigFormBase {
 
   /**
+   * Config settings.
+   *
+   * @var string
+   */
+  const CONFIG = 'bootstrap_styles.settings';
+
+  /**
    * The styles group plugin manager.
    *
    * @var \Drupal\bootstrap_styles\StylesGroup\StylesGroupManager

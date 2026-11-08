@@ -113,16 +113,20 @@ trait ResponsiveTrait {
   }
 
   /**
-   * Build the breakpoints configuration form.
+   * Create a copy of a configuration form field for one breakpoint.
    *
    * @param array $form
    *   An associative array containing the structure of the form.
-   * @param array $fields
-   *   The array of fields, each field has its parents and keyed by field name.
+   * @param string $breakpoint_key
+   *   The breakpoint key.
+   * @param string $field_name
+   *   The name of the field to copy.
+   * @param array $original_parents
+   *   The parents of the original field.
+   * @param array $new_parents
+   *   The parents to place the copy under, the original parents if empty.
    */
   protected function createBreakpointFormField(array &$form, string $breakpoint_key, string $field_name, array $original_parents, array $new_parents = []) {
-    // Loop through the breakpoints.
-    // foreach ($this->getBreakpoints() as $breakpoint_key => $breakpoint_value) {
     // Get the original field.
     $field = NestedArray::getValue($form, array_merge($original_parents, [$field_name]));
 
@@ -134,13 +138,12 @@ trait ResponsiveTrait {
       $target_parents = $new_parents;
     }
     NestedArray::setValue($form, array_merge($target_parents, [$field_name . '_' . $breakpoint_key]), $field);
-    // }
   }
 
   /**
-   * TODO: Remove and replace this function.
-   *
    * Build the breakpoints configuration form.
+   *
+   * @todo Remove and replace this function.
    *
    * @param array $form
    *   An associative array containing the structure of the form.
@@ -201,7 +204,7 @@ trait ResponsiveTrait {
    *   The storage key of the field in the storage array if
    *   it's different from the field name.
    */
-  protected function createBreakpointStyleFormField(array &$form, string $field_name, string $breakpoint_key, string $group_id, array $storage, string $storage_key = NULL) {
+  protected function createBreakpointStyleFormField(array &$form, string $field_name, string $breakpoint_key, string $group_id, array $storage, ?string $storage_key = NULL) {
     $form[$field_name . '_' . $breakpoint_key] = $form[$field_name];
     $form[$field_name . '_' . $breakpoint_key]['#options'] = $this->getStyleOptions($storage_key . '_' . $breakpoint_key);
 
@@ -227,7 +230,7 @@ trait ResponsiveTrait {
    *   The storage key of the field in the storage array if
    *   it's different from the field name.
    */
-  protected function createBreakpointsStyleFormFields(array &$form, string $field_name, string $group_id, array $storage, string $storage_key = NULL) {
+  protected function createBreakpointsStyleFormFields(array &$form, string $field_name, string $group_id, array $storage, ?string $storage_key = NULL) {
     foreach ($this->getBreakpointsKeys() as $breakpoint_key) {
       $this->createBreakpointStyleFormField($form, $field_name, $breakpoint_key, $group_id, $storage, $storage_key);
     }
@@ -250,7 +253,7 @@ trait ResponsiveTrait {
    *   The storage key of the field in the storage array if
    *   it's different from the field name.
    */
-  protected function createBreakpointStyleFormClassIndexBasedField(array &$form, string $field_name, string $breakpoint_key, string $group_id, array $storage, string $storage_key = NULL) {
+  protected function createBreakpointStyleFormClassIndexBasedField(array &$form, string $field_name, string $breakpoint_key, string $group_id, array $storage, ?string $storage_key = NULL) {
     $breakpoint_default_value = 0;
     if (isset($storage[$field_name . '_' . $breakpoint_key]['class'])) {
       $breakpoint_default_value = $this->getStyleOptionIndexByClass($field_name . '_' . $breakpoint_key, $storage[$field_name . '_' . $breakpoint_key]['class']);
@@ -290,14 +293,16 @@ trait ResponsiveTrait {
    *   The storage key of the field in the storage array if
    *   it's different from the field name.
    */
-  protected function createBreakpointsStyleFormClassIndexBasedFields(array &$form, string $field_name, string $group_id, array $storage, string $storage_key = NULL) {
+  protected function createBreakpointsStyleFormClassIndexBasedFields(array &$form, string $field_name, string $group_id, array $storage, ?string $storage_key = NULL) {
     foreach ($this->getBreakpointsKeys() as $breakpoint_key) {
       $this->createBreakpointStyleFormClassIndexBasedField($form, $field_name, $breakpoint_key, $group_id, $storage, $storage_key);
     }
   }
 
   /**
-   * TODO: RENAME Build the breakpoints style form elements.
+   * Build the breakpoints style form elements.
+   *
+   * @todo Rename this function.
    *
    * @param array $form
    *   An associative array containing the structure of the form.

@@ -7,7 +7,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\bootstrap_styles\ResponsiveTrait;
 
 /**
- * Class Background.
+ * Provides the background styles group plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\StylesGroup
  *

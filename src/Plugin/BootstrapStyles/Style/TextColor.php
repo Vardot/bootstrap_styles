@@ -7,7 +7,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\bootstrap_styles\ResponsiveTrait;
 
 /**
- * Class TextColor.
+ * Provides the text color style plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\Style
  *

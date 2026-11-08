@@ -726,7 +726,7 @@
 #layout-builder-modal *:not(div) textarea,
 #layout-builder-modal *:not(div) select {
   color: black;
-  border: 1px solid grey;
+  border: 1px solid gray;
   background: white;
 }
 
@@ -1749,7 +1749,7 @@
 #drupal-off-canvas-wrapper *:not(div) textarea,
 #drupal-off-canvas-wrapper *:not(div) select {
   color: black;
-  border: 1px solid grey;
+  border: 1px solid gray;
   background: white;
 }
 

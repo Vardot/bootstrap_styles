@@ -6,7 +6,7 @@ use Drupal\bootstrap_styles\Style\StylePluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class BoxShadow.
+ * Provides the box shadow style plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\Style
  *

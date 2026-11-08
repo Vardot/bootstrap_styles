@@ -15,7 +15,7 @@ use Drupal\media\Entity\Media;
 use Drupal\file\Entity\File;
 
 /**
- * Class BackgroundMedia.
+ * Provides the background media style plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\Style
  *
