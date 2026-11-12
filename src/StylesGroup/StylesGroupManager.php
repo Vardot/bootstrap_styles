@@ -2,6 +2,8 @@
 
 namespace Drupal\bootstrap_styles\StylesGroup;
 
+use Drupal\bootstrap_styles\Attribute\StylesGroup;
+use Drupal\Component\Plugin\Attribute\AttributeInterface;
 use Drupal\Core\Plugin\DefaultPluginManager;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
@@ -44,13 +46,27 @@ class StylesGroupManager extends DefaultPluginManager {
    *   Config factory service.
    */
   public function __construct(\Traversable $namespaces, CacheBackendInterface $cache_backend, ModuleHandlerInterface $module_handler, StylePluginManagerInterface $style_manager, ConfigFactoryInterface $config_factory) {
-    parent::__construct(
-      'Plugin/BootstrapStyles/StylesGroup',
-      $namespaces,
-      $module_handler,
-      'Drupal\bootstrap_styles\StylesGroup\StylesGroupPluginInterface',
-      'Drupal\bootstrap_styles\Annotation\StylesGroup'
-    );
+    if (interface_exists(AttributeInterface::class)) {
+      parent::__construct(
+        'Plugin/BootstrapStyles/StylesGroup',
+        $namespaces,
+        $module_handler,
+        'Drupal\bootstrap_styles\StylesGroup\StylesGroupPluginInterface',
+        StylesGroup::class,
+        'Drupal\bootstrap_styles\Annotation\StylesGroup'
+      );
+    }
+    else {
+      // Drupal < 10.2 has no attribute discovery, so use annotations only.
+      parent::__construct(
+        'Plugin/BootstrapStyles/StylesGroup',
+        $namespaces,
+        $module_handler,
+        'Drupal\bootstrap_styles\StylesGroup\StylesGroupPluginInterface',
+        // @phpstan-ignore pluginManager.attributeDiscoveryMissing
+        'Drupal\bootstrap_styles\Annotation\StylesGroup'
+      );
+    }
     $this->alterInfo('bootstrap_styles_info');
     $this->setCacheBackend($cache_backend, 'bootstrap_styles_groups');
     $this->styleManager = $style_manager;
