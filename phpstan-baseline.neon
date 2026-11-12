@@ -19,3 +19,16 @@ parameters:
 			message: "#^\\\\Drupal calls should be avoided in classes, use dependency injection instead$#"
 			count: 2
 			path: src/StylesGroup/StylesGroupPluginBase.php
+
+		# 1.1.x supports Drupal < 10.3 only, so it never runs on Drupal 11.2+
+		# where annotation-only plugin managers are deprecated. Attribute
+		# discovery is added on the 1.2.x and 2.0.x branches.
+		-
+			identifier: pluginManager.attributeDiscoveryMissing
+			count: 1
+			path: src/Style/StyleManager.php
+
+		-
+			identifier: pluginManager.attributeDiscoveryMissing
+			count: 1
+			path: src/StylesGroup/StylesGroupManager.php
