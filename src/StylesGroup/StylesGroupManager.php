@@ -2,6 +2,7 @@
 
 namespace Drupal\bootstrap_styles\StylesGroup;
 
+use Drupal\bootstrap_styles\Attribute\StylesGroup;
 use Drupal\Core\Plugin\DefaultPluginManager;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
@@ -49,6 +50,7 @@ class StylesGroupManager extends DefaultPluginManager {
       $namespaces,
       $module_handler,
       'Drupal\bootstrap_styles\StylesGroup\StylesGroupPluginInterface',
+      StylesGroup::class,
       'Drupal\bootstrap_styles\Annotation\StylesGroup'
     );
     $this->alterInfo('bootstrap_styles_info');

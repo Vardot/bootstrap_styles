@@ -2,6 +2,8 @@
 
 namespace Drupal\bootstrap_styles\Plugin\BootstrapStyles\StylesGroup;
 
+use Drupal\bootstrap_styles\Attribute\StylesGroup;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\bootstrap_styles\StylesGroup\StylesGroupPluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -9,14 +11,13 @@ use Drupal\Core\Form\FormStateInterface;
  * Provides the animation styles group plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\StylesGroup
- *
- * @StylesGroup(
- *   id = "animation",
- *   title = @Translation("Animation"),
- *   weight = 6,
- *   icon = "bootstrap_styles/images/plugins/animation-icon.svg"
- * )
  */
+#[StylesGroup(
+  id: 'animation',
+  title: new TranslatableMarkup('Animation'),
+  weight: 6,
+  icon: 'bootstrap_styles/images/plugins/animation-icon.svg',
+)]
 class Animation extends StylesGroupPluginBase {
 
   /**

@@ -2,6 +2,7 @@
 
 namespace Drupal\bootstrap_styles\Style;
 
+use Drupal\bootstrap_styles\Attribute\Style;
 use Drupal\Core\Plugin\DefaultPluginManager;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
@@ -28,6 +29,7 @@ class StyleManager extends DefaultPluginManager implements StylePluginManagerInt
       $namespaces,
       $module_handler,
       'Drupal\bootstrap_styles\Style\StylePluginInterface',
+      Style::class,
       'Drupal\bootstrap_styles\Annotation\Style'
     );
     $this->alterInfo('bootstrap_styles_info');

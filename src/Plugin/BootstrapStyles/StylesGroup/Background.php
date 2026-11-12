@@ -2,6 +2,8 @@
 
 namespace Drupal\bootstrap_styles\Plugin\BootstrapStyles\StylesGroup;
 
+use Drupal\bootstrap_styles\Attribute\StylesGroup;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\bootstrap_styles\StylesGroup\StylesGroupPluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -9,14 +11,13 @@ use Drupal\Core\Form\FormStateInterface;
  * Provides the background styles group plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\StylesGroup
- *
- * @StylesGroup(
- *   id = "background",
- *   title = @Translation("Background"),
- *   weight = 1,
- *   icon = "bootstrap_styles/images/plugins/background-icon.svg"
- * )
  */
+#[StylesGroup(
+  id: 'background',
+  title: new TranslatableMarkup('Background'),
+  weight: 1,
+  icon: 'bootstrap_styles/images/plugins/background-icon.svg',
+)]
 class Background extends StylesGroupPluginBase {
 
   /**

@@ -2,6 +2,8 @@
 
 namespace Drupal\bootstrap_styles\Plugin\BootstrapStyles\StylesGroup;
 
+use Drupal\bootstrap_styles\Attribute\StylesGroup;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\bootstrap_styles\StylesGroup\StylesGroupPluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -9,14 +11,13 @@ use Drupal\Core\Form\FormStateInterface;
  * Provides the shadow styles group plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\StylesGroup
- *
- * @StylesGroup(
- *   id = "shadow",
- *   title = @Translation("Shadow"),
- *   weight = 5,
- *   icon = "bootstrap_styles/images/plugins/shadow-icon.svg"
- * )
  */
+#[StylesGroup(
+  id: 'shadow',
+  title: new TranslatableMarkup('Shadow'),
+  weight: 5,
+  icon: 'bootstrap_styles/images/plugins/shadow-icon.svg',
+)]
 class Shadow extends StylesGroupPluginBase {
 
   /**

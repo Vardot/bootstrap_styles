@@ -2,6 +2,8 @@
 
 namespace Drupal\bootstrap_styles\Plugin\BootstrapStyles\Style;
 
+use Drupal\bootstrap_styles\Attribute\Style;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\bootstrap_styles\Style\StylePluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -9,14 +11,13 @@ use Drupal\Core\Form\FormStateInterface;
  * Provides the scroll effects style plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\Style
- *
- * @Style(
- *   id = "scroll_effects",
- *   title = @Translation("Scroll Effects"),
- *   group_id = "animation",
- *   weight = 3
- * )
  */
+#[Style(
+  id: 'scroll_effects',
+  title: new TranslatableMarkup('Scroll Effects'),
+  group_id: 'animation',
+  weight: 3,
+)]
 class ScrollEffects extends StylePluginBase {
 
   /**

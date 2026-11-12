@@ -2,6 +2,8 @@
 
 namespace Drupal\bootstrap_styles\Plugin\BootstrapStyles\Style;
 
+use Drupal\bootstrap_styles\Attribute\Style;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\bootstrap_styles\Style\StylePluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -9,14 +11,13 @@ use Drupal\Core\Form\FormStateInterface;
  * Provides the text alignment style plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\Style
- *
- * @Style(
- *   id = "text_alignment",
- *   title = @Translation("Text Alignment"),
- *   group_id = "typography",
- *   weight = 2
- * )
  */
+#[Style(
+  id: 'text_alignment',
+  title: new TranslatableMarkup('Text Alignment'),
+  group_id: 'typography',
+  weight: 2,
+)]
 class TextAlignment extends StylePluginBase {
 
   /**

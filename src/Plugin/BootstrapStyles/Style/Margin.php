@@ -2,6 +2,8 @@
 
 namespace Drupal\bootstrap_styles\Plugin\BootstrapStyles\Style;
 
+use Drupal\bootstrap_styles\Attribute\Style;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\bootstrap_styles\Style\StylePluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -9,14 +11,13 @@ use Drupal\Core\Form\FormStateInterface;
  * Provides the margin style plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\Style
- *
- * @Style(
- *   id = "margin",
- *   title = @Translation("Margin"),
- *   group_id = "spacing",
- *   weight = 2
- * )
  */
+#[Style(
+  id: 'margin',
+  title: new TranslatableMarkup('Margin'),
+  group_id: 'spacing',
+  weight: 2,
+)]
 class Margin extends StylePluginBase {
 
   /**

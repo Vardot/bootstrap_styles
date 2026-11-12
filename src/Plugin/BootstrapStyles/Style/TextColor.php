@@ -2,6 +2,8 @@
 
 namespace Drupal\bootstrap_styles\Plugin\BootstrapStyles\Style;
 
+use Drupal\bootstrap_styles\Attribute\Style;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\bootstrap_styles\Style\StylePluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -9,14 +11,13 @@ use Drupal\Core\Form\FormStateInterface;
  * Provides the text color style plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\Style
- *
- * @Style(
- *   id = "text_color",
- *   title = @Translation("Text Color"),
- *   group_id = "typography",
- *   weight = 1
- * )
  */
+#[Style(
+  id: 'text_color',
+  title: new TranslatableMarkup('Text Color'),
+  group_id: 'typography',
+  weight: 1,
+)]
 class TextColor extends StylePluginBase {
 
   /**

@@ -2,6 +2,8 @@
 
 namespace Drupal\bootstrap_styles\Plugin\BootstrapStyles\Style;
 
+use Drupal\bootstrap_styles\Attribute\Style;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\bootstrap_styles\Style\StylePluginBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
@@ -18,14 +20,13 @@ use Drupal\file\Entity\File;
  * Provides the background media style plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\Style
- *
- * @Style(
- *   id = "background_media",
- *   title = @Translation("Background Media"),
- *   group_id = "background",
- *   weight = 2
- * )
  */
+#[Style(
+  id: 'background_media',
+  title: new TranslatableMarkup('Background Media'),
+  group_id: 'background',
+  weight: 2,
+)]
 class BackgroundMedia extends StylePluginBase implements ContainerFactoryPluginInterface {
 
   /**

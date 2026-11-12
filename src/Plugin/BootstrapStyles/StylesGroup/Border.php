@@ -2,6 +2,8 @@
 
 namespace Drupal\bootstrap_styles\Plugin\BootstrapStyles\StylesGroup;
 
+use Drupal\bootstrap_styles\Attribute\StylesGroup;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\bootstrap_styles\StylesGroup\StylesGroupPluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -9,14 +11,13 @@ use Drupal\Core\Form\FormStateInterface;
  * Provides the border styles group plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\StylesGroup
- *
- * @StylesGroup(
- *   id = "border",
- *   title = @Translation("Border"),
- *   weight = 4,
- *   icon = "bootstrap_styles/images/plugins/border-icon.svg"
- * )
  */
+#[StylesGroup(
+  id: 'border',
+  title: new TranslatableMarkup('Border'),
+  weight: 4,
+  icon: 'bootstrap_styles/images/plugins/border-icon.svg',
+)]
 class Border extends StylesGroupPluginBase {
 
   /**

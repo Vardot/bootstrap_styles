@@ -2,6 +2,8 @@
 
 namespace Drupal\bootstrap_styles\Plugin\BootstrapStyles\Style;
 
+use Drupal\bootstrap_styles\Attribute\Style;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\bootstrap_styles\Style\StylePluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -9,14 +11,13 @@ use Drupal\Core\Form\FormStateInterface;
  * Provides the box shadow style plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\Style
- *
- * @Style(
- *   id = "box_shadow",
- *   title = @Translation("Box shadow"),
- *   group_id = "shadow",
- *   weight = 5
- * )
  */
+#[Style(
+  id: 'box_shadow',
+  title: new TranslatableMarkup('Box shadow'),
+  group_id: 'shadow',
+  weight: 5,
+)]
 class BoxShadow extends StylePluginBase {
 
   /**

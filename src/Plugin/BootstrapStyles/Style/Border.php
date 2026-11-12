@@ -2,6 +2,8 @@
 
 namespace Drupal\bootstrap_styles\Plugin\BootstrapStyles\Style;
 
+use Drupal\bootstrap_styles\Attribute\Style;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\bootstrap_styles\Style\StylePluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -9,14 +11,13 @@ use Drupal\Core\Form\FormStateInterface;
  * Provides the border style plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\Style
- *
- * @Style(
- *   id = "border",
- *   title = @Translation("Border"),
- *   group_id = "border",
- *   weight = 1
- * )
  */
+#[Style(
+  id: 'border',
+  title: new TranslatableMarkup('Border'),
+  group_id: 'border',
+  weight: 1,
+)]
 class Border extends StylePluginBase {
 
   /**

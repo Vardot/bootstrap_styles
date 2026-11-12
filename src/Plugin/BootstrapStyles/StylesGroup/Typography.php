@@ -2,6 +2,8 @@
 
 namespace Drupal\bootstrap_styles\Plugin\BootstrapStyles\StylesGroup;
 
+use Drupal\bootstrap_styles\Attribute\StylesGroup;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\bootstrap_styles\StylesGroup\StylesGroupPluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -9,14 +11,13 @@ use Drupal\Core\Form\FormStateInterface;
  * Provides the typography styles group plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\StylesGroup
- *
- * @StylesGroup(
- *   id = "typography",
- *   title = @Translation("Typography"),
- *   weight = 2,
- *   icon = "bootstrap_styles/images/plugins/typography-icon.svg"
- * )
  */
+#[StylesGroup(
+  id: 'typography',
+  title: new TranslatableMarkup('Typography'),
+  weight: 2,
+  icon: 'bootstrap_styles/images/plugins/typography-icon.svg',
+)]
 class Typography extends StylesGroupPluginBase {
 
   /**

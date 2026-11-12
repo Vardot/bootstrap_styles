@@ -2,6 +2,8 @@
 
 namespace Drupal\bootstrap_styles\Plugin\BootstrapStyles\Style;
 
+use Drupal\bootstrap_styles\Attribute\Style;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\bootstrap_styles\Style\StylePluginBase;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -9,14 +11,13 @@ use Drupal\Core\Form\FormStateInterface;
  * Provides the background color style plugin.
  *
  * @package Drupal\bootstrap_styles\Plugin\Style
- *
- * @Style(
- *   id = "background_color",
- *   title = @Translation("Background Color"),
- *   group_id = "background",
- *   weight = 1
- * )
  */
+#[Style(
+  id: 'background_color',
+  title: new TranslatableMarkup('Background Color'),
+  group_id: 'background',
+  weight: 1,
+)]
 class BackgroundColor extends StylePluginBase {
 
   /**
